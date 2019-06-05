@@ -79,7 +79,7 @@
         @foreach ($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
-                <td>{{ $user->avatar }}</td>
+                <td><img src="../avatar/{{ $user->avatar['image'] }}" alt=""></td>
                 <td><a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a></td>
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->phone??'-' }}</td>

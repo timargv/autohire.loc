@@ -13,6 +13,7 @@ class Avatar extends Model
 
     protected $fillable = ['user_id', 'avatar', 'status'];
 
+    protected $table = 'user_avatar';
 
 
     // ------- Получить пользователя, владеющего данным аватором.

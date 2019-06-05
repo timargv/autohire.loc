@@ -21,7 +21,7 @@ class UsersController extends Controller
 
     public function index(Request $request)
     {
-        $query = User::orderByDesc('id');
+        $query = User::orderByDesc('id')->with('avatar');
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);
