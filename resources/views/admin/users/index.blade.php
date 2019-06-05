@@ -2,8 +2,8 @@
 
 @section('content')
     @include('admin.users._nav')
+    @include('admin.users._nav_user')
 
-    <p><a href="{{ route('admin.users.create') }}" class="btn btn-success">Добавить пользователя</a></p>
 
     <div class="card mb-3">
         <div class="card-header">Фильтр</div>

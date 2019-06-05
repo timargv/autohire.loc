@@ -23,19 +23,32 @@
     <table class="table table-bordered table-striped">
         <tbody>
         <tr>
-            <th>ID</th><td>{{ $user->id }}</td>
+            <th width="100px">ID</th><td>{{ $user->id }}</td>
         </tr>
         <tr>
-            <th>Name</th><td>{{ $user->name }}</td>
+            <th>Ник</th><td>{{ $user->name }}</td>
+        </tr>
+        <tr>
+            <th>Имя</th><td>{{ $user->forename }}</td>
+        </tr>
+        <tr>
+            <th>Фамилия</th><td>{{ $user->surname }}</td>
+        </tr>
+        <tr>
+            <th>Отчество</th><td>{{ $user->patronymic }}</td>
+        </tr>
+        <tr>
+            <th>Город</th><td>{{ $user->city }}</td>
         </tr>
         <tr>
             <th>Email</th><td>{{ $user->email }}</td>
         </tr>
+
         <tr>
             <th>Status</th>
             <td>
                 @if ($user->isWait())
-                    <span class="badge badge-secondary">Waiting</span>
+                    <span class="badge badge-warning">Waiting</span>
                 @endif
                 @if ($user->isActive())
                     <span class="badge badge-primary">Active</span>
@@ -47,10 +60,15 @@
             <td>
                 @if ($user->isAdmin())
                     <span class="badge badge-danger">Admin</span>
+                @elseif ($user->isModerator())
+                    <span class="badge badge-success">Moderator</span>
                 @else
                     <span class="badge badge-secondary">User</span>
                 @endif
             </td>
+        </tr>
+        <tr>
+            <th>О себе</th><td>{{ $user->about }}</td>
         </tr>
         <tbody>
         </tbody>

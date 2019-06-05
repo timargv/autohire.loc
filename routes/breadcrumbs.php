@@ -112,6 +112,11 @@ Breadcrumbs::register('admin.home', function (Crumbs $crumbs) {
 
 // Users
 
+Breadcrumbs::register('admin.users.avatar.home', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.users.index');
+    $crumbs->push('Avatars', route('admin.users.avatar.home'));
+});
+
 Breadcrumbs::register('admin.users.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.home');
     $crumbs->push('Users', route('admin.users.index'));

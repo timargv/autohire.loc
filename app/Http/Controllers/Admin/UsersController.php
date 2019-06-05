@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\Users\UpdateRequest;
 use App\Http\Controllers\Controller;
 use App\UseCases\Auth\RegisterService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
@@ -87,10 +88,12 @@ class UsersController extends Controller
         $user->update($request->only(['name', 'email']));
 
         if ($request['role'] !== $user->role) {
-            $user->changeRole($request['role']);
+                $user->changeRole($request['role']);
         }
 
         return redirect()->route('admin.users.show', $user);
+
+
     }
 
     public function destroy(User $user)

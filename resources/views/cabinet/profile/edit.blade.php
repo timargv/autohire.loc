@@ -49,12 +49,9 @@
             @endif
         </div>
 
-
-
-
         <div class="form-group">
             <label for="city" class="col-form-label">Город</label>
-            <input id="city" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city', $user->city) }}" required>
+            <input id="city" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city', $user->city) }}" >
             @if ($errors->has('city'))
                 <span class="invalid-feedback"><strong>{{ $errors->first('city') }}</strong></span>
             @endif

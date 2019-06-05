@@ -84,6 +84,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('users', 'UsersController');
+
+
+        Route::group(['prefix' => 'user/avatars', 'as' => 'users.avatar.', 'namespace' => 'User'], function () {
+            Route::get('/', 'AvatarsController@index')->name('home');
+
+            Route::post('/not-match/{avatar}', 'AvatarsController@notMatch')->name('not.match');
+            Route::post('/active/{avatar}', 'AvatarsController@active')->name('active');
+        });
+
+
         Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');
 
 //        Route::group(['prefix' => 'adverts', 'as' => 'adverts.', 'namespace' => 'Adverts'], function () {

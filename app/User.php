@@ -169,6 +169,9 @@ class User extends Authenticatable
         if ($this->role === $role) {
             throw new \DomainException('Role is already assigned.');
         }
+        if (!\Auth::user()->isAdmin()) {
+            throw new \DomainException('Вы не можете менять роль пользователю.');
+        }
         $this->update(['role' => $role]);
     }
 

@@ -17,9 +17,9 @@ class Avatar extends Model
 
 
     // ------- Получить пользователя, владеющего данным аватором.
-    public function user()
+    public function author()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
 
@@ -31,5 +31,17 @@ class Avatar extends Model
             self::STATUS_MODERATION => 'Moderation',
             self::STATUS_ACTIVE => 'Active',
         ];
+    }
+
+    public function isNotMatch() {
+        return $this->status === self::STATUS_NOT_MATCH;
+    }
+
+    public function isModeration() {
+        return $this->status === self::STATUS_MODERATION;
+    }
+
+    public function isActive() {
+        return $this->status === self::STATUS_ACTIVE;
     }
 }
