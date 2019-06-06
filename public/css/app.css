@@ -10662,3 +10662,7 @@ a.text-dark:focus {
   }
 }
 
+.custom-file-input:lang(ru) ~ .custom-file-label::after {
+  content: "\412\44B\431\440\430\442\44C";
+}
+

@@ -66,7 +66,7 @@
         <thead>
         <tr>
             <th>ID</th>
-            <th>Фото</th>
+            <th width="50px">Фото</th>
             <th>Имя</th>
             <th>Email</th>
             <th>Телефон</th>
@@ -79,10 +79,25 @@
         @foreach ($users as $user)
             <tr>
                 <td>{{ $user->id }}</td>
-                <td><img src="../avatar/{{ $user->avatar['image'] }}" alt=""></td>
+                <td>
+                    <div class="w-100 position-relative">
+                        @if($user->avatar)
+                            <div class="position-absolute" style="top: -10px;left: -6px;">
+                                @if ($user->avatar->isNotMatch())
+                                    <i class="fas fa-circle text-danger" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
+                                @elseif ($user->avatar->isModeration())
+                                    <i class="fas fa-circle text-warning" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
+                                @else
+                                    <i class="fas fa-circle text-success" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
+                                @endif
+                            </div>
+                        @endif
+                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url($user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                    </div>
+                </td>
                 <td><a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a></td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->phone??'-' }}</td>
+                <td>{{ $user->userPhoneChar($user) }}</td>
                 <td>
                     @if ($user->isWait())
                         <span class="badge badge-warning">Waiting</span>

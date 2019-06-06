@@ -9,3 +9,9 @@
 
 // Font Awesome
 @import '../assets/plugins/fontawesome-pro/css/all.min.css';
+
+
+
+.custom-file-input:lang(ru) ~ .custom-file-label::after {
+  content: 'Выбрать';
+}

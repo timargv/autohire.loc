@@ -79,13 +79,25 @@ class UsersController extends Controller
     public function edit(User $user)
     {
         $roles = User::rolesList();
+        $statuses = User::statusList();
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles', 'statuses'));
     }
 
     public function update(UpdateRequest $request, User $user)
     {
-        $user->update($request->only(['name', 'email']));
+
+        $user->update($request->only([
+            'name',
+            'forename',
+            'surname',
+            'patronymic',
+            'email',
+            'status',
+            'role',
+            'phone',
+            'city',
+            'about']));
 
         if ($request['role'] !== $user->role) {
                 $user->changeRole($request['role']);

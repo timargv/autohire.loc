@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
  * @property \Carbon\Carbon $updated_at
  * @property \Carbon\Carbon $email_verified_at
  * @property \Carbon\Carbon $created_at
+ * @property string $phone_verify_token
  */
 class User extends Authenticatable
 {
@@ -44,19 +45,22 @@ class User extends Authenticatable
 
         'phone',
         'phone_auth',
-        'phone_verified',
         'phone_verify_token',
-        'phone_verify_token_expire',
 
         'city',
         'about',
 
-        'remember_token'
     ];
 
 
     protected $hidden = [
         'password', 'remember_token'
+    ];
+
+    protected $casts = [
+        'phone_verified' => 'boolean',
+        'phone_verify_token_expire' => 'datetime',
+        'phone_auth' => 'boolean',
     ];
 
     // ---------- Аватар пользователя
@@ -275,6 +279,16 @@ class User extends Authenticatable
         return !empty($this->name) && !empty($this->last_name) && $this->isPhoneVerified();
     }
 
+    public function userPhoneChar($user)
+    {
+        $charPhone = preg_split('//', $user->phone, -1, PREG_SPLIT_NO_EMPTY);
+        if (count($charPhone)==10) {
+            return '+7 ('.implode(array_slice($charPhone, 0, 3, true)). ') '
+                .implode(array_slice($charPhone, 3, 3, true)).'-'
+                .implode(array_slice($charPhone, 6, 2, true)).'-'
+                .implode(array_slice($charPhone, 8, 2, true));
+        } return '—';
+    }
 
 
 }

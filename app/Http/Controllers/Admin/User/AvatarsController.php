@@ -43,13 +43,13 @@ class AvatarsController extends Controller
             'status' => Avatar::STATUS_NOT_MATCH
         ]);
 
-        return redirect()->back()->with('error', 'Аватар не соответствует правилам сайта');
+        return redirect()->back()->with('error', 'Фото не соответствует правилам сайта');
     }
 
     public function active(Avatar $avatar) {
         $avatar->update([
             'status' => Avatar::STATUS_ACTIVE
         ]);
-        return redirect()->back()->with('success', 'Аватар активен');
+        return redirect()->back()->with('success', 'Фото подтверждено');
     }
 }

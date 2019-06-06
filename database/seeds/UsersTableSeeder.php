@@ -23,8 +23,8 @@ class UsersTableSeeder extends Seeder
             'password' => '$2y$10$L5aRc5gDSFDgKA/TTzQtFe17pztBd.KAkZmRl6oIFlnykL/chawzm',
             'status' => 'active',
             'role' => 'admin',
-            'phone' => '+79290076889',
-            'about' => $faker->realText(1500, 2),
+            'phone' => '9290076889',
+            'about' => $faker->realText(1500, 5),
         ]);
 
         factory(User::class, 10)->create();

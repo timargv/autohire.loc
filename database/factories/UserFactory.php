@@ -27,7 +27,7 @@ $factory->define(User::class, function (Faker $faker) {
         'surname' => $faker->firstName,
         'patronymic' => $faker->lastName,
         'email' => $faker->unique()->safeEmail,
-        'phone' => $faker->unique()->phoneNumber,
+        'phone' => $faker->numberBetween(1000000000,9999999999),
         'phone_verified' => $phoneActive,
         'password' => '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', // secret
         'remember_token' => str_random(10),

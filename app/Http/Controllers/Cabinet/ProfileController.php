@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Cabinet;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\ProfileEditRequest;
+use App\Http\Requests\Cabinet\UserAvatarRequest;
 use App\UseCases\Profile\ProfileService;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
@@ -38,5 +40,17 @@ class ProfileController extends Controller
             return redirect()->back()->with('error', $e->getMessage());
         }
         return redirect()->route('cabinet.profile.home');
+    }
+
+
+    public function avatar(UserAvatarRequest $request, User $user) {
+
+        try {
+            $this->service->addAvatar($user->id, $request);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->back()->with('success', 'Фото добавлено');
     }
 }

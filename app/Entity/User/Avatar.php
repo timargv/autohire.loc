@@ -11,7 +11,7 @@ class Avatar extends Model
     public const STATUS_MODERATION = 'moderation';
     public const STATUS_ACTIVE = 'active';
 
-    protected $fillable = ['user_id', 'avatar', 'status'];
+    protected $fillable = ['user_id', 'image', 'status'];
 
     protected $table = 'user_avatar';
 

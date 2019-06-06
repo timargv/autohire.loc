@@ -8,15 +8,19 @@ Auth::routes();
 Route::get('/verify/{token}', 'Auth\RegisterController@verify')->name('register.verify');
 
 
-
+// ---------- Cabinet
 
 Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet', 'middleware' => ['auth'] ], function () {
+
         Route::get('/', 'HomeController@index')->name('home');
 
         Route::group(['prefix' => 'profile', 'as' => 'profile.'], function () {
             Route::get('/', 'ProfileController@index')->name('home');
             Route::get('/edit', 'ProfileController@edit')->name('edit');
             Route::put('/update', 'ProfileController@update')->name('update');
+            Route::post('/{user}/avatar', 'ProfileController@avatar')->name('add.avatar');
+
+
             Route::post('/phone', 'PhoneController@request');
             Route::get('/phone', 'PhoneController@form')->name('phone');
             Route::put('/phone', 'PhoneController@verify')->name('phone.verify');
@@ -79,7 +83,11 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 );
 
 
+
+// ---------- ADMIN
+
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'can:admin-panel'] ], function () {
+
 //        Route::post('/ajax/upload/image', 'UploadController@image')->name('ajax.upload.image');
 
         Route::get('/', 'HomeController@index')->name('home');

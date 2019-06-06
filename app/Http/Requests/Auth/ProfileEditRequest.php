@@ -15,8 +15,8 @@ class ProfileEditRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'about' => 'string|max:3000',
-            'phone' => 'required|string|max:255|regex:/^\d+$/s',
+            'about' => 'nullable|string|max:3000',
+            'phone' => 'required|string|min:10|max:10|regex:/^\d+$/s',
         ];
     }
 }
