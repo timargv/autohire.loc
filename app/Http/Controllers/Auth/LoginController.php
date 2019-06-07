@@ -16,7 +16,6 @@ class LoginController extends Controller
 {
     use ThrottlesLogins;
 
-    private $cartService;
 
     public function __construct()
     {
