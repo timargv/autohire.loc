@@ -50,7 +50,7 @@ class LoginController extends Controller
             }
 
 
-            return redirect()->intended(route('home'));
+            return redirect()->intended(route('home'))->with('info', 'Вы зашли в свой профиль.');
         }
 
         $this->incrementLoginAttempts($request);

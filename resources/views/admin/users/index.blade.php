@@ -53,7 +53,7 @@
                     <div class="col-sm-2">
                         <div class="form-group">
                             <label class="col-form-label">&nbsp;</label><br />
-                            <button type="submit" class="btn btn-primary">Найти</button>
+                            <button type="submit" class="btn btn-primary">{{__('button.Search')}}</button>
                             <a href="?" class="btn btn-outline-danger"><i class="fas fa-times"></i></a>
                         </div>
                     </div>
@@ -62,14 +62,14 @@
         </div>
     </div>
 
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped table-responsive-sm">
         <thead>
         <tr>
             <th>ID</th>
             <th width="50px">Фото</th>
             <th>Имя</th>
             <th>Email</th>
-            <th>Телефон</th>
+            <th>{{__('fillable.Phone')}}</th>
             <th>Статус</th>
             <th>Роль</th>
         </tr>
@@ -84,15 +84,16 @@
                         @if($user->avatar)
                             <div class="position-absolute" style="top: -10px;left: -6px;">
                                 @if ($user->avatar->isNotMatch())
-                                    <i class="fas fa-circle text-danger" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
+                                    <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
                                 @elseif ($user->avatar->isModeration())
-                                    <i class="fas fa-circle text-warning" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
+                                    <i class="fas fa-question-circle text-warning bg-dark rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото на модерации"></i>
                                 @else
-                                    <i class="fas fa-circle text-success" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
+                                    <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото Подтверждено"></i>
                                 @endif
                             </div>
                         @endif
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url($user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        <a href="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
                     </div>
                 </td>
                 <td><a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a></td>

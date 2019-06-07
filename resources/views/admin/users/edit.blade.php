@@ -9,7 +9,7 @@
 
                 <div class="col-md-4">
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url($user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
 
                         <div class="card-img-overlay">
                             @if($user->avatar)
@@ -52,7 +52,7 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="phone" class="col-form-label">Phone</label>
+                        <label for="phone" class="col-form-label">{{__('fillable.Phone')}}</label>
                         <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $user->phone) }}" required>
                         @if ($errors->has('phone'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('phone') }}</strong></span>

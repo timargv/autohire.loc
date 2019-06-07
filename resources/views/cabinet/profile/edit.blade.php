@@ -9,7 +9,7 @@
 
 
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url($user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
 
                         <div class="card-img-overlay">
                             @if($user->avatar)
@@ -51,7 +51,7 @@
                         @endif
 
                         <div class="form-group mb-4">
-                            <button type="submit" class="btn btn-primary">{{ __('Загрузить') }}</button>
+                            <button type="submit" class="btn btn-primary">{{ __('button.Upload') }}</button>
                         </div>
                     </form>
 
@@ -63,7 +63,7 @@
                         @method('PUT')
 
                         <div class="form-group ">
-                            <label for="phone" class="col-form-label">Phone</label>
+                            <label for="phone" class="col-form-label">{{__('fillable.Phone')}}</label>
                             <div class="input-group mb-3 ">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">+7</span>
@@ -130,7 +130,7 @@
 
 
                         <div class="form-group">
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <button type="submit" class="btn btn-primary">{{__('button.Save')}}</button>
                         </div>
                     </form>
                 </div>

@@ -37,7 +37,7 @@
             </form>
         </div>
     </div>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped table-responsive-sm">
         <thead>
         <tr>
             <th>ID</th>
@@ -53,7 +53,7 @@
         @foreach ($avatars as $avatar)
             <tr>
                 <td>{{ $avatar->id }}</td>
-                <td><img src="{{ $avatar !== null ? Storage::disk('public')->url($avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="..."></td>
+                <td><img src="{{ $avatar !== null ? Storage::disk('public')->url('user/avatar/small/'. $avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="..."></td>
                 <td><a href="{{ route('admin.users.show', $avatar->author) }}">{{ $avatar->author->name }}</a></td>
                 <td>
                     @if ($avatar->isNotMatch())

@@ -13,7 +13,7 @@
                 <div class="col-md-4">
 
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url($user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
 
                         <div class="card-img-overlay">
                             @if($user->avatar)
@@ -22,7 +22,7 @@
                                 {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
                             </span></h5>
                                 @elseif($user->avatar->isModeration())
-                                    <h5><span class="badge badge-warning">
+                                    <h5><span class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="Фото на модерации">
                                 {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
                             </span></h5>
                                 @elseif($user->avatar->isNotMatch())
@@ -42,7 +42,7 @@
                                 Изменить
                             </button>
                             <div class="dropdown-menu dropdown-menu-right rounded-0">
-                                <a href="{{ route('cabinet.profile.edit') }}" class="dropdown-item align-middle btn-sm px-3 rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('Редактировать') }}</a>
+                                <a href="{{ route('cabinet.profile.edit') }}" class="dropdown-item align-middle btn-sm px-3 rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>
                             </div>
                         </div>
 
@@ -99,7 +99,7 @@
 
                             <div class="mb-3 col-md-4">
                                 <div class="mb-2 text-muted">
-                                    Email
+                                    {{__('register.EMailAddress')}}
                                 </div>
                                 <div class="h5 text-muted">
                                     {{ $user->email??'—' }}
@@ -108,7 +108,7 @@
 
                             <div class="mb-3 col-md-4">
                                 <div class="mb-2 text-muted">
-                                    Phone
+                                    {{__('fillable.Phone')}}
                                 </div>
                                 <div class="h5 text-muted">
                                     {{ $user->userPhoneChar($user) }}

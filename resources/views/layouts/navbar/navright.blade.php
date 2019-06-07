@@ -2,17 +2,17 @@
     <!-- Authentication Links -->
     @guest
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+            <a class="nav-link" href="{{ route('login') }}">{{ __('auth.Login') }}</a>
         </li>
         @if (Route::has('register'))
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                <a class="nav-link" href="{{ route('register') }}">{{ __('register.Register') }}</a>
             </li>
         @endif
     @else
         @can ('admin-panel')
             <li class="nav-item">
-                <a class="nav-link font-weight-bold" href="{{ route('admin.home') }}">{{ __('Admin') }}</a>
+                <a class="nav-link font-weight-bold" href="{{ route('admin.home') }}">{{ __('menu.Admin') }}</a>
             </li>
         @endcan
         <li class="nav-item dropdown">
@@ -21,11 +21,11 @@
             </a>
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('cabinet.home') }}">{{ __('Cabinet') }}</a>
+                <a class="dropdown-item" href="{{ route('cabinet.home') }}">{{ __('menu.Cabinet') }}</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
+                    {{ __('auth.Logout') }}
                 </a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

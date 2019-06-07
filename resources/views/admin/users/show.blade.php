@@ -10,7 +10,7 @@
                 <div class="col-md-4">
 
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url($user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
 
                         <div class="card-img-overlay">
                             <div class="">
@@ -55,16 +55,16 @@
                     <div class="float-right mt-1">
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Изменить
+                                {{__('fillable.Edit')}}
                             </button>
                             <div class="dropdown-menu dropdown-menu-right rounded-0">
-                                <a href="{{ route('admin.users.edit', $user) }}" class="dropdown-item align-middle btn-sm px-3  rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('Редактировать') }}</a>
+                                <a href="{{ route('admin.users.edit', $user) }}" class="dropdown-item align-middle btn-sm px-3  rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>
 
                                 @if ($user->isWait())
                                 <div class="form-group mb-0">
                                     <form method="POST" action="{{ route('admin.users.verify', $user) }}" class="">
                                         @csrf
-                                        <button class="dropdown-item btn-sm px-3  rounded-0" onclick="return confirm('Вы хотите подтвердить аккаунт?')"><i class="fal fa-check mr-2"></i> Верефицировать</button>
+                                        <button class="dropdown-item btn-sm px-3 text-success rounded-0" onclick="return confirm('Вы хотите подтвердить аккаунт?')"><i class="fal fa-check  mr-2"></i> {{__('menu.Verify')}}</button>
                                     </form>
                                 </div>
                                 @endif
@@ -73,7 +73,7 @@
                                     <form method="POST" action="{{ route('admin.users.destroy', $user) }}" class="">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="dropdown-item btn-sm px-3  rounded-0" onclick="return confirm('Удалить Пользователя?')"><i class="fal fa-trash mr-2"></i> Удалить</button>
+                                        <button class="dropdown-item btn-sm px-3  rounded-0" onclick="return confirm('Удалить Пользователя?')"><i class="fal fa-trash mr-2"></i> {{__('button.Delete')}}</button>
                                     </form>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
 
                             <div class="mb-3 col-md-4">
                                 <div class="mb-2 text-muted">
-                                    Email
+                                    {{__('register.EMailAddress')}}
                                 </div>
                                 <div class="h6 text-muted">
                                     {{ $user->email }}
@@ -141,7 +141,7 @@
 
                             <div class="mb-3 col-md-4">
                                 <div class="mb-2 text-muted">
-                                    Phone
+                                    {{__('fillable.Phone')}}
                                 </div>
                                 <div class="h5 text-muted">
                                     {{ $user->userPhoneChar($user) }}
