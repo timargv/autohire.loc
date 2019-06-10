@@ -2,9 +2,7 @@
 
 @section('content')
     @include('cabinet.black-list-tenant._nav')
-    <p>
-        <a href="{{ route('cabinet.black.list.tenants.create') }}" class="btn-sm btn btn-primary"><i class="fal fa-plus mr-1"></i> Добавить</a>
-    </p>
+    @include('.cabinet.black-list-tenant._nav_button')
 
 
     <div class="card mb-3">
@@ -45,10 +43,10 @@
         </div>
     </div>
 
-    <table class="table table-bordered table-striped table-responsive-sm">
+        <table class="table table-bordered bg-white table-responsive-sm">
         <thead>
         <tr>
-            <th>ID</th>
+            <th width="60px">ID</th>
             <th width="50px">{{__('fillable.Photo')}}</th>
             <th>{{__('fillable.Name')}}</th>
             <th>{{__('fillable.City')}}</th>

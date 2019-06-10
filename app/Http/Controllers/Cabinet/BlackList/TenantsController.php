@@ -48,10 +48,14 @@ class TenantsController extends Controller
 
     }
 
-
     public function create() {
 
         return view('cabinet.black-list-tenant.create');
+    }
+
+    public function show(BlackList $tenant)
+    {
+        return view('cabinet.black-list-tenant.show', compact('tenant'));
     }
 
     public function story(BlackListRequest $request)

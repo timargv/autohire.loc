@@ -1,5 +1,6 @@
 <?php
 
+use App\Entity\Tenant\BlackList;
 use App\User;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 
@@ -35,7 +36,7 @@ Breadcrumbs::register('password.reset', function (Crumbs $crumbs) {
 
 Breadcrumbs::register('profile.show', function (Crumbs $crumbs, User $user) {
     $crumbs->parent('cabinet.home');
-    $crumbs->push($user->name, route('cabinet.profile.home'));
+    $crumbs->push($user->name, route('cabinet.profile.home', $user));
 });
 
 
@@ -94,6 +95,11 @@ Breadcrumbs::register('cabinet.black.list.tenants.home', function (Crumbs $crumb
 Breadcrumbs::register('cabinet.black.list.tenants.create', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.black.list.tenants.home');
     $crumbs->push(__('fillable.Create'), route('cabinet.black.list.tenants.create'));
+});
+
+Breadcrumbs::register('cabinet.black.list.tenants.show', function (Crumbs $crumbs, BlackList $tenant) {
+    $crumbs->parent('cabinet.black.list.tenants.home');
+    $crumbs->push($tenant->name, route('cabinet.black.list.tenants.show', $tenant));
 });
 
 

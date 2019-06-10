@@ -38,7 +38,7 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::get('/tenants', 'TenantsController@index')->name('home');
             Route::get('/create', 'TenantsController@create')->name('create');
             Route::post('/create', 'TenantsController@story')->name('story');
-            Route::get('/show', 'TenantsController@show')->name('show');
+            Route::get('/{tenant}/show', 'TenantsController@show')->name('show');
             Route::get('/edit', 'TenantsController@edit')->name('edit');
             Route::put('/update', 'TenantsController@update')->name('update');
 

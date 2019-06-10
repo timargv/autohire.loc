@@ -64,29 +64,11 @@
                 @endforeach
                     <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/small/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
                     <a href="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/small/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
-
             </div>
             @endif
 
         </td>
-{{--        <td>--}}
-{{--            <div class="w-100 position-relative">--}}
-{{--                @if($item->photo)--}}
-{{--                    <div class="position-absolute" style="top: -10px;left: -6px;">--}}
-{{--                        @if ($tenant->photo->isNotMatch())--}}
-{{--                            <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>--}}
-{{--                        @elseif ($user->avatar->isModeration())--}}
-{{--                            <i class="fas fa-question-circle text-warning bg-dark rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото на модерации"></i>--}}
-{{--                        @else--}}
-{{--                            <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото Подтверждено"></i>--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
-{{--                @endif--}}
-{{--                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">--}}
-{{--                <a href="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>--}}
-{{--            </div>--}}
-{{--        </td>--}}
-        <td><a href="#">{{ $tenant->name }}</a>
+        <td><a href="{{ route('cabinet.black.list.tenants.show', $tenant) }}">{{ $tenant->name }}</a>
             @foreach($tenant->comments as $comment)
                 <div class="text-muted mt-1 mb-2">{{ $comment->comment }}</div>
                 @break($loop->first)

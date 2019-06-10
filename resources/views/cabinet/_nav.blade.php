@@ -5,6 +5,6 @@
     <li class="nav-item"><a class="nav-link{{ $page === 'profile' ? ' active' : '' }}" href="{{ route('cabinet.profile.home') }}">{{ __('menu.Profile') }}</a></li>
     <li class="nav-item"><a class="nav-link{{ $page === 'tickets' ? ' active' : '' }}" href="{{-- route('cabinet.tickets.index') --}}">{{ __('fillable.Tickets') }}</a></li>
     <li class="nav-item">
-        <a class="nav-link {{ $page === 'black-list-tenant' ? ' active' : '' }}" href="{{ route('cabinet.black.list.tenants.home') }}">Черный список</a>
+        <a class="nav-link {{ $page === 'black-list-tenant' ? ' active' : '' }}" href="{{ route('cabinet.black.list.tenants.home') }}">Черный список Арендаторов</a>
     </li>
 </ul>
