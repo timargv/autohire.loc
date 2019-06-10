@@ -21,14 +21,16 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
+        return view('cabinet.profile.home', compact('user'));
+    }
 
+    public function show(User $user) {
         return view('cabinet.profile.home', compact('user'));
     }
 
     public function edit()
     {
         $user = Auth::user();
-
         return view('cabinet.profile.edit', compact('user'));
     }
 

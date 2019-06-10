@@ -1,30 +1,37 @@
 <?php
 
-namespace App\Entity\User;
+namespace App\Entity\Tenant;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
-class Avatar extends Model
+class BlackListComment extends Model
 {
+
     public const STATUS_NOT_MATCH = 'not_match';
     public const STATUS_MODERATION = 'moderation';
     public const STATUS_ACTIVE = 'active';
 
-    protected $fillable = ['user_id', 'image', 'status'];
+    //
+    protected $table = 'black_list_tenant_comments';
 
-    protected $table = 'user_avatar';
+    protected $fillable = ['comment', 'black_list_tenant_id', 'author_id', 'status'];
 
 
-    // ------- Получить пользователя, владеющего данным аватором.
+    // --------- Block List Tenant
+    public function blackList () {
+        return $this->belongsTo(BlackList::class, 'black_list_tenant_id');
+    }
+
+    // --------- Author Black List
     public function author()
     {
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->belongsTo(User::class, 'author_id');
     }
 
 
     // ------- Список статуса
-    public static function statusAvatar(): array
+    public static function statusComment(): array
     {
         return [
             self::STATUS_NOT_MATCH => __('fillable.NotMatch'),

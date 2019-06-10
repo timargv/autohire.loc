@@ -8,6 +8,10 @@ Auth::routes();
 Route::get('/verify/{token}', 'Auth\RegisterController@verify')->name('register.verify');
 
 
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/profile/{user}', 'Cabinet\ProfileController@show')->name('profile.show');
+});
+
 // ---------- Cabinet
 
 Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet', 'middleware' => ['auth'] ], function () {
@@ -20,13 +24,30 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::put('/update', 'ProfileController@update')->name('update');
             Route::post('/{user}/avatar', 'ProfileController@avatar')->name('add.avatar');
 
-
             Route::post('/phone', 'PhoneController@request');
             Route::get('/phone', 'PhoneController@form')->name('phone');
             Route::put('/phone', 'PhoneController@verify')->name('phone.verify');
 
             Route::post('/phone/auth', 'PhoneController@auth')->name('phone.auth');
         });
+
+
+
+        Route::group(['prefix' => 'black-list', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
+
+            Route::get('/tenants', 'TenantsController@index')->name('home');
+            Route::get('/create', 'TenantsController@create')->name('create');
+            Route::post('/create', 'TenantsController@story')->name('story');
+            Route::get('/show', 'TenantsController@show')->name('show');
+            Route::get('/edit', 'TenantsController@edit')->name('edit');
+            Route::put('/update', 'TenantsController@update')->name('update');
+
+            Route::post('/{tenant}/photo', 'TenantsController@addPhoto')->name('add.photo');
+        });
+
+
+
+
 
         Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
 //        Route::delete('favorites/{advert}', 'FavoriteController@remove')->name('favorites.remove');

@@ -33,6 +33,12 @@ Breadcrumbs::register('password.reset', function (Crumbs $crumbs) {
 });
 
 
+Breadcrumbs::register('profile.show', function (Crumbs $crumbs, User $user) {
+    $crumbs->parent('cabinet.home');
+    $crumbs->push($user->name, route('cabinet.profile.home'));
+});
+
+
 // Cabinet
 
 Breadcrumbs::register('cabinet.home', function (Crumbs $crumbs) {
@@ -55,8 +61,8 @@ Breadcrumbs::register('cabinet.profile.phone', function (Crumbs $crumbs) {
     $crumbs->push(__('fillable.Phone'), route('cabinet.profile.phone'));
 });
 
-// Cabinet Adverts
 
+// Cabinet Adverts
 Breadcrumbs::register('cabinet.adverts.index', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.home');
     $crumbs->push(__('fillable.Advert'), route('cabinet.adverts.index'));
@@ -76,6 +82,21 @@ Breadcrumbs::register('cabinet.adverts.create', function (Crumbs $crumbs) {
 //    $crumbs->parent('cabinet.adverts.create.region', $category, $region);
 //    $crumbs->push($region ? $region->name : 'All', route('cabinet.adverts.create.advert', [$category, $region]));
 //});
+
+
+
+// Cabinet Tenant
+Breadcrumbs::register('cabinet.black.list.tenants.home', function (Crumbs $crumbs) {
+    $crumbs->parent('cabinet.home');
+    $crumbs->push(__('fillable.BlackListTenants'), route('cabinet.black.list.tenants.home'));
+});
+
+Breadcrumbs::register('cabinet.black.list.tenants.create', function (Crumbs $crumbs) {
+    $crumbs->parent('cabinet.black.list.tenants.home');
+    $crumbs->push(__('fillable.Create'), route('cabinet.black.list.tenants.create'));
+});
+
+
 
 // Favorites
 

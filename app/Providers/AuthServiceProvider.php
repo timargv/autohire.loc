@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Entity\Tenant\BlackList;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
@@ -35,6 +37,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->isAdmin() || $user->isModerator();
         });
 
+        Gate::define('manage-own-user', function (User $user) {
+            return Auth::user()->id === $user->id;
+        });
+
         Gate::define('manage-tickets', function (User $user) {
             return $user->isAdmin() || $user->isModerator();
         });
@@ -51,13 +57,22 @@ class AuthServiceProvider extends ServiceProvider
             return $user->isAdmin() || $user->isModerator();
         });
 
+
+
+        Gate::define('manage-own-black-list', function (User $user, BlackList $blackList) {
+            return $user->isAdmin() || $user->isModerator() || $blackList->author_id === $user->id;
+        });
+
 //        Gate::define('manage-banners', function (User $user) {
 //            return $user->isAdmin() || $user->isModerator();
 //        });
 
+
+
 //        Gate::define('show-advert', function (User $user, Advert $advert) {
 //            return $user->isAdmin() || $user->isModerator() || $advert->user_id === $user->id;
 //        });
+
 //
 //        Gate::define('manage-own-advert', function (User $user, Advert $advert) {
 //            return $advert->user_id === $user->id;

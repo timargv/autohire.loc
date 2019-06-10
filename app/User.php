@@ -15,6 +15,8 @@ use Illuminate\Support\Str;
  * @property \Carbon\Carbon $email_verified_at
  * @property \Carbon\Carbon $created_at
  * @property string $phone_verify_token
+ * @property mixed id
+ * @property mixed name
  */
 class User extends Authenticatable
 {
@@ -78,17 +80,17 @@ class User extends Authenticatable
     public static function rolesList(): array
     {
         return [
-            self::ROLE_USER => 'User',
-            self::ROLE_MODERATOR => 'Moderator',
-            self::ROLE_ADMIN => 'Admin',
+            self::ROLE_USER => __('fillable.User'),
+            self::ROLE_MODERATOR => __('fillable.Moderator'),
+            self::ROLE_ADMIN => __('fillable.Administrator'),
         ];
     }
 
     public static function statusList(): array
     {
         return [
-            self::STATUS_WAIT => 'Disabled',
-            self::STATUS_ACTIVE => 'Active',
+            self::STATUS_WAIT => __('fillable.Disabled'),
+            self::STATUS_ACTIVE => __('fillable.Active'),
         ];
     }
 
@@ -96,9 +98,9 @@ class User extends Authenticatable
     public static function statusAvatar(): array
     {
         return [
-            self::STATUS_NOT_MATCH => 'Не соответсвует правилам сайта',
-            self::STATUS_MODERATION => 'Moderation',
-            self::STATUS_ACTIVE => 'Active',
+            self::STATUS_NOT_MATCH => __('fillable.NotMatch'),
+            self::STATUS_MODERATION => __('fillable.Moderation'),
+            self::STATUS_ACTIVE => __('fillable.Active'),
         ];
     }
 
@@ -168,10 +170,10 @@ class User extends Authenticatable
     public function changeRole($role): void
     {
         if (!array_key_exists($role, self::rolesList())) {
-            throw new \InvalidArgumentException('Undefined role "' . $role . '"');
+            throw new \InvalidArgumentException('Неопределенная роль "' . $role . '"');
         }
         if ($this->role === $role) {
-            throw new \DomainException('Role is already assigned.');
+            throw new \DomainException('Роль уже назначена.');
         }
         if (!\Auth::user()->isAdmin()) {
             throw new \DomainException('Вы не можете менять роль пользователю.');
@@ -183,10 +185,10 @@ class User extends Authenticatable
     public function changeStatus($status): void
     {
         if (!array_key_exists($status, self::statusList())) {
-            throw new \InvalidArgumentException('Undefined status "' . $status . '"');
+            throw new \InvalidArgumentException('Неопределенный статус "' . $status . '"');
         }
         if ($this->status === $status) {
-            throw new \DomainException('Status is already assigned.');
+            throw new \DomainException('Статус уже присвоен.');
         }
         $this->update(['status' => $status]);
     }
@@ -204,10 +206,10 @@ class User extends Authenticatable
     public function requestPhoneVerification(Carbon $now): string
     {
         if (empty($this->phone)) {
-            throw new \DomainException('Phone number is empty.');
+            throw new \DomainException('Номер телефона пуст.');
         }
         if (!empty($this->phone_verify_token) && $this->phone_verify_token_expire && $this->phone_verify_token_expire->gt($now)) {
-            throw new \DomainException('Token is already requested.');
+            throw new \DomainException('Токен уже запрошен.');
         }
         $this->phone_verified = false;
         $this->phone_verify_token = (string)random_int(10000, 99999);
@@ -220,10 +222,10 @@ class User extends Authenticatable
     public function verifyPhone($token, Carbon $now): void
     {
         if ($token !== $this->phone_verify_token) {
-            throw new \DomainException('Incorrect verify token.');
+            throw new \DomainException('Неверный верификационный токен.');
         }
         if ($this->phone_verify_token_expire->lt($now)) {
-            throw new \DomainException('Token is expired.');
+            throw new \DomainException('Срок действия токена истек.');
         }
         $this->phone_verified = true;
         $this->phone_verify_token = null;
@@ -234,7 +236,7 @@ class User extends Authenticatable
     public function enablePhoneAuth(): void
     {
         if (!empty($this->phone) && !$this->isPhoneVerified()) {
-            throw new \DomainException('Phone number is empty.');
+            throw new \DomainException('Номер телефона пуст.');
         }
         $this->phone_auth = true;
         $this->saveOrFail();
@@ -249,7 +251,7 @@ class User extends Authenticatable
     public function addToFavorites($id): void
     {
         if ($this->hasInFavorites($id)) {
-            throw new \DomainException('This advert is already added to favorites.');
+            throw new \DomainException('Это объявление уже добавлено в избранное.');
         }
         $this->favorites()->attach($id);
     }

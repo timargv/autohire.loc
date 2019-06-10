@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-{{--@section('breadcrumbs', 'asdasd')--}}
-
 @section('content')
     @include('cabinet.profile._nav')
 
@@ -38,18 +36,17 @@
                 </div>
 
                 <div class="col-md-8">
-                    @if($user->can('manage-own-user'))
                     <div class="float-right mt-1">
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Изменить
                             </button>
                             <div class="dropdown-menu dropdown-menu-right rounded-0">
-                                <a href="{{ route('cabinet.profile.edit') }}" class="dropdown-item align-middle btn-sm px-3 rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>
+{{--                                <a href="{{ route('cabinet.profile.edit') }}" class="dropdown-item align-middle btn-sm px-3 rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>--}}
                             </div>
                         </div>
+
                     </div>
-                    @endif
 
                     <div class="p-md-4">
                         <div class="mb-3">
@@ -134,5 +131,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection
