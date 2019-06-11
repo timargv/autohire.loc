@@ -123,6 +123,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         });
 
 
+        Route::group(['prefix' => 'black-list/tenants', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
+            Route::resource('/', 'TenantsController');
+
+            Route::get('/{tenant}', 'TenantsController@show')->name('show');
+
+            Route::post('/not-match/{tenant}', 'TenantsController@notMatch')->name('not.match');
+            Route::post('/active/{tenant}', 'TenantsController@active')->name('active');
+
+            Route::post('/photo/not-match/{photo}', 'TenantPhotosController@notMatch')->name('photo.not.match');
+            Route::post('/photo/active/{photo}', 'TenantPhotosController@active')->name('photo.active');
+
+            Route::post('/comment/not-match/{comment}', 'TenantCommentsController@notMatch')->name('comment.not.match');
+            Route::post('/comment/active/{comment}', 'TenantCommentsController@active')->name('comment.active');
+        });
+
+
         Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');
 
 //        Route::group(['prefix' => 'adverts', 'as' => 'adverts.', 'namespace' => 'Adverts'], function () {

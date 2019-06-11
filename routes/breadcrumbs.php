@@ -130,20 +130,15 @@ Breadcrumbs::register('cabinet.tickets.show', function (Crumbs $crumbs, Ticket $
 
 
 
-// Admin
+// ======= Admin
 
 Breadcrumbs::register('admin.home', function (Crumbs $crumbs) {
     $crumbs->parent('home');
     $crumbs->push(__('fillable.Admin'), route('admin.home'));
 });
 
-// Users
 
-Breadcrumbs::register('admin.users.avatar.home', function (Crumbs $crumbs) {
-    $crumbs->parent('admin.users.index');
-    $crumbs->push(__('fillable.Avatars'), route('admin.users.avatar.home'));
-});
-
+// === Admin Users
 Breadcrumbs::register('admin.users.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.home');
     $crumbs->push(__('fillable.Users'), route('admin.users.index'));
@@ -162,4 +157,28 @@ Breadcrumbs::register('admin.users.show', function (Crumbs $crumbs, User $user) 
 Breadcrumbs::register('admin.users.edit', function (Crumbs $crumbs, User $user) {
     $crumbs->parent('admin.users.show', $user);
     $crumbs->push(__('fillable.Edit'), route('admin.users.edit', $user));
+});
+
+// == Admin Avatars
+Breadcrumbs::register('admin.users.avatar.home', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.users.index');
+    $crumbs->push(__('fillable.Avatars'), route('admin.users.avatar.home'));
+});
+
+
+
+// === Admin Tenants
+Breadcrumbs::register('admin.black.list.tenants.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push(__('fillable.BlackListTenants'), route('admin.black.list.tenants.index'));
+});
+
+Breadcrumbs::register('admin.black.list.tenants.show', function (Crumbs $crumbs, BlackList $tenant) {
+    $crumbs->parent('admin.black.list.tenants.index');
+    $crumbs->push($tenant->name, route('admin.black.list.tenants.show', $tenant));
+});
+
+Breadcrumbs::register('admin.black.list.tenants.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.black.list.tenants.index');
+    $crumbs->push(__('fillable.Create'), route('admin.black.list.tenants.create'));
 });

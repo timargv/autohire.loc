@@ -32,6 +32,15 @@
                 </div>
 
                 <div class="col-md-9">
+                    <div class="float-right mt-0">
+                        @if($tenant->isActive())
+                            <div><span class="badge badge-success">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
+                        @elseif($tenant->isModeration())
+                            <div><span class="badge badge-warning">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
+                        @elseif($tenant->isNotMatch())
+                            <div><span class="badge badge-danger">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
+                        @endif
+                    </div>
                     <div class="p-md-4">
                         <div class="mb-3">
                             <div class="mb-2 text-muted ">
@@ -73,27 +82,7 @@
                         </div>
 
 
-                        <div class="mb-3">
-                            <div class="mb-3 text-muted ">
-                                {{ __('fillable.Comments') }}
-                            </div>
-
-                            <ul class="list-unstyled">
-                                @foreach($tenant->comments as $comment)
-                                <li class="media mb-4 ">
-                                    <img src="{{ $comment->author->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$comment->author->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded-circle mr-3" alt="..." width="50px">
-
-
-                                    <div class="media-body">
-                                        <h6 class="mt-0 mb-2 font-weight-bold mt-1">{{ $comment->author->name }}</h6>
-                                        <p class="mb-2">{{ $comment->comment }}</p>
-                                        <div class="small text-muted">{{ $comment->created_at }}</div>
-                                    </div>
-                                </li>
-                                @endforeach
-                            </ul>
-
-                        </div>
+                        @include('.cabinet.black-list-tenant._comments', ['comments' => $tenant->comments])
                     </div>
                 </div>
             </div>

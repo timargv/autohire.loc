@@ -1,0 +1,1 @@
+@include ('admin._nav', ['page' => 'black-list-tenant'])

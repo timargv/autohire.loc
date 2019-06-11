@@ -6,55 +6,55 @@
 
 
     <div class="card mb-3">
-        <div class="card-header">Фильтр</div>
+{{--        <div class="card-header">Фильтр</div>--}}
         <div class="card-body">
             <form action="?" method="GET">
                 <div class="row">
                     <div class="col-sm-1">
-                        <div class="form-group">
-                            <label for="id" class="col-form-label">ID</label>
-                            <input id="id" class="form-control" name="id" value="{{ request('id') }}">
+                        <div class="form-group mb-3 mb-md-0">
+{{--                            <label for="id" class="col-form-label">ID</label>--}}
+                            <input id="id" class="form-control form-control-sm" name="id" value="{{ request('id') }}" placeholder="ID">
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group">
-                            <label for="name" class="col-form-label">Имя</label>
-                            <input id="name" class="form-control" name="name" value="{{ request('name') }}">
+                        <div class="form-group mb-3 mb-md-0">
+{{--                            <label for="name" class="col-form-label">Имя</label>--}}
+                            <input id="name" class="form-control form-control-sm" name="name" value="{{ request('name') }}" placeholder="{{__('fillable.Name')}}">
                         </div>
                     </div>
                     <div class="col-sm-3">
-                        <div class="form-group">
-                            <label for="email" class="col-form-label">Email</label>
-                            <input id="email" class="form-control" name="email" value="{{ request('email') }}">
+                        <div class="form-group mb-3 mb-md-0">
+{{--                            <label for="email" class="col-form-label">Email</label>--}}
+                            <input id="email" class="form-control form-control-sm" name="email" value="{{ request('email') }}" placeholder="{{__('register.EMailAddress')}}">
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group">
-                            <label for="status" class="col-form-label">Статус</label>
-                            <select id="status" class="form-control" name="status">
-                                <option value=""></option>
+                        <div class="form-group mb-3 mb-md-0">
+{{--                            <label for="status" class="col-form-label">Статус</label>--}}
+                            <select id="status" class="form-control form-control-sm" name="status">
+                                <option value="" class="text-muted" disabled selected>Выберите статус</option>
                                 @foreach ($statuses as $value => $label)
                                     <option value="{{ $value }}"{{ $value === request('status') ? ' selected' : '' }}>{{ $label }}</option>
-                                @endforeach;
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group">
-                            <label for="role" class="col-form-label">Роль</label>
-                            <select id="role" class="form-control" name="role">
-                                <option value=""></option>
+                        <div class="form-group mb-3 mb-md-0">
+{{--                            <label for="role" class="col-form-label">Роль</label>--}}
+                            <select id="role" class="form-control form-control-sm" name="role">
+                                <option value="" class="text-muted" disabled selected>Выберите Роль</option>
                                 @foreach ($roles as $value => $label)
                                     <option value="{{ $value }}"{{ $value === request('role') ? ' selected' : '' }}>{{ $label }}</option>
-                                @endforeach;
+                                @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group">
-                            <label class="col-form-label">&nbsp;</label><br />
-                            <button type="submit" class="btn btn-primary">{{__('button.Search')}}</button>
-                            <a href="?" class="btn btn-outline-danger"><i class="fas fa-times"></i></a>
+                        <div class="form-group mb-3 mb-md-0">
+{{--                            <label class="col-form-label">&nbsp;</label><br />--}}
+                            <button type="submit" class="btn btn-sm btn-primary">{{__('button.Search')}}</button>
+                            <a href="?" class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></a>
                         </div>
                     </div>
                 </div>
@@ -62,65 +62,7 @@
         </div>
     </div>
 
-    <table class="table table-bordered table-striped table-responsive-sm">
-        <thead>
-        <tr>
-            <th>ID</th>
-            <th width="50px">Фото</th>
-            <th>Имя</th>
-            <th>Email</th>
-            <th>{{__('fillable.Phone')}}</th>
-            <th>Статус</th>
-            <th>Роль</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        @foreach ($users as $user)
-            <tr>
-                <td>{{ $user->id }}</td>
-                <td>
-                    <div class="w-100 position-relative">
-                        @if($user->avatar)
-                            <div class="position-absolute" style="top: -10px;left: -6px;">
-                                @if ($user->avatar->isNotMatch())
-                                    <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>
-                                @elseif ($user->avatar->isModeration())
-                                    <i class="fas fa-question-circle text-warning bg-dark rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото на модерации"></i>
-                                @else
-                                    <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото Подтверждено"></i>
-                                @endif
-                            </div>
-                        @endif
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
-                        <a href="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
-                    </div>
-                </td>
-                <td><a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a></td>
-                <td>{{ $user->email }}</td>
-                <td>{{ $user->userPhoneChar($user) }}</td>
-                <td>
-                    @if ($user->isWait())
-                        <span class="badge badge-warning">Waiting</span>
-                    @endif
-                    @if ($user->isActive())
-                        <span class="badge badge-primary">Active</span>
-                    @endif
-                </td>
-                <td>
-                    @if ($user->isAdmin())
-                        <span class="badge badge-danger">Admin</span>
-                    @elseif ($user->isModerator())
-                        <span class="badge badge-success">Moderator</span>
-                    @else
-                        <span class="badge badge-secondary">User</span>
-                    @endif
-                </td>
-            </tr>
-        @endforeach
-
-        </tbody>
-    </table>
+    @include('admin.users._item', ['users' => $users])
 
     {{ $users->links() }}
 @endsection
