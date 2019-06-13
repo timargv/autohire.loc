@@ -21,7 +21,7 @@ class VerifyMail extends Mailable
 
     public function build()
     {
-        return $this->from('info@autohire.loc', 'AutoHire Регистрация')
+        return $this->from(env('MAIL_FROM_ADDRESS'), env('MAIL_FROM_NAME'))
                     ->subject(__('register.VerificationRegister'))
                     ->markdown('emails.auth.register.verify');
     }

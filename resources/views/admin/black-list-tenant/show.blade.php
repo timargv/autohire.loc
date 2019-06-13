@@ -50,15 +50,15 @@
                     <div class="float-md-right mb-md-0 mb-3 mt-1">
                         <div class="btn-group">
                             @if($tenant->isActive())
-                                <button type="button" class="btn btn-outline-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ $tenant->statusTenant()[$tenant->status] }}
                                 </button>
                             @elseif($tenant->isModeration())
-                                <button type="button" class="btn btn-outline-warning btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ $tenant->statusTenant()[$tenant->status] }}
                                 </button>
                             @elseif($tenant->isNotMatch())
-                                <button type="button" class="btn btn-outline-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <button type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     {{ $tenant->statusTenant()[$tenant->status] }}
                                 </button>
                             @endif

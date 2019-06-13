@@ -14,15 +14,15 @@
                         <div class="float-right mt-0">
                             <div class="btn-group">
                                 @if($comment->isActive())
-                                    <button type="button" class="btn btn-outline-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-success btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ $comment->statusComment()[$comment->status] }}
                                     </button>
                                 @elseif($comment->isModeration())
-                                    <button type="button" class="btn btn-outline-warning btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-warning btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ $comment->statusComment()[$comment->status] }}
                                     </button>
                                 @elseif($comment->isNotMatch())
-                                    <button type="button" class="btn btn-outline-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <button type="button" class="btn btn-danger btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ $comment->statusComment()[$comment->status] }}
                                     </button>
                                 @endif

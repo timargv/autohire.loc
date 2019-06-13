@@ -1,12 +1,12 @@
 @component('mail::message')
 # Подтверждение электонной почты
 
-Пожалуйста, перейдите по ссылке ничеже:
+{{ __('email.PleaseClickOnLink') }}
 
 @component('mail::button', ['url' => route('register.verify', ['token' => $user->verify_token])])
-Подтвердить электронную почту
+{{__('email.VerifyEmail')}}
 @endcomponent
 
-Спасибо,<br>
+{{__('noise.Thank')}}, {{ $user->name }}<br>
 {{ config('app.name') }}
 @endcomponent

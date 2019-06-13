@@ -30,7 +30,7 @@ Breadcrumbs::register('password.request', function (Crumbs $crumbs) {
 
 Breadcrumbs::register('password.reset', function (Crumbs $crumbs) {
     $crumbs->parent('password.request');
-    $crumbs->push(__('passwords.Change'), route('password.reset'));
+    $crumbs->push(__('passwords.Change'));
 });
 
 

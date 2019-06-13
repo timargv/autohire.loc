@@ -66,7 +66,7 @@ class TenantsController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('cabinet.black.list.tenants.home', compact('tenant'))->with('success', 'Запись добавлена');
+        return redirect()->route('cabinet.black.list.tenants.show', compact('tenant'))->with('success', 'Запись добавлена');
     }
 
 

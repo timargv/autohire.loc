@@ -7,6 +7,8 @@ use App\Entity\User\Avatar;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\Auth\ResetPasswordNotification;
+
 use Illuminate\Support\Str;
 
 /**
@@ -292,5 +294,10 @@ class User extends Authenticatable
         } return '—';
     }
 
+
+//    public function sendPasswordResetNotification($token)
+//    {
+//        $this->notify(new ResetPasswordNotification($token));
+//    }
 
 }
