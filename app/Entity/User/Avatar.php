@@ -4,6 +4,7 @@ namespace App\Entity\User;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 class Avatar extends Model
 {
@@ -43,5 +44,11 @@ class Avatar extends Model
 
     public function isActive() {
         return $this->status === self::STATUS_ACTIVE;
+    }
+
+    public static function countModerationPhotos () {
+        return Cache::remember('countModerationPhotos', 20, function () {
+            return static::query()->where('status', self::STATUS_MODERATION)->count();
+        });
     }
 }

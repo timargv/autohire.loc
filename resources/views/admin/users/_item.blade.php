@@ -1,10 +1,10 @@
-<table class="table table-bordered table-responsive-sm">
+<table class="table table-bordered table-responsive-sm table-responsive">
     <thead>
     <tr>
         <th>ID</th>
         <th width="50px">Фото</th>
         <th>Имя</th>
-        <th>Email</th>
+        <th width="150px">Email</th>
         <th>{{__('fillable.Phone')}}</th>
         <th>Статус</th>
         <th>Роль</th>
@@ -28,13 +28,21 @@
                             @endif
                         </div>
                     @endif
-                    <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        @if($user->avatar && Storage::disk('public')->exists('user/avatar/medium/'.$user->avatar->image))
+                            @if($user->avatar->isModeration() || $user->avatar->isNotMatch())
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/blur/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @else
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @endif
+                        @else
+                            <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                        @endif
                     <a href="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
                 </div>
             </td>
             <td><a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a></td>
-            <td>{{ $user->email }}</td>
-            <td>{{ $user->userPhoneChar($user) }}</td>
+            <td width="150px">{{ $user->email }}</td>
+            <td width="170px">{{ $user->userPhoneChar($user) }}</td>
             <td>
                 @if ($user->isWait())
                     <span class="badge badge-warning">{{ $user->statusList()[$user->status] }}</span>

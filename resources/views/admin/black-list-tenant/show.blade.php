@@ -15,7 +15,6 @@
                     @if(count($tenant->photos))
                         <div class="w-100 position-relative mb-5">
                             @foreach($tenant->photos as $photo)
-
                                 <div class="position-absolute" style="top: -10px;left: -6px;">
                                     @if ($photo->isNotMatch())
                                         <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $photo->statusPhoto()[$photo->status] }}"></i>
@@ -25,9 +24,18 @@
                                         <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $photo->statusPhoto()[$photo->status] }}"></i>
                                     @endif
                                 </div>
+                                @if($photo->photo && Storage::disk('public')->exists('user/black-tenant/images/medium/'.$photo->photo))
+                                    @if($photo->isModeration() || $photo->isNotMatch())
+                                        <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/blur/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                                    @else
+                                        <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/medium/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                                    @endif
+                                @else
+                                    <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                                @endif
                                 @break($photo->is_manin != null)
                             @endforeach
-                            <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/medium/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+
                                 <div class="card-img-overlay">
                                     <div class="d-flex flex-row">
                                         <form method="POST" action="{{ route('admin.black.list.tenants.photo.not.match', $photo) }}" class="mr-1">
@@ -42,8 +50,12 @@
                                 </div>
                             <a href="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/medium/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
                         </div>
-                    </div>
+                        @else
+                            <div class="w-100 position-relative mb-5">
+                                <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                            </div>
                     @endif
+                    </div>
                 </div>
 
                 <div class="col-md-9">

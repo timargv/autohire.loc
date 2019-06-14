@@ -2,6 +2,7 @@
 
 @section('content')
     @include('admin.users._nav')
+    @include ('admin.users._nav_user', ['page' => ''])
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">
@@ -9,7 +10,15 @@
 
                 <div class="col-md-4">
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        @if($user->avatar && Storage::disk('public')->exists('user/avatar/medium/'.$user->avatar->image))
+                            @if($user->avatar->isModeration() || $user->avatar->isNotMatch())
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/blur/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @else
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @endif
+                        @else
+                            <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                        @endif
 
                         <div class="card-img-overlay">
                             @if($user->avatar)
@@ -60,7 +69,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="email" class="col-form-label">Email *</label>
+                        <label for="email" class="col-form-label">{{ __('register.EMailAddress') }} *</label>
                         <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email', $user->email) }}" required>
                         @if ($errors->has('email'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('email') }}</strong></span>
@@ -68,7 +77,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="name" class="col-form-label">Ник *</label>
+                        <label for="name" class="col-form-label">{{ __('fillable.NickName') }} *</label>
                         <input id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $user->name) }}" required>
                         @if ($errors->has('name'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('name') }}</strong></span>
@@ -76,7 +85,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="forename" class="col-form-label">Имя</label>
+                        <label for="forename" class="col-form-label">{{ __('fillable.Name') }}</label>
                         <input id="forename" class="form-control{{ $errors->has('forename') ? ' is-invalid' : '' }}" name="forename" value="{{ old('forename', $user->forename) }}" >
                         @if ($errors->has('forename'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('forename') }}</strong></span>
@@ -102,7 +111,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="city" class="col-form-label">Город</label>
+                        <label for="city" class="col-form-label">{{ __('fillable.City') }}</label>
                         <input id="city" class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city" value="{{ old('city', $user->city) }}" >
                         @if ($errors->has('city'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('city') }}</strong></span>
@@ -110,7 +119,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="about" class="col-form-label">О себе</label>
+                        <label for="about" class="col-form-label">{{ __('fillable.About') }}</label>
                         <textarea id="about" class="form-control{{ $errors->has('about') ? ' is-invalid' : '' }}" name="about" rows="10">{{ old('about', $user->about) }}</textarea>
                         @if ($errors->has('about'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('about') }}</strong></span>
@@ -118,7 +127,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="status" class="col-form-label">Status</label>
+                        <label for="status" class="col-form-label">{{ __('fillable.Status') }}</label>
                         <select id="status" class="form-control{{ $errors->has('status') ? ' is-invalid' : '' }}" name="status">
                             @foreach ($statuses as $value => $label)
                                 <option value="{{ $value }}"{{ $value === old('status', $user->status) ? ' selected' : '' }}>{{ $label }}</option>
@@ -131,7 +140,7 @@
 
 
                     <div class="form-group">
-                        <label for="role" class="col-form-label">Role</label>
+                        <label for="role" class="col-form-label">{{ __('fillable.Role') }}</label>
                         <select id="role" class="form-control{{ $errors->has('role') ? ' is-invalid' : '' }}" name="role">
                             @foreach ($roles as $value => $label)
                                 <option value="{{ $value }}"{{ $value === old('role', $user->role) ? ' selected' : '' }}>{{ $label }}</option>
@@ -143,7 +152,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="submit" class="btn btn-primary">{{ __('button.Save') }}</button>
                     </div>
                 </form>
 

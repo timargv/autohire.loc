@@ -18,6 +18,7 @@ class ProfileService
         $paths = [
             'original' => public_path() . '\storage\user\avatar\original\\',
             'small' => public_path() . '\storage\user\avatar\small\\',
+            'blur' => public_path() . '\storage\user\avatar\blur\\',
             'medium' => public_path() . '\storage\user\avatar\medium\\',
             'large' => public_path() . '\storage\user\avatar\large\\',
         ];
@@ -43,14 +44,16 @@ class ProfileService
 
         DB::transaction(function () use ($request, $user) {
             $path = $this->pathPhoto()['original'];
+            $blurPath = $this->pathPhoto()['blur'];
             $smallPath = $this->pathPhoto()['small'];
             $middlePath = $this->pathPhoto()['medium'];
             $largePath = $this->pathPhoto()['large'];
 
             $img = Image::make($request['avatar']);
-            if (!file_exists($path) && !file_exists($smallPath) && !file_exists($middlePath) && !file_exists($largePath)) {
+            if (!file_exists($path) && !file_exists($smallPath) && !file_exists($blurPath) && !file_exists($middlePath) && !file_exists($largePath)) {
                 mkdir($path, 666, true);
                 mkdir($smallPath, 666, true);
+                mkdir($blurPath, 666, true);
                 mkdir($middlePath, 666, true);
                 mkdir($largePath, 666, true);
             }
@@ -68,6 +71,9 @@ class ProfileService
                 $constraint->aspectRatio();
             })->save($smallPath . $fileName, 100);
 
+            $img->resize(150, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->blur(70)->save($blurPath . $fileName, 100);
 
             $user->avatar()->create([
 //                'user_id' => $user->id,
@@ -85,6 +91,7 @@ class ProfileService
         if (!$user->avatar) {return;}
         Storage::disk('public')->delete([
             '\user\avatar\original\\'.$user->avatar->image,
+            '\user\avatar\blur\\'.$user->avatar->image,
             '\user\avatar\small\\'.$user->avatar->image,
             '\user\avatar\medium\\'.$user->avatar->image,
             '\user\avatar\large\\'.$user->avatar->image,

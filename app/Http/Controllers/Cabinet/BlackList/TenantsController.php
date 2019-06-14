@@ -40,8 +40,12 @@ class TenantsController extends Controller
             $query->where('status', $value);
         }
 
+        if (!empty($request->get('onlyMy'))) {
+            $query->where('author_id', Auth::id());
+        }
 
-        $tenants = $query->paginate(20);
+
+        $tenants = $query->paginate(10);
         $statuses = BlackList::statusTenant();
 
         return view('cabinet.black-list-tenant.home', compact('tenants', 'statuses'));
@@ -55,6 +59,11 @@ class TenantsController extends Controller
 
     public function show(BlackList $tenant)
     {
+        try {
+            $this->checkAccess($tenant);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
         return view('cabinet.black-list-tenant.show', compact('tenant'));
     }
 

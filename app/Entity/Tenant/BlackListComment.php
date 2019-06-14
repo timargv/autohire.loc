@@ -5,6 +5,9 @@ namespace App\Entity\Tenant;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property mixed author_id
+ */
 class BlackListComment extends Model
 {
 

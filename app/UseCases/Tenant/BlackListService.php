@@ -22,6 +22,7 @@ class BlackListService
     {
         $paths = [
             'original' => public_path() . '\storage\user\black-tenant\images\original\\',
+            'blur' => public_path() . '\storage\user\black-tenant\images\blur\\',
             'small' => public_path() . '\storage\user\black-tenant\images\small\\',
             'medium' => public_path() . '\storage\user\black-tenant\images\medium\\',
             'large' => public_path() . '\storage\user\black-tenant\images\large\\',
@@ -33,6 +34,7 @@ class BlackListService
     {
         $paths = [
             'original' => public_path() . '\storage\user\black-tenant\files\original\\',
+            'blur' => public_path() . '\storage\user\black-tenant\files\blur\\',
             'small' => public_path() . '\storage\user\black-tenant\files\small\\',
             'medium' => public_path() . '\storage\user\black-tenant\files\medium\\',
             'large' => public_path() . '\storage\user\black-tenant\files\large\\',
@@ -84,13 +86,15 @@ class BlackListService
          DB::transaction(function () use ($request, $userId, $tenant) {
 
              $path = $this->pathPhoto()['original'];
+             $blurPath = $this->pathPhoto()['blur'];
              $smallPath = $this->pathPhoto()['small'];
              $middlePath = $this->pathPhoto()['medium'];
              $largePath = $this->pathPhoto()['large'];
 
              $img = Image::make($request['photo']);
-             if (!file_exists($path) && !file_exists($smallPath) && !file_exists($middlePath) && !file_exists($largePath)) {
+             if (!file_exists($path) && !file_exists($smallPath) && !file_exists($blurPath) && !file_exists($middlePath) && !file_exists($largePath)) {
                  mkdir($path, 666, true);
+                 mkdir($blurPath, 666, true);
                  mkdir($smallPath, 666, true);
                  mkdir($middlePath, 666, true);
                  mkdir($largePath, 666, true);
@@ -108,6 +112,10 @@ class BlackListService
              $img->resize(150, null, function ($constraint) {
                  $constraint->aspectRatio();
              })->save($smallPath . $fileName, 100);
+
+             $img->resize(150, null, function ($constraint) {
+                 $constraint->aspectRatio();
+             })->blur(70)->save($blurPath . $fileName, 100);
 
 
              $photo = $tenant->photos()->create([

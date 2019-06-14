@@ -2,6 +2,7 @@
 
 @section('content')
     @include('admin.users._nav')
+    @include ('admin.users._nav_user', ['page' => ''])
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">
@@ -10,7 +11,15 @@
                 <div class="col-md-4">
 
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        @if($user->avatar && Storage::disk('public')->exists('user/avatar/medium/'.$user->avatar->image))
+                            @if($user->avatar->isModeration() || $user->avatar->isNotMatch())
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/blur/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @else
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @endif
+                        @else
+                            <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                        @endif
 
                         <div class="card-img-overlay">
                             <div class="">
@@ -85,6 +94,12 @@
                         <div class="mb-3">
                             <div class="mb-2 text-muted ">
                                 Ник
+                                @if ($user->isWait())
+                                    <span class="badge badge-warning">{{ $user->statusList()[$user->status] }}</span>
+                                @endif
+                                @if ($user->isActive())
+                                    <span class="badge badge-primary">{{ $user->statusList()[$user->status] }}</span>
+                                @endif
                             </div>
                             <div class="font-weight-bold h4 ">
                                 {{ $user->name }}

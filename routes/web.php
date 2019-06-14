@@ -37,7 +37,7 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 
             Route::get('/tenants', 'TenantsController@index')->name('home');
             Route::get('/create', 'TenantsController@create')->name('create');
-            Route::post('/create', 'TenantsController@story')->name('story');
+            Route::post('/story', 'TenantsController@story')->name('story');
             Route::get('/{tenant}/show', 'TenantsController@show')->name('show');
             Route::get('/edit', 'TenantsController@edit')->name('edit');
             Route::put('/update', 'TenantsController@update')->name('update');
@@ -125,6 +125,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
         Route::group(['prefix' => 'black-list/tenants', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
             Route::resource('/', 'TenantsController');
+            Route::post('/story', 'TenantsController@story')->name('story');
 
             Route::get('/{tenant}', 'TenantsController@show')->name('show');
 

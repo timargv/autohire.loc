@@ -5,7 +5,7 @@
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">
-            <form method="POST" action="{{ route('cabinet.black.list.tenants.story') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('admin.black.list.tenants.story') }}" enctype="multipart/form-data">
             @csrf
 
             <div class="row">

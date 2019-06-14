@@ -42,6 +42,9 @@ class TenantsController extends Controller
             $query->where('status', $value);
         }
 
+        if (!empty($request->get('onlyMy'))) {
+            $query->where('author_id', Auth::id());
+        }
 
         $tenants = $query->paginate(20);
         $statuses = BlackList::statusTenant();
@@ -74,7 +77,7 @@ class TenantsController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('admin.black.list.tenants.index', compact('tenant'))->with('success', 'Запись добавлена');
+        return redirect()->route('admin.black.list.tenants.show', compact('tenant'))->with('success', 'Запись добавлена');
     }
 
 

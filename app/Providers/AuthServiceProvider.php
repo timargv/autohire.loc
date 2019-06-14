@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Entity\Tenant\BlackList;
+use App\Entity\Tenant\BlackListComment;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -60,8 +61,14 @@ class AuthServiceProvider extends ServiceProvider
 
 
         Gate::define('manage-own-black-list', function (User $user, BlackList $blackList) {
-            return $user->isAdmin() || $user->isModerator() || $blackList->author_id === $user->id;
+            return $user->isAdmin() || $user->isModerator() || $blackList->author_id === $user->id || $blackList->isActive() || $blackList->isModeration();
         });
+
+        Gate::define('manage-own-black-list-comment', function (User $user, BlackListComment $blackListComment) {
+            return $user->isAdmin() || $user->isModerator() || $blackListComment->author_id === $user->id || $blackListComment->isActive();
+        });
+
+
 
 //        Gate::define('manage-banners', function (User $user) {
 //            return $user->isAdmin() || $user->isModerator();

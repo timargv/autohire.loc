@@ -2,9 +2,9 @@
 
 @section('content')
     @include('admin.users._nav')
-    @include('admin.users._nav_user')
+    @include ('admin.users._nav_user', ['page' => ''])
 
-
+    {{--  Фильтр по пользователям  --}}
     <div class="card mb-3">
 {{--        <div class="card-header">Фильтр</div>--}}
         <div class="card-body">
@@ -50,7 +50,8 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-sm-2">
+
+                    <div class="col-sm-2 pr-0">
                         <div class="form-group mb-3 mb-md-0">
 {{--                            <label class="col-form-label">&nbsp;</label><br />--}}
                             <button type="submit" class="btn btn-sm btn-primary">{{__('button.Search')}}</button>
@@ -62,7 +63,8 @@
         </div>
     </div>
 
+
     @include('admin.users._item', ['users' => $users])
 
-    {{ $users->links() }}
+    {{ $users->appends(request()->query())->links() }}
 @endsection

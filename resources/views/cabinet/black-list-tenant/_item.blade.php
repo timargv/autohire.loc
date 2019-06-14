@@ -1,56 +1,13 @@
 
 
 @foreach ($tenants as $tenant)
-{{--    <tr>--}}
-{{--        <td>{{ $tenant->id }}</td>--}}
-{{--        <td>--}}
-{{--            <div class="w-100 position-relative">--}}
-{{--                @if($item->photo)--}}
-{{--                    <div class="position-absolute" style="top: -10px;left: -6px;">--}}
-{{--                        @if ($user->avatar->isNotMatch())--}}
-{{--                            <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()[$user->avatar->status] }}"></i>--}}
-{{--                        @elseif ($user->avatar->isModeration())--}}
-{{--                            <i class="fas fa-question-circle text-warning bg-dark rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото на модерации"></i>--}}
-{{--                        @else--}}
-{{--                            <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото Подтверждено"></i>--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
-{{--                @endif--}}
-{{--                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">--}}
-{{--                <a href="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/small/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>--}}
-{{--            </div>--}}
-{{--        </td>--}}
-{{--        <td><a href="{{ route('admin.users.show', $user) }}">{{ $user->name }}</a></td>--}}
-{{--        <td>{{ $user->email }}</td>--}}
-{{--        <td>{{ $user->userPhoneChar($user) }}</td>--}}
-{{--        <td>--}}
-{{--            @if ($user->isWait())--}}
-{{--                <span class="badge badge-warning">Waiting</span>--}}
-{{--            @endif--}}
-{{--            @if ($user->isActive())--}}
-{{--                <span class="badge badge-primary">Active</span>--}}
-{{--            @endif--}}
-{{--        </td>--}}
-{{--        <td>--}}
-{{--            @if ($user->isAdmin())--}}
-{{--                <span class="badge badge-danger">Admin</span>--}}
-{{--            @elseif ($user->isModerator())--}}
-{{--                <span class="badge badge-success">Moderator</span>--}}
-{{--            @else--}}
-{{--                <span class="badge badge-secondary">User</span>--}}
-{{--            @endif--}}
-{{--        </td>--}}
-{{--    </tr>--}}
-
-
-
-    <tr>
+    @can('manage-own-black-list', $tenant)
+        <tr>
         <td>{{ $tenant->id }}</td>
         <td>
             @if(count($tenant->photos))
             <div class="w-100 position-relative">
                 @foreach($tenant->photos as $photo)
-
                     <div class="position-absolute" style="top: -10px;left: -6px;">
                         @if ($photo->isNotMatch())
                             <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $photo->statusPhoto()[$photo->status] }}"></i>
@@ -60,17 +17,34 @@
                             <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото Подтверждено"></i>
                         @endif
                     </div>
+                    @if($photo->photo && Storage::disk('public')->exists('user/black-tenant/images/medium/'.$photo->photo))
+                        @if($photo->isModeration() || $photo->isNotMatch())
+                            <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/blur/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        @else
+                            <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/medium/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                        @endif
+                    @else
+                        <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                    @endif
                     @break($photo->is_manin != null)
                 @endforeach
-                    <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/small/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
-                    <a href="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/small/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
             </div>
+            @else
+                <div class="w-100 position-relative">
+                    <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                </div>
             @endif
 
         </td>
         <td><a href="{{ route('cabinet.black.list.tenants.show', $tenant) }}">{{ $tenant->name }}</a>
             @foreach($tenant->comments as $comment)
-                <div class="text-muted mt-1 mb-2">{{ $comment->comment }}</div>
+                <div class="text-muted mt-1 mb-2">
+                    @can('manage-own-black-list-comment', $comment)
+                        {{ $comment->comment }}
+                    @else
+                        <span class="text-muted small">Комментарий в модерации</span>
+                    @endcan
+                </div>
                 @break($loop->first)
             @endforeach
         </td>
@@ -87,4 +61,6 @@
         </td>
 
     </tr>
+        @continue
+    @endcan
 @endforeach

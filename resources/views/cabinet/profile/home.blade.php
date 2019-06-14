@@ -15,22 +15,29 @@
                 <div class="col-md-4">
 
                     <div class="card border-0 text-white mb-3">
-                        <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
-
+                        @if($user->avatar && Storage::disk('public')->exists('user/avatar/medium/'.$user->avatar->image))
+                            @if($user->avatar->isModeration() || $user->avatar->isNotMatch())
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/blur/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @else
+                                <img src="{{ $user->avatar !== null ? Storage::disk('public')->url('user/avatar/medium/'.$user->avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                            @endif
+                        @else
+                            <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
+                        @endif
                         <div class="card-img-overlay">
                             @if($user->avatar)
                                 @if($user->avatar->isActive())
                                     <h5><span class="badge badge-success">
                                 {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
-                            </span></h5>
-                                @elseif($user->avatar->isModeration())
-                                    <h5><span class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="Фото на модерации">
-                                {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
-                            </span></h5>
-                                @elseif($user->avatar->isNotMatch())
-                                    <h5><span class="badge badge-danger">
-                                {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
-                            </span></h5>
+                                </span></h5>
+                                    @elseif($user->avatar->isModeration())
+                                        <h5><span class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="Фото на модерации">
+                                    {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
+                                </span></h5>
+                                    @elseif($user->avatar->isNotMatch())
+                                        <h5><span class="badge badge-danger">
+                                    {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
+                                </span></h5>
                                 @endif
                             @endif
                         </div>

@@ -2,7 +2,7 @@
 
 @section('content')
     @include('admin.users._nav')
-    @include('admin.users._nav_user')
+    @include ('admin.users._nav_user', ['page' => 'avatars'])
 
     <div class="card mb-3">
 {{--        <div class="card-header">Фильтр</div>--}}
@@ -40,5 +40,5 @@
 
     @include('admin.users.avatars._item', ['avatars' => $avatars])
 
-    {{ $avatars->links() }}
+    {{ $avatars->appends(request()->query())->links() }}
 @endsection

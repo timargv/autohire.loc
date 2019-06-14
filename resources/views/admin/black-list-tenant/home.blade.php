@@ -16,7 +16,7 @@
                             <input id="id" class="form-control form-control-sm" name="id" value="{{ request('id') }}" placeholder="ID">
                         </div>
                     </div>
-                    <div class="col-sm-6">
+                    <div class="col-sm-5">
                         <div class="form-group mb-3 mb-md-0">
                             <input id="name" class="form-control form-control-sm" name="name" value="{{ request('name') }}" placeholder="{{ __('fillable.Name') }}">
                         </div>
@@ -30,6 +30,10 @@
                                 @endforeach
                             </select>
                         </div>
+                    </div>
+                    <div class="custom-control custom-switch " data-toggle="tooltip" data-placement="top" title="Показать только мои">
+                        <input type="checkbox" class="custom-control-input" id="onlyMy" name="onlyMy" {{ request('onlyMy') ? ' checked' : '' }}>
+                        <label class="custom-control-label" for="onlyMy" ></label>
                     </div>
 
                     <div class="col-sm-2">
@@ -62,5 +66,5 @@
         </tbody>
     </table>
 
-    {{ $tenants->links() }}
+    {{ $tenants->appends(request()->query())->links() }}
 @endsection
