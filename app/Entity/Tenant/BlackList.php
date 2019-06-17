@@ -34,7 +34,7 @@ class BlackList extends Model
     // --------- Comments Black List
     public function comments()
     {
-        return $this->hasMany(BlackListComment::class, 'black_list_tenant_id', 'id');
+        return $this->hasMany(BlackListComment::class, 'black_list_tenant_id', 'id')->with('author');
     }
 
 

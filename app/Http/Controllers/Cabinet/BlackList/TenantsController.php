@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Cabinet\BlackList;
 use App\Entity\Tenant\BlackList;
 use App\Http\Requests\Tenant\BlackListRequest;
 use App\UseCases\Tenant\BlackListService;
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -53,7 +54,7 @@ class TenantsController extends Controller
     }
 
     public function create() {
-
+        $this->checkAccessAddTenant(Auth::user());
         return view('cabinet.black-list-tenant.create');
     }
 
@@ -86,4 +87,13 @@ class TenantsController extends Controller
             abort(403);
         }
     }
+
+    // --- Проверка на автора и прова редактирования
+    private function checkAccessAddTenant(User $user): void
+    {
+        if (!Gate::allows('manage-add-tenant', $user)) {
+            abort(403);
+        }
+    }
+
 }

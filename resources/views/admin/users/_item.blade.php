@@ -53,12 +53,18 @@
             </td>
             <td>
                 @if ($user->isAdmin())
-                    <span class="badge badge-danger">{{ $user->rolesList()[$user->role] }}</span>
+                    <span class="badge badge-danger font-weight-light">{{ $user->rolesList()[$user->role] }}</span>
                 @elseif ($user->isModerator())
-                    <span class="badge badge-success">{{ $user->rolesList()[$user->role] }}</span>
+                    <span class="badge badge-success font-weight-light">{{ $user->rolesList()[$user->role] }}</span>
                 @else
-                    <span class="badge badge-secondary">{{ $user->rolesList()[$user->role] }}</span>
+                    <span class="badge badge-secondary font-weight-light">{{ $user->rolesList()[$user->role] }}</span>
                 @endif
+
+                    @if($groups = $user->groups)
+                        @foreach($groups as $group)
+                            <div><span class="badge badge-info text-white font-weight-light small">{{ $group->name }}</span></div>
+                        @endforeach
+                    @endif
             </td>
         </tr>
     @endforeach

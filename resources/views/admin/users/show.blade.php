@@ -100,9 +100,16 @@
                                 @if ($user->isActive())
                                     <span class="badge badge-primary">{{ $user->statusList()[$user->status] }}</span>
                                 @endif
+                                @if($groups = $user->groups)
+                                    @foreach($groups as $group)
+                                        <span class="badge badge-secondary font-weight-light small">{{ $group->name }}</span>
+                                    @endforeach
+                                @endif
                             </div>
                             <div class="font-weight-bold h4 ">
                                 {{ $user->name }}
+
+
                             </div>
                         </div>
 

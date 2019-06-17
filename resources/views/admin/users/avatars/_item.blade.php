@@ -18,7 +18,13 @@
                 <img src="{{ $avatar !== null ? Storage::disk('public')->url('user/avatar/small/'. $avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
                 <a href="{{ $avatar !== null ? Storage::disk('public')->url('user/avatar/original/'.$avatar->image) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
             </td>
-            <td><a href="{{ route('admin.users.show', $avatar->author) }}">{{ $avatar->author->name }}</a></td>
+            <td>
+                @if($avatar->author)
+                    <a href="{{ route('admin.users.show', $avatar->author) }}">{{ $avatar->author->name }}</a>
+                @else
+                    <span style="pointer-events: none; opacity: 0.4;">Автор удалил свою страницу</span>
+                @endif
+            </td>
             <td>
                 @if ($avatar->isNotMatch())
                     <span class="badge badge-danger">{{ $statuses['not_match'] }}</span>

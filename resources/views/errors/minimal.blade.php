@@ -46,6 +46,14 @@
                 font-size: 18px;
                 text-align: center;
             }
+            a, a:hover, a:focus, a:active {
+                text-decoration: none;
+                padding: 5px 10px;
+                background-color: #595aa7;
+                color: #fff;
+                border-radius: 3px;
+                overflow: hidden;
+            }
         </style>
     </head>
     <body>
@@ -57,6 +65,13 @@
             <div class="message" style="padding: 10px;">
                 @yield('message')
             </div>
+
+           <div class="message">
+               <a href="{{ app('router')->has('home') ? route('home') : url('/') }}">
+                   {{ __('fillable.Home') }}
+               </a>
+           </div>
+
         </div>
     </body>
 </html>

@@ -20,15 +20,13 @@
                 @else
                     <img style=" pointer-events: none; opacity: 0.4;" src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded mr-3 " alt="..." width="50px">
                 @endif
-
-                <div class="media-body ">
+                <div class="media-body">
                     <h6 class="mt-0 mb-2 font-weight-bold mt-1 w-100">
                         @if($comment->author)
-                            <a href="{{ route('admin.users.show', $comment->author) }}">{{ $comment->author->name }}</a>
+                        <a href="{{ route('admin.users.show', $comment->author) }}">{{ $comment->author->name }}</a>
                         @else
                             <span style=" pointer-events: none; opacity: 0.4;">Автор удалил свою страницу</span>
                         @endif
-
                         <div class="float-right mt-0">
                             <div class="btn-group">
                                 @if($comment->isActive())
@@ -70,7 +68,7 @@
                     </h6>
                     <p class="mb-2" @if(!$comment->author)style=" pointer-events: none; opacity: 0.4;"@endif>{{ $comment->comment }}</p>
                     <div class="small text-muted">
-                        <span>{{ $comment->created_at }}</span>
+                        <span>{{ $comment->created_at }} к арендатору <a href="{{ route('admin.black.list.tenants.show', $comment->blackList) }}">{{ $comment->blackList->name }}</a></span>
                         <span class="">
                             @if($comment->isActive())
                                 <span class="badge badge-success">{{ $comment->statusComment()[$comment->status] }}</span>
@@ -85,5 +83,4 @@
             </li>
         @endforeach
     </ul>
-
 </div>

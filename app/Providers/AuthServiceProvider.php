@@ -29,6 +29,10 @@ class AuthServiceProvider extends ServiceProvider
             return $user->isAdmin() || $user->isModerator();
         });
 
+        Gate::define('admin', function (User $user) {
+            return $user->isAdmin();
+        });
+
         Gate::define('admin-panel', function (User $user) {
             return $user->isAdmin() || $user->isModerator();
         });
@@ -44,6 +48,10 @@ class AuthServiceProvider extends ServiceProvider
 
         Gate::define('manage-tickets', function (User $user) {
             return $user->isAdmin() || $user->isModerator();
+        });
+
+        Gate::define('manage-add-tenant', function (User $user) {
+            return $user->isLandLord();
         });
 
 //        Gate::define('manage-regions', function (User $user) {

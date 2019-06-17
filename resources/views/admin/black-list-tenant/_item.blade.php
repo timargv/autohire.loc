@@ -45,7 +45,7 @@
             @endforeach
         </td>
         <td><a href="#">{{ $tenant->city }}</a></td>
-        <td>@if($tenant->author) <a href="{{ route('profile.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>
+        <td>@if($tenant->author) <a href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>
         <td>
             @if($tenant->isActive())
                 <div><span class="badge badge-success">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>

@@ -114,6 +114,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('users', 'UsersController');
 
+        Route::group(['prefix' => 'user', 'as' => 'users.', 'namespace' => 'User'], function () {
+            Route::resource('groups', 'GroupsController');
+        });
+
 
         Route::group(['prefix' => 'user/avatars', 'as' => 'users.avatar.', 'namespace' => 'User'], function () {
             Route::get('/', 'AvatarsController@index')->name('home');
@@ -125,6 +129,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
         Route::group(['prefix' => 'black-list/tenants', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
             Route::resource('/', 'TenantsController');
+            Route::resource('/comments', 'Comment\CommentsController');
             Route::post('/story', 'TenantsController@story')->name('story');
 
             Route::get('/{tenant}', 'TenantsController@show')->name('show');
@@ -138,6 +143,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
             Route::post('/comment/not-match/{comment}', 'TenantCommentsController@notMatch')->name('comment.not.match');
             Route::post('/comment/active/{comment}', 'TenantCommentsController@active')->name('comment.active');
         });
+
+
 
 
         Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');

@@ -1,12 +1,8 @@
 @extends('layouts.app')
 
-{{--@section('breadcrumbs', 'asdasd')--}}
-
 @section('content')
-    @include('cabinet.profile._nav')
-
-    <div class="mb-3">
-    </div>
+    @include('admin.users._nav')
+    @include ('admin.users._nav_user', ['page' => ''])
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">
@@ -24,39 +20,75 @@
                         @else
                             <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                         @endif
+
                         <div class="card-img-overlay">
-                            @if($user->avatar)
-                                @if($user->avatar->isActive())
-                                    <h5><span class="badge badge-success">
-                                {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
-                                </span></h5>
+                            <div class="">
+                                @if($user->avatar)
+                                    @if($user->avatar->isActive())
+                                        <h5><span class="badge badge-success">
+                                        {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
+                                        </span></h5>
                                     @elseif($user->avatar->isModeration())
-                                        <h5><span class="badge badge-warning" data-toggle="tooltip" data-placement="top" title="Фото на модерации">
-                                    {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
-                                </span></h5>
+                                        <h5><span class="badge badge-warning">
+                                            {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
+                                        </span></h5>
                                     @elseif($user->avatar->isNotMatch())
                                         <h5><span class="badge badge-danger">
-                                    {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
-                                </span></h5>
+                                            {{ $user->avatar->statusAvatar()[$user->avatar->status] }}
+                                        </span></h5>
+                                    @endif
                                 @endif
+                            </div>
+
+                            @if($user->avatar)
+                            <div class="d-flex flex-row ">
+                                <form method="POST" action="{{ route('admin.users.avatar.not.match', $user->avatar) }}" class="mr-1">
+                                    @csrf
+                                    <button class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()['not_match'] }}"><i class="fas fa-ban"></i></button>
+                                </form>
+                                <form method="POST" action="{{ route('admin.users.avatar.active', $user->avatar) }}" class="mr-1">
+                                    @csrf
+                                    <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="{{ $user->avatar->statusAvatar()['active'] }}"><i class="fas fa-check"></i></button>
+                                </form>
+                            </div>
                             @endif
+
                         </div>
                     </div>
+
+
                 </div>
 
                 <div class="col-md-8">
-                    @if($user->can('manage-own-user'))
+
                     <div class="float-right mt-1">
                         <div class="btn-group">
                             <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Изменить
+                                {{__('fillable.Edit')}}
                             </button>
                             <div class="dropdown-menu dropdown-menu-right rounded-0">
-                                <a href="{{ route('cabinet.profile.edit') }}" class="dropdown-item align-middle btn-sm px-3 rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>
+                                <a href="{{ route('admin.users.edit', $user) }}" class="dropdown-item align-middle btn-sm px-3  rounded-0"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>
+
+                                @if ($user->isWait())
+                                <div class="form-group mb-0">
+                                    <form method="POST" action="{{ route('admin.users.verify', $user) }}" class="">
+                                        @csrf
+                                        <button class="dropdown-item btn-sm px-3 text-success rounded-0" onclick="return confirm('Вы хотите подтвердить аккаунт?')"><i class="fal fa-check  mr-2"></i> {{__('menu.Verify')}}</button>
+                                    </form>
+                                </div>
+                                @endif
+
+                                <div class="form-group mb-0">
+                                    <form method="POST" action="{{ route('admin.users.destroy', $user) }}" class="">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="dropdown-item btn-sm px-3  rounded-0" onclick="return confirm('Удалить Пользователя?')"><i class="fal fa-trash mr-2"></i> {{__('button.Delete')}}</button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
+
                     </div>
-                    @endif
 
                     <div class="p-md-4">
                         <div class="mb-3">
@@ -68,15 +100,9 @@
                                 @if ($user->isActive())
                                     <span class="badge badge-primary">{{ $user->statusList()[$user->status] }}</span>
                                 @endif
-                                @if($groups = $user->groups)
-                                    @foreach($groups as $group)
-                                        <span class="badge badge-secondary font-weight-light small">{{ $group->name }}</span>
-                                    @endforeach
-                                @endif
                             </div>
                             <div class="font-weight-bold h4 ">
-                                {{ $user->name??'—' }}
-
+                                {{ $user->name }}
                             </div>
                         </div>
 
@@ -123,8 +149,8 @@
                                 <div class="mb-2 text-muted">
                                     {{__('register.EMailAddress')}}
                                 </div>
-                                <div class="h5 text-muted">
-                                    {{ $user->email??'—' }}
+                                <div class="h6 text-muted">
+                                    {{ $user->email }}
                                 </div>
                             </div>
 

@@ -138,6 +138,27 @@
                         @endif
                     </div>
 
+                    <div class="form-group">
+                        <label for="groups" class="col-form-label">{{ __('fillable.Groups') }}</label>
+                        <select id="groups" class="form-control select2 w-100 {{ $errors->has('groups') ? ' is-invalid' : '' }}" name="groups[]"  multiple="multiple">
+
+                        @foreach ($groups as $parent)
+
+                                <option value="{{ $parent->id }}"
+                                @foreach ($user_groups as $item)
+                                    {{ $parent->id == $item ? ' selected' : '' }}
+                                        @endforeach
+                                >
+                                    {{ $parent->name }}
+                                </option>
+                            @endforeach;
+                        </select>
+
+                    @if ($errors->has('groups'))
+                            <span class="invalid-feedback"><strong>{{ $errors->first('groups') }}</strong></span>
+                        @endif
+                    </div>
+
 
                     <div class="form-group">
                         <label for="role" class="col-form-label">{{ __('fillable.Role') }}</label>

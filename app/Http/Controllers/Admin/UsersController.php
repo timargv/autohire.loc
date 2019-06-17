@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Entity\User\Group;
 use App\User;
 use App\Http\Requests\Admin\Users\CreateRequest;
 use App\Http\Requests\Admin\Users\UpdateRequest;
@@ -76,13 +77,14 @@ class UsersController extends Controller
     {
         $roles = User::rolesList();
         $statuses = User::statusList();
+        $groups = Group::all();
+        $user_groups = $user->groups()->get()->pluck('name', 'id');
 
-        return view('admin.users.edit', compact('user', 'roles', 'statuses'));
+        return view('admin.users.edit', compact('user', 'roles', 'statuses', 'groups', 'user_groups'));
     }
 
     public function update(UpdateRequest $request, User $user)
     {
-
         $user->update($request->only([
             'name',
             'forename',
@@ -98,6 +100,10 @@ class UsersController extends Controller
         if ($request['role'] !== $user->role) {
                 $user->changeRole($request['role']);
         }
+
+//        $user->groups()->whereIn('group_id', $request['groups'])->delete();
+
+        $user->setGroups($request['groups']);
 
         return redirect()->route('admin.users.show', $user);
 

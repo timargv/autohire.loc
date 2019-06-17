@@ -1,6 +1,7 @@
 <?php
 
 use App\Entity\Tenant\BlackList;
+use App\Entity\User\Group;
 use App\User;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 
@@ -163,6 +164,25 @@ Breadcrumbs::register('admin.users.edit', function (Crumbs $crumbs, User $user) 
 Breadcrumbs::register('admin.users.avatar.home', function (Crumbs $crumbs) {
     $crumbs->parent('admin.users.index');
     $crumbs->push(__('fillable.Avatars'), route('admin.users.avatar.home'));
+});
+
+
+// == Admin Groups
+Breadcrumbs::register('admin.users.groups.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.users.index');
+    $crumbs->push(__('fillable.Groups'), route('admin.users.groups.index'));
+});
+
+Breadcrumbs::register('admin.users.groups.edit', function (Crumbs $crumbs, Group $group) {
+    $crumbs->parent('admin.users.groups.index');
+    $crumbs->push($group->name, route('admin.users.groups.edit', $group));
+});
+
+
+// == Admin Comments
+Breadcrumbs::register('admin.black.list.tenants.comments.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.black.list.tenants.index');
+    $crumbs->push(__('fillable.Comments'), route('admin.black.list.tenants.comments.index'));
 });
 
 

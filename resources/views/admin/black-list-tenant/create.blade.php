@@ -2,6 +2,8 @@
 
 @section('content')
     @include('admin.black-list-tenant._nav')
+    @include('admin.black-list-tenant._nav_button', ['page' => ''])
+
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">

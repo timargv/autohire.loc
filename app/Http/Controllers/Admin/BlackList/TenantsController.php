@@ -65,6 +65,7 @@ class TenantsController extends Controller
     public function show(BlackList $tenant)
     {
         $statuses = BlackList::statusTenant();
+//        dd($tenant->comments);
         return view('admin.black-list-tenant.show', compact('tenant', 'statuses'));
     }
 

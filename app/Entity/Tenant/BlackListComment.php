@@ -17,7 +17,6 @@ class BlackListComment extends Model
 
     //
     protected $table = 'black_list_tenant_comments';
-
     protected $fillable = ['comment', 'black_list_tenant_id', 'author_id', 'status'];
 
 

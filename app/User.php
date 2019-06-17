@@ -4,12 +4,15 @@ namespace App;
 
 
 use App\Entity\User\Avatar;
+use App\Entity\User\Group;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Notifications\Auth\ResetPasswordNotification;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use function Symfony\Component\Debug\Tests\testHeader;
 
 /**
  * @property mixed $cart
@@ -33,6 +36,9 @@ class User extends Authenticatable
     public const ROLE_USER = 'user';
     public const ROLE_MODERATOR = 'moderator';
     public const ROLE_ADMIN = 'admin';
+
+    public const GROUP_LANDLORD = 'arendodatel';
+    public const GROUP_TENANT = 'arendator';
 
 
     protected $fillable = [
@@ -67,6 +73,7 @@ class User extends Authenticatable
         'phone_auth' => 'boolean',
     ];
 
+
     // ---------- Аватар пользователя
     public function avatar()
     {
@@ -78,6 +85,13 @@ class User extends Authenticatable
         return $this->belongsToMany(Advert::class, 'advert_favorites', 'user_id', 'advert_id');
     }
 
+    public function groupList() : array
+    {
+        return [
+            self::GROUP_LANDLORD => $this->getGroups()->where('slug', self::GROUP_LANDLORD)->pluck('name')[0],
+            self::GROUP_TENANT => $this->getGroups()->where('slug', self::GROUP_TENANT)->pluck('name')[0],
+        ];
+    }
 
     public static function rolesList(): array
     {
@@ -166,6 +180,11 @@ class User extends Authenticatable
     public function isAdmin(): bool
     {
         return $this->role === self::ROLE_ADMIN;
+    }
+
+    public function isLandLord() : bool
+    {
+        return array_key_exists($this->getUserGroupsIsSlug(), $this->groupList());
     }
 
 
@@ -294,10 +313,32 @@ class User extends Authenticatable
         } return '—';
     }
 
+    // ---------- Группы пользователей
+    public function groups()
+    {
+        return $this->belongsToMany(
+            Group::class,
+            'user_groups',
+            'user_id',
+            'group_id'
+        );
+    }
 
-//    public function sendPasswordResetNotification($token)
-//    {
-//        $this->notify(new ResetPasswordNotification($token));
-//    }
+
+    public function setGroups($ids)
+    {
+        if($ids == null){return;}
+        $this->groups()->sync($ids);
+    }
+
+    public function getUserGroupsIsSlug()
+    {
+        return Auth::user()->groups()->where('slug', self::GROUP_LANDLORD)->firstOrFail()->pluck('slug')[0];
+    }
+
+    public function getGroups()
+    {
+        return Group::all();
+    }
 
 }
