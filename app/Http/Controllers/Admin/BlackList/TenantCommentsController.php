@@ -9,6 +9,29 @@ use App\Http\Controllers\Controller;
 class TenantCommentsController extends Controller
 {
 
+    public function index(Request $request)
+    {
+        $query = BlackListComment::with(['author', 'author.avatar', 'blackList'])->orderByDesc('status');
+
+
+        if (!empty($value = $request->get('id'))) {
+            $query->where('id', $value);
+        }
+
+        if (!empty($value = $request->get('status'))) {
+            $query->where('status', $value);
+        }
+
+        if (!empty($request->get('onlyMy'))) {
+            $query->where('author_id', Auth::id());
+        }
+
+        $comments = $query->paginate(20);
+
+        $statuses = BlackListComment::statusComment();
+        return view('admin.black-list-tenant.comments.home', compact('comments', 'statuses'));
+    }
+
     public function notMatch(BlackListComment $comment) {
         $comment->update([
             'status' => BlackListComment::STATUS_NOT_MATCH

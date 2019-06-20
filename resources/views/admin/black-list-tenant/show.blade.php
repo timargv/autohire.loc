@@ -33,7 +33,7 @@
                                 @else
                                     <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                                 @endif
-                                @break($photo->is_manin != null)
+                                @break($photo->isMain())
                             @endforeach
 
                                 <div class="card-img-overlay">

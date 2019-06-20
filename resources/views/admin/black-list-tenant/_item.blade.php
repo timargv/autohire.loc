@@ -17,7 +17,6 @@
                             <i class="fas fa-check-circle text-success bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="Фото Подтверждено"></i>
                         @endif
                     </div>
-                    @break($photo->is_manin != null)
                     @if($photo->photo && Storage::disk('public')->exists('user/black-tenant/images/medium/'.$photo->photo))
                         @if($photo->isModeration() || $photo->isNotMatch())
                             <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/blur/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
@@ -28,6 +27,7 @@
                         <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                     @endif
 
+                    @break($photo->isMain())
                 @endforeach
                     <a href="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/small/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" target="_blank">open</a>
             </div>

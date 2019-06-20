@@ -114,11 +114,18 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         Route::get('/', 'HomeController@index')->name('home');
         Route::resource('users', 'UsersController');
 
+
+        // USER
         Route::group(['prefix' => 'user', 'as' => 'users.', 'namespace' => 'User'], function () {
             Route::resource('groups', 'GroupsController');
         });
 
+        // VERIFICATION USER
+        Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');
 
+
+
+        // AVATARS
         Route::group(['prefix' => 'user/avatars', 'as' => 'users.avatar.', 'namespace' => 'User'], function () {
             Route::get('/', 'AvatarsController@index')->name('home');
 
@@ -127,12 +134,17 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         });
 
 
+        // Чёрный список арендателей
         Route::group(['prefix' => 'black-list/tenants', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
             Route::resource('/', 'TenantsController');
-            Route::resource('/comments', 'Comment\CommentsController');
+            Route::resource('/comments', 'TenantCommentsController');
+            Route::resource('/photos', 'TenantPhotosController');
+
+
             Route::post('/story', 'TenantsController@story')->name('story');
 
             Route::get('/{tenant}', 'TenantsController@show')->name('show');
+
 
             Route::post('/not-match/{tenant}', 'TenantsController@notMatch')->name('not.match');
             Route::post('/active/{tenant}', 'TenantsController@active')->name('active');
@@ -145,9 +157,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
         });
 
 
-
-
-        Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');
 
 //        Route::group(['prefix' => 'adverts', 'as' => 'adverts.', 'namespace' => 'Adverts'], function () {
 //

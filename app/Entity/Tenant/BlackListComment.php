@@ -4,6 +4,7 @@ namespace App\Entity\Tenant;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @property mixed author_id
@@ -52,5 +53,13 @@ class BlackListComment extends Model
 
     public function isActive() {
         return $this->status === self::STATUS_ACTIVE;
+    }
+
+
+    // Кешированое количество не проверенных комментарий к арендателю из черного списка
+    public static function countModerationComments () {
+        return Cache::remember('countModerationComments', 20, function () {
+            return static::query()->where('status', self::STATUS_MODERATION)->count();
+        });
     }
 }

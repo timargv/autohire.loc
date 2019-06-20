@@ -160,14 +160,14 @@ Breadcrumbs::register('admin.users.edit', function (Crumbs $crumbs, User $user) 
     $crumbs->push(__('fillable.Edit'), route('admin.users.edit', $user));
 });
 
-// == Admin Avatars
+// == Admin User Avatars
 Breadcrumbs::register('admin.users.avatar.home', function (Crumbs $crumbs) {
     $crumbs->parent('admin.users.index');
     $crumbs->push(__('fillable.Avatars'), route('admin.users.avatar.home'));
 });
 
 
-// == Admin Groups
+// == Admin User Groups
 Breadcrumbs::register('admin.users.groups.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.users.index');
     $crumbs->push(__('fillable.Groups'), route('admin.users.groups.index'));
@@ -177,14 +177,6 @@ Breadcrumbs::register('admin.users.groups.edit', function (Crumbs $crumbs, Group
     $crumbs->parent('admin.users.groups.index');
     $crumbs->push($group->name, route('admin.users.groups.edit', $group));
 });
-
-
-// == Admin Comments
-Breadcrumbs::register('admin.black.list.tenants.comments.index', function (Crumbs $crumbs) {
-    $crumbs->parent('admin.black.list.tenants.index');
-    $crumbs->push(__('fillable.Comments'), route('admin.black.list.tenants.comments.index'));
-});
-
 
 
 // === Admin Tenants
@@ -202,3 +194,19 @@ Breadcrumbs::register('admin.black.list.tenants.create', function (Crumbs $crumb
     $crumbs->parent('admin.black.list.tenants.index');
     $crumbs->push(__('fillable.Create'), route('admin.black.list.tenants.create'));
 });
+
+
+// == Admin Tenants Comments
+Breadcrumbs::register('admin.black.list.tenants.comments.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.black.list.tenants.index');
+    $crumbs->push(__('fillable.Comments'), route('admin.black.list.tenants.comments.index'));
+});
+
+
+// == Admin Tenants PHOTOS
+Breadcrumbs::register('admin.black.list.tenants.photos.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.black.list.tenants.index');
+    $crumbs->push(__('fillable.Photos'), route('admin.black.list.tenants.photos.index'));
+});
+
+

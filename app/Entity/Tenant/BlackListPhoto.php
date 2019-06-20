@@ -4,6 +4,7 @@ namespace App\Entity\Tenant;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @property mixed status
@@ -14,6 +15,8 @@ class BlackListPhoto extends Model
     public const STATUS_NOT_MATCH = 'not_match';
     public const STATUS_MODERATION = 'moderation';
     public const STATUS_ACTIVE = 'active';
+
+    public const STATUS_MAIN = 1;
 
     //
     protected $table = 'black_list_tenant_photos';
@@ -52,5 +55,18 @@ class BlackListPhoto extends Model
 
     public function isActive() {
         return $this->status === self::STATUS_ACTIVE;
+    }
+
+    public function isMain() : bool
+    {
+        return $this->is_main === self::STATUS_MAIN;
+    }
+
+
+    // Кешированое количество не проверенных фотографий к арендателю из черного списка
+    public static function countModerationPhotos () {
+        return Cache::remember('countModerationPhotos', 20, function () {
+            return static::query()->where('status', self::STATUS_MODERATION)->count();
+        });
     }
 }

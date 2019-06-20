@@ -46,7 +46,7 @@ class Avatar extends Model
         return $this->status === self::STATUS_ACTIVE;
     }
 
-    public static function countModerationPhotos () {
+    public static function countModerationAvatars () {
         return Cache::remember('countModerationPhotos', 20, function () {
             return static::query()->where('status', self::STATUS_MODERATION)->count();
         });

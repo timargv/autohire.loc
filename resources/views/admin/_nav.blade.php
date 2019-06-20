@@ -8,9 +8,6 @@
     @endcan
     @can ('manage-users')
         <li class="nav-item"><a class="nav-link{{ $page === 'users' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.users.index') }}">Пользователи</a></li>
-        <li class="nav-item">
-            <a class="nav-link {{ $page === 'black-list-tenant' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.black.list.tenants.index') }}">Черный список Арендаторов</a>
-        </li>
+        <li class="nav-item"><a class="nav-link {{ $page === 'black-list-tenant' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.black.list.tenants.index') }}">Черный список Арендаторов</a></li>
     @endcan
-
 </ul>

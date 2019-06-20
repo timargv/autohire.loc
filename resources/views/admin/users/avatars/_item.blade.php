@@ -1,4 +1,4 @@
-<table class="table table-bordered table-responsive-sm">
+<table class="table table-bordered table-responsive-sm bg-white">
     <thead>
     <tr>
         <th width="60px">ID</th>

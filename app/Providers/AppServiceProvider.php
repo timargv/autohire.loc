@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Entity\Tenant\BlackList;
+use App\Entity\Tenant\BlackListComment;
+use App\Entity\Tenant\BlackListPhoto;
 use App\Entity\User\Avatar;
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +30,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer('admin.users._nav_user', function($view){
-            $view->with('countModerationPhotos', Avatar::countModerationPhotos());
+            $view->with('countModerationAvatars', Avatar::countModerationAvatars());
+        });
+
+        view()->composer('admin.black-list-tenant._nav_button', function($view){
+            $view->with('countModerationTenants', BlackList::countModerationTenants());
+            $view->with('countModerationTenantPhotos', BlackListPhoto::countModerationPhotos());
+            $view->with('countModerationTenantComments', BlackListComment::countModerationComments());
         });
     }
 }

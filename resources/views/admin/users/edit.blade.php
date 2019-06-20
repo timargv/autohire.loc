@@ -139,16 +139,13 @@
                     </div>
 
                     <div class="form-group">
+
                         <label for="groups" class="col-form-label">{{ __('fillable.Groups') }}</label>
                         <select id="groups" class="form-control select2 w-100 {{ $errors->has('groups') ? ' is-invalid' : '' }}" name="groups[]"  multiple="multiple">
-
                         @foreach ($groups as $parent)
 
-                                <option value="{{ $parent->id }}"
-                                @foreach ($user_groups as $item)
-                                    {{ $parent->id == $item ? ' selected' : '' }}
-                                        @endforeach
-                                >
+                                <option value="{{ $parent->id }}" @foreach ($user_groups as $key => $item)
+                                    {{ $parent->id == $key ? ' selected' : '' }} @endforeach>
                                     {{ $parent->name }}
                                 </option>
                             @endforeach;

@@ -23,7 +23,7 @@ class UsersController extends Controller
 
     public function index(Request $request)
     {
-        $query = User::orderByDesc('id')->with('avatar');
+        $query = User::orderByDesc('id')->with(['avatar','groups']);
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);
@@ -78,7 +78,7 @@ class UsersController extends Controller
         $roles = User::rolesList();
         $statuses = User::statusList();
         $groups = Group::all();
-        $user_groups = $user->groups()->get()->pluck('name', 'id');
+        $user_groups = $user->groups()->pluck('name', 'id');
 
         return view('admin.users.edit', compact('user', 'roles', 'statuses', 'groups', 'user_groups'));
     }
@@ -100,8 +100,6 @@ class UsersController extends Controller
         if ($request['role'] !== $user->role) {
                 $user->changeRole($request['role']);
         }
-
-//        $user->groups()->whereIn('group_id', $request['groups'])->delete();
 
         $user->setGroups($request['groups']);
 

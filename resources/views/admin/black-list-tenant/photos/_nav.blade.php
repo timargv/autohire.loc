@@ -1,0 +1,1 @@
+@include('admin.black-list-tenant._nav_button', ['page' => 'photos'])

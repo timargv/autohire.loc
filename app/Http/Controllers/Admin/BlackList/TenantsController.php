@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\BlackList;
 
 use App\Entity\Tenant\BlackList;
 use App\Entity\Tenant\BlackListComment;
+use App\Entity\Tenant\BlackListPhoto;
 use App\Http\Requests\Tenant\BlackListRequest;
 use App\UseCases\Tenant\BlackListService;
 use Illuminate\Http\Request;
@@ -30,14 +31,6 @@ class TenantsController extends Controller
             $query->where('id', $value);
         }
 
-        if (!empty($value = $request->get('name'))) {
-            $query->where('name', 'like', '%' . $value . '%');
-        }
-
-        if (!empty($value = $request->get('city'))) {
-            $query->where('city', 'like', '%' . $value . '%');
-        }
-
         if (!empty($value = $request->get('status'))) {
             $query->where('status', $value);
         }
@@ -47,6 +40,7 @@ class TenantsController extends Controller
         }
 
         $tenants = $query->paginate(20);
+
         $statuses = BlackList::statusTenant();
         $statusesPhoto = BlackList::statusTenant();
         $statusesComment = BlackList::statusTenant();

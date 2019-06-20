@@ -5,7 +5,7 @@
 
     <ul class="list-unstyled">
         @foreach($comments as $comment)
-            <li class="media mb-4 ">
+            <li class="media mb-5 ">
 
                 @if($comment->author)
                     @if($comment->author->avatar && Storage::disk('public')->exists('user/avatar/medium/'.$comment->author->image))
@@ -68,7 +68,7 @@
                     </h6>
                     <p class="mb-2" @if(!$comment->author)style=" pointer-events: none; opacity: 0.4;"@endif>{{ $comment->comment }}</p>
                     <div class="small text-muted">
-                        <span>{{ $comment->created_at }} к арендатору <a href="{{ route('admin.black.list.tenants.show', $comment->blackList) }}">{{ $comment->blackList->name }}</a></span>
+                        <span>{{ $comment->created_at->diffForHumans()}} к арендатору <a href="{{ route('admin.black.list.tenants.show', $comment->blackList) }}">{{ $comment->blackList->name }}</a></span>
                         <span class="">
                             @if($comment->isActive())
                                 <span class="badge badge-success">{{ $comment->statusComment()[$comment->status] }}</span>

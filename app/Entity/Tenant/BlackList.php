@@ -4,6 +4,7 @@ namespace App\Entity\Tenant;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @property mixed author_id
@@ -72,5 +73,13 @@ class BlackList extends Model
 
     public function isActive() {
         return $this->status === self::STATUS_ACTIVE;
+    }
+
+
+    // Кешированое количество не проверенных арендателей в черном списке
+    public static function countModerationTenants () {
+        return Cache::remember('countModerationTenants', 20, function () {
+            return static::query()->where('status', self::STATUS_MODERATION)->count();
+        });
     }
 }
