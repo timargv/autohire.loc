@@ -158,6 +158,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
 
+        // CATEGORIES (car models, years)
+        Route::group(['as' => 'categories.', 'namespace' => 'Category'], function () {
+            Route::get('/categories', 'HomeController@index')->name('home');
+
+            Route::group(['prefix' => 'car', 'as' => 'car.', 'namespace' => 'Car'], function () {
+
+                Route::resource('models', 'CarModelsController');
+                Route::resource('years', 'YearsController');
+
+            });
+
+        });
+
+
+
 //        Route::group(['prefix' => 'adverts', 'as' => 'adverts.', 'namespace' => 'Adverts'], function () {
 //
 //            Route::resource('categories', 'CategoryController');

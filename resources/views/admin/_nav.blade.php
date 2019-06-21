@@ -4,7 +4,7 @@
         <li class="nav-item"><a class="nav-link{{ $page === 'adverts' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.home') }}">Объявления</a></li>
     @endcan
     @can ('manage-adverts-categories')
-        <li class="nav-item"><a class="nav-link{{ $page === 'adverts_categories' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.home') }}">Категория</a></li>
+        <li class="nav-item"><a class="nav-link{{ $page === 'categories' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.categories.home') }}">Категория</a></li>
     @endcan
     @can ('manage-users')
         <li class="nav-item"><a class="nav-link{{ $page === 'users' ? ' active bg-danger text-white' : '' }}" href="{{ route('admin.users.index') }}">Пользователи</a></li>

@@ -210,3 +210,24 @@ Breadcrumbs::register('admin.black.list.tenants.photos.index', function (Crumbs 
 });
 
 
+
+
+// === Admin Category
+Breadcrumbs::register('admin.categories.home', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push(__('fillable.Categories'), route('admin.categories.home'));
+});
+
+
+// == Admin Category Car Models
+Breadcrumbs::register('admin.categories.car.models.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.home');
+    $crumbs->push(__('fillable.CarModels'), route('admin.categories.car.models.index'));
+});
+
+
+// == Admin Category Car Years
+Breadcrumbs::register('admin.categories.car.years.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.home');
+    $crumbs->push(__('fillable.CarYears'), route('admin.categories.car.years.index'));
+});
