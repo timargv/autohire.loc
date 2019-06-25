@@ -1,5 +1,8 @@
 <?php
 
+use App\Entity\Cars\Attribute;
+use App\Entity\Categories\Car\CarModel;
+use App\Entity\Categories\Car\Year;
 use App\Entity\Tenant\BlackList;
 use App\Entity\User\Group;
 use App\User;
@@ -225,9 +228,47 @@ Breadcrumbs::register('admin.categories.car.models.index', function (Crumbs $cru
     $crumbs->push(__('fillable.CarModels'), route('admin.categories.car.models.index'));
 });
 
+Breadcrumbs::register('admin.categories.car.models.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.car.models.index');
+    $crumbs->push(__('fillable.Create'), route('admin.categories.car.models.create'));
+});
+
+Breadcrumbs::register('admin.categories.car.models.edit', function (Crumbs $crumbs, CarModel $model) {
+    $crumbs->parent('admin.categories.car.models.index');
+    $crumbs->push($model->name, route('admin.categories.car.models.edit', $model));
+});
+
 
 // == Admin Category Car Years
 Breadcrumbs::register('admin.categories.car.years.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.categories.home');
     $crumbs->push(__('fillable.CarYears'), route('admin.categories.car.years.index'));
+});
+
+Breadcrumbs::register('admin.categories.car.years.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.car.years.index');
+    $crumbs->push(__('fillable.Create'), route('admin.categories.car.years.create'));
+});
+
+
+Breadcrumbs::register('admin.categories.car.years.edit', function (Crumbs $crumbs, Year $year) {
+    $crumbs->parent('admin.categories.car.years.index');
+    $crumbs->push($year->name, route('admin.categories.car.years.edit', $year));
+});
+
+
+// == Admin Category Car Attributes
+Breadcrumbs::register('admin.categories.car.attributes.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.home');
+    $crumbs->push(__('fillable.Attributes'), route('admin.categories.car.attributes.index'));
+});
+
+Breadcrumbs::register('admin.categories.car.attributes.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.car.attributes.index');
+    $crumbs->push(__('fillable.Create'), route('admin.categories.car.attributes.create'));
+});
+
+Breadcrumbs::register('admin.categories.car.attributes.edit', function (Crumbs $crumbs, Attribute $attribute) {
+    $crumbs->parent('admin.categories.car.attributes.index');
+    $crumbs->push($attribute->name, route('admin.categories.car.attributes.edit', $attribute));
 });

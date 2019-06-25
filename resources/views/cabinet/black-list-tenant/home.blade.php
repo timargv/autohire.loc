@@ -47,23 +47,7 @@
         </div>
     </div>
 
-        <table class="table table-bordered bg-white table-responsive">
-        <thead>
-        <tr>
-            <th width="60px">ID</th>
-            <th width="50px">{{__('fillable.Photo')}}</th>
-            <th>{{__('fillable.Name')}}</th>
-            <th>{{__('fillable.City')}}</th>
-            <th>{{__('fillable.Author')}}</th>
-            <th>{{__('fillable.Status')}}</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        @include('cabinet.black-list-tenant._item', ['tenants' => $tenants])
-
-        </tbody>
-    </table>
+    @include('cabinet.black-list-tenant._item', ['tenants' => $tenants])
 
     {{ $tenants->appends(request()->query())->links() }}
 @endsection

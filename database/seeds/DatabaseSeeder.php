@@ -1,5 +1,7 @@
 <?php
 
+use App\Entity\Categories\Car\CarModel;
+use App\Entity\Categories\Car\Year;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -16,5 +18,9 @@ class DatabaseSeeder extends Seeder
 //        $this->call(GroupsTableSeeder::class);
         $this->call(CarModelsTableSeeder::class);
         $this->call(CarYearsTableSeeder::class);
+        $this->call(CarAttributesTableSeeder::class);
+
+        CarModel::defaultOrder()->withDepth()->fixTree();
+        Year::defaultOrder()->withDepth()->fixTree();
     }
 }

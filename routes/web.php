@@ -166,7 +166,22 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
                 Route::resource('models', 'CarModelsController');
                 Route::resource('years', 'YearsController');
+                Route::resource('attributes', 'AttributesController');
 
+            });
+
+            Route::group(['prefix' => 'car/{model}', 'as' => 'car.model.', 'namespace' => 'Car'], function () {
+                Route::post('/first', 'CarModelsController@first')->name('first');
+                Route::post('/up', 'CarModelsController@up')->name('up');
+                Route::post('/down', 'CarModelsController@down')->name('down');
+                Route::post('/last', 'CarModelsController@last')->name('last');
+            });
+
+            Route::group(['prefix' => 'car/{year}', 'as' => 'car.year.', 'namespace' => 'Car'], function () {
+                Route::post('/first', 'CarModelsController@first')->name('first');
+                Route::post('/up', 'CarModelsController@up')->name('up');
+                Route::post('/down', 'CarModelsController@down')->name('down');
+                Route::post('/last', 'CarModelsController@last')->name('last');
             });
 
         });

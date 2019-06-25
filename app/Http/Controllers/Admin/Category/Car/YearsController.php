@@ -9,9 +9,17 @@ use App\Http\Controllers\Controller;
 class YearsController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('can:admin-panel');
+    }
+
+
     public function index(Request $request)
     {
-        $query = Year::orderBy('status');
+//        Year::defaultOrder()->withDepth()->fixTree();
+
+        $query = Year::defaultOrder('ASC');
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);
@@ -74,9 +82,9 @@ class YearsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Year $year)
     {
-        //
+        return view('admin.categories.car_years.edit', compact('year'));
     }
 
     /**
@@ -97,8 +105,42 @@ class YearsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Year $year)
     {
-        //
+        $year->delete();
+
+        return redirect()->back()->with('success', 'Год авто удалён!');
+    }
+
+    public function first(Year $year)
+    {
+        if ($first = $year->siblings()->defaultOrder()->first()) {
+            $year->insertBeforeNode($first);
+        }
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+    public function up(Year $year)
+    {
+        $year->up();
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+    public function down(Year $year)
+    {
+        $year->down();
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+    public function last(Year $year)
+    {
+        if ($last = $year->siblings()->defaultOrder('desc')->first()) {
+            $year->insertAfterNode($last);
+        }
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
     }
 }

@@ -9,9 +9,17 @@ use App\Http\Controllers\Controller;
 class CarModelsController extends Controller
 {
 
+    public function __construct()
+    {
+        $this->middleware('can:admin-panel');
+    }
+
+
     public function index(Request $request)
     {
-        $query = CarModel::orderBy('name');
+//        CarModel::defaultOrder()->withDepth()->fixTree();
+
+        $query = CarModel::defaultOrder('ASC');
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);
@@ -74,9 +82,10 @@ class CarModelsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(CarModel $model)
     {
         //
+        return view('admin.categories.car_models.edit', compact('model'));
     }
 
     /**
@@ -94,11 +103,46 @@ class CarModelsController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param CarModel $carModel
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
-    public function destroy($id)
+    public function destroy(CarModel $model)
     {
-        //
+        $model->delete();
+
+        return redirect()->back()->with('success', 'Модель авто удалён!');
+    }
+
+    public function first(CarModel $model)
+    {
+        if ($first = $model->siblings()->defaultOrder()->first()) {
+            $model->insertBeforeNode($first);
+        }
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+    public function up(CarModel $model)
+    {
+        $model->up();
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+    public function down(CarModel $model)
+    {
+        $model->down();
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+    public function last(CarModel $model)
+    {
+        if ($last = $model->siblings()->defaultOrder('desc')->first()) {
+            $model->insertAfterNode($last);
+        }
+
+        return redirect()->back()->with('success', 'Позиция обновлена!');
     }
 }
