@@ -18,7 +18,7 @@ class CreateCarYearsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('slug');
-            $table->string('status');
+            $table->string('status', 16);
             $table->integer('author_id');
             NestedSet::columns($table);
             $table->timestamps();

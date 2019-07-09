@@ -77,13 +77,11 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">+7</span>
                                 </div>
-                                <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $user->phone) }}" placeholder="Только цифры без пробелов и знаков" required>
+                                <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $user->phone) }}" placeholder="9**0001122" required>
                                 @if ($errors->has('phone'))
                                     <span class="invalid-feedback"><strong>{{ $errors->first('phone') }}</strong></span>
                                 @endif
                             </div>
-
-
                         </div>
 
                         <div class="form-group">

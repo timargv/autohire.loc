@@ -136,7 +136,6 @@
                             </div>
                         </div>
 
-
                         @include('admin.black-list-tenant._comments', ['comments' => $tenant->comments])
                     </div>
                 </div>

@@ -51,7 +51,7 @@ class AuthServiceProvider extends ServiceProvider
         });
 
         Gate::define('manage-add-tenant', function (User $user) {
-            return $user->isLandLord();
+            return $user->isAdmin() || $user->isModerator() || $user->isLandLord();
         });
 
 //        Gate::define('manage-regions', function (User $user) {
@@ -65,7 +65,6 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('manage-adverts-categories', function (User $user) {
             return $user->isAdmin() || $user->isModerator();
         });
-
 
 
         Gate::define('manage-own-black-list', function (User $user, BlackList $blackList) {

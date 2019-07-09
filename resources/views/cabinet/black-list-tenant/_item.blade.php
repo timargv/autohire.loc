@@ -6,8 +6,8 @@
                 <th width="60px">ID</th>
                 <th width="50px">{{__('fillable.Photo')}}</th>
                 <th>{{__('fillable.Name')}}</th>
-                <th>{{__('fillable.City')}}</th>
-                <th>{{__('fillable.Author')}}</th>
+{{--                <th>{{__('fillable.City')}}</th>--}}
+{{--                <th>{{__('fillable.Author')}}</th>--}}
                 <th>{{__('fillable.Status')}}</th>
             </tr>
             </thead>
@@ -49,6 +49,10 @@
 
                 </td>
                 <td><a href="{{ route('cabinet.black.list.tenants.show', $tenant) }}">{{ $tenant->name }}</a>
+                    <div class="small text-muted mb-2">
+                        @if($tenant->author) {{-- __('fillable.Author') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.Author')}}" class="text-dark" href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a>, @else - @endif
+                        @if($tenant->city) {{-- __('fillable.City') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.City')}}" class="text-dark" href="#">{{ $tenant->city }}</a>, @endif
+                        {{ $tenant->created_at->diffForHumans()}}</div>
                     @foreach($tenant->comments as $comment)
                         <div class="text-muted mt-1 mb-2">
                             @can('manage-own-black-list-comment', $comment)
@@ -60,8 +64,8 @@
                         @break($loop->first)
                     @endforeach
                 </td>
-                <td><a href="#">{{ $tenant->city }}</a></td>
-                    <td>@if($tenant->author) <a href="{{ route('profile.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>
+{{--                <td><a href="#">{{ $tenant->city }}</a></td>--}}
+{{--                <td>@if($tenant->author) <a href="{{ route('profile.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>--}}
                 <td>
                     @if($tenant->isActive())
                         <div><span class="badge badge-success">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
@@ -71,7 +75,6 @@
                         <div><span class="badge badge-danger">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
                     @endif
                 </td>
-
             </tr>
                 @continue
             @endcan

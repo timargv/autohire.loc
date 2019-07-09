@@ -49,7 +49,7 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 
 
 
-        Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
+//        Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
 //        Route::delete('favorites/{advert}', 'FavoriteController@remove')->name('favorites.remove');
 //
 //        Route::resource('tickets', 'TicketController')->only(['index', 'show', 'create', 'store', 'destroy']);
@@ -164,24 +164,27 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
             Route::group(['prefix' => 'car', 'as' => 'car.', 'namespace' => 'Car'], function () {
 
-                Route::resource('models', 'CarModelsController');
+                Route::resource('/brands', 'CarBrandsController')->only('index', 'show', 'delete', 'update', 'create', 'store');
+                Route::get('brands/{carBrand}/edit', 'CarBrandsController@edit')->name('brands.edit');
+                Route::delete('/{carBrand}/destroy', 'CarBrandsController@destroy')->name('brands.destroy');
+
                 Route::resource('years', 'YearsController');
                 Route::resource('attributes', 'AttributesController');
 
             });
 
-            Route::group(['prefix' => 'car/{model}', 'as' => 'car.model.', 'namespace' => 'Car'], function () {
-                Route::post('/first', 'CarModelsController@first')->name('first');
-                Route::post('/up', 'CarModelsController@up')->name('up');
-                Route::post('/down', 'CarModelsController@down')->name('down');
-                Route::post('/last', 'CarModelsController@last')->name('last');
+            Route::group(['prefix' => 'car/{carBrand}', 'as' => 'car.brand.', 'namespace' => 'Car'], function () {
+                Route::post('/first', 'CarBrandsController@first')->name('first');
+                Route::post('/up', 'CarBrandsController@up')->name('up');
+                Route::post('/down', 'CarBrandsController@down')->name('down');
+                Route::post('/last', 'CarBrandsController@last')->name('last');
             });
 
             Route::group(['prefix' => 'car/{year}', 'as' => 'car.year.', 'namespace' => 'Car'], function () {
-                Route::post('/first', 'CarModelsController@first')->name('first');
-                Route::post('/up', 'CarModelsController@up')->name('up');
-                Route::post('/down', 'CarModelsController@down')->name('down');
-                Route::post('/last', 'CarModelsController@last')->name('last');
+                Route::post('/first', 'CarBrandsController@first')->name('first');
+                Route::post('/up', 'CarBrandsController@up')->name('up');
+                Route::post('/down', 'CarBrandsController@down')->name('down');
+                Route::post('/last', 'CarBrandsController@last')->name('last');
             });
 
         });

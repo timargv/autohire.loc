@@ -61,8 +61,10 @@
                     @method('PUT')
 
                     <div class="form-group">
-                        <label for="phone" class="col-form-label">{{__('fillable.Phone')}}</label>
-                        <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $user->phone) }}" required>
+                        <label for="phone" class="col-form-label">{{__('fillable.Phone')}} *</label>
+                        <div data-toggle="tooltip" data-placement="top" title="{{__('fillable.Phone')}} нельзя изменить">
+                            <input id="phone" type="tel" class="form-control{{ $errors->has('phone') ? ' is-invalid' : '' }}" name="phone" value="{{ old('phone', $user->phone) }}" disabled>
+                        </div>
                         @if ($errors->has('phone'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('phone') }}</strong></span>
                         @endif
@@ -70,7 +72,9 @@
 
                     <div class="form-group">
                         <label for="email" class="col-form-label">{{ __('register.EMailAddress') }} *</label>
-                        <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email', $user->email) }}" required>
+                        <div data-toggle="tooltip" data-placement="top" title="{{__('register.EMailAddress')}} нельзя изменить">
+                            <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email', $user->email) }}" >
+                        </div>
                         @if ($errors->has('email'))
                             <span class="invalid-feedback"><strong>{{ $errors->first('email') }}</strong></span>
                         @endif

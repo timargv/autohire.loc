@@ -26,7 +26,7 @@ class UpdateRequest extends FormRequest
         return [
             'name' => 'required|string|max:255',
             'about' => 'nullable|string|max:3000',
-            'phone' => 'required|string|min:10|max:10|regex:/^\d+$/s|unique:users,id,' . $this->user->id,
+            'phone' => 'nullable|string|min:10|max:10|regex:/^\d+$/s|unique:users,id,' . $this->user->id,
             'email' => 'required|string|email|max:255|unique:users,id,' . $this->user->id,
             'status' => ['required', 'string', Rule::in(array_keys(User::statusList()))],
             'role' => ['required', 'string', Rule::in(array_keys(User::rolesList()))]

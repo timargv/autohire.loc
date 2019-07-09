@@ -17,7 +17,7 @@ class CreateCarAttributesTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('type');
-            $table->string('status');
+            $table->string('status', 16);
             $table->string('is_visible');
             $table->boolean('required');
             $table->json('variants');

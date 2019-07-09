@@ -25,7 +25,7 @@ class TenantsController extends Controller
 
     public function index (Request $request) {
 
-        $query = BlackList::orderByDesc('id')->with(['author', 'author.avatar', 'comments', 'files', 'photos']);
+        $query = BlackList::with(['author', 'author.avatar', 'comments', 'files', 'photos'])->orderByDesc('status')->orderByDesc('updated_at')->orderByDesc('id');
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);

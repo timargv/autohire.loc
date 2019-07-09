@@ -19,7 +19,7 @@ class TenantPhotosController extends Controller
 
 
 
-        $query = BlackListPhoto::with(['author', 'blackList', 'blackList.photos'])->orderBy('black_list_tenant_id')->orderBy('updated_at');
+        $query = BlackListPhoto::with(['author', 'blackList', 'blackList.photos'])->orderByDesc('black_list_tenant_id')->orderByDesc('status')->orderByDesc('updated_at');
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);

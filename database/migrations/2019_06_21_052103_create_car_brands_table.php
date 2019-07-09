@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Kalnoy\Nestedset\NestedSet;
 
-class CreateCarModelsTable extends Migration
+class CreateCarBrandsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,12 +14,12 @@ class CreateCarModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('car_models', function (Blueprint $table) {
+        Schema::create('car_brands', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('name_ru')->nullable();
+            $table->string('name')->index();
+            $table->string('name_ru')->index()->nullable();
             $table->string('slug');
-            $table->string('status');
+            $table->string('status', 16);
             $table->integer('author_id');
             NestedSet::columns($table);
             $table->timestamps();
@@ -33,6 +33,6 @@ class CreateCarModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_models');
+        Schema::dropIfExists('car_brands');
     }
 }

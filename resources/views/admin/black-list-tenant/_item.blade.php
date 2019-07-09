@@ -1,13 +1,13 @@
-<div class="card rounded-0 border-0 ">
-    <div class="card-body p-0">
+<div class="card rounded-0  ">
+    <div class="card-body p-0 ">
         <table class="table table-borderless table-responsive-sm bg-white">
             <thead class="thead-light">
             <tr>
                 <th width="60px">ID</th>
                 <th width="50px">{{__('fillable.Photo')}}</th>
                 <th>{{__('fillable.Name')}}</th>
-                <th>{{__('fillable.City')}}</th>
-                <th>{{__('fillable.Author')}}</th>
+{{--                <th>{{__('fillable.City')}}</th>--}}
+{{--                <th>{{__('fillable.Author')}}</th>--}}
                 <th>{{__('fillable.Status')}}</th>
                 <th></th>
             </tr>
@@ -49,16 +49,20 @@
                             <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                         </div>
                     @endif
-
                 </td>
-                <td><a href="{{ route('admin.black.list.tenants.show', $tenant) }}">{{ $tenant->name }}</a>
+                <td>
+                    <a href="{{ route('admin.black.list.tenants.show', $tenant) }}">{{ $tenant->name }} </a>
+                    <div class="small text-muted mb-2">
+                        @if($tenant->author) {{-- __('fillable.Author') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.Author')}}" class="text-dark" href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a>, @else - @endif
+                        @if($tenant->city) {{-- __('fillable.City') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.City')}}" class="text-dark" href="#">{{ $tenant->city }}</a>, @endif
+                            {{ $tenant->created_at->diffForHumans()}}</div>
                     @foreach($tenant->comments as $comment)
-                        <div class="text-muted mt-1 mb-2">{{ $comment->comment }}</div>
+                        <div class="text-muted mt-1 mb-2 small">{{ $comment->comment }}</div>
                         @break($loop->first)
                     @endforeach
                 </td>
-                <td><a href="#">{{ $tenant->city }}</a></td>
-                <td>@if($tenant->author) <a href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>
+{{--                <td class="small"><a href="#">{{ $tenant->city }}</a></td>--}}
+{{--                <td class="small">@if($tenant->author) <a href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>--}}
                 <td>
                     @if($tenant->isActive())
                         <div><span class="badge badge-success">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
@@ -68,21 +72,20 @@
                         <div><span class="badge badge-danger">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
                     @endif
                 </td>
-                <td>
-                    <div class="d-flex flex-row">
+                <td class="pr-0">
+                    <div class="d-flex flex-row-reverse justify-content-end">
                         <form method="POST" action="{{ route('admin.black.list.tenants.not.match', $tenant) }}" class="mr-1">
                             @csrf
-                            <button class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="{{ $statuses['not_match'] }}"><i class="fas fa-ban"></i></button>
+                            <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="{{ $statuses['not_match'] }}"><i class="fas fa-ban text-danger"></i></button>
                         </form>
                         <form method="POST" action="{{ route('admin.black.list.tenants.active', $tenant) }}" class="mr-1">
                             @csrf
-                            <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="{{ $statuses['active'] }}"><i class="fas fa-check"></i></button>
+                            <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="{{ $statuses['active'] }}"><i class="fas fa-check"></i></button>
                         </form>
                     </div>
                 </td>
-
             </tr>
-        @endforeach
+            @endforeach
             </tbody>
         </table>
     </div>

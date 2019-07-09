@@ -184,6 +184,7 @@ class User extends Authenticatable
 
     public function isLandLord() : bool
     {
+        dd($this->getUserGroupsIsSlug());
         return array_key_exists($this->getUserGroupsIsSlug(), $this->groupList());
     }
 

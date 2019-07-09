@@ -4,7 +4,7 @@
     </div>
 
     <ul class="list-unstyled">
-        @foreach($comments as $comment)
+        @forelse($comments as $comment)
             <li class="media mb-4 ">
 
                 @if($comment->author)
@@ -83,7 +83,9 @@
                     </div>
                 </div>
             </li>
-        @endforeach
+        @empty
+            <div class="text-muted w-100 text-center">Комментарий нет</div>
+        @endforelse
     </ul>
 
 </div>

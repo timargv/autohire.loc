@@ -36,15 +36,15 @@
                             <span class="badge badge-success">{{ $statuses['active'] }}</span>
                         @endif
                     </td>
-                    <td>
-                        <div class="d-flex flex-row">
-                            <form method="POST" action="{{ route('admin.users.avatar.not.match', $avatar) }}" class="mr-1">
+                    <td class="pr-0">
+                        <div class="d-flex  justify-content-end">
+                            <form method="POST" action="{{ route('admin.users.avatar.active', $avatar) }}" class="">
                                 @csrf
-                                <button class="btn btn-sm btn-danger" data-toggle="tooltip" data-placement="top" title="{{ $statuses['not_match'] }}"><i class="fas fa-ban"></i></button>
+                                <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="{{ $statuses['active'] }}"><i class="fas fa-check text-primary"></i></button>
                             </form>
-                            <form method="POST" action="{{ route('admin.users.avatar.active', $avatar) }}" class="mr-1">
+                            <form method="POST" action="{{ route('admin.users.avatar.not.match', $avatar) }}" class="">
                                 @csrf
-                                <button class="btn btn-sm btn-primary" data-toggle="tooltip" data-placement="top" title="{{ $statuses['active'] }}"><i class="fas fa-check"></i></button>
+                                <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="{{ $statuses['not_match'] }}"><i class="fas fa-ban text-danger"></i></button>
                             </form>
                         </div>
                     </td>

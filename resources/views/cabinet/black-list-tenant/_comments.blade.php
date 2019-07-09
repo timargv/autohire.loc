@@ -37,7 +37,7 @@
                             @endcan
                         </p>
                         <div class="small text-muted">
-                            <span>{{ $comment->created_at }}</span>
+                            <span>{{ $comment->created_at->diffForHumans() }}</span>
                             <span class="">
                                 @if($comment->isActive())
                                     <span class="badge badge-success">{{ $comment->statusComment()[$comment->status] }}</span>
@@ -51,6 +51,8 @@
                     </div>
                 </li>
                 @continue
+            @else
+                <span class="text-muted small">Комментарий в модерации</span>
             @endcan
         @endforeach
     </ul>

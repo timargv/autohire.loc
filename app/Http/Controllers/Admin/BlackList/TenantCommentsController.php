@@ -11,7 +11,7 @@ class TenantCommentsController extends Controller
 
     public function index(Request $request)
     {
-        $query = BlackListComment::with(['author', 'author.avatar', 'blackList'])->orderByDesc('status');
+        $query = BlackListComment::with(['author', 'author.avatar', 'blackList'])->orderByDesc('status')->orderByDesc('updated_at');
 
 
         if (!empty($value = $request->get('id'))) {

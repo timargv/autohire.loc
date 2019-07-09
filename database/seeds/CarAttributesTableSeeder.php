@@ -12,6 +12,8 @@ class CarAttributesTableSeeder extends Seeder
      */
     public function run()
     {
+        Attribute::create(['name' => 'Модель', 'type' => 'string', 'is_visible' => 'on', 'sort' => 1, 'status' => 'on', 'required' => 1, 'variants' => ['']]);
+
         Attribute::create(['name' => 'Кузов', 'type' => 'string', 'is_visible' => 'on', 'sort' => 1, 'status' => 'on', 'required' => 1, 'variants' => ['Седан',
         'Хэтчбек',
         'Хэтчбек 3 дв.',
@@ -43,9 +45,15 @@ class CarAttributesTableSeeder extends Seeder
             'Атмосферный',
             'Газобаллонное оборудование']]);
 
+        Attribute::create(['name' => 'Объем', 'type' => 'string', 'is_visible' => 'on', 'sort' => 1, 'status' => 'on', 'required' => 1, 'variants' => ['']]);
+
         Attribute::create(['name' => 'Привод', 'type' => 'string', 'is_visible' => 'on', 'sort' => 1, 'status' => 'on', 'required' => 1, 'variants' => [
             'Передний',
             'Задний',
             'Полный']]);
+
+
+
+
     }
 }

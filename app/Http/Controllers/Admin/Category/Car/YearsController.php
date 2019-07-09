@@ -19,7 +19,7 @@ class YearsController extends Controller
     {
 //        Year::defaultOrder()->withDepth()->fixTree();
 
-        $query = Year::defaultOrder('ASC');
+        $query = Year::orderByDesc('name')->orderBy('created_at', 'ASC');
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);
@@ -108,7 +108,6 @@ class YearsController extends Controller
     public function destroy(Year $year)
     {
         $year->delete();
-
         return redirect()->back()->with('success', 'Год авто удалён!');
     }
 

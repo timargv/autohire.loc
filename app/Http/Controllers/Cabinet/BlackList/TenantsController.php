@@ -23,7 +23,10 @@ class TenantsController extends Controller
 
     public function index (Request $request) {
 
-        $query = BlackList::orderByDesc('id')->with(['author', 'author.avatar', 'comments', 'files', 'photos']);
+        $query = BlackList::orderByDesc('id')
+            ->where('author_id', Auth::id())
+            ->orWhere('status', BlackList::STATUS_ACTIVE)
+            ->with(['author', 'author.avatar', 'comments', 'files', 'photos']);
 
         if (!empty($value = $request->get('id'))) {
             $query->where('id', $value);
@@ -54,7 +57,7 @@ class TenantsController extends Controller
     }
 
     public function create() {
-        $this->checkAccessAddTenant(Auth::user());
+//        $this->checkAccessAddTenant(Auth::user());
         return view('cabinet.black-list-tenant.create');
     }
 

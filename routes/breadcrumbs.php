@@ -1,7 +1,7 @@
 <?php
 
 use App\Entity\Cars\Attribute;
-use App\Entity\Categories\Car\CarModel;
+use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use App\Entity\Tenant\BlackList;
 use App\Entity\User\Group;
@@ -223,19 +223,19 @@ Breadcrumbs::register('admin.categories.home', function (Crumbs $crumbs) {
 
 
 // == Admin Category Car Models
-Breadcrumbs::register('admin.categories.car.models.index', function (Crumbs $crumbs) {
+Breadcrumbs::register('admin.categories.car.brands.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.categories.home');
-    $crumbs->push(__('fillable.CarModels'), route('admin.categories.car.models.index'));
+    $crumbs->push(__('fillable.CarBrands'), route('admin.categories.car.brands.index'));
 });
 
-Breadcrumbs::register('admin.categories.car.models.create', function (Crumbs $crumbs) {
-    $crumbs->parent('admin.categories.car.models.index');
-    $crumbs->push(__('fillable.Create'), route('admin.categories.car.models.create'));
+Breadcrumbs::register('admin.categories.car.brands.create', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.categories.car.brands.index');
+    $crumbs->push(__('fillable.Create'), route('admin.categories.car.brands.create'));
 });
 
-Breadcrumbs::register('admin.categories.car.models.edit', function (Crumbs $crumbs, CarModel $model) {
-    $crumbs->parent('admin.categories.car.models.index');
-    $crumbs->push($model->name, route('admin.categories.car.models.edit', $model));
+Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crumbs, CarBrand $carBrand) {
+    $crumbs->parent('admin.categories.car.brands.index');
+    $crumbs->push($carBrand->name, route('admin.categories.car.brands.edit', $carBrand));
 });
 
 
