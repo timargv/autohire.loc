@@ -27,6 +27,19 @@ class UsersTableSeeder extends Seeder
             'about' => $faker->realText(1500, 5),
         ]);
 
+        User::create([
+            'name' => 'Timur',
+            'forename' => 'Timur',
+            'surname' => 'Rgv',
+            'patronymic' => '',
+            'email' => 'info@autohire.loc',
+            'password' => '$2y$10$L5aRc5gDSFDgKA/TTzQtFe17pztBd.KAkZmRl6oIFlnykL/chawzm',
+            'status' => 'active',
+            'role' => 'user',
+            'phone' => '9290076889',
+            'about' => $faker->realText(1500, 5),
+        ]);
+
         factory(User::class, 10)->create();
     }
 }

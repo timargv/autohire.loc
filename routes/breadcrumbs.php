@@ -74,9 +74,10 @@ Breadcrumbs::register('cabinet.adverts.index', function (Crumbs $crumbs) {
 });
 
 Breadcrumbs::register('cabinet.adverts.create', function (Crumbs $crumbs) {
-    $crumbs->parent('adverts.index');
+    $crumbs->parent('cabinet.adverts.index');
     $crumbs->push(__('fillable.Create'), route('cabinet.adverts.create'));
 });
+
 
 //Breadcrumbs::register('cabinet.adverts.create.region', function (Crumbs $crumbs, Category $category, Region $region = null) {
 //    $crumbs->parent('cabinet.adverts.create');

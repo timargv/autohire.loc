@@ -33,8 +33,8 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 
 
 
-        Route::group(['prefix' => 'black-list', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
 
+        Route::group(['prefix' => 'black-list', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
             Route::get('/tenants', 'TenantsController@index')->name('home');
             Route::get('/create', 'TenantsController@create')->name('create');
             Route::post('/story', 'TenantsController@story')->name('story');
@@ -55,18 +55,12 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 //        Route::resource('tickets', 'TicketController')->only(['index', 'show', 'create', 'store', 'destroy']);
 //        Route::post('tickets/{ticket}/message', 'TicketController@message')->name('tickets.message');
 
-//        Route::group([
-//            'prefix' => 'adverts',
-//            'as' => 'adverts.',
-//            'namespace' => 'Adverts',
-//            'middleware' => [App\Http\Middleware\FilledProfile::class],
-//        ], function () {
-//            Route::get('/', 'AdvertController@index')->name('index');
-//            Route::get('/create', 'CreateController@category')->name('create');
-//            Route::get('/create/region/{category}/{region?}', 'CreateController@region')->name('create.region');
-//            Route::get('/create/advert/{category}/{region?}', 'CreateController@advert')->name('create.advert');
-//            Route::post('/create/advert/{category}/{region?}', 'CreateController@store')->name('create.advert.store');
-//
+        Route::group(['prefix' => 'my/cars', 'as' => 'adverts.', 'namespace' => 'Adverts',], function () {
+            Route::get('/', 'AdvertController@index')->name('index');
+            Route::get('/create', 'AdvertController@create')->name('create');
+            Route::post('/create/advert', 'AdvertController@store')->name('create.advert.store');
+
+
 //            Route::get('/{advert}/edit', 'ManageController@editForm')->name('edit');
 //            Route::put('/{advert}/edit', 'ManageController@edit');
 //            Route::get('/{advert}/photos', 'ManageController@photosForm')->name('photos');
@@ -76,7 +70,7 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 //            Route::post('/{advert}/send', 'ManageController@send')->name('send');
 //            Route::post('/{advert}/close', 'ManageController@close')->name('close');
 //            Route::delete('/{advert}/destroy', 'ManageController@destroy')->name('destroy');
-//        });
+        });
 
 //        Route::group([
 //            'prefix' => 'banners',

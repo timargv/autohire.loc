@@ -109,9 +109,9 @@ class Advert extends Model
     //    Отнощения
     //    =============================
 
-    public function user()
+    public function author()
     {
-        return $this->belongsTo(User::class, 'user_id', 'id');
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 
     public function carBrand()
@@ -145,7 +145,7 @@ class Advert extends Model
 
     public function scopeForUser(Builder $query, User $user)
     {
-        return $query->where('user_id', $user->id);
+        return $query->where('author_id', $user->id);
     }
 
     public function scopeForCategory(Builder $query, CarBrand $carBrand)
