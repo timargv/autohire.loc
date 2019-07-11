@@ -71,7 +71,7 @@ Breadcrumbs::register('cabinet.profile.phone', function (Crumbs $crumbs) {
 // Cabinet Adverts
 Breadcrumbs::register('cabinet.adverts.index', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.home');
-    $crumbs->push(__('fillable.Advert'), route('cabinet.adverts.index'));
+    $crumbs->push(__('fillable.Adverts'), route('cabinet.adverts.index'));
 });
 
 Breadcrumbs::register('cabinet.adverts.create', function (Crumbs $crumbs) {

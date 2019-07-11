@@ -26,13 +26,13 @@
                                 {{ $car_advert->carBrand->name }}<span class="text-muted font-weight-light">{{ $car_advert->getCarAttributeModelValue($car_advert->values) }}</span>
                             </div>
                             <div class="small">{{ $car_advert->carYear->name }}</div>
-                            @if($car_advert->values)
-                                <div class="text-black-50">
-                                    @foreach($car_advert->values as $value)
-                                        {{ $value->value }}@if(!$loop->last), @endif
-                                    @endforeach
-                                </div>
-                            @endif
+{{--                            @if($car_advert->values)--}}
+{{--                                <div class="text-black-50">--}}
+{{--                                    @foreach($car_advert->values as $value)--}}
+{{--                                        {{ $value->value }}@if(!$loop->last), @endif--}}
+{{--                                    @endforeach--}}
+{{--                                </div>--}}
+{{--                            @endif--}}
 {{--                            @forelse($car_advert->attributes as $attribute)--}}
 {{--                                {{ $attribute->name }}--}}
 {{--                            @empty--}}

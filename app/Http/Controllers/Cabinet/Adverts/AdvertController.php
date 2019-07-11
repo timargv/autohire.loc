@@ -32,12 +32,17 @@ class AdvertController extends Controller
         if (!empty($value = $request->get('name'))) {
             $query->whereHas('values', function ($query) use ($value) {
                 $query->where('value', 'like', '%'.$value.'%');
-            })->orWhereHas('carBrand', function ($query) use ($value) {
+            })
+                ->orWhereHas('carBrand', function ($query) use ($value) {
                 $query->where('name', 'like', '%'.$value.'%');
-            })->orWhereHas('carYear', function ($query) use ($value) {
+            })
+                ->orWhereHas('carYear', function ($query) use ($value) {
                 $query->where('name', 'like', '%'.$value.'%');
-            })->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
+            })
+                ->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
         }
+
+
 
 
 
