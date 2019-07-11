@@ -59,6 +59,10 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::get('/', 'AdvertController@index')->name('index');
             Route::get('/create', 'AdvertController@create')->name('create');
             Route::post('/create/advert', 'AdvertController@store')->name('create.advert.store');
+            Route::get('/{carAdvert}', 'AdvertController@show')->name('show');
+            Route::get('/{carAdvert}/edit', 'AdvertController@edit')->name('edit');
+            Route::put('/carAdvert}/update', 'AdvertController@update')->name('advert.update');
+            Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
 
 
 //            Route::get('/{advert}/edit', 'ManageController@editForm')->name('edit');

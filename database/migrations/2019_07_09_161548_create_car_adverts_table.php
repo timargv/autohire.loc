@@ -25,7 +25,7 @@ class CreateCarAdvertsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('price_per_day'); // Цена за сутки
             $table->text('address')->nullable();
-            $table->string('status', 16);
+            $table->string('status', 16)->default(Advert::STATUS_MODERATION);
             $table->text('reject_reason')->nullable();  // Причина отклонения
             $table->timestamps();
         });
@@ -41,6 +41,7 @@ class CreateCarAdvertsTable extends Migration
             $table->increments('id');
             $table->integer('car_advert_id')->references('id')->on('car_adverts')->onDelete('CASCADE');
             $table->string('file');
+            $table->string('type', 16)->nullable();
         });
     }
 

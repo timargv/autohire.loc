@@ -1,5 +1,6 @@
-<form method="POST" action="{{ route('cabinet.adverts.create.advert.store') }}">
+<form id="edit-product-form" method="POST" action="{{ route('cabinet.adverts.advert.update', $carAdvert) }}">
     @csrf
+    @method('PUT')
     <div class="row">
 
         <div class="col-md-4">
@@ -8,7 +9,7 @@
                 <select id="car_brand" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_brand">
                     <option value="">&mdash; Выберите марку автомобиля</option>
                     @foreach ($car_brands as $car_brand)
-                        <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand') ? ' selected' : '' }}>
+                        <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand', $carAdvert->carBrand->id) ? ' selected' : '' }}>
                             @for ($i = 0; $i < $car_brand->depth; $i++) &mdash; @endfor
                             {{ $car_brand->name }}
                         </option>
@@ -25,7 +26,7 @@
                 <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year">
                     <option value="">&mdash; {{ __('fillable.CarYears') }} автомобиля</option>
                     @foreach ($car_years as $car_year)
-                        <option value="{{ $car_year->id }}"{{ $car_year->id == old('car_year') ? ' selected' : '' }}>
+                        <option value="{{ $car_year->id }}"{{ $car_year->id == old('car_year', $carAdvert->carYear->id) ? ' selected' : '' }}>
                             @for ($i = 0; $i < $car_year->depth; $i++) &mdash; @endfor
                             {{ $car_year->name }}
                         </option>
@@ -41,7 +42,7 @@
                 <label for="type_rental" class="col-form-label">{{ __('fillable.TypeRental') }}</label>
                 <select id="type_rental" class="form-control select2 {{ $errors->has('type_rental') ? ' is-invalid' : '' }}" name="type_rental">
                     @foreach ($types as $type => $label)
-                        <option value="{{ $type }}"{{ $type == old('type_rental') ? ' selected' : '' }}>{{ $label }}</option>
+                        <option value="{{ $type }}"{{ $type == old('type_rental', $carAdvert->type_rental) ? ' selected' : '' }}>{{ $label }}</option>
                     @endforeach;
                 </select>
                 @if ($errors->has('type_rental'))
@@ -63,7 +64,7 @@
                             <select id="attribute_{{ $attribute->id }}" class="form-control select2 select2-search--hide {{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]">
                                 <option value=""> &mdash; </option>
                                 @foreach ($attribute->variants as $variant)
-                                    <option value="{{ $variant }}"{{ $variant == old('attributes.' . $attribute->id) ? ' selected' : '' }}>
+                                    <option value="{{ $variant }}"{{ $variant == old('attributes.' . $attribute->id, $carAdvert->getValue($attribute->id)) ? ' selected' : '' }}>
                                         {{ $variant }}
                                     </option>
                                 @endforeach
@@ -71,16 +72,16 @@
 
                         @elseif ($attribute->isNumber())
 
-                            <input id="attribute_{{ $attribute->id }}" type="number" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id) }}">
+                            <input id="attribute_{{ $attribute->id }}" type="number" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id, $carAdvert->getValue($attribute->id)) }}">
 
                         @else
 
-                            <input id="attribute_{{ $attribute->id }}" type="text" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id) }}">
+                            <input id="attribute_{{ $attribute->id }}" type="text" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id, $carAdvert->getValue($attribute->id)) }}">
 
                         @endif
 
                         @if ($errors->has('parent'))
-                            <span class="invalid-feedback"><strong>{{ $errors->first('attributes.' . $attribute->id) }}</strong></span>
+                            <span class="invalid-feedback"><strong>{{ $errors->first('attributes.' . $attribute->id, $carAdvert->getValue($attribute->id)) }}</strong></span>
                         @endif
                     </div>
                 </div>
@@ -90,7 +91,7 @@
 
     <div class="form-group">
         <label for="price_per_day" class="col-form-label">{{ __('fillable.PricePerDay') }} РУБ.</label>
-        <input id="price_per_day" type="number" class="form-control{{ $errors->has('price_per_day') ? ' is-invalid' : '' }}" name="price_per_day" value="{{ old('price_per_day') }}" required>
+        <input id="price_per_day" type="number" class="form-control{{ $errors->has('price_per_day') ? ' is-invalid' : '' }}" name="price_per_day" value="{{ old('price_per_day', $carAdvert->price_per_day) }}" required>
         @if ($errors->has('price_per_day'))
             <span class="invalid-feedback"><strong>{{ $errors->first('price_per_day') }}</strong></span>
         @endif
@@ -100,7 +101,7 @@
         <label for="address" class="col-form-label">{{ __('fillable.Address') }}</label>
         <div class="row">
             <div class="col-md-12">
-                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address', $carAdvert->address) }}" required>
                 @if ($errors->has('address'))
                     <span class="invalid-feedback"><strong>{{ $errors->first('address') }}</strong></span>
                 @endif
@@ -110,7 +111,7 @@
 
     <div class="form-group">
         <label for="description" class="col-form-label">{{ __('fillable.Description') }}</label>
-        <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="5" required>{{ old('description') }}</textarea>
+        <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="5" required>{{ old('description', $carAdvert->description) }}</textarea>
         @if ($errors->has('description'))
             <span class="invalid-feedback"><strong>{{ $errors->first('description') }}</strong></span>
         @endif

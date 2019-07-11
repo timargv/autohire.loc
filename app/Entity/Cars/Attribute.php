@@ -2,6 +2,7 @@
 
 namespace App\Entity\Cars;
 
+use App\Entity\Cars\Advert\Value;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -63,5 +64,18 @@ class Attribute extends Model
     public function isSelect(): bool
     {
         return \count($this->variants) > 0;
+    }
+
+    /**
+     * @return Attribute[]
+     */
+    public static  function allAttributes() : array
+    {
+        return self::orderBy('sort')->getModels();
+    }
+
+
+    public function values() {
+        return $this->belongsTo(Value::class);
     }
 }

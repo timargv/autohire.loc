@@ -2,6 +2,7 @@
 
 namespace App\Entity\Cars\Advert;
 
+use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use App\User;
@@ -73,7 +74,7 @@ class Advert extends Model
     public function getValue($id)
     {
         foreach ($this->values as $value) {
-            if ($value->attribute_id === $id) {
+            if ($value->car_attribute_id === $id) {
                 return $value->value;
             }
         }
@@ -121,7 +122,7 @@ class Advert extends Model
 
     public function carYear()
     {
-        return $this->belongsTo(Year::class, 'car_years_id', 'id');
+        return $this->belongsTo(Year::class, 'car_year_id', 'id');
     }
 
     public function values()
@@ -129,9 +130,14 @@ class Advert extends Model
         return $this->hasMany(Value::class, 'car_advert_id', 'id');
     }
 
+    public function attributes ()
+    {
+        return $this->belongsToMany(Attribute::class, 'car_advert_values', 'car_advert_id', 'car_attribute_id');
+    }
+
     public function photos()
     {
-        return $this->hasMany(Photo::class, 'advert_id', 'id');
+        return $this->hasMany(Photo::class, 'car_advert_id', 'id');
     }
 
 
@@ -154,6 +160,33 @@ class Advert extends Model
             [$carBrand->id],
             $carBrand->descendants()->pluck('id')->toArray()
         ));
+    }
+
+
+
+    // Получить основную картинку
+    public function getMainPhoto ($photos)
+    {
+        return $photos->where('type', Photo::TYPE_MAIN_PHOTO)->first()
+            ? $photos->where('type', Photo::TYPE_MAIN_PHOTO)->get('file')
+            : 'https://vk.com/images/dquestion_app_widget_1_b.png';
+    }
+    
+    
+    // Получить тип аренды
+    public function getTypeRental ()
+    {
+        if (array_key_exists($this->type_rental, self::typeRental())) {
+            return self::typeRental()[$this->type_rental];
+        } return;
+    }
+
+
+    public function getCarAttributeModelValue ($values)
+    {
+        if ($value = $values->where('car_attribute_id', 1)->first()){
+            return ', '.$value['value'];
+        }
     }
 
 }

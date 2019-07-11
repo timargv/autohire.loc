@@ -1,5 +1,6 @@
 <?php
 
+use App\Entity\Cars\Advert\Advert;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
@@ -78,6 +79,15 @@ Breadcrumbs::register('cabinet.adverts.create', function (Crumbs $crumbs) {
     $crumbs->push(__('fillable.Create'), route('cabinet.adverts.create'));
 });
 
+Breadcrumbs::register('cabinet.adverts.edit', function (Crumbs $crumbs, Advert $carAdvert) {
+    $crumbs->parent('cabinet.adverts.show', $carAdvert);
+    $crumbs->push(__('fillable.Edit'), route('cabinet.adverts.edit', $carAdvert));
+});
+
+Breadcrumbs::register('cabinet.adverts.show', function (Crumbs $crumbs, Advert $carAdvert) {
+    $crumbs->parent('cabinet.adverts.index');
+    $crumbs->push($carAdvert->carBrand->name, route('cabinet.adverts.show', $carAdvert));
+});
 
 //Breadcrumbs::register('cabinet.adverts.create.region', function (Crumbs $crumbs, Category $category, Region $region = null) {
 //    $crumbs->parent('cabinet.adverts.create');

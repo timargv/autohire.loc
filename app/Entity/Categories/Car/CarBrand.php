@@ -5,6 +5,12 @@ namespace App\Entity\Categories\Car;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 
+/**
+ * @property string name
+ * @property string name_ru
+ * @property string status
+ * @property string slug
+ */
 class CarBrand extends Model
 {
 

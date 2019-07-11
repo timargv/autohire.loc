@@ -3,9 +3,13 @@
 namespace App\Http\Controllers\Cabinet\Adverts;
 
 use App\Entity\Cars\Advert\Advert;
+use App\Entity\Cars\Advert\Value;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
+use App\Http\Requests\Adverts\CreateRequest;
+use App\UseCases\CarAdverts\CarAdvertService;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -13,13 +17,37 @@ use Illuminate\Support\Facades\Auth;
 class AdvertController extends Controller
 {
 
-    public function index () {
-        $car_adverts = Advert::forUser(Auth::user())->orderByDesc('id')->with('carBrand')->paginate(20);
+    private $service;
+
+    public function __construct(CarAdvertService $service)
+    {
+        $this->service = $service;
+    }
+
+
+    public function index (Request $request) {
+        $query = Advert::forUser(Auth::user())->orderByDesc('id')->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
+
+
+        if (!empty($value = $request->get('name'))) {
+            $query->whereHas('values', function ($query) use ($value) {
+                $query->where('value', 'like', '%'.$value.'%');
+            })->orWhereHas('carBrand', function ($query) use ($value) {
+                $query->where('name', 'like', '%'.$value.'%');
+            })->orWhereHas('carYear', function ($query) use ($value) {
+                $query->where('name', 'like', '%'.$value.'%');
+            })->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
+        }
+
+
+
+        $car_adverts = $query->paginate(20);
+
+
         return view('cabinet.adverts.index', compact('car_adverts'));
     }
 
     public function create() {
-
         $car_brands = CarBrand::all();
         $car_years = Year::all();
         $types = Advert::typeRental();
@@ -27,4 +55,29 @@ class AdvertController extends Controller
         return view('cabinet.adverts.create', compact('car_brands', 'car_years', 'types', 'attributes'));
     }
 
+
+    public function store (CreateRequest $request)
+    {
+        try {
+            $carAdvert = $this->service->create(Auth::id(), $request);
+        } catch (\DomainException $e) {
+            return back()->with('status', $e->getMessage());
+        }
+
+        return redirect()->route('cabinet.adverts.show', compact('carAdvert'));
+    }
+
+    public function show (Advert $carAdvert)
+    {
+        return view('cabinet.adverts.show', compact('carAdvert'));
+    }
+
+    public function edit (Advert $carAdvert) {
+
+        $car_brands = CarBrand::all();
+        $car_years = Year::all();
+        $types = Advert::typeRental();
+        $attributes = Attribute::all();
+        return view('cabinet.adverts.edit', compact('carAdvert','car_brands', 'car_years', 'types', 'attributes'));
+    }
 }

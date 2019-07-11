@@ -3,7 +3,7 @@
         <table class="table table-borderless table-responsive-sm bg-white">
             <thead class="thead-light">
             <tr>
-                <th rowspan="5">
+                <th colspan="5">
                     <div class="row">
                         <div class="col-6">Мои объявления</div>
                         <div class="col-6">
@@ -16,12 +16,34 @@
             <tbody>
                 @forelse($car_adverts as $car_advert)
                     <tr>
-                        <td>{{ $car_advert->getMainImage() }}</td>
-                        <td>{{ $car_advert->carBrand->name }}</td>
-                        <td>{{ $car_advert->carYear->name }}</td>
-                        <td class="pr-0">
-                            <div class="d-flex flex-row-reverse justify-content-end">
-                                <a href="{{ route('cabinet.adverts.edit', $car_advert) }}"><i class="fas fa-edit text-black-50"></i></a>
+                        <td width="65px">
+                            <div class="w-100 position-relative">
+                                <img src="{{ $car_advert->getMainPhoto($car_advert->photos) }}" class="rounded w-100 " alt="...">
+                            </div>
+                        </td>
+                        <td>
+                            <div class="font-weight-bold">
+                                {{ $car_advert->carBrand->name }}<span class="text-muted font-weight-light">{{ $car_advert->getCarAttributeModelValue($car_advert->values) }}</span>
+                            </div>
+                            <div class="small">{{ $car_advert->carYear->name }}</div>
+                            @if($car_advert->values)
+                                <div class="text-black-50">
+                                    @foreach($car_advert->values as $value)
+                                        {{ $value->value }}@if(!$loop->last), @endif
+                                    @endforeach
+                                </div>
+                            @endif
+{{--                            @forelse($car_advert->attributes as $attribute)--}}
+{{--                                {{ $attribute->name }}--}}
+{{--                            @empty--}}
+
+{{--                            @endforelse--}}
+                        </td>
+                        <td>{{ $car_advert->getTypeRental() }}</td>
+                        <td>{{ $car_advert->price_per_day }} ₽</td>
+                        <td class="pr-0" width="65px">
+                            <div class="d-flex justify-content-end">
+                                <a class="btn btn-sm btn-link" href="{{ route('cabinet.adverts.edit', ['carAdvert' => $car_advert]) }}"><i class="fas fa-edit text-black-50"></i></a>
                                 <form method="POST" action="{{ route('cabinet.adverts.destroy', $car_advert) }}" class="mr-1">
                                     @csrf
                                     @method('DELETE')
