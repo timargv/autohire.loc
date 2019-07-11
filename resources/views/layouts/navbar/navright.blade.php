@@ -15,6 +15,9 @@
                 <a class="nav-link font-weight-bold" href="{{ route('admin.home') }}">{{ __('menu.Admin') }}</a>
             </li>
         @endcan
+        <li class="nav-item">
+            <a class="nav-link font-weight-light py-1 mt-1 rounded bg-success  text-white" href="{{ route('cabinet.adverts.create') }}"><i style="font-size: 18px; position:relative; top: 2px" class="fal fa-plus-circle mr-1"></i>{{ __('menu.AddAdvert') }}</a>
+        </li>
         <li class="nav-item dropdown">
             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }} <span class="caret"></span>
@@ -22,6 +25,7 @@
 
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="{{ route('cabinet.home') }}">{{ __('menu.Cabinet') }}</a>
+                <a class="dropdown-item" href="{{ route('cabinet.adverts.index') }}">{{ __('menu.MyAdverts') }}</a>
                 <a class="dropdown-item" href="{{ route('logout') }}"
                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
