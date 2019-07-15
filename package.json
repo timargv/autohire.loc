@@ -24,7 +24,9 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "@fancyapps/fancybox": "^3.5.7",
         "@ttskch/select2-bootstrap4-theme": "^1.2.2",
+        "autonumeric": "^4.5.4",
         "select2": "^4.0.7"
     }
 }

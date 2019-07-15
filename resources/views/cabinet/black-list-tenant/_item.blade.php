@@ -3,7 +3,7 @@
         <table class="table table-borderless table-responsive-sm bg-white">
             <thead class="thead-light">
             <tr>
-                <th width="60px">ID</th>
+{{--                <th width="60px">ID</th>--}}
                 <th width="50px">{{__('fillable.Photo')}}</th>
                 <th>{{__('fillable.Name')}}</th>
 {{--                <th>{{__('fillable.City')}}</th>--}}
@@ -15,7 +15,7 @@
             @foreach ($tenants as $tenant)
             @can('manage-own-black-list', $tenant)
                 <tr>
-                <td>{{ $tenant->id }}</td>
+{{--                <td>{{ $tenant->id }}</td>--}}
                 <td>
                     @if(count($tenant->photos))
                     <div class="w-100 position-relative">

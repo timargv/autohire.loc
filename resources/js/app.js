@@ -6,6 +6,8 @@
 
 require('./bootstrap');
 require('select2');
+window.AutoNumeric = require('autonumeric/dist/autoNumeric.min');
+require('@fancyapps/fancybox/dist/jquery.fancybox');
 // window.Vue = require('vue');
 
 /**
@@ -32,8 +34,30 @@ require('select2');
 // });
 
 
-$('[data-toggle="tooltip"]').tooltip();
+const autoNumericOptionsRuble = {
+    currencySymbol: "\u202f ₽",
+    currencySymbolPlacement: "s",
+    decimalCharacterAlternative: ".",
+    digitGroupSeparator: " ",
+    minimumValue: "0",
+    decimalPlaces: "0"
+};
 
-$('.select2').select2({
-    theme: 'bootstrap4',
+$(document).ready(function() {
+
+    $('[data-toggle="tooltip"]').tooltip();
+
+    $('.select2').select2({
+        theme: 'bootstrap4',
+    });
+
+    AutoNumeric.multiple('#priceCarAdvert', autoNumericOptionsRuble);
+
+    $('[data-fancybox="images"]').fancybox({
+        thumbs : {
+            autoStart : true
+        }
+    })
+
 });
+

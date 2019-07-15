@@ -31,7 +31,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="custom-control custom-switch " data-toggle="tooltip" data-placement="top" title="Показать только мои">
+                    <div class="custom-control mb-3 ml-3 mb-md-0 custom-switch " data-toggle="tooltip" data-placement="top" title="Показать только мои">
                         <input type="checkbox" class="custom-control-input" id="onlyMy" name="onlyMy" {{ request('onlyMy') ? ' checked' : '' }}>
                         <label class="custom-control-label" for="onlyMy" ></label>
                     </div>

@@ -46,6 +46,7 @@ class Advert extends Model
     protected $table = 'car_adverts';
     protected $guarded = ['id'];
 
+    protected $with = ['photos', 'carBrand', 'carYear', 'values', 'attributes'];
 
 
     //  Массив из типа аренды авто
@@ -167,9 +168,29 @@ class Advert extends Model
     // Получить основную картинку
     public function getMainPhoto ($photos)
     {
-        return $photos->where('type', Photo::TYPE_MAIN_PHOTO)->first()
-            ? $photos->where('type', Photo::TYPE_MAIN_PHOTO)->get('file')
-            : 'https://vk.com/images/dquestion_app_widget_1_b.png';
+        $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
+
+        foreach ($photos as $photo) {
+            if ($photo->type === Photo::TYPE_MAIN_PHOTO) {
+                $photoMain = $photo->file;
+            }
+        }
+
+        return $photoMain;
+    }
+
+    // Получить основную картинку
+    public function getMainPhotoModel ($photos)
+    {
+        $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
+
+        foreach ($photos as $photo) {
+            if ($photo->type === Photo::TYPE_MAIN_PHOTO) {
+                $photoMain = $photo;
+            }
+        }
+
+        return $photoMain;
     }
     
     
@@ -185,8 +206,19 @@ class Advert extends Model
     public function getCarAttributeModelValue ($values)
     {
         if ($value = $values->where('car_attribute_id', 1)->first()){
-            return ', '.$value['value'];
+            return $value['value'];
         }
+    }
+
+
+    public function photosCount ()
+    {
+        $maxPhotos = 30;
+        $countPhotos = count($this->photos()->get());
+
+        if ($countPhotos <= $maxPhotos && $this->photos()->count() > 0) {
+            return $maxPhotos - $countPhotos;
+        } return $maxPhotos;
     }
 
 }

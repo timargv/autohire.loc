@@ -23,4 +23,8 @@ class Value extends Model
         return $this->belongsTo(Advert::class);
     }
 
+    public function getCarAttribute ($id) {
+        return Attribute::findOrFail($id);
+    }
+
 }

@@ -89,6 +89,13 @@ Breadcrumbs::register('cabinet.adverts.show', function (Crumbs $crumbs, Advert $
     $crumbs->push($carAdvert->carBrand->name, route('cabinet.adverts.show', $carAdvert));
 });
 
+
+// Cabinet Adverts Photos
+Breadcrumbs::register('cabinet.adverts.photos', function (Crumbs $crumbs, Advert $carAdvert) {
+    $crumbs->parent('cabinet.adverts.show', $carAdvert);
+    $crumbs->push(__('fillable.Photos'), route('cabinet.adverts.photos', $carAdvert));
+});
+
 //Breadcrumbs::register('cabinet.adverts.create.region', function (Crumbs $crumbs, Category $category, Region $region = null) {
 //    $crumbs->parent('cabinet.adverts.create');
 //    $crumbs->push($category->name, route('cabinet.adverts.create.region', [$category, $region]));

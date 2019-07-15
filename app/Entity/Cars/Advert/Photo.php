@@ -4,6 +4,9 @@ namespace App\Entity\Cars\Advert;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @property string file
+ */
 class Photo extends Model
 {
 
@@ -12,7 +15,7 @@ class Photo extends Model
     protected $table = 'car_advert_photos';
 
 
-    protected $fillable = ['file', 'car_advert_id', 'type'];
+    protected $fillable = ['file', 'type'];
     public $timestamps = false;
 
 }

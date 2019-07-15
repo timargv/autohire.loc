@@ -61,8 +61,15 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::post('/create/advert', 'AdvertController@store')->name('create.advert.store');
             Route::get('/{carAdvert}', 'AdvertController@show')->name('show');
             Route::get('/{carAdvert}/edit', 'AdvertController@edit')->name('edit');
-            Route::put('/carAdvert}/update', 'AdvertController@update')->name('advert.update');
+            Route::put('/{carAdvert}/update', 'AdvertController@update')->name('update');
             Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
+
+
+            Route::get('/{carAdvert}/photos', 'AdvertController@photosForm')->name('photos');
+            Route::post('/{carAdvert}/photos', 'AdvertController@photos');
+
+            Route::get('/{carAdvert}/{photo}/main', 'AdvertController@mainPhoto')->name('main.photo');
+            Route::delete('/{carAdvert}/{photo}/destroy', 'AdvertController@destroyPhoto')->name('delete.photo');
 
 
 //            Route::get('/{advert}/edit', 'ManageController@editForm')->name('edit');

@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Entity\Cars\Advert\Advert;
 use App\Entity\Tenant\BlackList;
 use App\Entity\Tenant\BlackListComment;
 use App\User;
@@ -88,9 +89,9 @@ class AuthServiceProvider extends ServiceProvider
 //        });
 
 //
-//        Gate::define('manage-own-advert', function (User $user, Advert $advert) {
-//            return $advert->user_id === $user->id;
-//        });
+        Gate::define('manage-own-advert', function (User $user, Advert $carAdvert) {
+            return $carAdvert->author_id === $user->id;
+        });
 //
 //        Gate::define('manage-own-banner', function (User $user, Banner $banner) {
 //            return $banner->user_id === $user->id;
