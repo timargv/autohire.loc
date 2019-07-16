@@ -1,53 +1,65 @@
 
-<div class="row">
-    <div class="d-flex flex-wrap ml-3">
-        @if($mainPhoto = $carAdvert->getMainPhotoModel($carAdvert->photos))
+<div class="row pl-3 pr-3">
+        @if(count($carAdvert->photos))
+            @if($mainPhoto = $carAdvert->getMainPhotoModel($carAdvert->photos))
 
-            @if(Storage::disk('public')->exists('car-adverts/item/'. $mainPhoto->file))
-                <div class="mb-1 pr-1 position-relative">
-                    <img class="img-responsive border-0 " src="{{ Storage::disk('public')->url('car-adverts/item/'. $mainPhoto->file) }}" >
-                    <div class="btn-group position-absolute fixed-bottom">
-                        <form method="POST" action="{{ route('cabinet.adverts.delete.photo', [$carAdvert, $mainPhoto]) }}" class="mr-1">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title=""><i class="fas fa-trash text-black-50"></i></button>
-                        </form>
-                        <a class="btn btn-sm btn-link" href="{{ route('cabinet.adverts.main.photo', [$carAdvert, $mainPhoto]) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Сделать Главным"><i class="fas fa-check-circle"></i></a>
-                    </div>
-                </div>
-            @else
-                <img src="{{ $carAdvert->getMainPhoto() }}" class="rounded w-100 " alt="...">
-            @endif
-        @endif
-
-
-
-        @foreach($carAdvert->photos as $photo)
-            @if (Storage::disk('public')->exists('car-adverts/thumbnail/'. $photo->file))
-                @if($photo->type == null)
-                    <div class="mb-1 pr-1 position-relative">
-                        <img class="img-responsive border-0 " src="{{ Storage::disk('public')->url('car-adverts/item/'. $photo->file) }}" >
+                @if(Storage::disk('public')->exists('car-adverts/item/'. $mainPhoto->file))
+                    <div class="mb-1 px-0 mr-1 position-relative col-1">
+                        <img class="img-responsive rounded border-0 w-100" src="{{ Storage::disk('public')->url('car-adverts/item/'. $mainPhoto->file) }}" >
                         <div class="btn-group position-absolute fixed-bottom">
-                            <form method="POST" action="{{ route('cabinet.adverts.delete.photo', [$carAdvert, $photo]) }}" class="mr-1">
+                            <form method="POST" action="{{ route('cabinet.adverts.delete.photo', [$carAdvert, $mainPhoto]) }}" class="w-100">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title=""><i class="fas fa-trash text-black-50"></i></button>
+                                <div class="d-flex">
+                                    <div class="">
+                                        <button class="btn btn-sm btn-link " data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('button.Delete') }}"><i class="fas fa-trash text-danger"></i></button>
+                                    </div>
+                                    <div class="ml-auto">
+                                        <a class="btn btn-sm btn-link" href="{{ route('cabinet.adverts.main.photo', [$carAdvert, $mainPhoto]) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Сделать Главным"><i class="fas fa-check-circle"></i></a>
+                                    </div>
+                                </div>
                             </form>
-                            <a class="btn btn-sm btn-link" href="{{ route('cabinet.adverts.main.photo', [$carAdvert, $photo]) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Сделать Главным"><i class="fas fa-check-circle"></i></a>
                         </div>
                     </div>
+                @else
+                    <img src="{{ $carAdvert->getMainPhoto() }}" class="rounded w-100 " alt="...">
                 @endif
             @endif
-        @endforeach
 
-        <a class="mb-1 px-3 pt-3 pb-2 border-light shadow-sm text-black-50 text-center d-flex align-items-center text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
+
+
+            @foreach($carAdvert->photos as $photo)
+                @if (Storage::disk('public')->exists('car-adverts/thumbnail/'. $photo->file))
+                    @if($photo->type == null)
+                        <div class="mb-1 mr-1 px-0 position-relative col-1">
+                            <img class="img-responsive rounded border-0 w-100" src="{{ Storage::disk('public')->url('car-adverts/item/'. $photo->file) }}">
+                            <div class="btn-group position-absolute fixed-bottom">
+                                <form method="POST" action="{{ route('cabinet.adverts.delete.photo', [$carAdvert, $photo]) }}" class="w-100">
+                                    @csrf
+                                    @method('DELETE')
+                                    <div class="d-flex">
+                                        <div class="">
+                                            <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="" data-original-title="{{ __('button.Delete') }}"><i class="fas fa-trash text-danger"></i></button>
+                                        </div>
+                                        <div class="ml-auto">
+                                            <a class="btn btn-sm btn-link" href="{{ route('cabinet.adverts.main.photo', [$carAdvert, $photo]) }}" data-toggle="tooltip" data-placement="top" title="" data-original-title="Сделать Главным"><i class="fas fa-check-circle"></i></a>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    @endif
+                @endif
+            @endforeach
+        @endif
+
+        <a class="mb-1 px-3 pt-1 pb-1 rounded border-light shadow-sm text-white-50 bg-secondary text-center d-flex align-items-center text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
             <span class="align-content-center">
                 <i class="mt-1 fal fa-plus-circle fa-2x"></i><br />
                 <span class="small">Осталось {{ $carAdvert->photosCount() }} фото</span>
             </span>
         </a>
 
-    </div>
 
 </div>
 

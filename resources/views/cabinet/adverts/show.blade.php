@@ -20,15 +20,12 @@
                             <td width="130px" class="pl-0 text-black-50">{{ __('Год выпуска') }}</td>
                             <th>{{ $carAdvert->carYear->name }}</th>
                         </tr>
-                        @foreach($carAdvert->values as $value)
-                            @php
-                                $attributeName = $value->getCarAttribute($value->car_attribute_id)->name;
-                            @endphp
 
-                            @continue($attributeName === 'Модель')
+                        @foreach($carAttributes as $carAttribute)
+                            @continue($carAttribute->name === 'Модель')
                             <tr>
-                                <td width="130px" class="pl-0 text-black-50">{{ $attributeName }}</td>
-                                <th>{{ $value->value }} @if($attributeName === 'Объем') л. @endif</th>
+                                <td width="130px" class="pl-0 text-black-50">{{ $carAttribute->name }}</td>
+                                <th>{{ $carAttribute->value }} </th>
                             </tr>
                         @endforeach
 
@@ -36,30 +33,31 @@
                 </div>
                 <div class="col-md-7 col-12">
                     <div class="images mb-4">
-{{--                        @foreach($carAdvert->photos as $photo)--}}
-{{--                            {{ $photo }}--}}
-{{--                        @endforeach--}}
-                            <a href="https://avatars.mds.yandex.net/get-autoru-vos/2141545/d6c8ada114d07f95eb39f8aa3f6563ef/1200x900n" data-fancybox="images"  class="main-photo mb-3 d-block">
-                                <img src="https://avatars.mds.yandex.net/get-autoru-vos/2141545/d6c8ada114d07f95eb39f8aa3f6563ef/1200x900n" class="w-100" />
+                        @if(count($carAdvert->photos))
+                            <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $mainCarImage) }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
+                                <img src="{{ Storage::disk('public')->url('car-adverts/large/'. $mainCarImage) }}" class="w-100"> />
                             </a>
+                        @else
+                            <a href="{{ $mainCarImage }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
+                                <img src="{{ $mainCarImage }}" class="h-100" />
+                            </a>
+                        @endif
 
-                            <div class="row mr-0">
-                                <a href="https://source.unsplash.com/93Cn9VXuFIM/1500x1000" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0 outline">
-                                    <img src="https://source.unsplash.com/93Cn9VXuFIM/180x120" class="w-100" />
+                        <div class="row mr-0">
+                            @foreach($carAdvert->photos as $photo)
+                                @continue($photo->type)
+                                <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $photo->file) }}" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0 outline">
+                                    <img src="{{ Storage::disk('public')->url('car-adverts/small/'. $photo->file) }}" class="w-100" />
                                 </a>
+                            @endforeach
 
-                                <a href="https://source.unsplash.com/random/1500x1000" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0">
-                                    <img src="https://source.unsplash.com/random/180x120"  class="w-100" />
+                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" class="mb-2 col-6 ml-3 col-md-2 px-0 py-2 pr-0 outline text-black-50 bg-light text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
+                                    <span class="">
+                                        <i class="mt-1 fal fa-plus-circle fa-2x"></i><br />
+                                        <span class="small">Осталось {{ $carAdvert->photosCount() }} фото</span>
+                                    </span>
                                 </a>
-
-                                <a href="https://source.unsplash.com/6SLdXXVYQpo/1500x1000" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0">
-                                    <img src="https://source.unsplash.com/6SLdXXVYQpo/180x120" class="w-100" />
-                                </a>
-
-                                <a href="https://source.unsplash.com/t7_nn4rHsRA/1500x1000" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0">
-                                    <img src="https://source.unsplash.com/t7_nn4rHsRA/180x120" class="w-100" />
-                                </a>
-                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

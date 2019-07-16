@@ -68,7 +68,7 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::get('/{carAdvert}/photos', 'AdvertController@photosForm')->name('photos');
             Route::post('/{carAdvert}/photos', 'AdvertController@photos');
 
-            Route::get('/{carAdvert}/{photo}/main', 'AdvertController@mainPhoto')->name('main.photo');
+            Route::get('/{carAdvert}/photo/{photo}/main', 'AdvertController@mainPhoto')->name('main.photo');
             Route::delete('/{carAdvert}/{photo}/destroy', 'AdvertController@destroyPhoto')->name('delete.photo');
 
 

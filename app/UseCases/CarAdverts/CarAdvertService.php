@@ -160,11 +160,11 @@ class CarAdvertService
                 $fileName = $carAdvert->id.'-'.uniqid().'-'. (new \DateTime)->getTimeStamp() . '.png';
 
                 $img->save($path . $fileName);
-                $img->fit(1000, 1000, function ($image) { $image->upsize(); })->save($largePath .$fileName, 100);
-                $img->fit(450, 450, function ($image) { $image->upsize(); })->save($middlePath . $fileName, 100);
-                $img->fit(150, 150, function ($image) { $image->upsize(); })->save($smallPath . $fileName, 100);
-                $img->fit(320, 320, function ($image) { $image->upsize(); })->save($thumbPath . $fileName, 100);
-                $img->fit(80, 80, function ($image) { $image->upsize(); })->save($itemPath . $fileName, 100);
+                $img->fit(1024, 768, function ($image) { $image->upsize(); })->save($largePath .$fileName, 100);
+                $img->fit(800, 600, function ($image) { $image->upsize(); })->save($middlePath . $fileName, 100);
+                $img->fit(512, 384, function ($image) { $image->upsize(); })->save($smallPath . $fileName, 100);
+                $img->fit(320, 240, function ($image) { $image->upsize(); })->save($thumbPath . $fileName, 100);
+                $img->fit(256, 192, function ($image) { $image->upsize(); })->save($itemPath . $fileName, 100);
 
 
                 if ($key == 0) {
@@ -185,6 +185,17 @@ class CarAdvertService
             $carAdvert->update();
 
         });
+    }
+
+    public function makePhotoMain ($carAdvertId, $photoId) : void
+    {
+
+        $carAdvert = $this->getCarAdvert($carAdvertId);
+        $carPhoto = $this->getCarPhoto($photoId);
+
+        $carAdvert->photos()->update(['type' => '']);
+        $carAdvert->photos()->where('id', $carPhoto->id)->update(['type' => Photo::TYPE_MAIN_PHOTO]);
+
     }
 
     public function deletePhoto ($id, $photoId)

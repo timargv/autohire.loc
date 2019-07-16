@@ -72,7 +72,12 @@ class AdvertController extends Controller
 
     public function show (Advert $carAdvert)
     {
-        return view('cabinet.adverts.show', compact('carAdvert'));
+        $mainCarImage = $carAdvert->getMainPhoto($carAdvert->photos);
+        $carAttributes = $carAdvert->values()
+            ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
+            ->join('car_adverts', 'car_adverts.id', '=', 'car_advert_values.car_advert_id')
+            ->select('car_attributes.name', 'car_advert_values.value')->get();
+        return view('cabinet.adverts.show', compact('carAdvert', 'carAttributes', 'mainCarImage'));
     }
 
     public function edit (Advert $carAdvert) {
@@ -114,6 +119,18 @@ class AdvertController extends Controller
         }
 
         return redirect()->route('cabinet.adverts.show', $carAdvert)->with('success', 'Фото добавлено!');
+    }
+
+    public function mainPhoto (Advert $carAdvert, Photo $photo) {
+        $this->checkAccess($carAdvert);
+
+        try {
+            $this->service->makePhotoMain($carAdvert->id, $photo->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('cabinet.adverts.show', $carAdvert)->with('success', 'Главное фото изменено!');
     }
 
     public function destroyPhoto (Advert $carAdvert, Photo $photo)
