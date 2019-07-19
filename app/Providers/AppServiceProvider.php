@@ -7,6 +7,7 @@ use App\Entity\Tenant\BlackListComment;
 use App\Entity\Tenant\BlackListPhoto;
 use App\Entity\User\Avatar;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -29,6 +30,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        Schema::defaultStringLength(191);
+
         view()->composer('admin.users._nav_user', function($view){
             $view->with('countModerationAvatars', Avatar::countModerationAvatars());
         });
