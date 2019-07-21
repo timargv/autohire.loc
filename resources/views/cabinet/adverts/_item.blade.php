@@ -20,7 +20,7 @@
                             <a href="{{ route('cabinet.adverts.show', $car_advert) }}" class="w-100 position-relative">
                                 @if($mainPhoto = $car_advert->getMainPhoto($car_advert->photos))
                                     @if(Storage::disk('public')->exists('car-adverts/item/'. $mainPhoto))
-                                        <img src="{{ Storage::disk('public')->url('car-adverts/item/'. $mainPhoto) }}" class="rounded w-100 " alt="...">
+                                        <img src="{{ Storage::disk('public')->url('car-adverts/item/'. $mainPhoto) }}" class="rounded w-100 " alt="..." style="width: 65px !important;">
                                     @else
                                         <img src="{{ $mainPhoto }}" class="rounded w-100 " alt="...">
                                     @endif
