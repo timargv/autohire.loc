@@ -98,7 +98,7 @@ class ProfileService
         ]);
         $user->avatar()->delete();
     }
-    
+
 
     private function pathAvatarDelete()
     {
@@ -121,3 +121,4 @@ class ProfileService
 
 
 }
+
