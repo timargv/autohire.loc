@@ -57,6 +57,7 @@ class BlackListService
                 'status'    => BlackList::STATUS_MODERATION
             ]);
 
+            // ssh test
             $blacklistTenant->saveOrFail();
 
             if ($request['photo']) {
