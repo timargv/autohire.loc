@@ -21,11 +21,11 @@ class BlackListService
     public function pathPhoto()
     {
         $paths = [
-            'original' => public_path() . '\storage\user\black-tenant\images\original\\',
-            'blur' => public_path() . '\storage\user\black-tenant\images\blur\\',
-            'small' => public_path() . '\storage\user\black-tenant\images\small\\',
-            'medium' => public_path() . '\storage\user\black-tenant\images\medium\\',
-            'large' => public_path() . '\storage\user\black-tenant\images\large\\',
+            'original' => public_path() . '/storage/user/black-tenant/images/original/',
+            'blur' => public_path() . '/storage/user/black-tenant/images/blur/',
+            'small' => public_path() . '/storage/user/black-tenant/images/small/',
+            'medium' => public_path() . '/storage/user/black-tenant/images/medium/',
+            'large' => public_path() . '/storage/user/black-tenant/images/large/',
         ];
         return $paths;
     }
@@ -33,11 +33,11 @@ class BlackListService
     public function pathFile()
     {
         $paths = [
-            'original' => public_path() . '\storage\user\black-tenant\files\original\\',
-            'blur' => public_path() . '\storage\user\black-tenant\files\blur\\',
-            'small' => public_path() . '\storage\user\black-tenant\files\small\\',
-            'medium' => public_path() . '\storage\user\black-tenant\files\medium\\',
-            'large' => public_path() . '\storage\user\black-tenant\files\large\\',
+            'original' => public_path() . '/storage/user/black-tenant/images/original/',
+            'blur' => public_path() . '/storage/user/black-tenant/images/blur/',
+            'small' => public_path() . '/storage/user/black-tenant/images/small/',
+            'medium' => public_path() . '/storage/user/black-tenant/images/medium/',
+            'large' => public_path() . '/storage/user/black-tenant/images/large/',
         ];
         return $paths;
     }
@@ -90,11 +90,11 @@ class BlackListService
 
              $img = Image::make($request['photo']);
              if (!file_exists($path) && !file_exists($smallPath) && !file_exists($blurPath) && !file_exists($middlePath) && !file_exists($largePath)) {
-                 mkdir($path, 666, true);
-                 mkdir($blurPath, 666, true);
-                 mkdir($smallPath, 666, true);
-                 mkdir($middlePath, 666, true);
-                 mkdir($largePath, 666, true);
+                 mkdir($path, 0755, true);
+                 mkdir($blurPath, 0755, true);
+                 mkdir($smallPath, 0755, true);
+                 mkdir($middlePath, 0755, true);
+                 mkdir($largePath, 0755, true);
              }
 
              $fileName = $userId.'-'.uniqid().'-'. (new \DateTime)->getTimeStamp() . '.png';
@@ -150,12 +150,23 @@ class BlackListService
 
         if (!$photo) {return;}
         Storage::disk('public')->delete([
-            '\user\black-tenant\images\original\\'.$photo->photo,
-            '\user\black-tenant\images\small\\'.$photo->photo,
-            '\user\black-tenant\images\medium\\'.$photo->photo,
-            '\user\black-tenant\images\large\\'.$photo->photo,
+            $this->pathPhotoDelete()['original'].$photo->photo,
+            $this->pathPhotoDelete()['small'].$photo->photo,
+            $this->pathPhotoDelete()['medium'].$photo->photo,
+            $this->pathPhotoDelete()['large'].$photo->photo,
         ]);
         $photo->delete();
+    }
+
+    private function pathPhotoDelete()
+    {
+        $paths = [
+          'original' => '/user/black-tenant/images/original/',
+          'small' => '/user/black-tenant/images/small/',
+          'medium' => '/user/black-tenant/images/medium/',
+          'large' => '/user/black-tenant/images/large/',
+        ];
+        return $paths;
     }
 
 
