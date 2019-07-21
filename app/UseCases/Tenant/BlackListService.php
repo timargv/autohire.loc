@@ -74,12 +74,14 @@ class BlackListService
 
     }
 
+    public function ($) {
+      // code...
+    }
 
 
     public function addPhotoMain($userId, $request, $blackListId) : void
     {
         $tenant = $this->getTenant($blackListId);
-
 
         $this->deletePhotoMainTenant($blackListId);
 
@@ -129,8 +131,6 @@ class BlackListService
 
          });
     }
-
-
 
     public function addFile($userId, BlackListFileRequest $request, $blackListId)
     {
