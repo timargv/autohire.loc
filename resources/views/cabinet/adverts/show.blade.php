@@ -55,7 +55,7 @@
                                     <div class="bg-light py-2 h-100">
                                         <i class="mt-1 fal fa-plus-circle fa-2x"></i><br />
                                         <span class="small">Осталось {{ $carAdvert->photosCount() }} фото</span>
-                                    </span>
+                                    </div>
                                 </a>
                         </div>
                     </div>
