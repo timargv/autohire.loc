@@ -220,9 +220,8 @@ class CarAdvertService
         $carAdvert->photos()->inRandomOrder()->take(1)->update([
             'type' => Photo::TYPE_MAIN_PHOTO,
         ]);
-
-
     }
+    
 
     private function getCarAdvert($id) : Advert
     {
