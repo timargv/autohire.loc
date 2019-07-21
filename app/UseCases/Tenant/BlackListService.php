@@ -74,11 +74,6 @@ class BlackListService
 
     }
 
-    public function ($) {
-      // code...
-    }
-
-
     public function addPhotoMain($userId, $request, $blackListId) : void
     {
         $tenant = $this->getTenant($blackListId);
