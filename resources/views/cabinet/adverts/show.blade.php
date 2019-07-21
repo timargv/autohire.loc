@@ -51,8 +51,8 @@
                                 </a>
                             @endforeach
 
-                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" class="mb-2 col-6 ml-3 col-md-2 px-0 py-2 pr-0 outline text-black-50 bg-light text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
-                                    <span class="">
+                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" class="mb-2 col-6 col-md-3 pr-0 outline text-black-50  text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
+                                    <div class="bg-light py-2 h-100">
                                         <i class="mt-1 fal fa-plus-circle fa-2x"></i><br />
                                         <span class="small">Осталось {{ $carAdvert->photosCount() }} фото</span>
                                     </span>
