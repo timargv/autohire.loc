@@ -16,11 +16,11 @@ class ProfileService
     public function pathPhoto()
     {
         $paths = [
-            'original' => public_path() . '\storage\user\avatar\original\\',
-            'small' => public_path() . '\storage\user\avatar\small\\',
-            'blur' => public_path() . '\storage\user\avatar\blur\\',
-            'medium' => public_path() . '\storage\user\avatar\medium\\',
-            'large' => public_path() . '\storage\user\avatar\large\\',
+            'original' => public_path() . '/storage/user/avatar/original/',
+	        'small' => public_path() . '/storage/user/avatar/small/',
+	        'blur' => public_path() . '/storage/user/avatar/blur/',
+	        'medium' => public_path() . '/storage/user/avatar/medium/',
+	        'large' => public_path() . '/storage/user/avatar/large/',
         ];
         return $paths;
     }
@@ -51,11 +51,11 @@ class ProfileService
 
             $img = Image::make($request['avatar']);
             if (!file_exists($path) && !file_exists($smallPath) && !file_exists($blurPath) && !file_exists($middlePath) && !file_exists($largePath)) {
-                mkdir($path, 666, true);
-                mkdir($smallPath, 666, true);
-                mkdir($blurPath, 666, true);
-                mkdir($middlePath, 666, true);
-                mkdir($largePath, 666, true);
+                mkdir($path, 0755, true);
+                mkdir($smallPath, 0755, true);
+                mkdir($blurPath, 0755, true);
+                mkdir($middlePath, 0755, true);
+                mkdir($largePath, 0755, true);
             }
 
             $fileName = $user->id.'-'.uniqid().'-'. (new \DateTime)->getTimeStamp() . '.png';
@@ -90,13 +90,25 @@ class ProfileService
 
         if (!$user->avatar) {return;}
         Storage::disk('public')->delete([
-            '\user\avatar\original\\'.$user->avatar->image,
-            '\user\avatar\blur\\'.$user->avatar->image,
-            '\user\avatar\small\\'.$user->avatar->image,
-            '\user\avatar\medium\\'.$user->avatar->image,
-            '\user\avatar\large\\'.$user->avatar->image,
+          $this->pathPhotoDelete()['original'].$user->avatar->image,
+          $this->pathPhotoDelete()['blur'].$user->avatar->image,
+          $this->pathPhotoDelete()['small'].$user->avatar->image,
+          $this->pathPhotoDelete()['medium'].$user->avatar->image,
+          $this->pathPhotoDelete()['large'].$user->avatar->image,
         ]);
         $user->avatar()->delete();
+    }
+
+    private function pathAvatarDelete()
+    {
+        $paths = [
+          'original' => '/user/avatar/original/',
+          'blur' => '/user/avatar/blur/',
+          'small' => '/user/avatar/small/',
+          'medium' => '/user/avatar/medium/',
+          'large' => '/user/avatar/large/',
+        ];
+        return $paths;
     }
 
 

@@ -131,6 +131,7 @@ class CarAdvertService
 
     public function addPhotos ($id, PhotosRequest $request) : void
     {
+
         $carAdvert = $this->getCarAdvert($id);
 
         DB::transaction(function () use ($request, $carAdvert) {
@@ -149,12 +150,12 @@ class CarAdvertService
                 $img = Image::make($file);
 
                 if (!file_exists($path) && !file_exists($itemPath) && !file_exists($thumbPath) && !file_exists($smallPath) && !file_exists($middlePath) && !file_exists($largePath)) {
-                    mkdir($path, 666, true);
-                    mkdir($thumbPath, 666, true);
-                    mkdir($itemPath, 666, true);
-                    mkdir($smallPath, 666, true);
-                    mkdir($middlePath, 666, true);
-                    mkdir($largePath, 666, true);
+                    mkdir($path, 0755, true);
+                    mkdir($thumbPath, 0755, true);
+                    mkdir($itemPath, 0755, true);
+                    mkdir($smallPath, 0755, true);
+                    mkdir($middlePath, 0755, true);
+                    mkdir($largePath, 0755, true);
                 }
 
                 $fileName = $carAdvert->id.'-'.uniqid().'-'. (new \DateTime)->getTimeStamp() . '.png';
@@ -204,15 +205,17 @@ class CarAdvertService
         $carAdvert = $this->getCarAdvert($id);
         $carPhoto = $this->getCarPhoto($photoId);
 
-        $carAdvert->photos()->find($carPhoto->id)->delete();
         Storage::disk('public')->delete([
-            $this->pathPhoto()['original'].$carPhoto->file,
-            $this->pathPhoto()['thumbnail'].$carPhoto->file,
-            $this->pathPhoto()['item'].$carPhoto->file,
-            $this->pathPhoto()['small'].$carPhoto->file,
-            $this->pathPhoto()['medium'].$carPhoto->file,
-            $this->pathPhoto()['large'].$carPhoto->file,
+            $this->pathPhotoDelete()['original'].$carPhoto->file,
+            $this->pathPhotoDelete()['thumbnail'].$carPhoto->file,
+            $this->pathPhotoDelete()['item'].$carPhoto->file,
+            $this->pathPhotoDelete()['small'].$carPhoto->file,
+            $this->pathPhotoDelete()['medium'].$carPhoto->file,
+            $this->pathPhotoDelete()['large'].$carPhoto->file,
+
         ]);
+
+	$carAdvert->photos()->find($carPhoto->id)->delete();
 
         $carAdvert->photos()->inRandomOrder()->take(1)->update([
             'type' => Photo::TYPE_MAIN_PHOTO,
@@ -234,12 +237,25 @@ class CarAdvertService
     private function pathPhoto()
     {
         $paths = [
-            'original' => public_path() . '\storage\car-adverts\original\\',
-            'thumbnail' => public_path() . '\storage\car-adverts\thumbnail\\',
-            'item' => public_path() . '\storage\car-adverts\item\\',
-            'small' => public_path() . '\storage\car-adverts\small\\',
-            'medium' => public_path() . '\storage\car-adverts\medium\\',
-            'large' => public_path() . '\storage\car-adverts\large\\',
+          'original' => public_path() . '/storage/car-adverts/original/',
+          'thumbnail' => public_path() . '/storage/car-adverts/thumbnail/',
+          'item' => public_path() . '/storage/car-adverts/item/',
+          'small' => public_path() . '/storage/car-adverts/small/',
+          'medium' => public_path() . '/storage/car-adverts/medium/',
+          'large' => public_path() . '/storage/car-adverts/large/',
+        ];
+        return $paths;
+    }
+
+    private function pathPhotoDelete()
+    {
+        $paths = [
+          'original' => '/car-adverts/original/',
+          'thumbnail' => '/car-adverts/thumbnail/',
+          'item' => '/car-adverts/item/',
+          'small' => '/car-adverts/small/',
+          'medium' => '/car-adverts/medium/',
+          'large' => '/car-adverts/large/',
         ];
         return $paths;
     }
