@@ -59,7 +59,6 @@ class BlackListService
 
             $blacklistTenant->saveOrFail();
 
-
             if ($request['photo']) {
                 $this->addPhotoMain($user->id, $request, $blacklistTenant->id);
             }
