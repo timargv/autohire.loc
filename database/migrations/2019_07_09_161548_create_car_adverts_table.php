@@ -25,9 +25,11 @@ class CreateCarAdvertsTable extends Migration
             $table->text('description')->nullable();
             $table->integer('price_per_day'); // Цена за сутки
             $table->text('address')->nullable();
-            $table->string('status', 16)->default(Advert::STATUS_MODERATION);
+            $table->string('status', 16);
             $table->text('reject_reason')->nullable();  // Причина отклонения
             $table->timestamps();
+            $table->timestamp('published_at')->nullable();
+            $table->timestamp('expires_at')->nullable();
         });
 
         Schema::create('car_advert_values', function (Blueprint $table) {

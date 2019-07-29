@@ -46,6 +46,11 @@ class Advert extends Model
     protected $table = 'car_adverts';
     protected $guarded = ['id'];
 
+    protected $casts = [
+        'published_at' => 'datetime',
+        'expires_at' => 'datetime',
+    ];
+
     protected $with = ['photos', 'carBrand', 'carYear', 'values', 'attributes'];
 
 
@@ -63,10 +68,10 @@ class Advert extends Model
     public static function statusesList(): array
     {
         return [
-            self::STATUS_DRAFT => __(''),
-            self::STATUS_MODERATION => 'On Moderation',
-            self::STATUS_ACTIVE => 'Active',
-            self::STATUS_CLOSED => 'Closed',
+            self::STATUS_DRAFT => __('Черновик'),
+            self::STATUS_MODERATION => __('На Модерации'),
+            self::STATUS_ACTIVE => __('Актуально'),
+            self::STATUS_CLOSED => __('Снять с аренды'),
         ];
     }
 
@@ -141,10 +146,57 @@ class Advert extends Model
         return $this->hasMany(Photo::class, 'car_advert_id', 'id');
     }
 
+    //    =============================
+
+
+    //    Функции для объявлении
+    //    =============================
+
+
+    // Статус черновик с объяснением от модератора или администратора
+    public function reject($reason): void
+    {
+        $this->update([
+            'status' => self::STATUS_DRAFT,
+            'reject_reason' => $reason,
+        ]);
+    }
+
+    public function sendToModeration(): void
+    {
+        if (!$this->isDraft()) {
+            throw new \DomainException('Объявление не черновик.');
+        }
+        if (!\count($this->photos)) {
+            throw new \DomainException('Загрузите фотографию.');
+        }
+        $this->update([
+            'status' => self::STATUS_MODERATION,
+        ]);
+    }
+
+    public function moderate(Carbon $date): void
+    {
+        if ($this->status !== self::STATUS_MODERATION) {
+            throw new \DomainException('Advert is not sent to moderation.');
+        }
+        $this->update([
+            'published_at' => $date,
+            'expires_at' => $date->copy()->addDays(15),
+            'status' => self::STATUS_ACTIVE,
+        ]);
+    }
+
+    public function close(): void
+    {
+        $this->update([
+            'status' => self::STATUS_CLOSED,
+        ]);
+    }
+
 
 
     // Заготовки для запросов
-
     public function scopeActive(Builder $query)
     {
         return $query->where('status', self::STATUS_ACTIVE);
@@ -208,6 +260,11 @@ class Advert extends Model
         if ($value = $values->where('car_attribute_id', 1)->first()){
             return $value['value'];
         }
+    }
+
+    public function isCarAttributeModel ($value): bool
+    {
+        return $value->car_attribute_id === 1;
     }
 
 

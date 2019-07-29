@@ -48350,6 +48350,10 @@ $(document).ready(function () {
       autoStart: true
     }
   });
+  $('.toast').toast('show');
+  $('.carAdvertSh').hover(function () {
+    $(this).toggleClass('shadow-sm');
+  });
 });
 
 /***/ }),

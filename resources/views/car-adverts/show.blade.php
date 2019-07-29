@@ -1,17 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('cabinet.adverts._nav')
-    @include('cabinet.adverts._nav_button', ['page' => ''])
 
     @can ('manage-adverts')
         <div class="d-flex flex-row mb-3">
             @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
-                <a href="{{ route('admin.adverts.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
+                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
             @endif
 
             @if ($carAdvert->isOnModeration())
-                <form method="POST" action="{{ route('admin.adverts.adverts.moderate', $advert) }}" class="mr-1">
+                <form method="POST" action="{{ route('admin.cars.adverts.moderate', $carAdvert) }}" class="mr-1">
                     @csrf
                     <button class="btn btn-success">Moderate</button>
                 </form>
@@ -49,7 +47,6 @@
         <div class="card-header border-0 h5 d-flex">
             <div class="">
                 <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span> 	&ndash;
-                <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="small" data-toggle="tooltip" data-placement="top" title="{{ __('fillable.Edit') }}">{{ mb_strimwidth(__('fillable.Edit'), 0, 4, '.') }}</a>
                 <span class="badge badge-@if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation')warning @else primary @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
             </div>
             <div class="ml-auto font-weight-bold">

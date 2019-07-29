@@ -146,6 +146,31 @@ class AdvertController extends Controller
     }
 
 
+    public function send(Advert $carAdvert)
+    {
+        $this->checkAccess($carAdvert);
+        try {
+            $this->service->sendToModeration($carAdvert->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('cars.adverts.show', $carAdvert);
+    }
+
+    public function close(Advert $carAdvert)
+    {
+        $this->checkAccess($carAdvert);
+        try {
+            $this->service->close($carAdvert->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('cars.adverts.show', $carAdvert);
+    }
+
+
     private function checkAccess(Advert $carAdvert): void
     {
         if (!Gate::allows('manage-own-advert', $carAdvert)) {

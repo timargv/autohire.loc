@@ -12,8 +12,10 @@ use App\Entity\Categories\Car\Year;
 use App\Http\Requests\Adverts\AttributesRequest;
 use App\Http\Requests\Adverts\CreateRequest;
 use App\Http\Requests\Adverts\PhotosRequest;
+use App\Http\Requests\Adverts\RejectRequest;
 use App\Http\Requests\Adverts\UpdateRequest;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
@@ -45,6 +47,7 @@ class CarAdvertService
                 'price_per_day' => $request['price_per_day'],
                 'address' => $request['address'],
                 'type_rental' => $request['type_rental'],
+                'status' => Advert::STATUS_DRAFT,
             ]);
 
             $carAdvert->author()->associate($user);
@@ -221,7 +224,32 @@ class CarAdvertService
             'type' => Photo::TYPE_MAIN_PHOTO,
         ]);
     }
-    
+
+    public function sendToModeration($id): void
+    {
+        $carAdvert = $this->getCarAdvert($id);
+        $carAdvert->sendToModeration();
+    }
+
+    public function moderate($id): void
+    {
+        $carAdvert = $this->getCarAdvert($id);
+        $carAdvert->moderate(Carbon::now());
+//        event(new ModerationPassed($advert));
+    }
+
+    public function reject($id, RejectRequest $request): void
+    {
+        $carAdvert = $this->getCarAdvert($id);
+        $carAdvert->reject($request['reason']);
+    }
+
+    public function close($id): void
+    {
+        $carAdvert = $this->getCarAdvert($id);
+        $carAdvert->close();
+    }
+
 
     private function getCarAdvert($id) : Advert
     {

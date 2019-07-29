@@ -12,6 +12,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/profile/{user}', 'Cabinet\ProfileController@show')->name('profile.show');
 });
 
+Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdverts'], function () {
+    Route::get('/all', 'AdvertController@index')->name('index');
+    Route::get('/{carBrand}/all', 'AdvertController@carBrand')->name('brand');
+    Route::get('/show/{carAdvert}', 'AdvertController@show')->name('show');
+
+});
+
+
 // ---------- Cabinet
 
 Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet', 'middleware' => ['auth'] ], function () {
@@ -62,6 +70,8 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::get('/{carAdvert}', 'AdvertController@show')->name('show');
             Route::get('/{carAdvert}/edit', 'AdvertController@edit')->name('edit');
             Route::put('/{carAdvert}/update', 'AdvertController@update')->name('update');
+            Route::post('/{carAdvert}/send', 'AdvertController@send')->name('send');
+            Route::post('/{carAdvert}/close', 'AdvertController@close')->name('close');
             Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
 
 
@@ -196,32 +206,21 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
 
 
-//        Route::group(['prefix' => 'adverts', 'as' => 'adverts.', 'namespace' => 'Adverts'], function () {
-//
-//            Route::resource('categories', 'CategoryController');
-//
-//            Route::group(['prefix' => 'categories/{category}', 'as' => 'categories.'], function () {
-//                Route::post('/first', 'CategoryController@first')->name('first');
-//                Route::post('/up', 'CategoryController@up')->name('up');
-//                Route::post('/down', 'CategoryController@down')->name('down');
-//                Route::post('/last', 'CategoryController@last')->name('last');
-//                Route::resource('attributes', 'AttributeController')->except('index');
-//            });
-//
-//            Route::group(['prefix' => 'adverts', 'as' => 'adverts.'], function () {
-//                Route::get('/', 'AdvertController@index')->name('index');
-//                Route::get('/{advert}/edit', 'AdvertController@editForm')->name('edit');
-//                Route::put('/{advert}/edit', 'AdvertController@edit');
-//                Route::get('/{advert}/photos', 'AdvertController@photosForm')->name('photos');
-//                Route::post('/{advert}/photos', 'AdvertController@photos');
-//                Route::get('/{advert}/attributes', 'AdvertController@attributesForm')->name('attributes');
-//                Route::post('/{advert}/attributes', 'AdvertController@attributes');
-//                Route::post('/{advert}/moderate', 'AdvertController@moderate')->name('moderate');
-//                Route::get('/{advert}/reject', 'AdvertController@rejectForm')->name('reject');
-//                Route::post('/{advert}/reject', 'AdvertController@reject');
-//                Route::delete('/{advert}/destroy', 'AdvertController@destroy')->name('destroy');
-//            });
-//        });
+        Route::group(['prefix' => 'cars-adverts', 'as' => 'cars.adverts.', 'namespace' => 'CarAdvert'], function () {
+
+                Route::get('/', 'AdvertController@index')->name('index');
+//                Route::get('/{carAdvert}/edit', 'AdvertController@editForm')->name('edit');
+//                Route::put('/{carAdvert}/edit', 'AdvertController@edit');
+//                Route::get('/{carAdvert}/photos', 'AdvertController@photosForm')->name('photos');
+//                Route::post('/{carAdvert}/photos', 'AdvertController@photos');
+//                Route::get('/{carAdvert}/attributes', 'AdvertController@attributesForm')->name('attributes');
+//                Route::post('/{carAdvert}/attributes', 'AdvertController@attributes');
+                Route::post('/{carAdvert}/moderate', 'AdvertController@moderate')->name('moderate');
+                Route::get('/{carAdvert}/reject', 'AdvertController@rejectForm')->name('reject');
+                Route::post('/{carAdvert}/reject', 'AdvertController@reject');
+//                Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
+
+        });
 
     }
 );

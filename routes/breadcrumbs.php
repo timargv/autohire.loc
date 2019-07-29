@@ -45,6 +45,33 @@ Breadcrumbs::register('profile.show', function (Crumbs $crumbs, User $user) {
 });
 
 
+
+
+// Car Advert
+
+Breadcrumbs::register('cars.adverts.index', function (Crumbs $crumbs) {
+    $crumbs->parent('home');
+    $crumbs->push(__('fillable.Adverts'), route('cars.adverts.index'));
+});
+
+Breadcrumbs::register('cars.adverts.show', function (Crumbs $crumbs, Advert $carAdvert) {
+    $crumbs->parent('cars.adverts.index', $carAdvert);
+    $crumbs->push($carAdvert->carBrand->name, route('cars.adverts.show', $carAdvert));
+});
+
+
+
+// Car Brand
+Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, $slug) {
+    $carBrand = CarBrand::query()->where('slug', $slug)->orWhere('id', $slug)->first();
+    $crumbs->parent('cars.adverts.index', $carBrand);
+    $crumbs->push($carBrand->name, route('cars.adverts.brand', $carBrand));
+});
+
+
+
+
+
 // Cabinet
 
 Breadcrumbs::register('cabinet.home', function (Crumbs $crumbs) {
@@ -289,4 +316,16 @@ Breadcrumbs::register('admin.categories.car.attributes.create', function (Crumbs
 Breadcrumbs::register('admin.categories.car.attributes.edit', function (Crumbs $crumbs, Attribute $attribute) {
     $crumbs->parent('admin.categories.car.attributes.index');
     $crumbs->push($attribute->name, route('admin.categories.car.attributes.edit', $attribute));
+});
+
+
+// == Admin CarAdverts
+Breadcrumbs::register('admin.cars.adverts.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push(__('fillable.Adverts'), route('admin.cars.adverts.index'));
+});
+
+Breadcrumbs::register('admin.cars.adverts.reject', function (Crumbs $crumbs, Advert $carAdvert) {
+    $crumbs->parent('admin.home');
+    $crumbs->push($carAdvert->carBrand->name, route('admin.cars.adverts.reject', $carAdvert));
 });

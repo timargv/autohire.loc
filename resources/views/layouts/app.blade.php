@@ -20,7 +20,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
-    <div id="app">
+    <div class="position-relative" id="app" aria-live="polite" aria-atomic="true">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -44,10 +44,14 @@
             <div class="container">
                 @section('breadcrumbs', Breadcrumbs::render())
                 @yield('breadcrumbs')
-                @include('layouts.partials.flash')
                 @yield('content')
             </div>
         </main>
+
+        {{-- FLASH --}}
+        <div style="position: absolute; top: 70px; left: 15px;">
+            @include('layouts.partials.flash')
+        </div>
     </div>
 
     <footer class="footer mt-auto py-3">
