@@ -7,7 +7,7 @@
     @can ('manage-adverts')
         <div class="d-flex flex-row mb-3">
             @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
-                <a href="{{ route('admin.adverts.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
+                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
             @endif
 
             @if ($carAdvert->isOnModeration())
