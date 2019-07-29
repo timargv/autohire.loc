@@ -63,7 +63,7 @@ Breadcrumbs::register('cars.adverts.show', function (Crumbs $crumbs, Advert $car
 
 // Car Brand
 Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, $slug) {
-    $carBrand = CarBrand::query()->where('slug', $slug)->orWhere('id', $slug)->first();
+    $carBrand = CarBrand::where('slug', $slug)->orWhere('id', $slug)->first();
     $crumbs->parent('cars.adverts.index', $carBrand);
     $crumbs->push($carBrand->name, route('cars.adverts.brand', $carBrand));
 });
