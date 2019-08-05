@@ -164,7 +164,7 @@ class Advert extends Model
 
     public function sendToModeration(): void
     {
-        if (!$this->isDraft()) {
+        if (!$this->isDraft() && !$this->isClosed()) {
             throw new \DomainException('Объявление не черновик.');
         }
         if (!\count($this->photos)) {
