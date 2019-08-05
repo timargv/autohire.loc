@@ -31,7 +31,7 @@
             <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
             <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.AddPhotos') }}</a>
 
-            @if ($carAdvert->isDraft())
+            @if ($carAdvert->isDraft() || $carAdvert->isClosed())
                 <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
                     @csrf
                     <button class="btn btn-success">{{ __('button.Activate') }}</button>
