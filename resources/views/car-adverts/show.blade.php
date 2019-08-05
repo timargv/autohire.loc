@@ -53,7 +53,9 @@
         <div class="card-header border-0 h5 d-flex">
             <div class="">
                 <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span> 	&ndash;
-                <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @else badge-primary @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
+                @can ('manage-own-advert', $carAdvert || 'manage-adverts')
+                <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @else badge-success @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
+                @endcan
             </div>
             <div class="ml-auto font-weight-bold">
                 <span id="priceCarAdvert">{{ $carAdvert->price_per_day }}</span>
