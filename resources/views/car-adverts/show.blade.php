@@ -110,6 +110,7 @@
                                 </a>
                             @endforeach
 
+                            @can ('manage-own-advert', $carAdvert )
                             <a class="mb-2 col-6 col-md-3 pr-0 outline text-black-50  text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
                                 <div class="bg-light py-2 h-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" >
                                     <div class="d-flex align-items-center h-100">
@@ -120,6 +121,7 @@
                                     </div>
                                 </div>
                             </a>
+                            @endcan
                         </div>
                     </div>
                 </div>
