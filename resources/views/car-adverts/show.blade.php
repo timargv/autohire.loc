@@ -20,7 +20,7 @@
         </div>
     @endcan
 
-    @can ('manage-own-advert', $carAdvert)
+    @can ('manage-own-advert', $carAdvert )
         <div class="text-muted small">
           <span>Мое объявление</span>
         </div>
@@ -53,7 +53,7 @@
         <div class="card-header border-0 h5 d-flex">
             <div class="">
                 <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span> 	&ndash;
-                <span class="badge badge-@if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation')warning @else primary @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
+                <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @else badge-primary @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
             </div>
             <div class="ml-auto font-weight-bold">
                 <span id="priceCarAdvert">{{ $carAdvert->price_per_day }}</span>
