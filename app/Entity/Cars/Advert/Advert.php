@@ -71,7 +71,7 @@ class Advert extends Model
             self::STATUS_DRAFT => __('Черновик'),
             self::STATUS_MODERATION => __('На Модерации'),
             self::STATUS_ACTIVE => __('Актуально'),
-            self::STATUS_CLOSED => __('Снять с аренды'),
+            self::STATUS_CLOSED => __('Снято с аренды'),
         ];
     }
 
@@ -244,8 +244,8 @@ class Advert extends Model
 
         return $photoMain;
     }
-    
-    
+
+
     // Получить тип аренды
     public function getTypeRental ()
     {
