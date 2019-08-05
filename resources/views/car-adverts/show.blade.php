@@ -8,7 +8,7 @@
         </div>
         <div class="d-flex flex-row mb-3">
             @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
-                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
+                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">{{ __('button.Reject') }}</a>
             @endif
 
             @if ($carAdvert->isOnModeration())
@@ -26,25 +26,25 @@
         </div>
         <div class="d-flex flex-row mb-3">
             <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
-            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">Photos</a>
+            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Photos') }}</a>
 
             @if ($carAdvert->isDraft())
                 <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">Publish</button>
+                    <button class="btn btn-success">{{ __('button.Activate') }}</button>
                 </form>
             @endif
             @if ($carAdvert->isActive())
                 <form method="POST" action="{{ route('cabinet.adverts.close', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">Close</button>
+                    <button class="btn btn-success">{{ __('button.RentedOut') }}</button>
                 </form>
             @endif
 
             <form method="POST" action="{{ route('cabinet.adverts.destroy', $carAdvert) }}" class="mr-1">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger">{{ __('button.Delete') }}</button>
             </form>
         </div>
     @endcan
