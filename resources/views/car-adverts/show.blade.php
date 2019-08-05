@@ -3,6 +3,7 @@
 @section('content')
 
     @can ('manage-adverts')
+    @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
         <div class="text-muted small">
           <span>{{ __('Панель модерации') }}</span>
         </div>
@@ -18,6 +19,7 @@
                 </form>
             @endif
         </div>
+    @endif
     @endcan
 
     @can ('manage-own-advert', $carAdvert )
