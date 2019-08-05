@@ -47,7 +47,7 @@ return [
     'Added'     => 'Добавил',
     'Comment'   => 'Комментарий',
     'Comments'  => 'Комментария',
-    'CommentSeller' => 'Комментарий продавца',
+    'CommentSeller' => 'Комментарий арендодателя',
     'Categories'=> 'Категории',
     'Category'  => 'Категория',
     'CarYears'  => 'Год',

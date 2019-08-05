@@ -5,9 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/admin/users/groups/_item.blade.php" line="22" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -721,12 +719,12 @@
       <workItem from="1563088523277" duration="17003000" />
       <workItem from="1563180222236" duration="17959000" />
       <workItem from="1563267056774" duration="9531000" />
-      <workItem from="1564379963278" duration="25451000" />
+      <workItem from="1564379963278" duration="25480000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322129000" />
+    <option name="totallyTimeSpent" value="322158000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
