@@ -53,7 +53,7 @@
         <div class="card-header border-0 h5 d-flex">
             <div class="">
                 <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span> 	&ndash;
-                @canany([['manage-own-advert', $carAdvert], 'manage-adverts'])
+                @canany(['manage-own-advert', 'manage-adverts'], $carAdvert)
                 <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @else badge-success @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
                 @endcanany
             </div>
