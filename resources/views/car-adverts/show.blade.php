@@ -3,6 +3,9 @@
 @section('content')
 
     @can ('manage-adverts')
+        <div class="text-muted small">
+          <span>{{ __('Панель модерации') }}</span>
+        </div>
         <div class="d-flex flex-row mb-3">
             @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
                 <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
@@ -18,10 +21,10 @@
     @endcan
 
     @can ('manage-own-advert', $carAdvert)
+        <div class="text-muted small">
+          <span>Мое объявление</span>
+        </div>
         <div class="d-flex flex-row mb-3">
-            <div class="text-muted small">
-              <span>Мое объявление</span>
-            </div>
             <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
             <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">Photos</a>
 
