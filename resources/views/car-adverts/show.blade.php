@@ -52,8 +52,9 @@
     <div class="card rounded-0 border-0 shadow-sm">
         <div class="card-header border-0 h5 d-flex">
             <div class="">
-                <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span> 	&ndash;
+                <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span>
                 @canany(['manage-own-advert', 'manage-adverts'], $carAdvert)
+                &ndash;
                 <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @else badge-success @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
                 @endcanany
             </div>
