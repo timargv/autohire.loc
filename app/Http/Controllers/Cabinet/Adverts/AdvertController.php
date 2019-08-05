@@ -72,6 +72,7 @@ class AdvertController extends Controller
 
     public function show (Advert $carAdvert)
     {
+        $this->checkAccess($carAdvert);
         $mainCarImage = $carAdvert->getMainPhoto($carAdvert->photos);
         $carAttributes = $carAdvert->values()
             ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
