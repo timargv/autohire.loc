@@ -28,7 +28,7 @@
         </div>
         <div class="d-flex flex-row mb-3">
             <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
-            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Photos') }}</a>
+            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.AddPhotos') }}</a>
 
             @if ($carAdvert->isDraft())
                 <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
