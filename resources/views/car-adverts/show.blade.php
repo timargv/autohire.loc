@@ -3,10 +3,12 @@
 @section('content')
 
     @can ('manage-adverts')
-    @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
+        @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
         <div class="text-muted small">
           <span>{{ __('Панель модерации') }}</span>
         </div>
+        @endif
+
         <div class="d-flex flex-row mb-3">
             @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
                 <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">{{ __('button.Reject') }}</a>
@@ -15,11 +17,10 @@
             @if ($carAdvert->isOnModeration())
                 <form method="POST" action="{{ route('admin.cars.adverts.moderate', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">Moderate</button>
+                    <button class="btn btn-success">{{ __('button.Accept') }}</button>
                 </form>
             @endif
         </div>
-    @endif
     @endcan
 
     @can ('manage-own-advert', $carAdvert )
