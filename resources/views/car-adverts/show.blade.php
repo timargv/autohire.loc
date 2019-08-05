@@ -58,7 +58,7 @@
                 <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span>
                 @canany(['manage-own-advert', 'manage-adverts'], $carAdvert)
                 &ndash;
-                <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @else badge-success @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
+                <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @elseif($carAdvert->status == 'closed') badge-danger @else badge-success @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
                 @endcanany
             </div>
             <div class="ml-auto font-weight-bold">
