@@ -19,7 +19,10 @@
 
     @can ('manage-own-advert', $carAdvert)
         <div class="d-flex flex-row mb-3">
-            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">Edit</a>
+            <div class="text-muted small">
+              <span>Мое объявление</span>
+            </div>
+            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
             <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">Photos</a>
 
             @if ($carAdvert->isDraft())
