@@ -5,42 +5,51 @@
     @include('cabinet.adverts._nav_button', ['page' => ''])
 
     @can ('manage-adverts')
+        @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
+        <div class="text-muted small">
+          <span>{{ __('Панель модерации') }}</span>
+        </div>
+        @endif
+
         <div class="d-flex flex-row mb-3">
             @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
-                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">Reject</a>
+                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">{{ __('button.Reject') }}</a>
             @endif
 
             @if ($carAdvert->isOnModeration())
-                <form method="POST" action="{{ route('admin.adverts.adverts.moderate', $advert) }}" class="mr-1">
+                <form method="POST" action="{{ route('admin.cars.adverts.moderate', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">Moderate</button>
+                    <button class="btn btn-success">{{ __('button.Accept') }}</button>
                 </form>
             @endif
         </div>
     @endcan
 
-    @can ('manage-own-advert', $carAdvert)
+    @can ('manage-own-advert', $carAdvert )
+        <div class="text-muted small">
+          <span>Мое объявление</span>
+        </div>
         <div class="d-flex flex-row mb-3">
-            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">Edit</a>
-            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">Photos</a>
+            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
+            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.AddPhotos') }}</a>
 
-            @if ($carAdvert->isDraft())
+            @if ($carAdvert->isDraft() || $carAdvert->isClosed())
                 <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">Publish</button>
+                    <button class="btn btn-success">{{ __('button.Activate') }}</button>
                 </form>
             @endif
             @if ($carAdvert->isActive())
                 <form method="POST" action="{{ route('cabinet.adverts.close', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">Close</button>
+                    <button class="btn btn-success">{{ __('button.RentedOut') }}</button>
                 </form>
             @endif
 
             <form method="POST" action="{{ route('cabinet.adverts.destroy', $carAdvert) }}" class="mr-1">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger">Delete</button>
+                <button class="btn btn-danger">{{ __('button.Delete') }}</button>
             </form>
         </div>
     @endcan
@@ -48,9 +57,11 @@
     <div class="card rounded-0 border-0 shadow-sm">
         <div class="card-header border-0 h5 d-flex">
             <div class="">
-                <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span> 	&ndash;
-                <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="small" data-toggle="tooltip" data-placement="top" title="{{ __('fillable.Edit') }}">{{ mb_strimwidth(__('fillable.Edit'), 0, 4, '.') }}</a>
-                <span class="badge badge-@if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation')warning @else primary @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
+                <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}</span>
+                @canany(['manage-own-advert', 'manage-adverts'], $carAdvert)
+                &ndash;
+                <span class="badge @if($carAdvert->status == 'draft' || $carAdvert->status == 'moderation') badge-warning @elseif($carAdvert->status == 'closed') badge-danger @else badge-success @endif">{{ $carAdvert->statusesList()[$carAdvert->status] }}</span>
+                @endcanany
             </div>
             <div class="ml-auto font-weight-bold">
                 <span id="priceCarAdvert">{{ $carAdvert->price_per_day }}</span>
@@ -104,6 +115,7 @@
                                 </a>
                             @endforeach
 
+                            @can ('manage-own-advert', $carAdvert )
                             <a class="mb-2 col-6 col-md-3 pr-0 outline text-black-50  text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
                                 <div class="bg-light py-2 h-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" >
                                     <div class="d-flex align-items-center h-100">
@@ -114,6 +126,7 @@
                                     </div>
                                 </div>
                             </a>
+                            @endcan
                         </div>
                     </div>
                 </div>
