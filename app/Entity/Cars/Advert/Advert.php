@@ -47,8 +47,8 @@ class Advert extends Model
     protected $guarded = ['id'];
 
     protected $casts = [
-        'published_at' => 'datetime',
-        'expires_at' => 'datetime',
+        'published_at' => 'datetime',   // опубликовано
+        'expires_at' => 'datetime',     // истекает
     ];
 
     protected $with = ['photos', 'carBrand', 'carYear', 'values', 'attributes'];

@@ -8,27 +8,27 @@
         <tbody>
         <tr>
             <th width="150px">{{ __('fillable.Title') }}</th>
-            <td>{{ $carBrand->name }}</td>
+            <td>{{ $carModel->name }}</td>
         </tr>
 
         <tr>
             <th width="200px">{{ __('fillable.TitleRu') }}</th>
-            <td>{{ $carBrand->name_ru }}</td>
+            <td>{{ $carModel->name_ru }}</td>
         </tr>
 
         <tr>
             <th width="150px">{{ __('fillable.Slug') }}</th>
-            <td>{{ $carBrand->slug }}</td>
+            <td>{{ $carModel->slug }}</td>
         </tr>
 
         <tr>
             <th width="150px">{{ __('fillable.Status') }}</th>
-            <td>{{ $carBrand->status }}</td>
+            <td>{{ $carModel->status }}</td>
         </tr>
 
         <tr>
             <th width="150px">{{ __('fillable.Author') }}</th>
-            <td>{{ $carBrand->author->name }}</td>
+            <td>{{ $carModel->author->name }}</td>
         </tr>
 
 
@@ -38,10 +38,10 @@
     </table>
 
     <div class="btn-group mr-2 my-2 mt-4">
-        <a href="{{ route('admin.categories.car.brands.create', $carBrand) }}" class="btn-sm btn btn-outline-primary"><i class="fal fa-plus mr-1"></i> {{ __('button.Add') .' '. __('fillable.CarModels') }} </a>
+        <a href="{{ route('admin.categories.car.brands.create', $carModel) }}" class="btn-sm btn btn-outline-primary"><i class="fal fa-plus mr-1"></i> {{ __('button.Add') .' '. __('fillable.CarModels') }} </a>
     </div>
-    
-    @include('.admin.categories.car_brands.models._item', ['carModels' => $carBrand->children, $carBrand])
+
+    @include('.admin.categories.car_brands.models.series._item', ['carSeries' => $carModel->children])
 
 
 {{--    {{ $tenants->appends(request()->query())->links() }}--}}

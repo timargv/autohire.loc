@@ -20,7 +20,7 @@ class CarBrandsController extends Controller
     {
 //        CarBrand::defaultOrder()->withDepth()->fixTree();
 
-        $query = CarBrand::defaultOrder('ASC');
+        $query = CarBrand::whereIsRoot()->defaultOrder('ASC');
 
 
 
@@ -45,33 +45,31 @@ class CarBrandsController extends Controller
         return view('admin.categories.car_brands.home', compact('carBrands'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('admin.categories.car_brands.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @return void
-     */
-    public function store(Request $request)
+    public function modelForm($carBrand)
+    {
+        return view('admin.categories.car_brands.models.create', compact('carBrand'));
+    }
+
+
+    public function store(Request $request, $carBrand = null)
     {
         $this->validate($request, [
             'name' => 'required|string|max:255',
-            'name_ru' => 'required|string|max:255'
+            'name_ru' => 'required|string|max:255',
+            'parent' => 'nullable|integer|exists:car_brands,id',
         ]);
 
         CarBrand::create([
             'name' => $request['name'],
             'name_ru' => $request['name_ru'],
             'status' => 'active',
+            'parent_id' => $request['parent'],
             'author_id' => \Auth::id(),
             'slug' => Str::slug($request['name']).'-'.rand(0, 10),
         ]);
@@ -79,30 +77,27 @@ class CarBrandsController extends Controller
         return redirect()->route('admin.categories.car.brands.index')->with('success', 'Новая марка автомобиля добавлена');
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+
+    public function show($id, CarBrand $carBrand)
     {
-        //
+        $carBrand = $this->getCarBrand($id);
+        $carModelsOrSeries = $carBrand->children()->defaultOrder()->getModels();
+        return view('admin.categories.car_brands.show', compact('carBrand', 'carModelsOrSeries'));
     }
+
+    public function modelShow(CarBrand $carBrand, CarBrand $carModel)
+    {
+        $carModelsOrSeries = $carModel->children()->defaultOrder()->getModels();
+        return view('admin.categories.car_brands.models.show', compact('carBrand','carModel', 'carModelsOrSeries'));
+    }
+
 
     public function edit(CarBrand $carBrand)
     {
         return view('admin.categories.car_brands.edit', compact('carBrand'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param \Illuminate\Http\Request $request
-     * @param CarBrand $carBrand
-     * @return \Illuminate\Http\Response
-     * @throws \Illuminate\Validation\ValidationException
-     */
+
     public function update(Request $request, CarBrand $carBrand)
     {
         $this->validate($request, [
@@ -121,13 +116,7 @@ class CarBrandsController extends Controller
         return redirect()->route('admin.categories.car.brands.index')->with('success', 'Марка автомобиля обновлена');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param CarBrand $carBrand
-     * @return \Illuminate\Http\Response
-     * @throws \Exception
-     */
+
     public function destroy(CarBrand $carBrand)
     {
         $carBrand->delete();
@@ -164,5 +153,11 @@ class CarBrandsController extends Controller
         }
 
         return redirect()->back()->with('success', 'Позиция обновлена!');
+    }
+
+
+
+    private function getCarBrand($id) {
+        return CarBrand::findOrFail($id);
     }
 }

@@ -267,7 +267,7 @@ Breadcrumbs::register('admin.categories.home', function (Crumbs $crumbs) {
 });
 
 
-// == Admin Category Car Models
+// == Admin Category Car Brand Model Series
 Breadcrumbs::register('admin.categories.car.brands.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.categories.home');
     $crumbs->push(__('fillable.CarBrands'), route('admin.categories.car.brands.index'));
@@ -278,10 +278,39 @@ Breadcrumbs::register('admin.categories.car.brands.create', function (Crumbs $cr
     $crumbs->push(__('fillable.Create'), route('admin.categories.car.brands.create'));
 });
 
-Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crumbs, CarBrand $carBrand) {
-    $crumbs->parent('admin.categories.car.brands.index');
-    $crumbs->push($carBrand->name, route('admin.categories.car.brands.edit', $carBrand));
+Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crumbs, CarBrand $car_brand) {
+    $crumbs->parent('admin.adverts.categories.show', $car_brand);
+    $crumbs->push($car_brand->name, route('admin.categories.car.brands.edit', $car_brand));
 });
+
+
+Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crumbs, $carBrand) {
+    $carBrand = CarBrand::findOrFail($carBrand);
+    if ($parent = $carBrand->parent) {
+        $crumbs->parent('admin.categories.car.brands.show', $parent);
+    } else {
+        $crumbs->parent('admin.categories.car.brands.index');
+    }
+    $crumbs->push($carBrand->name, route('admin.categories.car.brands.show', $carBrand));
+});
+
+
+
+//Breadcrumbs::register('admin.categories.car.brands.model.create', function (Crumbs $crumbs, CarBrand $carBrand) {
+//    if ($parent = $carBrand->parent) {
+//        $crumbs->parent('admin.categories.car.brands.show', $parent);
+//    } else {
+//        $crumbs->parent('admin.categories.car.brands.show', $carBrand->id);
+//    }
+//    $crumbs->push(__('fillable.Create') .' '. __('fillable.CarModels'), route('admin.categories.car.brands.model.create', $carBrand));
+//});
+
+
+//Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crumbs, CarBrand $car_brand) {
+//
+//    $crumbs->push('ss'  );
+//});
+//
 
 
 // == Admin Category Car Years

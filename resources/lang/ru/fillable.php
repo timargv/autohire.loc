@@ -54,6 +54,7 @@ return [
     'Attribute' => 'Аттрибут',
     'Attributes'=> 'Аттрибуты',
     'CarModels' => 'Модель',
+    'CarSeries' => 'Серия',
     'CarBrands' => 'Марка',
     'Function'  => 'Функция',
 

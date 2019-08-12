@@ -2,15 +2,12 @@
 
 namespace App\Entity\Categories\Car;
 
+use App\Entity\Cars\Advert\Advert;
+use App\User;
 use Illuminate\Database\Eloquent\Model;
 use Kalnoy\Nestedset\NodeTrait;
 
-/**
- * @property string name
- * @property string name_ru
- * @property string status
- * @property string slug
- */
+
 class CarBrand extends Model
 {
 
@@ -18,4 +15,15 @@ class CarBrand extends Model
 
     protected $table = 'car_brands';
     protected $fillable = ['name', 'name_ru', 'status', 'slug', 'parent_id', 'author_id'];
+
+
+    //-------------------
+//    public function products () {
+//        return $this->belongsToMany(Advert::class,'car_id','id');
+//    }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'author_id', 'id');
+    }
 }

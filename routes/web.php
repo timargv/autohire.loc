@@ -1,6 +1,5 @@
 <?php
 
-
 Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
@@ -179,14 +178,16 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
             Route::group(['prefix' => 'car', 'as' => 'car.', 'namespace' => 'Car'], function () {
 
-                Route::resource('/brands', 'CarBrandsController')->only('index', 'show', 'delete', 'update', 'create', 'store');
-                Route::get('brands/{carBrand}/edit', 'CarBrandsController@edit')->name('brands.edit');
-                Route::delete('/{carBrand}/destroy', 'CarBrandsController@destroy')->name('brands.destroy');
+                Route::resource('brands', 'CarBrandsController');
+                Route::get('/brands/create/{carBrand?}', 'CarBrandsController@modelForm')->name('brands.create');
+                Route::get('/brands/{carBrand}/model/{carModel}', 'CarBrandsController@modelShow')->name('brands.model.show');
+                Route::delete('/brands/{carBrand}/destroy', 'CarBrandsController@destroy')->name('brands.destroy');
 
                 Route::resource('years', 'YearsController');
                 Route::resource('attributes', 'AttributesController');
 
             });
+
 
             Route::group(['prefix' => 'car/{carBrand}', 'as' => 'car.brand.', 'namespace' => 'Car'], function () {
                 Route::post('/first', 'CarBrandsController@first')->name('first');
