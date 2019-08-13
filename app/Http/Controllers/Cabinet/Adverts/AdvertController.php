@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
 class AdvertController extends Controller
@@ -178,4 +179,16 @@ class AdvertController extends Controller
             abort(403);
         }
     }
+
+
+
+    public function getModels($id) {
+        $carModels = $this->getCarBrand($id)->children->pluck("name","id");
+        return json_encode($carModels);
+    }
+
+    private function getCarBrand($id) {
+        return CarBrand::findOrFail($id);
+    }
+
 }

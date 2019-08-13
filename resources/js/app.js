@@ -65,5 +65,68 @@ $(document).ready(function() {
     $('.carAdvertSh').hover(function () {
             $(this).toggleClass('shadow-sm');
     });
+
+
+    $('select[name="car_brand"]').on('change', function(){
+        var carBrandId = $(this).val();
+        if(carBrandId) {
+            $.ajax({
+                url: '/cabinet/my/cars/create/models/get/'+carBrandId,
+                type:"GET",
+                dataType:"json",
+                beforeSend: function(){
+                    $('#loader').css("visibility", "visible");
+                },
+
+                success:function(data) {
+
+                    $('select[name="car_model"]').empty();
+
+                    $.each(data, function(key, value){
+
+                        $('select[name="car_model"]').append('<option value="'+ key +'">' + value + '</option>');
+
+                    });
+                },
+                complete: function(){
+                    $('#loader').css("visibility", "hidden");
+                }
+            });
+        } else {
+            $('select[name="car_model"]').empty();
+        }
+
+    });
+
+    $('select[name="car_model"]').on('change', function(){
+        var carModelId = $(this).val();
+        if(carModelId) {
+            $.ajax({
+                url: '/cabinet/my/cars/create/models/get/'+carModelId,
+                type:"GET",
+                dataType:"json",
+                beforeSend: function(){
+                    $('#loader').css("visibility", "visible");
+                },
+
+                success:function(data) {
+
+                    $('select[name="car_series"]').empty();
+
+                    $.each(data, function(key, value){
+
+                        $('select[name="car_series"]').append('<option value="'+ key +'">' + value + '</option>');
+
+                    });
+                },
+                complete: function(){
+                    $('#loader').css("visibility", "hidden");
+                }
+            });
+        } else {
+            $('select[name="car_series"]').empty();
+        }
+
+    });
 });
 

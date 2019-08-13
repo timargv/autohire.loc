@@ -286,13 +286,16 @@ Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crum
 
 Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crumbs, $carBrand) {
     $carBrand = CarBrand::findOrFail($carBrand);
+
+
     if ($parent = $carBrand->parent) {
-        $crumbs->parent('admin.categories.car.brands.show', $parent);
+        $crumbs->parent('admin.categories.car.brands.show', $parent->id);
     } else {
         $crumbs->parent('admin.categories.car.brands.index');
     }
     $crumbs->push($carBrand->name, route('admin.categories.car.brands.show', $carBrand));
 });
+
 
 
 

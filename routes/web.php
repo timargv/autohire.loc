@@ -64,6 +64,9 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 
         Route::group(['prefix' => 'my/cars', 'as' => 'adverts.', 'namespace' => 'Adverts',], function () {
             Route::get('/', 'AdvertController@index')->name('index');
+
+            Route::get('/create/models/get/{id}', 'AdvertController@getModels');
+
             Route::get('/create', 'AdvertController@create')->name('create');
             Route::post('/create/advert', 'AdvertController@store')->name('create.advert.store');
             Route::get('/{carAdvert}', 'AdvertController@show')->name('show');
@@ -179,8 +182,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
             Route::group(['prefix' => 'car', 'as' => 'car.', 'namespace' => 'Car'], function () {
 
                 Route::resource('brands', 'CarBrandsController');
-                Route::get('/brands/create/{carBrand?}', 'CarBrandsController@modelForm')->name('brands.create');
-                Route::get('/brands/{carBrand}/model/{carModel}', 'CarBrandsController@modelShow')->name('brands.model.show');
+                Route::get('/brands/create/{carBrand?}', 'CarBrandsController@create')->name('brands.create');
                 Route::delete('/brands/{carBrand}/destroy', 'CarBrandsController@destroy')->name('brands.destroy');
 
                 Route::resource('years', 'YearsController');

@@ -38,11 +38,10 @@
     </table>
 
     <div class="btn-group mr-2 my-2 mt-4">
-        <a href="{{ route('admin.categories.car.brands.create', $carBrand) }}" class="btn-sm btn btn-outline-primary"><i class="fal fa-plus mr-1"></i> {{ __('button.Add') .' '. __('fillable.CarModels') }} </a>
+        <a href="{{ route('admin.categories.car.brands.create', $carBrand) }}" class="btn-sm btn btn-outline-primary"><i class="fal fa-plus mr-1"></i> {{ $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. __('fillable.CarSeries') : __('button.Add') .' '. __('fillable.CarModels') }} </a>
     </div>
-    
-    @include('.admin.categories.car_brands.models._item', ['carModels' => $carBrand->children, $carBrand])
 
+    @include('.admin.categories.car_brands.models._item', ['carModels' => $carModelsOrSeries, 'carBrandDepth' => $carBrand->depthCarBrand($carBrand->id)->depth])
 
 {{--    {{ $tenants->appends(request()->query())->links() }}--}}
 @endsection

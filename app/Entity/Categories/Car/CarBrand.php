@@ -26,4 +26,9 @@ class CarBrand extends Model
     {
         return $this->belongsTo(User::class, 'author_id', 'id');
     }
+
+
+    public function depthCarBrand ($id) {
+        return self::withDepth()->find($id);
+    }
 }

@@ -4,31 +4,37 @@
             <thead class="thead-light">
             <tr>
                 <th width="70px">ID</th>
-                <th>{{__('fillable.CarModels')}}</th>
+                <th>{{$carBrandDepth == 1 ? __('fillable.CarSeries') : __('fillable.CarBrands')}}</th>
                 <th width="250px">{{__('fillable.Function')}}</th>
                 <th width="40px"></th>
             </tr>
             </thead>
             <tbody>
-            @foreach ($carModels as $carModel)
+
+            @foreach ($carModels as $carBrand)
+
                 <tr>
-                    <td>{{ $carModel->id }}</td>
-                    <td><a href="{{ route('admin.categories.car.brands.model.show', [$carBrand, $carModel]) }}">{{ $carModel->name }}</a></td>
+                    <td>{{ $carBrand->id }}</td>
+                    @if ($carBrandDepth == 1)
+                        <td>{{ $carBrand->name }}</td>
+                    @else
+                        <td><a href="{{ route('admin.categories.car.brands.show', $carBrand) }}">{{ $carBrand->name }}</a></td>
+                    @endif
                     <td>
                         <div class="" style="margin: 0 -5px;">
-                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.first', $carModel) }}">
+                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.first', $carBrand) }}">
                                 @csrf
                                 <button class="btn btn-xs bg-gray color-palette"><i class="far fa-angle-double-up"></i></button>
                             </form>
-                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.up', $carModel) }}">
+                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.up', $carBrand) }}">
                                 @csrf
                                 <button class="btn btn-xs bg-gray color-palette"><i class="far fa-angle-up"></i></button>
                             </form>
-                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.down', $carModel) }}">
+                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.down', $carBrand) }}">
                                 @csrf
                                 <button class="btn btn-xs bg-gray color-palette"><i class="far fa-angle-down"></i></button>
                             </form>
-                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.last', $carModel) }}">
+                            <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.last', $carBrand) }}">
                                 @csrf
                                 <button class="btn btn-xs bg-gray color-palette"><i class="far fa-angle-double-down"></i></button>
                             </form>
@@ -36,8 +42,8 @@
                     </td>
                     <td>
                         <div class="d-flex flex-row">
-                            <a href="{{ route('admin.categories.car.brands.edit', $carModel) }}" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="{{ __('button.Edit') }}"><i class="fas fa-edit text-muted"></i></a>
-                            <form method="POST" action="{{ route('admin.categories.car.brands.destroy', $carModel) }}" class="mr-1">
+                            <a href="{{ route('admin.categories.car.brands.edit', $carBrand) }}" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="{{ __('button.Edit') }}"><i class="fas fa-edit text-muted"></i></a>
+                            <form method="POST" action="{{ route('admin.categories.car.brands.destroy', $carBrand) }}" class="mr-1">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-sm btn-outline-light" onclick="return confirm('Удалить Категорию?')" data-toggle="tooltip" data-placement="top" title="{{ __('button.Delete') }}"><i class="fas fa-trash text-muted"></i></button>

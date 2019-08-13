@@ -6,11 +6,19 @@
 
     <div class="card border-0 rounded-0 shadow-sm">
         <div class="card-header border-0">
-            {{ __('fillable.Create') .' '.  __('fillable.CarBrands')}}
+            @if (!empty($carBrand))
+                {{ $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. __('fillable.CarSeries') : __('button.Add') .' '. __('fillable.CarModels') }}
+            @else
+                {{ __('button.Add') .' '. __('fillable.CarBrands') }}
+            @endif
         </div>
         <div class="card-body">
             <form method="POST" action="{{ route('admin.categories.car.brands.store') }}">
                 @csrf
+
+                @if ($carBrand)
+                    <input hidden id="parent" class="form-control{{ $errors->has('parent') ? ' is-invalid' : '' }}" name="parent" value="{{ $carBrand->id }}" required>
+                @endif
 
                 <div class="form-group">
                     <label for="name" class="col-form-label">{{ __('fillable.Title') }}</label>

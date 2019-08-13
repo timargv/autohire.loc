@@ -46,9 +46,9 @@ class CarBrandsController extends Controller
     }
 
 
-    public function create()
+    public function create(CarBrand $carBrand = null)
     {
-        return view('admin.categories.car_brands.create');
+        return view('admin.categories.car_brands.create', compact('carBrand'));
     }
 
     public function modelForm($carBrand)
@@ -59,7 +59,8 @@ class CarBrandsController extends Controller
 
     public function store(Request $request, $carBrand = null)
     {
-        $this->validate($request, [
+
+        $request->validate([
             'name' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
             'parent' => 'nullable|integer|exists:car_brands,id',
@@ -85,11 +86,6 @@ class CarBrandsController extends Controller
         return view('admin.categories.car_brands.show', compact('carBrand', 'carModelsOrSeries'));
     }
 
-    public function modelShow(CarBrand $carBrand, CarBrand $carModel)
-    {
-        $carModelsOrSeries = $carModel->children()->defaultOrder()->getModels();
-        return view('admin.categories.car_brands.models.show', compact('carBrand','carModel', 'carModelsOrSeries'));
-    }
 
 
     public function edit(CarBrand $carBrand)
