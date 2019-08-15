@@ -20,7 +20,6 @@ class CreateRequest extends FormRequest
     {
         $items = [];
 
-
         return array_merge([
             'description'   => 'required|string',
             'price_per_day' => 'required|integer',

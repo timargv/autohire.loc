@@ -59,7 +59,6 @@ class CarBrandsController extends Controller
 
     public function store(Request $request, $carBrand = null)
     {
-
         $request->validate([
             'name' => 'required|string|max:255',
             'name_ru' => 'required|string|max:255',
@@ -75,6 +74,9 @@ class CarBrandsController extends Controller
             'slug' => Str::slug($request['name']).'-'.rand(0, 10),
         ]);
 
+        if (!empty($carBrand = $request['parent'])) {
+            return redirect()->route('admin.categories.car.brands.show', $carBrand)->with('success', 'Новая марка автомобиля добавлена');
+        }
         return redirect()->route('admin.categories.car.brands.index')->with('success', 'Новая марка автомобиля добавлена');
     }
 

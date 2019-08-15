@@ -27,11 +27,15 @@ class CarAdvertService
     public function create ($userId, CreateRequest $request) : Advert
     {
 
+
         /** @var User $user */
         $user = User::findOrFail($userId);
 
         /** @var CarBrand $carBrand */
         $carBrand = CarBrand::findOrFail($request['car_brand']);
+        $carModel = CarBrand::findOrFail($request['car_model']);
+        $carSeries = CarBrand::findOrFail($request['car_series']);
+
 
         /** @var Year $carYear */
         $carYear = Year::findOrfail($request['car_year']);
@@ -39,7 +43,7 @@ class CarAdvertService
         $attributes = Attribute::all();
 
 
-        return DB::transaction(function () use ($request, $user, $carBrand, $carYear, $attributes) {
+        return DB::transaction(function () use ($request, $user, $carBrand, $carModel, $carSeries, $carYear, $attributes) {
 
             /** @var Advert $carAdvert */
             $carAdvert = Advert::make([
@@ -52,6 +56,8 @@ class CarAdvertService
 
             $carAdvert->author()->associate($user);
             $carAdvert->carBrand()->associate($carBrand);
+            $carAdvert->carModel()->associate($carModel);
+            $carAdvert->carSerie()->associate($carSeries);
             $carAdvert->carYear()->associate($carYear);
 
             $carAdvert->saveOrFail();

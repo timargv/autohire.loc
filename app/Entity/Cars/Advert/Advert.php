@@ -51,7 +51,7 @@ class Advert extends Model
         'expires_at' => 'datetime',     // истекает
     ];
 
-    protected $with = ['photos', 'carBrand', 'carYear', 'values', 'attributes'];
+    protected $with = ['photos', 'carBrand', 'carModel', 'carSerie', 'carYear', 'values', 'attributes'];
 
 
     //  Массив из типа аренды авто
@@ -124,6 +124,16 @@ class Advert extends Model
     public function carBrand()
     {
         return $this->belongsTo(CarBrand::class, 'car_brand_id', 'id');
+    }
+
+    public function carModel()
+    {
+        return $this->belongsTo(CarBrand::class, 'car_model_id', 'id');
+    }
+
+    public function carSerie()
+    {
+        return $this->belongsTo(CarBrand::class, 'car_serie_id', 'id');
     }
 
     public function carYear()

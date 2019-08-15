@@ -24,7 +24,7 @@
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_model'))has-error @endif">
                 <label for="car_model" class="col-form-label">{{ __('fillable.CarModels') }}</label>
-                <select id="car_model" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_model">
+                <select id="car_model" class="form-control select2 w-100 {{ $errors->has('car_model') ? ' is-invalid' : '' }}" name="car_model">
                     <option value="">&mdash; Выберите марку автомобиля</option>
                 </select>
                 @if ($errors->has('car_model'))
@@ -37,7 +37,7 @@
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_series'))has-error @endif">
                 <label for="car_series" class="col-form-label">{{ __('fillable.CarSeries') }}</label>
-                <select id="car_series" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_series">
+                <select id="car_series" class="form-control select2 w-100 {{ $errors->has('car_series') ? ' is-invalid' : '' }}" name="car_series">
                     <option value="">&mdash; Выберите модель автомобиля</option>
                 </select>
                 @if ($errors->has('car_series'))

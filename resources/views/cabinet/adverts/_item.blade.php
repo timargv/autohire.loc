@@ -30,7 +30,7 @@
                         <td>
                             <div style="width: 150px; display:block;">
                                 <a href="{{ route('cabinet.adverts.show', $car_advert) }}" class="font-weight-bold">
-                                    {{ $car_advert->carBrand->name }} <span class="text-muted font-weight-light">{{ $car_advert->getCarAttributeModelValue($car_advert->values) }}</span>
+                                    {{ $car_advert->carBrand->name }} <span class="text-muted font-weight-light">{{ $car_advert->carModel->name }}</span>
                                 </a>
                                 <div class="small">{{ $car_advert->carYear->name }}</div>
                             </div>
