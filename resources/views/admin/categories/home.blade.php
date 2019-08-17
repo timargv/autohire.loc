@@ -1,7 +1,6 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'categories'])
 
 @section('content')
-    @include ('admin.categories._nav', ['page' => ''])
 
 
 @endsection

@@ -48466,6 +48466,17 @@ if (token) {
 
 /***/ }),
 
+/***/ "./resources/sass/admin.app.scss":
+/*!***************************************!*\
+  !*** ./resources/sass/admin.app.scss ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -48478,14 +48489,15 @@ if (token) {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
-  \*************************************************************/
+/*!*********************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/admin.app.scss ***!
+  \*********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! E:\OSPanel\domains\autohire.loc\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\OSPanel\domains\autohire.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! E:\OSPanel\domains\autohire.loc\resources\sass\app.scss */"./resources/sass/app.scss");
+module.exports = __webpack_require__(/*! E:\OSPanel\domains\autohire.loc\resources\sass\admin.app.scss */"./resources/sass/admin.app.scss");
 
 
 /***/ })

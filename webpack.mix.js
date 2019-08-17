@@ -14,18 +14,27 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css');
 
+
+mix.js('resources/js/admin.app.js', 'public/js')
+	.sass('resources/sass/admin.app.scss', 'public/css');
+
 // mix.styles([
-//     'resources/assets/admin/bootstrap/css/bootstrap.min.css',
-//     // 'resources/assets/admin/ionicons/2.0.1/css/ionicons.min.css',
-//     'resources/assets/admin/plugins/iCheck/minimal/_all.css',
-//     'resources/assets/admin/plugins/datepicker/datepicker3.css',
-//     'resources/assets/admin/plugins/colorpicker/bootstrap-colorpicker.min.css',
-//     'resources/assets/admin/plugins/select2/select2.min.css',
-//     'resources/assets/admin/plugins/datatables/dataTables.bootstrap.css',
-//     'resources/assets/admin/dist/css/AdminLTE.css',
-//     'resources/assets/admin/dist/css/skins/_all-skins.min.css',
-//     'resources/assets/admin/dist/css/style.less'
-// ], 'public/css/admin.css').sass('resources/sass/plug.scss', 'public/css/plug').version();
+//  	    'resources/assets/plugins/bootstrap/dist/css/bootstrap.min.css',
+//     	'resources/assets/plugins/fontawesome-pro/css/all.min.css',
+//     	'resources/assets/plugins/iCheck/all.css',
+//     	'resources/assets/plugins/bootstrap-daterangepicker/daterangepicker.css',
+//     	'resources/assets/plugins/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
+//     	'resources/assets/plugins/timepicker/bootstrap-timepicker.min.css',
+//     	'resources/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css',
+//     	'resources/assets/plugins/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
+//     	'resources/assets/plugins/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css',
+//     	'resources/assets/plugins/select2/dist/css/select2.min.css',
+// //     'resources/assets/admin/plugins/datatables/dataTables.bootstrap.css',
+//     	'resources/assets/dist/css/AdminLTE.css',
+//     	'resources/assets/admin/dist/css/skins/_all-skins.min.css',
+// //     'resources/assets/admin/dist/css/style.less'
+// ], 'public/css/admin.css').version();
+
 
 
 
@@ -58,5 +67,6 @@ mix.js('resources/js/app.js', 'public/js')
 //
 // mix.copy('resources/assets/admin/bootstrap/fonts', 'public/fonts');
 // mix.copy('resources/assets/admin/dist/fonts', 'public/fonts');
-// mix.copy('resources/assets/admin/dist/img', 'public/img');
+// mix.copy('resources/assets/img', 'public/img');
+// mix.copy('resources/assets/plugins/fontawesome-pro/webfonts', 'public/webfonts');
 // mix.copy('resources/assets/admin/plugins/iCheck/minimal/blue.png', 'public/css');

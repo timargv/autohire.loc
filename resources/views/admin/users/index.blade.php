@@ -1,37 +1,35 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'users'])
 
 @section('content')
-    @include('admin.users._nav')
-    @include ('admin.users._nav_user', ['page' => ''])
 
     {{--  Фильтр по пользователям  --}}
-    <div class="card mb-3">
+    <div class="box mb-3">
 {{--        <div class="card-header">Фильтр</div>--}}
-        <div class="card-body">
+        <div class="box-body">
             <form action="?" method="GET">
                 <div class="row">
                     <div class="col-sm-1">
-                        <div class="form-group mb-3 mb-md-0">
+                        <div class="form-group  mb-3 mb-md-0">
 {{--                            <label for="id" class="col-form-label">ID</label>--}}
                             <input id="id" class="form-control form-control-sm" name="id" value="{{ request('id') }}" placeholder="ID">
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group mb-3 mb-md-0">
+                        <div class="form-group  mb-3 mb-md-0">
 {{--                            <label for="name" class="col-form-label">Имя</label>--}}
                             <input id="name" class="form-control form-control-sm" name="name" value="{{ request('name') }}" placeholder="{{__('fillable.Name')}}">
                         </div>
                     </div>
                     <div class="col-sm-3">
-                        <div class="form-group mb-3 mb-md-0">
+                        <div class="form-group  mb-3 mb-md-0">
 {{--                            <label for="email" class="col-form-label">Email</label>--}}
                             <input id="email" class="form-control form-control-sm" name="email" value="{{ request('email') }}" placeholder="{{__('register.EMailAddress')}}">
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group mb-3 mb-md-0">
+                        <div class="form-group input-group-sm mb-3 mb-md-0">
 {{--                            <label for="status" class="col-form-label">Статус</label>--}}
-                            <select id="status" class="form-control form-control-sm" name="status">
+                            <select id="status" class="form-control form-control-sm select2" name="status">
                                 <option value="" class="text-muted" disabled selected>Выберите статус</option>
                                 @foreach ($statuses as $value => $label)
                                     <option value="{{ $value }}"{{ $value === request('status') ? ' selected' : '' }}>{{ $label }}</option>
@@ -40,9 +38,9 @@
                         </div>
                     </div>
                     <div class="col-sm-2">
-                        <div class="form-group mb-3 mb-md-0">
+                        <div class="form-group input-group-sm mb-3 mb-md-0">
 {{--                            <label for="role" class="col-form-label">Роль</label>--}}
-                            <select id="role" class="form-control form-control-sm" name="role">
+                            <select id="role" class="form-control form-control-sm select2" name="role">
                                 <option value="" class="text-muted" disabled selected>Выберите Роль</option>
                                 @foreach ($roles as $value => $label)
                                     <option value="{{ $value }}"{{ $value === request('role') ? ' selected' : '' }}>{{ $label }}</option>
@@ -54,8 +52,8 @@
                     <div class="col-sm-2 pr-0">
                         <div class="form-group mb-3 mb-md-0">
 {{--                            <label class="col-form-label">&nbsp;</label><br />--}}
-                            <button type="submit" class="btn btn-sm btn-primary">{{__('button.Search')}}</button>
-                            <a href="?" class="btn btn-sm btn-outline-danger"><i class="fas fa-times"></i></a>
+                            <button type="submit" class="btn  btn-default">{{__('button.Search')}}</button>
+                            <a href="?" class="btn  btn-default"><i class="fas fa-times"></i></a>
                         </div>
                     </div>
                 </div>
@@ -63,8 +61,28 @@
         </div>
     </div>
 
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Все Пользователи</h3>
 
-    @include('admin.users._item', ['users' => $users])
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="min-width: 150px;">
+                    @include ('admin.users._nav_user', ['page' => 'users'])
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+            @include('admin.users._item', ['users' => $users])
+        </div>
+        <!-- /.box-body -->
 
-    {{ $users->appends(request()->query())->links() }}
+        <div class="box-footer">
+            {{ $users->appends(request()->query())->links() }}
+        </div>
+    </div>
+
+
+
+
 @endsection

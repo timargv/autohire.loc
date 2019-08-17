@@ -1,4 +1,4 @@
-@include ('admin._nav', ['page' => 'categories'])
+@include ('admin.layouts._sidebar', ['page' => 'categories'])
 
 <p>
     <div class="btn-group mr-2 my-2">

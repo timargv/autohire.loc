@@ -1,12 +1,23 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'years'])
 
 @section('content')
-    @include('admin.categories._nav', ['page' => 'years'])
-    @include('admin.categories.car_years._search_form')
+    <div class="box">
+        <div class="box-header">
+            <h3 class="box-title">Все года </h3>
 
-
-    @include('admin.categories.car_years._item', ['years' => $years])
-
-
-    {{ $years->appends(request()->query())->links() }}
+            <div class="box-tools">
+                <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
+                    @include('admin.categories.car_years._search_form')
+                </div>
+            </div>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body table-responsive no-padding">
+            @include('admin.categories.car_years._item', ['years' => $years])
+        </div>
+        <!-- /.box-body -->
+        <div class="box-footer">
+            {{ $years->appends(request()->query())->links() }}
+        </div>
+    </div>
 @endsection
