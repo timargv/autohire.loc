@@ -5,61 +5,7 @@
     <bookmark url="file://$PROJECT_DIR$/resources/views/admin/users/groups/_item.blade.php" line="22" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/lang/ru/text.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/aero.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/aero.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/aero@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/aero@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/blue@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/blue@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/green.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/green.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/green@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/green@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/grey.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/grey.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/grey@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/grey@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/orange.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/orange.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/orange@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/orange@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/pink.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/pink.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/pink@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/pink@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/purple.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/purple.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/purple@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/purple@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/red.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/red.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/red@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/red@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/yellow.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/yellow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/images/yellow@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/yellow@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/admin.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin.app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin.app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/fillable.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/fillable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/admin.app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admin.app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_form_search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_form_search.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/_search_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/_search_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_attributes/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/_search_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/_search_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/models/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/models/_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_brands/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_years/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_years/_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_years/_search_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_years/_search_form.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_years/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_years/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/categories/car_years/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/categories/car_years/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/_header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
-    </list>
+    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,8 +109,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/categories/car_brands/edit.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+            <state relative-caret-position="736">
+              <caret line="55" column="10" lean-forward="true" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -684,12 +630,12 @@
       <workItem from="1565871918934" duration="1395000" />
       <workItem from="1565881216577" duration="1766000" />
       <workItem from="1566043291950" duration="31077000" />
-      <workItem from="1566469443092" duration="11738000" />
+      <workItem from="1566469443092" duration="12339000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399182000" />
+    <option name="totallyTimeSpent" value="399783000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1104,8 +1050,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/categories/car_brands/edit.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="40" column="83" selection-start-line="40" selection-start-column="83" selection-end-line="40" selection-end-column="83" />
+        <state relative-caret-position="736">
+          <caret line="55" column="10" lean-forward="true" selection-start-line="55" selection-start-column="10" selection-end-line="55" selection-end-column="10" />
         </state>
       </provider>
     </entry>
