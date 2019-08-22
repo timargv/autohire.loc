@@ -63,7 +63,7 @@ $(document).ready(function() {
 
 
     $('.carAdvertSh').hover(function () {
-            $(this).toggleClass('shadow-sm');
+        $(this).toggleClass('shadow-sm');
     });
 
 

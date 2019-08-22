@@ -78,8 +78,9 @@
                     @endif
                 </div>
 
-                <div class="form-group">
+                <div class="form-group d-flex">
                     <button type="submit" class="btn btn-primary">{{ __('button.Save') }}</button>
+                    <a class="btn btn-danger ml-auto" href="{{ URL::previous() }}">{{ __('button.Back') }}</a>
                 </div>
             </form>
         </div>

@@ -1,15 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'years'])
+@section('TitlePage', __('fillable.Edit') .' '. $year->name)
 
 @section('content')
-    @include('admin.categories._nav', ['page' => 'years'])
-
-
-    <div class="card border-0 rounded-0 shadow-sm">
-        <div class="card-header border-0">
+    <div class="box box-solid">
+        <div class="box-header with-border">
             {{ __('fillable.Create') .' '.  __('fillable.Attribute')}}
         </div>
 
-        <div class="card-body">
+        <div class="box-body">
             <form method="POST" action="{{ route('admin.categories.car.years.update', $year) }}">
                 @csrf
                 @method('PUT')
@@ -31,7 +29,7 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="status" name="status" {{ old('status', $year->status != 'off') ? 'checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input flat-red" id="status" name="status" {{ old('status', $year->status != 'off') ? 'checked' : '' }}>
                         <label class="custom-control-label" for="status">{{ __('fillable.Status') }}</label>
                     </div>
                     @if ($errors->has('status'))
@@ -39,8 +37,9 @@
                     @endif
                 </div>
 
-                <div class="form-group">
+                <div class="form-group d-flex">
                     <button type="submit" class="btn btn-primary">{{ __('button.Save') }}</button>
+                    <a class="btn btn-danger ml-auto" href="{{ URL::previous() }}">{{ __('button.Back') }}</a>
                 </div>
 
             </form>

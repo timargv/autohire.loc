@@ -1,8 +1,8 @@
 @extends('admin.layouts.app', ['page' => 'adverts'])
 
 @section('content')
-    <div class="box">
-        <div class="box-header">
+    <div class="box box-solid">
+        <div class="box-header with-border">
             <h3 class="box-title">Все {{ __('fillable.Adverts') }} </h3>
 
             <div class="box-tools">

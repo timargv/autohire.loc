@@ -1,9 +1,9 @@
 @extends('admin.layouts.app', ['page' => 'attributes'])
 
 @section('content')
-    <div class="box">
-        <div class="box-header">
-            <h3 class="box-title">Все Аттрибуты </h3>
+    <div class="box box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Все аттрибуты </h3>
 
             <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">

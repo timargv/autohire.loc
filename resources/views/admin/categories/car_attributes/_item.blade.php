@@ -19,11 +19,11 @@
             <td class="text-{{ $attribute->required != 0 ? 'success' : 'danger' }}">{{ $attribute->required != 0 ? 'on' : 'off' }}</td>
             <td>
                 <div class="d-flex flex-row">
-                    <a href="{{ route('admin.categories.car.attributes.edit', $attribute) }}" class="btn btn-sm btn-outline-light" data-toggle="tooltip" data-placement="top" title="{{ __('button.Edit') }}"><i class="fas fa-edit text-muted"></i></a>
-                    <form method="POST" action="{{ route('admin.categories.car.attributes.destroy', $attribute) }}" class="mr-1">
+                    <a href="{{ route('admin.categories.car.attributes.edit', $attribute) }}" class="btn btn-xs bg-transparent" data-toggle="tooltip" data-placement="top" title="{{ __('button.Edit') }}"><i class="fas fa-edit text-muted"></i></a>
+                    <form method="POST" action="{{ route('admin.categories.car.attributes.destroy', $attribute) }}" class="mx-3">
                         @csrf
                         @method('DELETE')
-                        <button class="btn btn-sm btn-outline-light" onclick="return confirm('Удалить Аттрибут?')" data-toggle="tooltip" data-placement="top" title="{{ __('button.Delete') }}"><i class="fas fa-trash text-muted"></i></button>
+                        <button class="btn btn-xs bg-transparent" onclick="return confirm('Удалить Аттрибут?')" data-toggle="tooltip" data-placement="top" title="{{ __('button.Delete') }}"><i class="fas fa-trash text-muted"></i></button>
                     </form>
                 </div>
             </td>

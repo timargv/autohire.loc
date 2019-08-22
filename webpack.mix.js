@@ -11,8 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+// mix.js('resources/js/app.js', 'public/js')
+//     .sass('resources/sass/app.scss', 'public/css');
 
 
 mix.js('resources/js/admin.app.js', 'public/js')
@@ -69,4 +69,4 @@ mix.js('resources/js/admin.app.js', 'public/js')
 // mix.copy('resources/assets/admin/dist/fonts', 'public/fonts');
 // mix.copy('resources/assets/img', 'public/img');
 // mix.copy('resources/assets/plugins/fontawesome-pro/webfonts', 'public/webfonts');
-// mix.copy('resources/assets/admin/plugins/iCheck/minimal/blue.png', 'public/css');
+// mix.copy('resources/assets/plugins/iCheck/minimal/blue.png', 'public/img');

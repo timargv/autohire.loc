@@ -90,9 +90,12 @@ class CarBrandsController extends Controller
 
 
 
-    public function edit(CarBrand $carBrand)
+    public function edit($id, CarBrand $carBrand)
     {
-        return view('admin.categories.car_brands.edit', compact('carBrand'));
+        $carBrand = $this->getCarBrand($id);
+        $carModelsOrSeries = $carBrand->children()->defaultOrder()->getModels();
+
+        return view('admin.categories.car_brands.edit', compact('carBrand', 'carModelsOrSeries'));
     }
 
 

@@ -278,16 +278,19 @@ Breadcrumbs::register('admin.categories.car.brands.create', function (Crumbs $cr
     $crumbs->push(__('fillable.Create'), route('admin.categories.car.brands.create'));
 });
 
-Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crumbs, CarBrand $car_brand) {
-    $crumbs->parent('admin.adverts.categories.show', $car_brand);
-    $crumbs->push($car_brand->name, route('admin.categories.car.brands.edit', $car_brand));
+Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crumbs, $carBrand) {
+    $carBrand = CarBrand::findOrFail($carBrand);
+    if ($parent = $carBrand->parent) {
+        $crumbs->parent('admin.categories.car.brands.show', $parent->id);
+    } else {
+        $crumbs->parent('admin.categories.car.brands.index');
+    }
+    $crumbs->push($carBrand->name, route('admin.categories.car.brands.edit', $carBrand));
 });
 
 
 Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crumbs, $carBrand) {
     $carBrand = CarBrand::findOrFail($carBrand);
-
-
     if ($parent = $carBrand->parent) {
         $crumbs->parent('admin.categories.car.brands.show', $parent->id);
     } else {

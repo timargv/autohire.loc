@@ -40,6 +40,7 @@
         "flot": "^0.8.3",
         "font-awesome": "^4.7",
         "fullcalendar": "^3.10",
+        "icheck": "^1.0.2",
         "inputmask": "^3.3.7",
         "ion-rangeslider": "^2.3",
         "ionicons": "^3",
