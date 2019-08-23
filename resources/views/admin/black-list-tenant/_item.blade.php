@@ -1,5 +1,5 @@
-<div class="card rounded-0  ">
-    <div class="card-body p-0 ">
+<div class="box box-solid">
+    <div class="box-body no-padding">
         <table class="table table-borderless table-responsive-sm bg-white">
             <thead class="thead-light">
             <tr>
@@ -65,11 +65,11 @@
 {{--                <td class="small">@if($tenant->author) <a href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a> @else - @endif</td>--}}
                 <td>
                     @if($tenant->isActive())
-                        <div><span class="badge badge-success">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
+                        <div><span class="badge bg-success">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
                     @elseif($tenant->isModeration())
-                        <div><span class="badge badge-warning">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
+                        <div><span class="badge bg-warning">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
                     @elseif($tenant->isNotMatch())
-                        <div><span class="badge badge-danger">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
+                        <div><span class="badge bg-danger">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
                     @endif
                 </td>
                 <td class="pr-0">

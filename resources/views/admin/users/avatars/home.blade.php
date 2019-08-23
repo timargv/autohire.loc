@@ -1,12 +1,12 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'users'])
+@section('btnBlock')
+    @include ('admin.users._nav_user', ['page' => 'avatars'])
+@stop
 
 @section('content')
-    @include('admin.users._nav')
-    @include ('admin.users._nav_user', ['page' => 'avatars'])
-
-    <div class="card mb-3">
+    <div class="box box-solid">
 {{--        <div class="card-header">Фильтр</div>--}}
-        <div class="card-body">
+        <div class="box-body">
             <form action="?" method="GET">
                 <div class="row">
                     <div class="col-sm-1">

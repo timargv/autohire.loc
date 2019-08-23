@@ -1,10 +1,22 @@
 @extends('admin.layouts.app', ['page' => 'carBrands'])
+@include('admin.categories.car_brands._header_panel')
+
+@if ($carBrand->depthCarBrand($carBrand->id)->depth == 0)
+    @section('TitlePage', __('fillable.Edit') .' '.  trans_choice('fillable.CarBrand', 10) . ' ' . $carBrand->name)
+@else
+    @section('TitlePage',  $carBrand->depthCarBrand($carBrand->id)->depth == 1 ?  __('fillable.Edit').' '. trans_choice('fillable.CarModel', 1).' '. $carBrand->name  : __('fillable.Edit') .' '. trans_choice('fillable.CarSeries', 10) .' '. $carBrand->name  )
+@endif
+
 
 @section('content')
 
     <div class="box box-solid">
         <div class="box-header ">
-            {{ __('fillable.Create') .' '.  __('fillable.Attribute')}}
+            @if ($carBrand->depthCarBrand($carBrand->id)->depth == 0)
+                <h3 class="box-title">{{ __('fillable.Edit') .' '.  trans_choice('fillable.CarBrand', 10) . ' ' . $carBrand->name }}</h3>
+            @else
+                <h3 class="box-title">{{ $carBrand->depthCarBrand($carBrand->id)->depth == 1 ?  trans_choice('fillable.CarModel', 1) .' '. $carBrand->name : trans_choice('fillable.CarSeries', 10) .' '. $carBrand->name }} </h3>
+            @endif
         </div>
 
         <div class="box-body">

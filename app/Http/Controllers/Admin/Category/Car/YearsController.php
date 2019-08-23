@@ -51,7 +51,7 @@ class YearsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.categories.car_years.create');
     }
 
     /**

@@ -51,7 +51,7 @@ class Advert extends Model
         'expires_at' => 'datetime',     // истекает
     ];
 
-    protected $with = ['photos', 'carBrand', 'carModel', 'carSerie', 'carYear', 'values', 'attributes'];
+    protected $with = ['photos', 'author', 'carBrand', 'carModel', 'carSerie', 'carYear', 'values', 'attributes'];
 
 
     //  Массив из типа аренды авто
@@ -247,9 +247,11 @@ class Advert extends Model
         $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
 
         foreach ($photos as $photo) {
+
             if ($photo->type === Photo::TYPE_MAIN_PHOTO) {
                 $photoMain = $photo;
             }
+
         }
 
         return $photoMain;

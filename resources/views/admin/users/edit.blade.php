@@ -1,12 +1,16 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'users'])
+@section('btnBlock')
+    @include ('admin.users._nav_user', ['page' => ''])
+@stop
 
 @section('content')
-    @include('admin.users._nav')
-    @include ('admin.users._nav_user', ['page' => ''])
 
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <div class="row">
+    <div class="box box-solid">
+        <div class="box-header with-border">
+            {{ __('fillable.Edit') }}
+        </div>
+        <div class="box-body">
+            <div class="row py-3">
 
                 <div class="col-md-4">
                     <div class="card border-0 text-white mb-3">

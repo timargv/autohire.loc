@@ -285,7 +285,7 @@ Breadcrumbs::register('admin.categories.car.brands.edit', function (Crumbs $crum
     } else {
         $crumbs->parent('admin.categories.car.brands.index');
     }
-    $crumbs->push($carBrand->name, route('admin.categories.car.brands.edit', $carBrand));
+    $crumbs->push(__('fillable.Edit') .' '. $carBrand->name, route('admin.categories.car.brands.edit', $carBrand));
 });
 
 
@@ -322,7 +322,7 @@ Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crum
 // == Admin Category Car Years
 Breadcrumbs::register('admin.categories.car.years.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.categories.home');
-    $crumbs->push(__('fillable.CarYears'), route('admin.categories.car.years.index'));
+    $crumbs->push(trans_choice('fillable.CarYears', 8), route('admin.categories.car.years.index'));
 });
 
 Breadcrumbs::register('admin.categories.car.years.create', function (Crumbs $crumbs) {

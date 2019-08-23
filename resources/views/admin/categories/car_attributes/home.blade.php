@@ -1,4 +1,6 @@
 @extends('admin.layouts.app', ['page' => 'attributes'])
+@include('admin.categories.car_attributes._header_panel')
+
 
 @section('content')
     <div class="box box-solid">
@@ -7,7 +9,6 @@
 
             <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="width: 150px;">
-                    @include('admin.categories.car_attributes._search_form')
                 </div>
             </div>
         </div>

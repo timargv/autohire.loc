@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'black-list-tenant'])
+@section('btnBlock')
+    @include('admin.black-list-tenant._nav_button', ['page' => 'create'])
+@stop
+
 
 @section('content')
-    @include('admin.black-list-tenant._nav')
-    @include('admin.black-list-tenant._nav_button', ['page' => ''])
 
-
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
+    <div class="box box-solid">
+        <div class="box-body">
             <form method="POST" action="{{ route('admin.black.list.tenants.story') }}" enctype="multipart/form-data">
             @csrf
 

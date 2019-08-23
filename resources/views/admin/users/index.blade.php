@@ -1,9 +1,12 @@
 @extends('admin.layouts.app', ['page' => 'users'])
+@section('btnBlock')
+    @include ('admin.users._nav_user', ['page' => 'create'])
+@stop
 
 @section('content')
 
     {{--  Фильтр по пользователям  --}}
-    <div class="box mb-3">
+    <div class="box box-solid">
 {{--        <div class="card-header">Фильтр</div>--}}
         <div class="box-body">
             <form action="?" method="GET">
@@ -61,13 +64,13 @@
         </div>
     </div>
 
-    <div class="box">
-        <div class="box-header">
+    <div class="box box-solid">
+        <div class="box-header with-border">
             <h3 class="box-title">Все Пользователи</h3>
 
             <div class="box-tools">
                 <div class="input-group input-group-sm hidden-xs" style="min-width: 150px;">
-                    @include ('admin.users._nav_user', ['page' => 'users'])
+
                 </div>
             </div>
         </div>

@@ -1,14 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'attributes'])
+@include('admin.categories.car_attributes._header_panel')
 
 @section('content')
-    @include('admin.categories._nav', ['page' => 'attributes'])
 
-
-    <div class="card border-0 rounded-0 shadow-sm">
-        <div class="card-header border-0">
-            {{ __('fillable.Create') .' '.  __('fillable.Attribute')}}
+    <div class="box box-solid">
+        <div class="box-header border-white">
+            {{ __('fillable.Create') .' '.  trans_choice('fillable.Attribute', 1)}}
         </div>
-        <div class="card-body">
+        <div class="box-body">
             <form method="POST" action="{{ route('admin.categories.car.attributes.store') }}">
                 @csrf
 
@@ -50,7 +49,7 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="required" name="required" {{ old('required') ? 'checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input flat-red" id="required" name="required" {{ old('required') ? 'checked' : '' }}>
                         <label class="custom-control-label" for="required">{{ __('fillable.Required') }}</label>
                     </div>
                     @if ($errors->has('required'))
@@ -60,7 +59,7 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="status" name="status" {{ old('status') ? 'checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input flat-red" id="status" name="status" {{ old('status') ? 'checked' : '' }}>
                         <label class="custom-control-label" for="status">{{ __('fillable.Status') }}</label>
                     </div>
                     @if ($errors->has('status'))
@@ -70,7 +69,7 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input" id="is_visible" name="is_visible" {{ old('is_visible') ? 'checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input flat-red" id="is_visible" name="is_visible" {{ old('is_visible') ? 'checked' : '' }}>
                         <label class="custom-control-label" for="is_visible">{{ __('fillable.Visible') }}</label>
                     </div>
                     @if ($errors->has('is_visible'))

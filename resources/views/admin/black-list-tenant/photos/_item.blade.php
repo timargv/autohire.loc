@@ -1,5 +1,5 @@
-<div class="card rounded-0 border-0 ">
-    <div class="card-body p-0">
+<div class="box box-solid ">
+    <div class="box-body p-0">
         <table class="table table-borderless table-responsive-sm bg-white">
             <thead class="thead-light">
             <tr>

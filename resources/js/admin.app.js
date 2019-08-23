@@ -34,6 +34,7 @@ require('icheck');
 $(document).ready(function() {
 //     //Initialize Select2 Elements
     $('.select2').select2();
+    $('[data-toggle="tooltip"]').tooltip();
 //
 //     //Datemask dd/mm/yyyy
 //     $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });

@@ -1,10 +1,10 @@
 @extends('admin.layouts.app', ['page' => 'attributes'])
-@section('TitlePage', __('fillable.Edit') .' '. $attribute->name)
+@include('admin.categories.car_attributes._header_panel')
 
 @section('content')
     <div class="box box-solid">
         <div class="box-header with-border">
-            {{ __('fillable.Create') .' '.  __('fillable.Attribute')}}
+            {{ __('fillable.Edit') .' '.  trans_choice('fillable.Attribute', 1)}}
         </div>
 
         <div class="box-body ">

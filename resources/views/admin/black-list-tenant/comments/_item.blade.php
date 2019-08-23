@@ -1,5 +1,5 @@
-<div class="card rounded-0">
-    <div class="card-body">
+<div class="box box-solid">
+    <div class="box-body">
     <div class="mb-3">
         <div class="mb-3 text-muted ">
             {{ __('fillable.Comments') }}

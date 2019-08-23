@@ -1,10 +1,9 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'users'])
+@section('btnBlock')
+    @include ('admin.users._nav_user', ['page' => 'groups'])
+@stop
 
 @section('content')
-    @include('admin.users._nav')
-    @include ('admin.users._nav_user', ['page' => 'groups'])
-
-
     <div class="row">
         <div class="col-md-6">
             @include('admin.users.groups._item', ['groups' => $groups])

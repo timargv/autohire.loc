@@ -1,12 +1,13 @@
-@extends('layouts.app')
+@extends('admin.layouts.app', ['page' => 'black-list-tenant'])
+@section('btnBlock')
+    @include('admin.black-list-tenant._nav_button', ['page' => 'comments'])
+@stop
 
 @section('content')
-    @include('admin.black-list-tenant._nav')
-    @include('admin.black-list-tenant._nav_button', ['page' => 'comments'])
 
-    <div class="card mb-3">
+    <div class="box box-solid">
         {{--        <div class="card-header">Фильтр</div>--}}
-        <div class="card-body">
+        <div class="box-body">
             <form action="?" method="GET" class="">
                 <div class="row">
                     <div class="col-sm-1">
@@ -15,7 +16,7 @@
                             <input id="id" class="form-control form-control-sm" name="id" value="{{ request('id') }}" placeholder="ID">
                         </div>
                     </div>
-                    <div class="col-sm-5">
+                    <div class="col-sm-3">
                         <div class="form-group mb-3 mb-md-0">
                             <input id="name" class="form-control form-control-sm" name="name" value="{{ request('name') }}" placeholder="{{ __('fillable.Name') }}">
                         </div>
@@ -30,9 +31,9 @@
                             </select>
                         </div>
                     </div>
-                    <div class="custom-control custom-switch " data-toggle="tooltip" data-placement="top" title="Показать только мои">
-                        <input type="checkbox" class="custom-control-input" id="onlyMy" name="onlyMy" {{ request('onlyMy') ? ' checked' : '' }}>
-                        <label class="custom-control-label" for="onlyMy" ></label>
+                    <div class="custom-control col-md-2 col-xs-12 custom-switch " data-toggle="tooltip" data-placement="top" title="Показать только мои">
+                        <input type="checkbox" class="custom-control-input flat-red" id="onlyMy" name="onlyMy" {{ request('onlyMy') ? ' checked' : '' }}>
+                        <label class="custom-control-label" for="onlyMy" >только мои</label>
                     </div>
 
                     <div class="col-sm-2 pr-0">

@@ -1,4 +1,6 @@
 @extends('layouts.app')
+@include('admin.categories.car_years._header_panel')
+
 
 @section('content')
     @include('admin.categories._nav', ['page' => 'years'])

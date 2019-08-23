@@ -2,7 +2,7 @@
     <thead class="thead-light">
     <tr>
         <th width="70px">ID</th>
-        <th>{{__('fillable.Attribute')}}</th>
+        <th>{{ trans_choice('fillable.Attribute', 1) }}</th>
         <th width="40px">{{ __('fillable.Status') }}</th>
         <th width="40px">{{ __('fillable.Visible') }}</th>
         <th width="40px">{{ __('fillable.Required') }}</th>

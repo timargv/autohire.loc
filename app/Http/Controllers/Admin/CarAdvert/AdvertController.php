@@ -50,6 +50,7 @@ class AdvertController extends Controller
 
         $car_adverts = $query->paginate(20);
 
+
         $statuses = Advert::statusesList();
 
         $roles = User::rolesList();

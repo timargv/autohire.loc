@@ -1,4 +1,9 @@
 @extends('admin.layouts.app', ['page' => 'brands'])
+
+@section('search_header')
+    @include('admin.categories.car_brands._form_search_header')
+@stop
+
 @if (!empty($carBrand))
     @section('TitlePage', $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. __('fillable.CarSeries') : __('button.Add') .' '. __('fillable.CarModel') )
 @else

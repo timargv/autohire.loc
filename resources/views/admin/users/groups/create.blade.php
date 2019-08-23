@@ -1,5 +1,8 @@
-<div class="card border-0 shadow-sm">
-    <div class="card-body">
+<div class="box box-solid">
+    <div class="box-header with-border">
+        Добавить группу
+    </div>
+    <div class="box-body">
         <form method="POST" action="{{ route('admin.users.groups.store') }}">
             @csrf
 

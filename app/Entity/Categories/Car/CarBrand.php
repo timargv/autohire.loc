@@ -22,6 +22,11 @@ class CarBrand extends Model
 //        return $this->belongsToMany(Advert::class,'car_id','id');
 //    }
 
+    public function parent()
+    {
+        return $this->belongsTo(self::class);
+    }
+
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id', 'id');
