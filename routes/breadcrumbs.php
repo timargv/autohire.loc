@@ -51,7 +51,7 @@ Breadcrumbs::register('profile.show', function (Crumbs $crumbs, User $user) {
 
 Breadcrumbs::register('cars.adverts.index', function (Crumbs $crumbs) {
     $crumbs->parent('home');
-    $crumbs->push(__('fillable.Adverts'), route('cars.adverts.index'));
+    $crumbs->push(__('fillable.CarsLite'), route('cars.adverts.index'));
 });
 
 Breadcrumbs::register('cars.adverts.show', function (Crumbs $crumbs, Advert $carAdvert) {

@@ -74,26 +74,27 @@ $(document).ready(function() {
                 url: '/cabinet/my/cars/create/models/get/'+carBrandId,
                 type:"GET",
                 dataType:"json",
-                beforeSend: function(){
-                    $('#loader').css("visibility", "visible");
-                },
+
 
                 success:function(data) {
-
-                    $('select[name="car_model"]').empty();
-
+                    $('select[name="car_model"]').empty().prepend('<option value="">— Выберите модель</option>');
                     $.each(data, function(key, value){
-
                         $('select[name="car_model"]').append('<option value="'+ key +'">' + value + '</option>');
-
                     });
+
+                    if(!$.trim(data)) {
+                        $('#car_model').attr('disabled', true).empty().prepend('<option value="">— Выберите Модель</option>');
+                    } else {
+                        $('#car_model').removeAttr("disabled");
+                    }
                 },
                 complete: function(){
-                    $('#loader').css("visibility", "hidden");
+                    $('#car_model').attr("disabled");
                 }
-            });
-        } else {
-            $('select[name="car_model"]').empty();
+
+        }); } else {
+            $('select[name="car_model"]').empty().prepend('<option value="">— Выберите Модель</option>');
+            $('#car_model').attr("disabled");
         }
 
     });
@@ -105,26 +106,30 @@ $(document).ready(function() {
                 url: '/cabinet/my/cars/create/models/get/'+carModelId,
                 type:"GET",
                 dataType:"json",
-                beforeSend: function(){
-                    $('#loader').css("visibility", "visible");
-                },
 
                 success:function(data) {
 
-                    $('select[name="car_series"]').empty();
+                    $('select[name="car_series"]').empty().prepend('<option value="">— Выберите серию</option>');
 
                     $.each(data, function(key, value){
-
                         $('select[name="car_series"]').append('<option value="'+ key +'">' + value + '</option>');
-
                     });
+
+                    if(!$.trim(data)) {
+                        $('#car_series').attr('disabled', true).empty().prepend('<option value="">— Выберите серию</option>');
+                    } else {
+                        $('#car_series').removeAttr("disabled");
+                    }
+
                 },
                 complete: function(){
-                    $('#loader').css("visibility", "hidden");
+                    $('#car_series').attr("disabled");
                 }
+
             });
         } else {
-            $('select[name="car_series"]').empty();
+            $('select[name="car_series"]').empty().prepend('<option value="">— Выберите серию</option>');
+            $('#car_series').attr("disabled");
         }
 
     });

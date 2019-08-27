@@ -17,7 +17,7 @@
             <div class="box box-solid">
                 <div class="box-header">
                     @if (!empty($carBrand))
-                        {{ $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. __('fillable.CarSeries') : __('button.Add') .' '. __('fillable.CarModel') }}
+                        {{ $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. trans_choice('fillable.CarSeries', 10) : __('button.Add') .' '. __('fillable.CarModel') }}
                     @else
                         {{ __('button.Add') .' '. trans_choice('fillable.CarBrand', 10) }}
                     @endif

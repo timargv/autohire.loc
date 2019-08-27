@@ -4,7 +4,7 @@
 
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_brand'))has-error @endif">
-                <label for="car_brand" class="col-form-label">{{ __('fillable.CarBrands') }}</label>
+                <label for="car_brand" class="col-form-label">{{ trans_choice('fillable.CarBrand', 1) }}</label>
                 <select id="car_brand" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_brand">
                     <option value="">&mdash; Выберите марку автомобиля</option>
                     @foreach ($car_brands as $car_brand)
@@ -23,9 +23,9 @@
 
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_model'))has-error @endif">
-                <label for="car_model" class="col-form-label">{{ __('fillable.CarModels') }}</label>
-                <select id="car_model" class="form-control select2 w-100 {{ $errors->has('car_model') ? ' is-invalid' : '' }}" name="car_model">
-                    <option value="">&mdash; Выберите марку автомобиля</option>
+                <label for="car_model" class="col-form-label">{{ trans_choice('fillable.CarModels', 1) }}</label>
+                <select id="car_model" class="form-control select2 w-100 {{ $errors->has('car_model') ? ' is-invalid' : '' }}" name="car_model" disabled>
+                    <option value="">&mdash; Выберите {{ trans_choice('fillable.CarModels', 1) }}</option>
                 </select>
                 @if ($errors->has('car_model'))
                     <span class="help-block"><strong>{{ $errors->first('car_model') }}</strong></span>
@@ -36,9 +36,9 @@
 
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_series'))has-error @endif">
-                <label for="car_series" class="col-form-label">{{ __('fillable.CarSeries') }}</label>
-                <select id="car_series" class="form-control select2 w-100 {{ $errors->has('car_series') ? ' is-invalid' : '' }}" name="car_series">
-                    <option value="">&mdash; Выберите модель автомобиля</option>
+                <label for="car_series" class="col-form-label">{{ trans_choice('fillable.CarSeries', 1) }}</label>
+                <select id="car_series" class="form-control select2 w-100 {{ $errors->has('car_series') ? ' is-invalid' : '' }}" name="car_series" disabled>
+                    <option value="">&mdash; Выберите {{ trans_choice('fillable.CarSeries', 1) }}</option>
                 </select>
                 @if ($errors->has('car_series'))
                     <span class="help-block"><strong>{{ $errors->first('car_series') }}</strong></span>
@@ -50,9 +50,9 @@
 
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_year'))has-error @endif">
-                <label for="parent" class="col-form-label">{{ __('fillable.CarYears') }}</label>
+                <label for="parent" class="col-form-label">{{ trans_choice('fillable.CarYears', 1) }}</label>
                 <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year">
-                    <option value="">&mdash; {{ __('fillable.CarYears') }} автомобиля</option>
+                    <option value="">&mdash; {{ trans_choice('fillable.CarYears', 1) }} автомобиля</option>
                     @foreach ($car_years as $car_year)
                         <option value="{{ $car_year->id }}"{{ $car_year->id == old('car_year') ? ' selected' : '' }}>
                             @for ($i = 0; $i < $car_year->depth; $i++) &mdash; @endfor

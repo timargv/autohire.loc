@@ -89,10 +89,10 @@
                     @endif
 
                     <div class="btn-group w-100 ">
-                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle btn-block align-middle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{__('fillable.Edit')}}  <i class="fas fa-sort-down"></i>
+                        <button type="button" class="btn btn-primary btn-sm dropdown-toggle btn-block " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{__('fillable.Edit')}}
                         </button>
-                        <div class="dropdown-menu dropdown-menu-left rounded-0 ">
+                        <div class="dropdown-menu dropdown-menu-left rounded-0 w-100">
                             <a href="{{ route('admin.users.edit', $user) }}" class="btn bg-transparent btn-block text-left btn-sm rounded-0 text-black" style="text-align: left"><i class="fal fa-pen mr-2"></i> {{ __('button.Edit') }}</a>
 
                             @if ($user->isWait())

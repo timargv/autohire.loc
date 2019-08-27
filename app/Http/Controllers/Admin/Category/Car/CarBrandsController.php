@@ -114,6 +114,8 @@ class CarBrandsController extends Controller
             'slug' => Str::slug($request['name']).'-'.rand(0, 10),
         ]);
 
+
+
         return redirect()->route('admin.categories.car.brands.index')->with('success', 'Марка автомобиля обновлена');
     }
 

@@ -21,11 +21,12 @@ class CreateRequest extends FormRequest
         $items = [];
 
         return array_merge([
+            'car_brand'     => 'required|integer',
             'description'   => 'required|string',
             'price_per_day' => 'required|integer',
             'address'       => 'required|string',
             'type_rental'   => 'required|string',
-            'attribute.*'    => 'required|string',
+            'attribute.*'   => 'required|string',
         ], $items);
 
 

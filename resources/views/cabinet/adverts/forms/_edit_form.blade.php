@@ -77,11 +77,52 @@
                 @endif
             </div>
         </div>
+
+        <div class="col-md-4">
+            <div class="form-group @if($errors->has('car_model'))has-error @endif">
+                <label for="parent" class="col-form-label">{{ __('fillable.CarModel') }}</label>
+                <select id="car_model" class="form-control select2 w-100 {{ $errors->has('car_model') ? ' is-invalid' : '' }}" name="car_model">
+                    <option value="">&mdash; Выберите {{ __('fillable.CarModel') }}</option>
+                    @if ($carAdvert->carBrand->children)
+                    @foreach ($carAdvert->carBrand->children as $car_model)
+                        <option value="{{ $car_model->id }}"{{ $car_model->id == old('car_model', $carAdvert->carModel ? $carAdvert->carModel->id : null) ? ' selected' : '' }}>
+                            @for ($i = 0; $i < $car_model->depth; $i++) &mdash; @endfor
+                            {{ $car_model->name }}
+                        </option>
+                    @endforeach;
+                    @endif
+                </select>
+                @if ($errors->has('car_model'))
+                    <span class="help-block"><strong>{{ $errors->first('car_model') }}</strong></span>
+                @endif
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group @if($errors->has('car_series'))has-error @endif">
+                <label for="parent" class="col-form-label">{{ trans_choice('fillable.CarSeries', 1) }}</label>
+                <select id="car_series" class="form-control select2 w-100 {{ $errors->has('car_series') ? ' is-invalid' : '' }}" name="car_series" {{ $carAdvert->carModel ? '' : 'disabled' }}>
+                    <option value="">&mdash; Выберите {{ trans_choice('fillable.CarSeries', 10) }}</option>
+                    @if ($carAdvert->carModel)
+                    @foreach ($carAdvert->carModel->children as $car_series)
+                        <option value="{{ $car_series->id }}" {{ $car_series->id == old('car_series', $carAdvert->carSerie ? $carAdvert->carSerie->id : null) ? ' selected' : '' }}>
+                            @for ($i = 0; $i < $car_series->depth; $i++) &mdash; @endfor
+                            {{ $car_series->name }}
+                        </option>
+                    @endforeach;
+                    @endif
+                </select>
+                @if ($errors->has('car_series'))
+                    <span class="help-block"><strong>{{ $errors->first('car_series') }}</strong></span>
+                @endif
+            </div>
+        </div>
+
         <div class="col-md-4">
             <div class="form-group @if($errors->has('car_year'))has-error @endif">
                 <label for="parent" class="col-form-label">{{ trans_choice('fillable.CarYears', 1) }}</label>
                 <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year">
-                    <option value="">&mdash; {{ __('fillable.CarYears') }} автомобиля</option>
+                    <option value="">&mdash; {{ trans_choice('fillable.CarYears', 1) }} автомобиля</option>
                     @foreach ($car_years as $car_year)
                         <option value="{{ $car_year->id }}"{{ $car_year->id == old('car_year', $carAdvert->carYear->id) ? ' selected' : '' }}>
                             @for ($i = 0; $i < $car_year->depth; $i++) &mdash; @endfor

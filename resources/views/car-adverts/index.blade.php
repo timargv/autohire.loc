@@ -20,7 +20,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <div class="d-flex">
-                                    <a href="{{ route('cars.adverts.show', $carAdvert) }}" class="card-title font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->getCarAttributeModelValue($carAdvert->values) }}, {{ $carAdvert->carYear->name }}</a>
+                                    <a href="{{ route('cars.adverts.show', $carAdvert) }}" class="card-title font-weight-bold">{{ $carAdvert->carBrand->name }} {{  $carAdvert->carModel ? $carAdvert->carModel->name : '' }}, {{ $carAdvert->carYear->name }}</a>
                                     <div class="ml-auto font-weight-bold">
                                         <span id="priceCarAdvert">{{ $carAdvert->price_per_day }}</span>
                                     </div>

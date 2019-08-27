@@ -12,7 +12,7 @@
         <div class="box-body">
             <div class="row py-3">
 
-                <div class="col-md-4">
+                <div class="col-md-2">
                     <div class="card border-0 text-white mb-3">
                         @if($user->avatar && Storage::disk('public')->exists('user/avatar/medium/'.$user->avatar->image))
                             @if($user->avatar->isModeration() || $user->avatar->isNotMatch())
@@ -146,8 +146,7 @@
                         @endif
                     </div>
 
-                    <div class="form-group">
-
+                    <div class="form-group position-relative">
                         <label for="groups" class="col-form-label">{{ __('fillable.Groups') }}</label>
                         <select id="groups" class="form-control select2 w-100 {{ $errors->has('groups') ? ' is-invalid' : '' }}" name="groups[]"  multiple="multiple">
                         @foreach ($groups as $parent)

@@ -270,5 +270,67 @@ class CarBrandsTableSeeder extends Seeder
         CarBrand::create(['name' => 'ТагАЗ', 'name_ru' => 'ТагАЗ', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('ТагАЗ')]);
         CarBrand::create(['name' => 'УАЗ', 'name_ru' => 'УАЗ', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('УАЗ')]);
 
+
+
+
+        CarBrand::create(['name' => '02 (E10)', 'name_ru' => '02 (E10)', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('02 (E10)')]);
+        CarBrand::create(['name' => '1 серия', 'name_ru' => '1 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1 серия')]);
+        CarBrand::create(['name' => '1M', 'name_ru' => '1M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1M')]);
+        CarBrand::create(['name' => '2 серия', 'name_ru' => '2 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('2 серия')]);
+        CarBrand::create(['name' => '2 серия Active Tourer', 'name_ru' => '2 серия Active Tourer', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('2 серия Active Tourer')]);
+        CarBrand::create(['name' => '2 серия Grand Tourer', 'name_ru' => '2 серия Grand Tourer', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('2 серия Grand Tourer')]);
+        CarBrand::create(['name' => '2000 C/CS', 'name_ru' => '2000 C/CS', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('2000 C/CS')]);
+        CarBrand::create(['name' => '3 серия', 'name_ru' => '3 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('3 серия')]);
+        CarBrand::create(['name' => '3/15', 'name_ru' => '3/15', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('3/15')]);
+        CarBrand::create(['name' => '315', 'name_ru' => '315', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('315')]);
+        CarBrand::create(['name' => '3200', 'name_ru' => '3200', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('3200')]);
+        CarBrand::create(['name' => '321', 'name_ru' => '321', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('321')]);
+        CarBrand::create(['name' => '326', 'name_ru' => '326', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('326')]);
+        CarBrand::create(['name' => '327', 'name_ru' => '327', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('327')]);
+        CarBrand::create(['name' => '340', 'name_ru' => '340', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('340')]);
+        CarBrand::create(['name' => '4 серия', 'name_ru' => '4 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('4 серия')]);
+        CarBrand::create(['name' => '5 серия', 'name_ru' => '5 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('5 серия')]);
+        CarBrand::create(['name' => '501', 'name_ru' => '501', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('501')]);
+        CarBrand::create(['name' => '502', 'name_ru' => '502', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('502')]);
+        CarBrand::create(['name' => '503', 'name_ru' => '503', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('503')]);
+        CarBrand::create(['name' => '507', 'name_ru' => '507', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('507')]);
+        CarBrand::create(['name' => '6 серия', 'name_ru' => '6 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('6 серия')]);
+        CarBrand::create(['name' => '600', 'name_ru' => '600', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('600')]);
+        CarBrand::create(['name' => '7 серия', 'name_ru' => '7 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('7 серия')]);
+        CarBrand::create(['name' => '700', 'name_ru' => '700', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('700')]);
+        CarBrand::create(['name' => '8 серия', 'name_ru' => '8 серия', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('8 серия')]);
+        CarBrand::create(['name' => 'E3', 'name_ru' => 'E3', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('E3')]);
+        CarBrand::create(['name' => 'E9', 'name_ru' => 'E9', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('E9')]);
+        CarBrand::create(['name' => 'i3', 'name_ru' => 'i3', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('i3')]);
+        CarBrand::create(['name' => 'i8', 'name_ru' => 'i8', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('i8')]);
+        CarBrand::create(['name' => 'M2', 'name_ru' => 'M2', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('M2')]);
+        CarBrand::create(['name' => 'M3', 'name_ru' => 'M3', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('M3')]);
+        CarBrand::create(['name' => 'M4', 'name_ru' => 'M4', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('M4')]);
+        CarBrand::create(['name' => 'M5', 'name_ru' => 'M5', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('M5')]);
+        CarBrand::create(['name' => 'M6', 'name_ru' => 'M6', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('M6')]);
+        CarBrand::create(['name' => 'M8', 'name_ru' => 'M8', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('M8')]);
+        CarBrand::create(['name' => 'New Class', 'name_ru' => 'New Class', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('New Class')]);
+        CarBrand::create(['name' => 'X1', 'name_ru' => 'X1', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X1')]);
+        CarBrand::create(['name' => 'X2', 'name_ru' => 'X2', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X2')]);
+        CarBrand::create(['name' => 'X3', 'name_ru' => 'X3', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X3')]);
+        CarBrand::create(['name' => 'X3 M', 'name_ru' => 'X3 M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X3 M')]);
+        CarBrand::create(['name' => 'X4', 'name_ru' => 'X4', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X4')]);
+        CarBrand::create(['name' => 'X4 M', 'name_ru' => 'X4 M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X4 M')]);
+        CarBrand::create(['name' => 'X5', 'name_ru' => 'X5', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X5')]);
+        CarBrand::create(['name' => 'X5 M', 'name_ru' => 'X5 M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X5 M')]);
+        CarBrand::create(['name' => 'X6', 'name_ru' => 'X6', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X6')]);
+        CarBrand::create(['name' => 'X6 M', 'name_ru' => 'X6 M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X6 M')]);
+        CarBrand::create(['name' => 'X7', 'name_ru' => 'X7', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('X7')]);
+        CarBrand::create(['name' => 'Z1', 'name_ru' => 'Z1', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Z1')]);
+        CarBrand::create(['name' => 'Z3', 'name_ru' => 'Z3', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Z3')]);
+        CarBrand::create(['name' => 'Z3 M', 'name_ru' => 'Z3 M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Z3 M')]);
+        CarBrand::create(['name' => 'Z4', 'name_ru' => 'Z4', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Z4')]);
+        CarBrand::create(['name' => 'Z4 M', 'name_ru' => 'Z4 M', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Z4 M')]);
+        CarBrand::create(['name' => 'Z8', 'name_ru' => 'Z8', 'parent_id' => 26, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Z8')]);
+
+
+
+        CarBrand::create(['name' => 'III (G29)', 'name_ru' => 'III (G29)', 'parent_id' => 309, 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('III (G29)')]);
+
     }
 }

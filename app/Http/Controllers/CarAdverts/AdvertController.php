@@ -14,7 +14,7 @@ class AdvertController extends Controller
 
     public function index () {
 
-        $query = Advert::active()->orderByDesc('id')->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
+        $query = Advert::active()->orderByDesc('id');
 
 //        if (!empty($request)) {
 //            $query->whereHas('carBrand', function ($query) use ($carBrand) {
@@ -48,13 +48,10 @@ class AdvertController extends Controller
     public function carBrand ($slug) {
 
         $carBrand = $this->getCarBrand($slug);
-
-        $query = Advert::active()->orderByDesc('id')->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
-
+        $query = Advert::active()->orderByDesc('id');
         $query->whereHas('carBrand', function ($query) use ($carBrand) {
             $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
         });
-
 
         $carAdverts = $query->paginate(15);
 

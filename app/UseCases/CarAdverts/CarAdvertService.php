@@ -32,9 +32,9 @@ class CarAdvertService
         $user = User::findOrFail($userId);
 
         /** @var CarBrand $carBrand */
-        $carBrand = CarBrand::findOrFail($request['car_brand']);
-        $carModel = CarBrand::findOrFail($request['car_model']);
-        $carSeries = CarBrand::findOrFail($request['car_series']);
+        $carBrand = $request['car_brand'] ? CarBrand::findOrFail($request['car_brand']) : null ;
+        $carModel = $request['car_model'] ? CarBrand::findOrFail($request['car_model']) : null ;
+        $carSeries = $request['car_series'] ? CarBrand::findOrFail($request['car_series']) : null ;
 
 
         /** @var Year $carYear */
@@ -83,7 +83,9 @@ class CarAdvertService
         $carAdvert = $this->getCarAdvert($id);
 
         /** @var CarBrand $carBrand */
-        $carBrand = CarBrand::findOrFail($request['car_brand']);
+        $carBrand = $request['car_brand'] ? CarBrand::findOrFail($request['car_brand']) : null ;
+        $carModel = $request['car_model'] ? CarBrand::findOrFail($request['car_model']) : null ;
+        $carSeries = $request['car_series'] ? CarBrand::findOrFail($request['car_series']) : null ;
 
         /** @var Year $carYear */
         $carYear = Year::findOrfail($request['car_year']);
@@ -96,11 +98,13 @@ class CarAdvertService
         ]));
 
         $carAdvert->carBrand()->associate($carBrand);
+        $carAdvert->carModel()->associate($carModel);
+        $carAdvert->carSerie()->associate($carSeries);
         $carAdvert->carYear()->associate($carYear);
 
         $attributes = Attribute::all();
 
-        DB::transaction(function () use ($request, $carAdvert, $attributes) {
+        DB::transaction(function () use ($request, $carAdvert, $carBrand, $carModel, $carSeries, $attributes) {
             $carAdvert->values()->delete();
 
             foreach ($attributes as $attribute) {

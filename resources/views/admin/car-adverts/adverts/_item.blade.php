@@ -18,7 +18,9 @@
             <td>
                 <div class="d-flex">
                     <a href="{{ route('cars.adverts.show', $car_advert) }}" target="_blank">{{ $car_advert->carBrand->name }}</a>
-                    <a class="ml-auto text-muted" href="{{ route('cars.adverts.show', $car_advert) }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Смотреть на сайте"><i class="fal fa-external-link"></i></a>
+                    <a class="ml-auto text-muted" href="{{ route('cars.adverts.show', $car_advert) }}" target="_blank" data-toggle="tooltip" data-placement="left" title="Смотреть на сайте">
+                        <i class="far fa-external-link"></i>
+                    </a>
                 </div>
             </td>
             <td>{{ $car_advert->updated_at->diffForHumans() }}</td>

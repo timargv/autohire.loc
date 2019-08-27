@@ -54,10 +54,15 @@
         </div>
     @endcan
 
+
+    @if (!count($carAdvert->photos))
+        {{ session()->flash('error_alert', 'Добавьте Фотогорафию авто') }}
+    @endif
+
     <div class="card rounded-0 border-0 shadow-sm">
         <div class="card-header border-0 h5 d-flex">
             <div class="">
-                <span class="font-weight-bold">{{ $carAdvert->carBrand->name .' '. $carAdvert->carModel->name }}</span>
+                <span class="font-weight-bold">{{ $carAdvert->carBrand->name }} {{  $carAdvert->carModel ? $carAdvert->carModel->name : '' }}</span>
 
 {{--                {{ dd($carAdvert->carBrand) }}--}}
                 @canany(['manage-own-advert', 'manage-adverts'], $carAdvert)

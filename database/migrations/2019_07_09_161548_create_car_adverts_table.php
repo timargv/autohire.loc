@@ -17,8 +17,8 @@ class CreateCarAdvertsTable extends Migration
         Schema::create('car_adverts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('car_brand_id')->references('id')->on('car_brands');
-            $table->integer('car_model_id')->references('id')->on('car_brands');
-            $table->integer('car_serie_id')->references('id')->on('car_brands');
+            $table->integer('car_model_id')->references('id')->on('car_brands')->nullable();
+            $table->integer('car_serie_id')->references('id')->on('car_brands')->nullable();
             $table->integer('car_year_id')->references('id')->on('car_years');
             $table->integer('author_id')->references('id')->on('users')->onDelete('CASCADE');
 

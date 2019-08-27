@@ -44,6 +44,7 @@
             <div class="container">
                 @section('breadcrumbs', Breadcrumbs::render())
                 @yield('breadcrumbs')
+                @include('layouts.partials.flash_alert')
                 @yield('content')
             </div>
         </main>

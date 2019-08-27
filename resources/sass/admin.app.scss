@@ -3259,11 +3259,16 @@ button.bg-dark:focus {
   }
 }
 
+.media, .media-body {
+  overflow: initial !important;
+}
+
 .media {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: start;
   align-items: flex-start;
+
 }
 
 .media-body {
@@ -3280,6 +3285,10 @@ button.bg-dark:focus {
 
 .dropdown-toggle {
   white-space: nowrap;
+}
+
+.navbar-custom-menu .dropdown-toggle::after {
+  display: none !important;
 }
 
 .dropdown-toggle::after {

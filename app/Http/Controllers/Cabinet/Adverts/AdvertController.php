@@ -85,7 +85,7 @@ class AdvertController extends Controller
     public function edit (Advert $carAdvert) {
 
         $this->checkAccess($carAdvert);
-        $car_brands = CarBrand::all();
+        $car_brands = CarBrand::whereIsRoot()->defaultOrder('ASC')->get();
         $car_years = Year::all();
         $types = Advert::typeRental();
         $attributes = Attribute::all();
