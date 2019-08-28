@@ -83,6 +83,46 @@ class AdvertController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
+        return redirect()->back();
+    }
+
+    public function send(Advert $carAdvert)
+    {
+
+        try {
+            $this->service->sendToModeration($carAdvert->id);
+        } catch (\DomainException $e) {
+            $notification = [
+                'message' => $e->getMessage(),
+                'alert-type' => 'error'
+            ];
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->back()->with('info', 'Активирован');
+    }
+
+    public function close(Advert $carAdvert)
+    {
+        try {
+            $this->service->close($carAdvert->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
         return redirect()->route('cars.adverts.show', $carAdvert);
     }
+
+
+    public function destroy(Advert $carAdvert)
+    {
+        try {
+            $this->service->remove($carAdvert->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->back()->with('info', 'Удалено');
+    }
+
 }

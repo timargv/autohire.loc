@@ -180,9 +180,11 @@ class Advert extends Model
         if (!\count($this->photos)) {
             throw new \DomainException('Загрузите фотографию.');
         }
+
         $this->update([
             'status' => self::STATUS_MODERATION,
         ]);
+
     }
 
     public function moderate(Carbon $date): void

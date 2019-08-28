@@ -1,0 +1,24 @@
+
+@if (session('status_alert'))
+    <div class="alert alert-success" role="alert">
+        {{ session('status_alert') }}
+    </div>
+@endif
+
+@if (session('success_alert'))
+    <div class="alert alert-success" role="alert">
+        {{ session('success_alert') }}
+    </div>
+@endif
+
+@if (session('error_alert'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('error_alert') }}
+    </div>
+@endif
+
+@if (session('info_alert'))
+    <div class="alert alert-info" role="alert">
+        {{ session('info_alert') }}
+    </div>
+@endif

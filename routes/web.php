@@ -218,10 +218,11 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 //                Route::post('/{carAdvert}/photos', 'AdvertController@photos');
 //                Route::get('/{carAdvert}/attributes', 'AdvertController@attributesForm')->name('attributes');
 //                Route::post('/{carAdvert}/attributes', 'AdvertController@attributes');
+                Route::post('/{carAdvert}/send', 'AdvertController@send')->name('send');
                 Route::post('/{carAdvert}/moderate', 'AdvertController@moderate')->name('moderate');
                 Route::get('/{carAdvert}/reject', 'AdvertController@rejectForm')->name('reject');
                 Route::post('/{carAdvert}/reject', 'AdvertController@reject');
-//                Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
+                Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
 
         });
 

@@ -40,7 +40,7 @@
             @if ($carAdvert->isActive())
                 <form method="POST" action="{{ route('cabinet.adverts.close', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">{{ __('button.RentedOut') }}</button>
+                    <button class="btn btn-success">{{ __('button.RentedOuted') }}</button>
                 </form>
             @endif
 

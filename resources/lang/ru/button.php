@@ -18,6 +18,7 @@ return [
     'Moderate'          =>  'Отклонить',
     'Accept'            =>  'Принять',
     'AddPhotos'         =>  'Добваить фото',
-    'Activate'          =>  'Активикровать',
-    'RentedOut'         =>  'Снято с аренды'
+    'Activate'          =>  'Активировать',
+    'RentedOut'         =>  'Снято с аренды',
+    'RentedOuted'       =>  'Снять с аренды'
 ];

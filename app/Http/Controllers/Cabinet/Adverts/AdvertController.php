@@ -147,6 +147,18 @@ class AdvertController extends Controller
         return redirect()->back()->with('success', 'Фото Удалено!');
     }
 
+    public function destroy(Advert $advert)
+    {
+        $this->checkAccess($advert);
+        try {
+            $this->service->remove($advert->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('cabinet.adverts.index');
+    }
+
 
     public function send(Advert $carAdvert)
     {

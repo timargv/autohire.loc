@@ -33,7 +33,7 @@
             <li class="header">HEADER</li>
 
             <li class="{{ $page === '' ? 'active' : '' }}"><a href="{{ route('admin.home') }}"><i class="fal fa-analytics mr-3"></i> <span>Dashboards</span></a></li>
-            <li ><a href="{{ route('home') }}"><i class="far fa-link mr-3"></i> <span>На Сайт</span></a></li>
+            <li ><a href="{{ route('home') }}" target="_blank"><i class="far fa-link mr-3"></i> <span>На Сайт</span></a></li>
 
 
             <li class="header">Объявления</li>

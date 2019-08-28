@@ -12,7 +12,7 @@
     @else
         @can ('admin-panel')
             <li class="nav-item">
-                <a class="nav-link font-weight-bold" href="{{ route('admin.home') }}">{{ __('menu.Admin') }}</a>
+                <a class="nav-link font-weight-bold" href="{{ route('admin.home') }}" target="_blank">{{ __('menu.Admin') }}</a>
             </li>
         @endcan
         <li class="nav-item">

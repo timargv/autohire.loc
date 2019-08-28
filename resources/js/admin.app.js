@@ -26,6 +26,7 @@ require('../assets/js/adminlte.min');
 require('select2');
 require('fastclick');
 require('icheck');
+require('bootstrap/js/dist/toast');
 // require('../assets/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js');
 
 
@@ -35,6 +36,7 @@ $(document).ready(function() {
 //     //Initialize Select2 Elements
     $('.select2').select2();
     $('[data-toggle="tooltip"]').tooltip();
+    $('.toast').toast('show');
 //
 //     //Datemask dd/mm/yyyy
 //     $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' });

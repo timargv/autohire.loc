@@ -142,6 +142,16 @@ class CarAdvertService
         });
     }
 
+    public function remove($id) {
+
+        $carAdvert = $this->getCarAdvert($id);
+        if ($carAdvert->photos) {
+            $this->deletePhotos($carAdvert->id);
+        }
+        $carAdvert->delete();
+
+    }
+
     public function addPhotos ($id, PhotosRequest $request) : void
     {
 
@@ -212,6 +222,26 @@ class CarAdvertService
 
     }
 
+    public function deletePhotos ($carAdvertId)
+    {
+        $carAdvert = $this->getCarAdvert($carAdvertId);
+
+        foreach ($carAdvert->photos as $carPhoto) {
+            $carPhoto = $this->getCarPhoto($carPhoto->id);
+            Storage::disk('public')->delete([
+                $this->pathPhotoDelete()['original'] . $carPhoto->file,
+                $this->pathPhotoDelete()['thumbnail'] . $carPhoto->file,
+                $this->pathPhotoDelete()['item'] . $carPhoto->file,
+                $this->pathPhotoDelete()['small'] . $carPhoto->file,
+                $this->pathPhotoDelete()['medium'] . $carPhoto->file,
+                $this->pathPhotoDelete()['large'] . $carPhoto->file,
+
+            ]);
+            $carPhoto->delete();
+        }
+
+    }
+
     public function deletePhoto ($id, $photoId)
     {
 
@@ -228,7 +258,7 @@ class CarAdvertService
 
         ]);
 
-	$carAdvert->photos()->find($carPhoto->id)->delete();
+	    $carAdvert->photos()->find($carPhoto->id)->delete();
 
         $carAdvert->photos()->inRandomOrder()->take(1)->update([
             'type' => Photo::TYPE_MAIN_PHOTO,
@@ -238,6 +268,7 @@ class CarAdvertService
     public function sendToModeration($id): void
     {
         $carAdvert = $this->getCarAdvert($id);
+
         $carAdvert->sendToModeration();
     }
 

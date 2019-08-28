@@ -159,6 +159,11 @@ desired effect
     <!-- Add the sidebar's background. This div must be placed
     immediately after the control sidebar -->
     <div class="control-sidebar-bg"></div>
+
+        {{-- FLASH --}}
+        <div style="position: absolute;top: 62px;right: 15px;">
+            @include('admin.layouts.partials.flash')
+        </div>
 </div>
 <!-- ./wrapper -->
 

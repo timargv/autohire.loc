@@ -41,9 +41,11 @@
                 </div>
                 <div class="w-100 pb-4 border-bottom mb-4"></div>
             @endforeach
+            <div class="">
+                {{ $carAdverts->links() }}
+            </div>
         </div>
     </div>
     <div class="">
-        {{ $carAdverts->links() }}
     </div>
 @endsection
