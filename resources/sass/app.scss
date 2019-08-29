@@ -18,3 +18,12 @@
 .custom-file-input:lang(ru) ~ .custom-file-label::after {
   content: 'Выбрать';
 }
+
+
+
+@media (min-width: 768px) {
+	.carAdvertSh {
+	    max-height: 206px;
+	    overflow: hidden;
+	}
+}

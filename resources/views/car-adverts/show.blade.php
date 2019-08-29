@@ -27,27 +27,27 @@
         <div class="text-muted small">
           <span>Мое объявление</span>
         </div>
-        <div class="d-flex flex-row mb-3">
-            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.Edit') }}</a>
-            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1">{{ __('button.AddPhotos') }}</a>
+        <div class="d-md-flex flex-row mb-0">
+            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1 mb-2">{{ __('button.Edit') }}</a>
+            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1 mb-2">{{ __('button.AddPhotos') }}</a>
 
             @if ($carAdvert->isDraft() || $carAdvert->isClosed())
                 <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">{{ __('button.Activate') }}</button>
+                    <button class="btn btn-success mb-2">{{ __('button.Activate') }}</button>
                 </form>
             @endif
             @if ($carAdvert->isActive())
                 <form method="POST" action="{{ route('cabinet.adverts.close', $carAdvert) }}" class="mr-1">
                     @csrf
-                    <button class="btn btn-success">{{ __('button.RentedOuted') }}</button>
+                    <button class="btn btn-success mb-2">{{ __('button.RentedOuted') }}</button>
                 </form>
             @endif
 
             <form method="POST" action="{{ route('cabinet.adverts.destroy', $carAdvert) }}" class="mr-1">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-danger">{{ __('button.Delete') }}</button>
+                <button class="btn btn-danger mb-2">{{ __('button.Delete') }}</button>
             </form>
         </div>
     @endcan

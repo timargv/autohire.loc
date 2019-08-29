@@ -3,10 +3,10 @@
 
 @section('content')
     <div class="row my-5">
-        <div class="col-3">
+        <div class="col-md-3 mb-3">
             filter
         </div>
-        <div class="col-9">
+        <div class="col-md-9 mb-3">
             @foreach($carAdverts as $carAdvert)
                 <div id="carAdvertSh" class="carAdvertSh card border-0 rounded-0 ">
                     <div class="row no-gutters">
