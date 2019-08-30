@@ -6,39 +6,307 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/autohire.loc.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/jshint.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/flash.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/layouts/partials/flash_alert.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarAdvert/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CarAdvert/AdvertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/admin.app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/admin.app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/admin.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/admin.app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/admin.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/admin.app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/button.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/button.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/admin.app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/admin.app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/all.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/brands.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/fontawesome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/light.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/light.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/regular.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/solid.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/svg-with-js.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/svg-with-js.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/v4-shims.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/v4-shims.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/all.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/brands.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/brands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/fontawesome.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/fontawesome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/light.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/light.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/regular.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/regular.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/solid.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/solid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/v4-shims.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/v4-shims.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/brands.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/brands.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/light.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/light.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/regular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/solid.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/acquisitions-incorporated.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/acquisitions-incorporated.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/adobe.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/adobe.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/amazon-pay.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/amazon-pay.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/angular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/angular.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/apple.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/apple.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/artstation.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/artstation.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/bitbucket.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/bitbucket.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/canadian-maple-leaf.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/canadian-maple-leaf.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/centos.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/centos.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/critical-role.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/critical-role.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/diaspora.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/diaspora.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook-f.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook-f.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook-messenger.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook-messenger.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook-square.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook-square.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/facebook.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/fedora.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/fedora.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/figma.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/figma.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/fulcrum.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/fulcrum.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/git-square.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/git-square.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/git.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/git.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/hackerrank.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/hackerrank.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/hornbill.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/hornbill.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/houzz.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/houzz.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/java.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/java.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/kaggle.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/kaggle.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/keybase.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/keybase.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/linkedin-in.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/linkedin-in.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/mailchimp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/mailchimp.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/mandalorian.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/mandalorian.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/mastodon.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/mastodon.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/neos.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/neos.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/nimblr.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/nimblr.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/osi.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/osi.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/phoenix-squadron.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/phoenix-squadron.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/quinscape.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/quinscape.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/reacteurope.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/reacteurope.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/redhat.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/redhat.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/rev.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/rev.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/rocketchat.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/rocketchat.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/sass.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/sass.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/shopware.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/shopware.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/sketch.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/sketch.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/sourcetree.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/sourcetree.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/speakap.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/speakap.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/strava.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/strava.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/stripe-s.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/stripe-s.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/suse.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/suse.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/teamspeak.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/teamspeak.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/the-red-yeti.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/the-red-yeti.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/themeco.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/themeco.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/think-peaks.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/think-peaks.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/typo3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/typo3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/ups.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/ups.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/usps.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/usps.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/wolf-pack-battalion.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/wolf-pack-battalion.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/yelp.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/yelp.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/alarm-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/alarm-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-center.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-center.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-justify.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-justify.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-left.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/align-right.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/arrow-alt-right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/arrow-alt-right.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/bold.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/bold.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/brain.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/brain.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-bishop-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-bishop-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-bishop.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-bishop.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-board.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-board.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-clock-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-clock-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-king-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-king-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-king.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-king.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-knight-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-knight-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-knight.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-knight.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-pawn-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-pawn-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-pawn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-pawn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-queen-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-queen-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-queen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-queen.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-rook-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-rook-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-rook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess-rook.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/chess.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/eraser.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/eraser.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/flower.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/flower.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/font.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/font.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/h1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/h1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/h2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/h2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/h3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/h3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/heading.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/heading.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/id-card.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/id-card.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/indent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/indent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/italic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/italic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/list-ol.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/list-ol.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/list-ul.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/list-ul.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/list.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/list.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/mind-share.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/mind-share.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/outdent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/outdent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/paragraph.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/paragraph.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/plane-departure.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/plane-departure.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/radiation-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/radiation-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/radiation.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/radiation.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sim-card.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sim-card.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-alpha-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-alpha-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-alpha-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-alpha-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-amount-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-amount-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-amount-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-amount-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-numeric-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-numeric-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-numeric-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/sort-numeric-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/strikethrough.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/strikethrough.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/subscript.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/subscript.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/superscript.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/superscript.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/tasks.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/tasks.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/text-height.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/text-height.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/text-width.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/text-width.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/torah.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/torah.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/underline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/underline.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/user-lock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/user-lock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/volume-off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/volume-off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/alarm-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/alarm-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-center.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-center.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-justify.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-justify.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-left.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/align-right.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/bold.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/bold.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/brain.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/brain.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-bishop-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-bishop-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-bishop.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-bishop.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-board.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-board.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-clock-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-clock-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-king-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-king-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-king.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-king.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-knight-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-knight-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-knight.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-knight.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-pawn-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-pawn-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-pawn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-pawn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-queen-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-queen-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-queen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-queen.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-rook-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-rook-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-rook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess-rook.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/chess.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/eraser.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/eraser.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/fighter-jet.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/fighter-jet.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/font.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/font.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/h1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/h1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/h2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/h2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/h3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/h3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/heading.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/heading.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/indent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/indent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/italic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/italic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/list-ol.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/list-ol.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/list-ul.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/list-ul.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/list.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/list.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/mind-share.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/mind-share.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/outdent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/outdent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/paragraph.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/paragraph.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/radiation-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/radiation-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/radiation.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/radiation.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sim-card.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sim-card.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-alpha-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-alpha-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-alpha-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-alpha-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-amount-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-amount-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-amount-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-amount-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-numeric-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-numeric-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-numeric-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/sort-numeric-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/strikethrough.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/strikethrough.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/subscript.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/subscript.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/superscript.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/superscript.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/tasks.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/tasks.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/text-height.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/text-height.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/text-width.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/text-width.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/torah.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/torah.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/underline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/underline.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/user-lock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/user-lock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/wand.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/wand.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/alarm-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/alarm-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-center.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-center.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-justify.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-justify.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-left.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-left.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-right.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/align-right.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/bold.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/bold.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/brain.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/brain.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/check-double.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/check-double.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-bishop-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-bishop-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-bishop.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-bishop.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-board.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-board.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-clock-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-clock-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-clock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-clock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-king-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-king-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-king.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-king.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-knight-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-knight-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-knight.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-knight.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-pawn-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-pawn-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-pawn.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-pawn.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-queen-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-queen-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-queen.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-queen.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-rook-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-rook-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-rook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess-rook.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/chess.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/expand-arrows-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/expand-arrows-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/font.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/font.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/h1.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/h1.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/h2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/h2.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/h3.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/h3.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/heading.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/heading.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/indent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/indent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/italic.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/italic.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/list-ol.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/list-ol.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/list-ul.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/list-ul.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/list.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/list.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/magnet.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/magnet.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/mind-share.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/mind-share.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/outdent.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/outdent.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/paragraph.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/paragraph.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/radiation-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/radiation-alt.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/radiation.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/radiation.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/redo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/redo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sim-card.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sim-card.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-alpha-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-alpha-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-alpha-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-alpha-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-amount-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-amount-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-amount-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-amount-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-numeric-down.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-numeric-down.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-numeric-up.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sort-numeric-up.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/strikethrough.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/strikethrough.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/subscript.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/subscript.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/superscript.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/superscript.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sync.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/sync.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/tasks.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/tasks.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/text-height.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/text-height.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/text-width.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/text-width.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/torah.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/torah.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/underline.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/underline.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/user-lock.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/user-lock.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/volleyball-ball.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/volleyball-ball.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/volume-off.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/volume-off.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.eot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff2" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/_sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/_sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,31 +334,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/js/admin.app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" selection-start-line="1" selection-end-line="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="76" column="89" selection-start-line="76" selection-start-column="89" selection-end-line="76" selection-end-column="89" />
+            <state relative-caret-position="374">
+              <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="164" column="48" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
+            <state relative-caret-position="255">
+              <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
               <folding>
-                <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#478#503#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -116,41 +393,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="664">
+            <state relative-caret-position="2347">
               <caret line="160" selection-start-line="149" selection-start-column="4" selection-end-line="160" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="148" column="48" selection-start-line="148" selection-start-column="48" selection-end-line="148" selection-end-column="48" />
-              <folding>
-                <element signature="e#660#2528#0#PHP" />
-                <element signature="e#2535#4070#0#PHP" />
-                <element signature="e#4076#4788#0#PHP" />
-                <element signature="e#4794#7227#0#PHP" />
-                <element signature="e#7233#7571#0#PHP" />
-                <element signature="e#8521#9298#0#PHP" />
-                <element signature="e#8356#8499#0#PHP" />
-                <element signature="e#8505#8692#0#PHP" />
-                <element signature="e#8698#8862#0#PHP" />
-                <element signature="e#8868#8988#0#PHP" />
-                <element signature="e#9096#9188#0#PHP" />
-                <element signature="e#9194#9709#0#PHP" />
-                <element signature="e#9715#10092#0#PHP" />
-              </folding>
+            <state relative-caret-position="187">
+              <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CarAdvert/AdvertController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="124" column="56" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+            <state relative-caret-position="1479">
+              <caret line="149" selection-start-line="149" selection-end-line="149" />
               <folding>
                 <element signature="e#491#1818#0#PHP" />
               </folding>
@@ -161,17 +423,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="698">
-              <caret line="153" column="26" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/partials/flash.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+            <state relative-caret-position="-3377">
+              <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -229,7 +482,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/groups/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/groups/create.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/avatars/home.blade.php" />
@@ -250,7 +502,6 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/Adverts/CreateRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/edit.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/flash_alert.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/navbar/navleft.blade.php" />
         <option value="$PROJECT_DIR$/resources/lang/ru/fillable.php" />
@@ -270,16 +521,18 @@
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/resources/lang/ru/button.php" />
         <option value="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" />
-        <option value="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" />
         <option value="$PROJECT_DIR$/resources/js/admin.app.js" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/layouts/partials/flash.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/admin.app.scss" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" />
-        <option value="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php" />
-        <option value="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/CarAdvert/AdvertController.php" />
+        <option value="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" />
+        <option value="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" />
       </list>
     </option>
   </component>
@@ -406,7 +659,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -431,14 +683,6 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="Entity" type="462c0819:PsiDirectoryNode" />
               <item name="Cars" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-              <item name="Cars" type="462c0819:PsiDirectoryNode" />
-              <item name="Advert" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -677,6 +921,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -691,7 +936,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -785,11 +1030,12 @@
       <workItem from="1566550029138" duration="15659000" />
       <workItem from="1566889987582" duration="15520000" />
       <workItem from="1566988863901" duration="11139000" />
+      <workItem from="1567162784544" duration="6613000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442101000" />
+    <option name="totallyTimeSpent" value="448714000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -803,7 +1049,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21268657" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21481876" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -854,13 +1100,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/seeds/CarBrandsTableSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="756">
-          <caret line="332" column="72" selection-start-line="332" selection-start-column="72" selection-end-line="332" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Category/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -976,20 +1215,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" selection-start-line="13" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/car-adverts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
@@ -1053,13 +1278,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" selection-start-line="28" selection-end-line="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_utilities.scss">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1114,11 +1332,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
+        <state relative-caret-position="2788">
           <caret line="164" column="48" selection-start-line="164" selection-start-column="48" selection-end-line="164" selection-end-column="48" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1129,17 +1344,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/sass/admin.app.scss">
+    <entry file="file://$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="3547" column="16" selection-start-line="3547" selection-start-column="16" selection-end-line="3547" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="664">
-          <caret line="160" selection-start-line="149" selection-start-column="4" selection-end-line="160" />
+        <state relative-caret-position="583">
+          <caret line="265" column="26" selection-start-line="265" selection-start-column="26" selection-end-line="265" selection-end-column="26" />
+          <folding>
+            <element signature="e#660#2528#0#PHP" />
+            <element signature="e#2535#4070#0#PHP" />
+            <element signature="e#4076#4788#0#PHP" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1150,49 +1363,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/sass/admin.app.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="76" column="89" selection-start-line="76" selection-start-column="89" selection-end-line="76" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="698">
-          <caret line="153" column="26" selection-start-line="153" selection-start-column="20" selection-end-line="153" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="148" column="48" selection-start-line="148" selection-start-column="48" selection-end-line="148" selection-end-column="48" />
-          <folding>
-            <element signature="e#660#2528#0#PHP" />
-            <element signature="e#2535#4070#0#PHP" />
-            <element signature="e#4076#4788#0#PHP" />
-            <element signature="e#4794#7227#0#PHP" />
-            <element signature="e#7233#7571#0#PHP" />
-            <element signature="e#8521#9298#0#PHP" />
-            <element signature="e#8356#8499#0#PHP" />
-            <element signature="e#8505#8692#0#PHP" />
-            <element signature="e#8698#8862#0#PHP" />
-            <element signature="e#8868#8988#0#PHP" />
-            <element signature="e#9096#9188#0#PHP" />
-            <element signature="e#9194#9709#0#PHP" />
-            <element signature="e#9715#10092#0#PHP" />
-          </folding>
+        <state relative-caret-position="386">
+          <caret line="3547" column="16" selection-start-line="3547" selection-start-column="16" selection-end-line="3547" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/CarAdvert/AdvertController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="124" column="56" selection-start-line="124" selection-start-column="56" selection-end-line="124" selection-end-column="56" />
+        <state relative-caret-position="1479">
+          <caret line="149" selection-start-line="149" selection-end-line="149" />
           <folding>
             <element signature="e#491#1818#0#PHP" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2347">
+          <caret line="160" selection-start-line="149" selection-start-column="4" selection-end-line="160" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3377">
+          <caret line="29" column="3" selection-start-line="29" selection-start-column="3" selection-end-line="29" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/index.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="82" selection-start-line="15" selection-start-column="82" selection-end-line="15" selection-end-column="82" />
+          <folding>
+            <element signature="e#478#503#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/admin/car-adverts/adverts/_item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="24" selection-start-line="22" selection-start-column="24" selection-end-line="22" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack.mix.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="57" lean-forward="true" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
         </state>
       </provider>
     </entry>

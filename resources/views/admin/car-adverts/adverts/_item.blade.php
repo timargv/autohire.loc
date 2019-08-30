@@ -42,7 +42,7 @@
                     <button type="button" class="no-icon-dropdown-toggle py-0 btn btn-sm bg-transparent shadow-none text-center color-palette dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <i class="fal fa-ellipsis-v fa-2x" style="font-size: 1.4em;"></i>
                     </button>
-                    <ul class="dropdown-menu dropdown-menu-right border-0 shadow-sm">
+                    <ul class="dropdown-menu dropdown-menu-right border-0 shadow">
 
                         @if ($car_advert->isDraft() || $car_advert->isClosed())
                         <li>

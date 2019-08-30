@@ -242,22 +242,14 @@ class CarAdvertService
 
     }
 
+    /*
+     * Удалить одну фотографию в объявлении
+     * */
     public function deletePhoto ($id, $photoId)
     {
-
         $carAdvert = $this->getCarAdvert($id);
         $carPhoto = $this->getCarPhoto($photoId);
-
-        Storage::disk('public')->delete([
-            $this->pathPhotoDelete()['original'].$carPhoto->file,
-            $this->pathPhotoDelete()['thumbnail'].$carPhoto->file,
-            $this->pathPhotoDelete()['item'].$carPhoto->file,
-            $this->pathPhotoDelete()['small'].$carPhoto->file,
-            $this->pathPhotoDelete()['medium'].$carPhoto->file,
-            $this->pathPhotoDelete()['large'].$carPhoto->file,
-
-        ]);
-
+        $this->deleteCarPhotoFile($carPhoto->file);
 	    $carAdvert->photos()->find($carPhoto->id)->delete();
 
         $carAdvert->photos()->inRandomOrder()->take(1)->update([
@@ -265,10 +257,12 @@ class CarAdvertService
         ]);
     }
 
+    /*
+     * Отправить объявление в модерацию
+     * */
     public function sendToModeration($id): void
     {
         $carAdvert = $this->getCarAdvert($id);
-
         $carAdvert->sendToModeration();
     }
 
@@ -326,6 +320,19 @@ class CarAdvertService
           'large' => '/car-adverts/large/',
         ];
         return $paths;
+    }
+
+
+    public function deleteCarPhotoFile($fileName) {
+        Storage::disk('public')->delete([
+            $this->pathPhotoDelete()['original'].$fileName,
+            $this->pathPhotoDelete()['thumbnail'].$fileName,
+            $this->pathPhotoDelete()['item'].$fileName,
+            $this->pathPhotoDelete()['small'].$fileName,
+            $this->pathPhotoDelete()['medium'].$fileName,
+            $this->pathPhotoDelete()['large'].$fileName,
+
+        ]);
     }
 
 }

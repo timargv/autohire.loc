@@ -163,7 +163,7 @@ class Advert extends Model
     //    =============================
 
 
-    // Статус черновик с объяснением от модератора или администратора
+    // Объявление не принято с объяснением от модератора или администратора переведен в статус черновик
     public function reject($reason): void
     {
         $this->update([
@@ -172,6 +172,10 @@ class Advert extends Model
         ]);
     }
 
+
+    /*
+     * Сменить статус объявления на модерации
+     * */
     public function sendToModeration(): void
     {
         if (!$this->isDraft() && !$this->isClosed()) {
@@ -187,10 +191,14 @@ class Advert extends Model
 
     }
 
+
+    /*
+     * Сменить статус объявление: прошел модерацию и активирован на 15 дней
+     * */
     public function moderate(Carbon $date): void
     {
         if ($this->status !== self::STATUS_MODERATION) {
-            throw new \DomainException('Advert is not sent to moderation.');
+            throw new \DomainException('Объявление не отправлено на модерацию.');
         }
         $this->update([
             'published_at' => $date,
@@ -199,13 +207,16 @@ class Advert extends Model
         ]);
     }
 
+
+    /*
+     * Статус объявления: смнить на закрыть
+     * */
     public function close(): void
     {
         $this->update([
             'status' => self::STATUS_CLOSED,
         ]);
     }
-
 
 
     // Заготовки для запросов
@@ -228,7 +239,6 @@ class Advert extends Model
     }
 
 
-
     // Получить основную картинку
     public function getMainPhoto ($photos)
     {
@@ -239,7 +249,6 @@ class Advert extends Model
                 $photoMain = $photo->file;
             }
         }
-
         return $photoMain;
     }
 
@@ -249,13 +258,10 @@ class Advert extends Model
         $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
 
         foreach ($photos as $photo) {
-
             if ($photo->type === Photo::TYPE_MAIN_PHOTO) {
                 $photoMain = $photo;
             }
-
         }
-
         return $photoMain;
     }
 
@@ -282,12 +288,14 @@ class Advert extends Model
     }
 
 
+    /*
+     * Сколько фотографий еще можно добавить
+     * */
     public function photosCount ()
     {
         $maxPhotos = 30;
         $countPhotos = count($this->photos()->get());
-
-        if ($countPhotos <= $maxPhotos && $this->photos()->count() > 0) {
+        if ($countPhotos <= $maxPhotos && $countPhotos > 0) {
             return $maxPhotos - $countPhotos;
         } return $maxPhotos;
     }

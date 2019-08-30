@@ -5,8 +5,10 @@
 @endif
 
 @if (session('success'))
-    <div class="alert alert-success">
-        {{ session('success') }}
+    <div class="toast border-0 shadow-sm" role="alert" aria-live="polite" aria-atomic="true" data-delay="3000">
+        <div class="toast-body alert-success"  role="alert" aria-live="assertive" aria-atomic="true">
+            {{ session('success') }}
+        </div>
     </div>
 @endif
 

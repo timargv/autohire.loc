@@ -59,11 +59,18 @@ class AdvertController extends Controller
     }
 
 
+    /*
+     * Форма для текста почему не приняли объявление модератором или администратором
+     * */
     public function rejectForm(Advert $carAdvert)
     {
         return view('admin.car-adverts.adverts.reject', compact('carAdvert'));
     }
 
+
+    /*
+     * Объявление не принято с объяснением от модератора или администратора переведен в статус черновик
+     * */
     public function reject(RejectRequest $request, Advert $carAdvert)
     {
         try {
@@ -75,6 +82,10 @@ class AdvertController extends Controller
         return redirect()->route('cars.adverts.show', $carAdvert);
     }
 
+
+    /*
+     * Объявление промодерированно, и активирована
+     * */
     public function moderate(Advert $carAdvert)
     {
         try {
@@ -86,9 +97,12 @@ class AdvertController extends Controller
         return redirect()->back();
     }
 
+
+    /* Отклонить объявление
+     * Send Car Advert
+     * */
     public function send(Advert $carAdvert)
     {
-
         try {
             $this->service->sendToModeration($carAdvert->id);
         } catch (\DomainException $e) {
@@ -102,6 +116,10 @@ class AdvertController extends Controller
         return redirect()->back()->with('info', 'Активирован');
     }
 
+
+    /* Закрыть объявление
+     * Close Car Advert
+     * */
     public function close(Advert $carAdvert)
     {
         try {
@@ -114,6 +132,9 @@ class AdvertController extends Controller
     }
 
 
+    /* Удалить объявление
+     * Delete Car Advert
+     * */
     public function destroy(Advert $carAdvert)
     {
         try {

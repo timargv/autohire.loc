@@ -13,7 +13,7 @@
             </div>
         </div>
         <!-- /.box-header -->
-        <div class="box-body table-responsive no-padding">
+        <div class="box-body table-responsive no-padding" style="min-height: 450px">
             @include('admin.car-adverts.adverts._item', $car_adverts)
         </div>
         <!-- /.box-body -->
