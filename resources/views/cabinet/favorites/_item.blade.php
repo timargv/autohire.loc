@@ -3,11 +3,10 @@
         <table class="table table-borderless table-responsive-sm bg-white">
             <thead class="thead-light">
             <tr>
-                <th colspan="6">
+                <th colspan="5">
                     <div class="row">
-                        <div class="col-6">Мои объявления <span class="font-weight-light">&mdash; {{ count($car_adverts) }}</span></div>
+                        <div class="col-6">{{ trans_choice('title.favorite', 1) }} <span class="font-weight-light">&mdash; {{ count($car_adverts) }}</span></div>
                         <div class="col-6">
-                            @include('cabinet.adverts.forms._search_form')
                         </div>
                     </div>
                 </th>
@@ -35,18 +34,15 @@
                                 <div class="small">{{ $car_advert->carYear->name }}</div>
                             </div>
                         </td>
-                        <td>
-                            <span class="badge @if($car_advert->status == 'draft' || $car_advert->status == 'moderation') badge-warning @elseif($car_advert->status == 'closed') badge-danger @else badge-success @endif">{{ $car_advert->statusesList()[$car_advert->status] }}</span>
-                        </td>
                         <td>{{ $car_advert->getTypeRental() }}</td>
                         <td><span style="width: 100px; display:block;" id="priceCarAdvert" data-toggle="tooltip" data-placement="top" title="{{ __('fillable.PricePerDay').' в рублях' }}">{{ $car_advert->price_per_day }}</span></td>
                         <td class="pr-0" width="65px">
                             <div class="d-flex justify-content-end">
-                                <a class="btn btn-sm btn-link" href="{{ route('cabinet.adverts.edit', ['carAdvert' => $car_advert]) }}"><i class="fas fa-edit text-black-50"></i></a>
-                                <form method="POST" action="{{ route('cabinet.adverts.destroy', $car_advert) }}" class="mr-1">
+                                <form method="POST" action="{{ route('cabinet.favorites.remove', $car_advert) }}" class="d-inline-block">
                                     @csrf
                                     @method('DELETE')
-                                    <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title=""><i class="fas fa-trash text-black-50"></i></button>
+                                    <button type="submit" class="btn btn-sm bg-transparent border border-bottom  rounded"
+                                            data-toggle="tooltip" data-placement="left" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
                                 </form>
                             </div>
                         </td>
@@ -54,29 +50,14 @@
                 @empty
                     <tr>
                         <td>
-                            @if(request('name'))
-                                <div class="w-100 p-5">
-                                    <div class="text-muted h5 mb-2">Ничего не найдено</div>
-                                    <div class="text-black-50 mb-3">
-                                        Добавьте объявление, и его увидят тысячи потенциальных покупателей.
-                                    </div>
-                                    <div class="display-4">
-                                        <a class="btn btn-success px-3" href="{{ route('cabinet.adverts.create') }}"><i class="far fa-plus mr-2"></i> {{ __('button.Add') .' '. __('fillable.Advert') }}</a>
-                                    </div>
-                                </div>
-                                @else
-                                <div class="w-100 p-5">
-                                    <div class="text-muted h5 mb-2">Сдавать  &mdash;  легко</div>
-                                    <div class="text-black-50 mb-3">
-                                        Добавьте объявление, и его увидят тысячи потенциальных покупателей.
-                                    </div>
-                                    <div class="display-4">
-                                        <a class="btn btn-success px-3" href="{{ route('cabinet.adverts.create') }}"><i class="far fa-plus mr-2"></i> {{ __('button.Add') .' '. __('fillable.Advert') }}</a>
-                                    </div>
+                            <div class="w-100 p-5">
+                                <div class="text-muted h5 mb-2">Объявления</div>
+                                <div class="text-black-50 mb-3">
+                                    Сохраняйте понравившиеся объявления, узнавайте
+                                    об изменении цен.
                                 </div>
 
-                            @endif
-
+                            </div>
                         </td>
                     </tr>
                 @endforelse

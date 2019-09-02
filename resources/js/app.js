@@ -61,12 +61,6 @@ $(document).ready(function() {
 
     $('.toast').toast('show');
 
-
-    $('.carAdvertSh').hover(function () {
-        $(this).toggleClass('shadow-sm');
-    });
-
-
     $('select[name="car_brand"]').on('change', function(){
         var carBrandId = $(this).val();
         if(carBrandId) {

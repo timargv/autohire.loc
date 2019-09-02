@@ -156,6 +156,11 @@ class Advert extends Model
         return $this->hasMany(Photo::class, 'car_advert_id', 'id');
     }
 
+    public function favorites() {
+        return $this->belongsToMany(User::class, 'car_advert_favorites', 'car_advert_id', 'user_id');
+    }
+
+
     //    =============================
 
 
@@ -238,6 +243,13 @@ class Advert extends Model
         ));
     }
 
+    public function scopeFavoredByUser(Builder $query, User $user) {
+        return $query->whereHas('favorites', function (Builder $query) use ($user) {
+            $query->where('user_id', $user->id);
+        });
+    }
+
+
 
     // Получить основную картинку
     public function getMainPhoto ($photos)
@@ -299,5 +311,6 @@ class Advert extends Model
             return $maxPhotos - $countPhotos;
         } return $maxPhotos;
     }
+
 
 }

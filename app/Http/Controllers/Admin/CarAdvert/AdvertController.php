@@ -8,6 +8,7 @@ use App\UseCases\CarAdverts\CarAdvertService;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class AdvertController extends Controller
 {
@@ -55,7 +56,9 @@ class AdvertController extends Controller
 
         $roles = User::rolesList();
 
-        return view('admin.car-adverts.adverts.index', compact('car_adverts', 'statuses', 'roles'));
+        $user = Auth::user();
+
+        return view('admin.car-adverts.adverts.index', compact('car_adverts', 'statuses', 'roles', 'user'));
     }
 
 

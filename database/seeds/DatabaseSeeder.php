@@ -13,6 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        CarBrand::defaultOrder()->withDepth()->fixTree();
+        Year::defaultOrder()->withDepth()->fixTree();
+
         $this->call(UsersTableSeeder::class);
         $this->call(TenantsTableSeeder::class);
         $this->call(GroupsTableSeeder::class);
@@ -20,7 +23,9 @@ class DatabaseSeeder extends Seeder
         $this->call(CarYearsTableSeeder::class);
         $this->call(CarAttributesTableSeeder::class);
 
-        CarBrand::defaultOrder()->withDepth()->fixTree();
-        Year::defaultOrder()->withDepth()->fixTree();
+
+        $this->call(CarAdvertsTableSeeder::class);
+        $this->call(PhotoCarAdvertsTableSeeder::class);
+
     }
 }

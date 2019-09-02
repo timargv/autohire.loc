@@ -27,3 +27,17 @@
 	    overflow: hidden;
 	}
 }
+
+.p-3.card.rounded {
+	border: 0;
+	border-top: 1px solid rgba(0,0,0,.12) !important;
+}
+.p-3.card.rounded:hover + .p-3.card.rounded {
+	border-top-color: transparent !important;
+}
+.p-3.card.rounded:hover {
+	z-index: 1 !important;
+	border-top-color: transparent !important;
+	border-radius: 8px !important;
+	box-shadow: 0 5px 20px 0 rgba(0,0,0,.1) !important;
+}

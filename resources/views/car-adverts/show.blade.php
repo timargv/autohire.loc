@@ -27,7 +27,10 @@
         <div class="text-muted small">
           <span>Мое объявление</span>
         </div>
-        <div class="d-md-flex flex-row mb-0">
+        <div class="d-md-flex flex-row mb-0 ">
+
+            <div class="d-md-none d-block"></div>
+
             <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1 mb-2">{{ __('button.Edit') }}</a>
             <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1 mb-2">{{ __('button.AddPhotos') }}</a>
 
@@ -93,41 +96,64 @@
 
                     </table>
                 </div>
-                <div class="col-md-7 col-12">
-                    <div class="images mb-4">
-                        @if(count($carAdvert->photos))
-                            <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $mainCarImage) }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
-                                <img src="{{ Storage::disk('public')->url('car-adverts/large/'. $mainCarImage) }}" class="w-100" />
-                            </a>
-                        @else
-                            <a href="{{ $mainCarImage }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
-                                <img src="{{ $mainCarImage }}" class="h-100" />
-                            </a>
-                        @endif
+                <div class="col-md-9 col-12">
+                    <div class="row">
+                        <div class="col-md-11 col-12">
+                            <div class="images mb-md-4 mb-2">
+                                @if(count($carAdvert->photos))
+                                    <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $mainCarImage) }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
+                                        <img src="{{ Storage::disk('public')->url('car-adverts/large/'. $mainCarImage) }}" class="w-100" />
+                                    </a>
+                                @else
+                                    <a href="{{ $mainCarImage }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
+                                        <img src="{{ $mainCarImage }}" class="h-100" />
+                                    </a>
+                                @endif
 
-                        <div class="row mr-0">
-                            @foreach($carAdvert->photos as $photo)
-                                @continue($photo->type)
-                                <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $photo->file) }}" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0 outline">
-                                    <img src="{{ Storage::disk('public')->url('car-adverts/small/'. $photo->file) }}" class="w-100" />
-                                </a>
-                            @endforeach
+                                <div class="row mr-0">
+                                    @foreach($carAdvert->photos as $photo)
+                                        @continue($photo->type)
+                                        <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $photo->file) }}" data-fancybox="images" class="mb-2 col-6 col-md-2 pr-0 outline">
+                                            <img src="{{ Storage::disk('public')->url('car-adverts/small/'. $photo->file) }}" class="w-100" />
+                                        </a>
+                                    @endforeach
 
-                            @can ('manage-own-advert', $carAdvert )
-                            <a class="mb-2 col-6 col-md-3 pr-0 outline text-black-50  text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
-                                <div class="bg-light py-2 h-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" >
-                                    <div class="d-flex align-items-center h-100">
-                                        <div class="flex-column w-100">
-                                            <div class="w-100"><i class="mt-1 fal fa-plus-circle fa-2x"></i><br /></div>
-                                            <div class="w-100"><span class="small">Осталось {{ $carAdvert->photosCount() }} фото</span></div>
-                                        </div>
-                                    </div>
+                                    @can ('manage-own-advert', $carAdvert )
+                                        <a class="mb-2 col-6 col-md-3 pr-0 outline text-black-50  text-center  text-decoration-none" href="{{ route('cabinet.adverts.photos', $carAdvert) }}">
+                                            <div class="bg-light py-2 h-100" data-toggle="tooltip" data-placement="top" title="" data-original-title="Добавить фото" >
+                                                <div class="d-flex align-items-center h-100">
+                                                    <div class="flex-column w-100">
+                                                        <div class="w-100"><i class="mt-1 fal fa-plus-circle fa-2x"></i><br /></div>
+                                                        <div class="w-100"><span class="small">Осталось {{ $carAdvert->photosCount() }} фото</span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    @endcan
                                 </div>
-                            </a>
-                            @endcan
+                            </div>
+                        </div>
+                        <div class="col-md-1 col-12 mb-md-4 mb-2">
+                            <div class="favorite text-md-center text-left mr-0 mb-2 mb-md-0">
+                                @if($user && $user->hasInFavorites($carAdvert->id))
+                                    <form method="POST" action="{{ route('cabinet.favorites.remove', $carAdvert) }}" class="d-inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
+                                                data-toggle="tooltip" data-placement="left" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
+                                    </form>
+                                @else
+                                    <form method="POST" action="{{ route('cars.adverts.favorites', $carAdvert) }}" class="d-inline-block">
+                                        @csrf
+                                        <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
+                                                data-toggle="tooltip" data-placement="left" title="Добавить в закладки" style="border-radius: 0px"><i class="fal fa-heart "></i></button>
+                                    </form>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
             <div class="d-flex row flex-wrap">
                 <div class="col-md-3"></div>

@@ -3,16 +3,14 @@
 namespace App;
 
 
+use App\Entity\Cars\Advert\Advert;
 use App\Entity\User\Avatar;
 use App\Entity\User\Group;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\Auth\ResetPasswordNotification;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use function Symfony\Component\Debug\Tests\testHeader;
 
 /**
  * @property mixed $cart
@@ -82,7 +80,7 @@ class User extends Authenticatable
 
     public function favorites()
     {
-        return $this->belongsToMany(Advert::class, 'advert_favorites', 'user_id', 'advert_id');
+        return $this->belongsToMany(Advert::class, 'car_advert_favorites', 'user_id', 'car_advert_id');
     }
 
     public function groupList() : array

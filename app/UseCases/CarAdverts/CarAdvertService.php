@@ -205,6 +205,7 @@ class CarAdvertService
                 }
 
 
+
             }
             $carAdvert->update();
 

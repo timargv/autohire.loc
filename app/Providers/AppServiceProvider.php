@@ -41,5 +41,6 @@ class AppServiceProvider extends ServiceProvider
             $view->with('countModerationTenantPhotos', BlackListPhoto::countModerationPhotos());
             $view->with('countModerationTenantComments', BlackListComment::countModerationComments());
         });
+
     }
 }

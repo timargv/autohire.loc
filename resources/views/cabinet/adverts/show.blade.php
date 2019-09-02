@@ -102,8 +102,10 @@
 
                     </table>
                 </div>
-                <div class="col-md-7 col-12">
-                    <div class="images mb-4">
+                <div class="col-md-9 col-12">
+                    <div class="row">
+                        <div class="col-md-11 col-12">
+                            <div class="images mb-md-4 mb-2">
                         @if(count($carAdvert->photos))
                             <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $mainCarImage) }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
                                 <img src="{{ Storage::disk('public')->url('car-adverts/large/'. $mainCarImage) }}" class="w-100" />
@@ -134,6 +136,27 @@
                                 </div>
                             </a>
                             @endcan
+                        </div>
+                    </div>
+
+                        </div>
+                        <div class="col-md-1 col-12 mb-md-4 mb-2">
+                            <div class="favorite text-md-center text-left mr-0 mb-2 mb-md-0">
+                                @if($user && $user->hasInFavorites($carAdvert->id))
+                                    <form method="POST" action="{{ route('cabinet.favorites.remove', $carAdvert) }}" class="d-inline-block">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
+                                                data-toggle="tooltip" data-placement="left" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
+                                    </form>
+                                @else
+                                    <form method="POST" action="{{ route('cars.adverts.favorites', $carAdvert) }}" class="d-inline-block">
+                                        @csrf
+                                        <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
+                                                data-toggle="tooltip" data-placement="left" title="Добавить в закладки" style="border-radius: 0px"><i class="fal fa-heart "></i></button>
+                                    </form>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>

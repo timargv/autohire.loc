@@ -74,12 +74,13 @@ class AdvertController extends Controller
     public function show (Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
+        $user = Auth::user();
         $mainCarImage = $carAdvert->getMainPhoto($carAdvert->photos);
         $carAttributes = $carAdvert->values()
             ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
             ->join('car_adverts', 'car_adverts.id', '=', 'car_advert_values.car_advert_id')
             ->select('car_attributes.name', 'car_advert_values.value')->get();
-        return view('cabinet.adverts.show', compact('carAdvert', 'carAttributes', 'mainCarImage'));
+        return view('cabinet.adverts.show', compact('carAdvert', 'carAttributes', 'mainCarImage', 'user'));
     }
 
     public function edit (Advert $carAdvert) {

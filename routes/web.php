@@ -16,6 +16,9 @@ Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdv
     Route::get('/{carBrand}/all', 'AdvertController@carBrand')->name('brand');
     Route::get('/show/{carAdvert}', 'AdvertController@show')->name('show');
 
+    Route::post('/show/{carAdvert}/favorites', 'FavoriteController@add')->name('favorites');
+    Route::delete('/show/{carAdvert}/favorites', 'FavoriteController@remove');
+
 });
 
 
@@ -39,8 +42,6 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
         });
 
 
-
-
         Route::group(['prefix' => 'black-list', 'as' => 'black.list.tenants.', 'namespace' => 'BlackList'], function () {
             Route::get('/tenants', 'TenantsController@index')->name('home');
             Route::get('/create', 'TenantsController@create')->name('create');
@@ -53,11 +54,8 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
         });
 
 
-
-
-
-//        Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
-//        Route::delete('favorites/{advert}', 'FavoriteController@remove')->name('favorites.remove');
+        Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
+        Route::delete('favorites/{carAdvert}', 'FavoriteController@remove')->name('favorites.remove');
 //
 //        Route::resource('tickets', 'TicketController')->only(['index', 'show', 'create', 'store', 'destroy']);
 //        Route::post('tickets/{ticket}/message', 'TicketController@message')->name('tickets.message');
