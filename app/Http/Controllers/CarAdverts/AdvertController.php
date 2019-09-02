@@ -50,7 +50,7 @@ class AdvertController extends Controller
     public function carBrand ($slug) {
 
         $carBrand = $this->getCarBrand($slug);
-        $query = Advert::active()->orderByDesc('id');
+        $query = Advert::active()->orderByDesc('id')->with('favorites');
         $query->whereHas('carBrand', function ($query) use ($carBrand) {
             $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
         });

@@ -72,6 +72,7 @@ class User extends Authenticatable
     ];
 
 
+
     // ---------- Аватар пользователя
     public function avatar()
     {

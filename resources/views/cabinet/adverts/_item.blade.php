@@ -5,7 +5,7 @@
             <tr>
                 <th colspan="6">
                     <div class="row">
-                        <div class="col-6">Мои объявления <span class="font-weight-light">&mdash; {{ count($car_adverts) }}</span></div>
+                        <div class="col-6">Мои объявления <span class="font-weight-light">&mdash; {{ $countCarAdvert }}</span></div>
                         <div class="col-6">
                             @include('cabinet.adverts.forms._search_form')
                         </div>

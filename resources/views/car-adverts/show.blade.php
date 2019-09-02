@@ -66,6 +66,7 @@
             </div>
             <div class="ml-auto font-weight-bold">
                 <span id="priceCarAdvert">{{ $carAdvert->price_per_day }}</span>
+                <span class="font-weight-light text-muted small">/ {{ $carAdvert->getTypeRental() }}</span>
             </div>
         </div>
         <div class="card-body">

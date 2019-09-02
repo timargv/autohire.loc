@@ -48,7 +48,9 @@ class AdvertController extends Controller
 
         $car_adverts = $query->paginate(20);
 
-        return view('cabinet.adverts.index', compact('car_adverts'));
+        $countCarAdvert = $query->count();
+
+        return view('cabinet.adverts.index', compact('car_adverts', 'countCarAdvert'));
     }
 
     public function create() {
