@@ -16,7 +16,7 @@
                 @forelse($car_adverts as $car_advert)
                     <tr>
                         <td width="65px">
-                            <a href="{{ route('cabinet.adverts.show', $car_advert) }}" class="w-100 position-relative">
+                            <a href="{{ route('cars.adverts.show', $car_advert) }}" class="w-100 position-relative">
                                 @if($mainPhoto = $car_advert->getMainPhoto($car_advert->photos))
                                     @if(Storage::disk('public')->exists('car-adverts/item/'. $mainPhoto))
                                         <img src="{{ Storage::disk('public')->url('car-adverts/item/'. $mainPhoto) }}" class="rounded w-100 " alt="..." style="width: 65px !important;">
@@ -28,7 +28,7 @@
                         </td>
                         <td>
                             <div style="width: 150px; display:block;">
-                                <a href="{{ route('cabinet.adverts.show', $car_advert) }}" class="font-weight-bold">
+                                <a href="{{ route('cars.adverts.show', $car_advert) }}" class="font-weight-bold">
                                     {{ $car_advert->carBrand->name }} <span class="text-muted font-weight-light">{{ $car_advert->carModel->name }}</span>
                                 </a>
                                 <div class="small">{{ $car_advert->carYear->name }}</div>
