@@ -150,16 +150,16 @@ class AdvertController extends Controller
         return redirect()->back()->with('success', 'Фото Удалено!');
     }
 
-    public function destroy(Advert $advert)
+    public function destroy(Advert $carAdvert)
     {
-        $this->checkAccess($advert);
+        $this->checkAccess($carAdvert);
         try {
-            $this->service->remove($advert->id);
+            $this->service->remove($carAdvert->id);
         } catch (\DomainException $e) {
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('cabinet.adverts.index');
+        return redirect()->route('cabinet.adverts.index')->with('success', 'Объявление удалено!');
     }
 
 

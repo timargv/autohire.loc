@@ -48,7 +48,7 @@ $(document).ready(function() {
     $('[data-toggle="tooltip"]').tooltip();
 
     $('.select2').select2({
-        theme: 'bootstrap4',
+        theme: 'bootstrap4'
     });
 
     AutoNumeric.multiple('#priceCarAdvert', autoNumericOptionsRuble);

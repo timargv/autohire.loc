@@ -40,7 +40,15 @@
             </div>
         </nav>
 
-        <main class="app-content py-3">
+        <div class="include_cabinet_menu" style="    background-color: #e9ecef;">
+            <div class="container">
+                <div class="row">
+                    @yield('cabinet_nav')
+                </div>
+            </div>
+        </div>
+
+        <main class="app-content py-3" style="background: @yield('bgColor')">
             <div class="container">
                 @section('breadcrumbs', Breadcrumbs::render())
                 @yield('breadcrumbs')

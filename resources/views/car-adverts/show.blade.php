@@ -2,58 +2,7 @@
 
 @section('content')
 
-    @can ('manage-adverts')
-        @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
-        <div class="text-muted small">
-          <span>{{ __('Панель модерации') }}</span>
-        </div>
-        @endif
-
-        <div class="d-flex flex-row mb-3">
-            @if ($carAdvert->isOnModeration() || $carAdvert->isActive())
-                <a href="{{ route('admin.cars.adverts.reject', $carAdvert) }}" class="btn btn-danger mr-1">{{ __('button.Reject') }}</a>
-            @endif
-
-            @if ($carAdvert->isOnModeration())
-                <form method="POST" action="{{ route('admin.cars.adverts.moderate', $carAdvert) }}" class="mr-1">
-                    @csrf
-                    <button class="btn btn-success">{{ __('button.Accept') }}</button>
-                </form>
-            @endif
-        </div>
-    @endcan
-
-    @can ('manage-own-advert', $carAdvert )
-        <div class="text-muted small">
-          <span>Мое объявление</span>
-        </div>
-        <div class="d-md-flex flex-row mb-0 ">
-
-            <div class="d-md-none d-block"></div>
-
-            <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-primary mr-1 mb-2">{{ __('button.Edit') }}</a>
-            <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-primary mr-1 mb-2">{{ __('button.AddPhotos') }}</a>
-
-            @if ($carAdvert->isDraft() || $carAdvert->isClosed())
-                <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
-                    @csrf
-                    <button class="btn btn-success mb-2">{{ __('button.Activate') }}</button>
-                </form>
-            @endif
-            @if ($carAdvert->isActive())
-                <form method="POST" action="{{ route('cabinet.adverts.close', $carAdvert) }}" class="mr-1">
-                    @csrf
-                    <button class="btn btn-success mb-2">{{ __('button.RentedOuted') }}</button>
-                </form>
-            @endif
-
-            <form method="POST" action="{{ route('cabinet.adverts.destroy', $carAdvert) }}" class="mr-1">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger mb-2">{{ __('button.Delete') }}</button>
-            </form>
-        </div>
-    @endcan
+    @include('car-adverts._nav_button_cabinet', ['page' => ''])
 
     <div class="card rounded-0 border-0 shadow-sm">
         <div class="card-header border-0 h5 d-flex">

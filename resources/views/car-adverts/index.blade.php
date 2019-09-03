@@ -4,7 +4,7 @@
 @section('content')
     <div class="row my-5">
         <div class="col-md-3 mb-3">
-            filter
+            @include('car-adverts._filter')
         </div>
         <div class="col-md-9 mb-3">
             @foreach($carAdverts as $carAdvert)
