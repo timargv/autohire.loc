@@ -48,10 +48,12 @@
             </div>
         </div>
 
-        <main class="app-content py-3" style="background: @yield('bgColor')">
-            <div class="container">
-                @section('breadcrumbs', Breadcrumbs::render())
-                @yield('breadcrumbs')
+        <main class="app-content py-0 py-md-3" style="background: @yield('bgColor')">
+            <div class="container px-0 px-md-3">
+                <div class="d-none d-md-block">
+                    @section('breadcrumbs', Breadcrumbs::render())
+                    @yield('breadcrumbs')
+                </div>
                 @include('layouts.partials.flash_alert')
                 @yield('content')
             </div>

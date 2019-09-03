@@ -11641,6 +11641,15 @@ a.text-dark:focus {
   }
 }
 
+body {
+  min-width: 320px;
+}
+
+.breadcrumb {
+  padding: 0;
+  background-color: transparent;
+}
+
 .custom-file-input:lang(ru) ~ .custom-file-label::after {
   content: "\412\44B\431\440\430\442\44C";
 }
@@ -11652,11 +11661,23 @@ a.text-dark:focus {
   }
 }
 
+.text-link-lite {
+  color: #aed3f1;
+}
+
+.bg-link-lite {
+  background-color: #aed3f1;
+}
+
 .fal,
 .fas,
 .far,
 .fad {
   font-style: normal;
+}
+
+.shadow-md {
+  box-shadow: 0 3px 14px 0 rgba(0, 0, 0, 0.12);
 }
 
 .p-3.card.rounded {
@@ -11701,5 +11722,78 @@ a.text-dark:focus {
 .nav.cabinet_nav .nav-link.active {
   background: #ddd;
   color: #555555;
+}
+
+.link-user-message-car-advert {
+  color: #929292 !important;
+}
+
+.link-user-telephone-car-advert {
+  color: #929292 !important;
+}
+
+.link-user-message-car-advert:hover,
+.link-user-telephone-car-advert:hover {
+  background-color: #bbbbbb47 !important;
+  color: #909090 !important;
+}
+
+.dropdown-menu-center {
+  right: auto !important;
+  left: -150% !important;
+  top: 40px !important;
+  -webkit-transform: translate(-100%, 0) !important;
+  transform: translate(-100%, 0) !important;
+}
+
+@media (min-width: 992px) {
+  .animate {
+    animation-duration: 0.3s;
+    -webkit-animation-duration: 0.3s;
+    animation-fill-mode: both;
+    -webkit-animation-fill-mode: both;
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0rem);
+            transform: translateY(0rem);
+    opacity: 1;
+  }
+
+  0% {
+    -webkit-transform: translateY(1rem);
+            transform: translateY(1rem);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -webkit-opacity: 1;
+  }
+
+  0% {
+    -webkit-transform: translateY(1rem);
+    -webkit-opacity: 0;
+  }
+}
+
+.slideIn {
+  -webkit-animation-name: slideIn;
+  animation-name: slideIn;
 }
 

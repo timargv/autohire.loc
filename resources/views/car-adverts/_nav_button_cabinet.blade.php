@@ -1,4 +1,4 @@
-<div class="d-md-flex flex-md-row">
+<div class="d-flex flex-row">
     @can ('manage-own-advert', $carAdvert )
     <div class="form-group">
         <div class="text-muted small">
@@ -7,7 +7,7 @@
         <a href="{{ route('cabinet.adverts.create') }}" class="btn-sm btn btn-{{ $page == 'create' ? 'primary ' : 'primary' }}" data-toggle="tooltip" data-placement="top" data-title="{{ __('button.Add') .' '. __('fillable.New') .' '. __('fillable.Advert')}}"><i class="fal fa-plus"></i></a>
 
         <div class="d-inline-block">
-            <div class="d-md-flex flex-row ">
+            <div class="d-flex flex-row ">
                 <a href="{{ route('cabinet.adverts.edit', $carAdvert) }}" class="btn btn-sm btn-outline-primary mr-1 mb-2 mb-md-0" data-toggle="tooltip" data-placement="top" data-title="{{ __('button.Edit') }}"><i class="fal fa-pen"></i></a>
                 <a href="{{ route('cabinet.adverts.photos', $carAdvert) }}" class="btn btn-sm btn-outline-primary mr-1 mb-2 mb-md-0" data-toggle="tooltip" data-placement="top" data-title="{{ __('button.AddPhotos') }}"><i class="fal fa-images"></i></a>
 
@@ -46,7 +46,7 @@
                 @if ($carAdvert->isOnModeration())
                     <form method="POST" action="{{ route('admin.cars.adverts.moderate', $carAdvert) }}" class="mr-1">
                         @csrf
-                        <button class="btn btn-sm btn-success ">{{ __('button.Accept') }}</button>
+                        <button class="btn btn-sm btn-success "><i class="fal fa-check d-md-none d-inline-block"></i><span class="d-md-inline-block d-none">{{ __('button.Accept') }}</span></button>
                     </form>
                 @endif
 

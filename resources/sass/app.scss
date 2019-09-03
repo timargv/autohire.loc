@@ -16,11 +16,18 @@
 @import '~@fancyapps/fancybox/dist/jquery.fancybox.css';
 
 
+body {
+	min-width: 320px;
+}
+
+.breadcrumb {
+	padding: 0;
+	background-color: transparent;
+}
+
 .custom-file-input:lang(ru) ~ .custom-file-label::after {
   content: 'Выбрать';
 }
-
-
 
 @media (min-width: 768px) {
 	.carAdvertSh {
@@ -28,11 +35,20 @@
 	    overflow: hidden;
 	}
 }
+.text-link-lite {
+	color: $link-lite;
+}
+.bg-link-lite {
+	background-color: $link-lite;
+}
 .fal,
 .fas,
 .far,
 .fad {
 	font-style: normal;
+}
+.shadow-md {
+	box-shadow: 0 3px 14px 0 rgba(0,0,0,.12);
 }
 .p-3.card.rounded {
 	border: 0;
@@ -73,4 +89,70 @@
 .nav.cabinet_nav .nav-link.active {
 	background: $ddd;
 	color: $silver-black;
+}
+
+.link-user-message-car-advert {
+	color: #929292 !important
+}
+.link-user-telephone-car-advert {
+	color: #929292 !important
+}
+
+.link-user-message-car-advert:hover,
+.link-user-telephone-car-advert:hover {
+	background-color: #bbbbbb47 !important;
+	color: #909090 !important;
+}
+
+.dropdown-menu-center {
+	right: auto  !important;
+	left: -150% !important;
+	top: 40px !important;
+	-webkit-transform: translate(-100%, 0) !important;
+	-o-transform: translate(-100%, 0) !important;
+	transform: translate(-100%, 0) !important;
+}
+
+@media (min-width: 992px) {
+	.animate {
+		animation-duration: 0.3s;
+		-webkit-animation-duration: 0.3s;
+		animation-fill-mode: both;
+		-webkit-animation-fill-mode: both;
+	}
+}
+
+@keyframes slideIn {
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+	100% {
+		transform:translateY(0rem);
+		opacity: 1;
+	}
+	0% {
+		transform: translateY(1rem);
+		opacity: 0;
+	}
+}
+
+@-webkit-keyframes slideIn {
+	0% {
+		-webkit-transform: translateY(1rem);
+		-webkit-opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateY(0);
+		-webkit-opacity: 1;
+	}
+	0% {
+		-webkit-transform: translateY(1rem);
+		-webkit-opacity: 0;
+	}
+}
+
+.slideIn {
+	-webkit-animation-name: slideIn;
+	animation-name: slideIn;
 }
