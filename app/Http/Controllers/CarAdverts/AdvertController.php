@@ -39,7 +39,7 @@ class AdvertController extends Controller
     public function show (Advert $carAdvert)
     {
         if (!($carAdvert->isActive() || Gate::allows('show-advert', $carAdvert))) {
-            abort(403);
+            abort(404);
         }
 
         $user = Auth::user();

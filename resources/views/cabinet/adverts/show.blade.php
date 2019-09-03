@@ -35,7 +35,40 @@
                 @endif
             </div>
             <div class="d-flex row flex-wrap flex-sm-row flex-column-reverse">
-                <div class="col-md-3 col-12 pb-4">
+                <div class="col-md-4 col-12 pb-4">
+                    <div class="favorite text-left mr-0 mb-3">
+                        <div class="btn-group ">
+                            @if($user && $user->hasInFavorites($carAdvert->id))
+                                <form method="POST" action="{{ route('cabinet.favorites.remove', $carAdvert) }}" class="d-inline-block" >
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-sm bg-transparent border rounded-left"
+                                            data-toggle="tooltip" data-placement="top" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
+                                </form>
+                            @else
+                                <form method="POST" action="{{ route('cars.adverts.favorites', $carAdvert) }}" class="d-inline-block">
+                                    @csrf
+                                    <button type="submit" class="btn btn-sm bg-transparent border rounded-left"
+                                            data-toggle="tooltip" data-placement="top" title="Добавить в закладки" style="border-radius: 0px"><i class="fal fa-heart "></i></button>
+                                </form>
+                            @endif
+                            <button type="submit" class="btn btn-sm bg-transparent border-top border-bottom  "
+                                    data-toggle="tooltip" data-placement="top" title="Оставить заметку" style="border-radius: 0px"><i class="far fa-edit text-black-50"></i></button>
+
+
+                            <div class="btn-group" role="group">
+                                <button id="btnGroupDrop1" class="btn btn-sm bg-transparent border border-bottom  rounded-right"
+                                        type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                                        data-toggle="tooltip" data-placement="top" title="Пожаловаться" style="border-radius: 0px"><i class="fas fa-ban  text-black-50"></i></button>
+                                <div class="dropdown-menu dropdown-menu-center animate slideIn shadow-md border-0" aria-labelledby="btnGroupDrop1">
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                    <a class="dropdown-item" href="#">Dropdown link</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    @include('car-adverts.user', ['user' => $carAdvert->author])
                     <table class="table table-responsive-sm table-borderless table-sm">
                         <tr>
                             <td width="130px" class="pl-0 text-black-50">{{ __('Год выпуска') }}</td>
@@ -52,9 +85,9 @@
 
                     </table>
                 </div>
-                <div class="col-md-9 col-12">
+                <div class="col-md-8 col-12">
                     <div class="row">
-                        <div class="col-md-11 col-12">
+                        <div class="col-md-12 col-12">
                             <div class="images mb-md-4 mb-2">
                         @if(count($carAdvert->photos))
                             <a href="{{ Storage::disk('public')->url('car-adverts/original/'. $mainCarImage) }}" data-fancybox="images"  class="main-photo mb-3 d-block overflow-hidden" style="max-height: 450px;">
@@ -90,29 +123,13 @@
                     </div>
 
                         </div>
-                        <div class="col-md-1 col-12 mb-md-4 mb-2">
-                            <div class="favorite text-md-center text-left mr-0 mb-2 mb-md-0">
-                                @if($user && $user->hasInFavorites($carAdvert->id))
-                                    <form method="POST" action="{{ route('cabinet.favorites.remove', $carAdvert) }}" class="d-inline-block">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
-                                                data-toggle="tooltip" data-placement="left" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
-                                    </form>
-                                @else
-                                    <form method="POST" action="{{ route('cars.adverts.favorites', $carAdvert) }}" class="d-inline-block">
-                                        @csrf
-                                        <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
-                                                data-toggle="tooltip" data-placement="left" title="Добавить в закладки" style="border-radius: 0px"><i class="fal fa-heart "></i></button>
-                                    </form>
-                                @endif
-                            </div>
-                        </div>
+
                     </div>
                 </div>
+
             </div>
             <div class="d-flex row flex-wrap">
-                <div class="col-md-3"></div>
+                <div class="col-md-4"></div>
                 <div class="col-md-7">
                     <div class="description mb-4">
                         <div class="h4 font-weight-bold">{{ __('fillable.CommentSeller') }}</div>

@@ -1,4 +1,4 @@
-<div class="p-0 rounded shadow-md mb-3 overflow-hidden">
+<div class="p-0 rounded shadow-md mb-md-4 mb-3 overflow-hidden">
     <div class="row">
         <div class="col-7 col-md-8 pr-0">
             <div class="p-3">

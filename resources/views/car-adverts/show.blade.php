@@ -36,22 +36,22 @@
                                 <form method="POST" action="{{ route('cabinet.favorites.remove', $carAdvert) }}" class="d-inline-block" >
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn  bg-transparent border border-bottom  rounded-left"
+                                    <button type="submit" class="btn btn-sm bg-transparent border rounded-left"
                                             data-toggle="tooltip" data-placement="top" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
                                 </form>
                             @else
                                 <form method="POST" action="{{ route('cars.adverts.favorites', $carAdvert) }}" class="d-inline-block">
                                     @csrf
-                                    <button type="submit" class="btn  bg-transparent border border-bottom  rounded"
+                                    <button type="submit" class="btn btn-sm bg-transparent border rounded-left"
                                             data-toggle="tooltip" data-placement="top" title="Добавить в закладки" style="border-radius: 0px"><i class="fal fa-heart "></i></button>
                                 </form>
                             @endif
-                                <button type="submit" class="btn  bg-transparent border-top border-bottom  "
+                                <button type="submit" class="btn btn-sm bg-transparent border-top border-bottom  "
                                         data-toggle="tooltip" data-placement="top" title="Оставить заметку" style="border-radius: 0px"><i class="far fa-edit text-black-50"></i></button>
 
 
                                 <div class="btn-group" role="group">
-                                    <button id="btnGroupDrop1" class="btn  bg-transparent border border-bottom  rounded-right"
+                                    <button id="btnGroupDrop1" class="btn btn-sm bg-transparent border border-bottom  rounded-right"
                                             type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             data-toggle="tooltip" data-placement="top" title="Пожаловаться" style="border-radius: 0px"><i class="fas fa-ban  text-black-50"></i></button>
                                     <div class="dropdown-menu dropdown-menu-center animate slideIn shadow-md border-0" aria-labelledby="btnGroupDrop1">

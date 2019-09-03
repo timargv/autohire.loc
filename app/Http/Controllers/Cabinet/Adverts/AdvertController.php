@@ -191,7 +191,7 @@ class AdvertController extends Controller
     private function checkAccess(Advert $carAdvert): void
     {
         if (!Gate::allows('manage-own-advert', $carAdvert)) {
-            abort(403);
+            abort(404);
         }
     }
 
