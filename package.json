@@ -20,7 +20,6 @@
         "resolve-url-loader": "^2.3.1",
         "sass": "^1.15.2",
         "sass-loader": "^7.1.0",
-        "vue": "^2.5.17",
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
@@ -53,6 +52,7 @@
         "morris.js": "^0.5",
         "pace": "0.0.4",
         "raphael": "^2.2.7",
+        "readmore-js": "^2.2.1",
         "select2": "^4.0.3",
         "slimscroll": "^0.9.1",
         "toastr": "^2.1.4"

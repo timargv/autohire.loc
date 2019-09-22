@@ -20,5 +20,6 @@ return [
     'AddPhotos'         =>  'Добваить фото',
     'Activate'          =>  'Активировать',
     'RentedOut'         =>  'Снято с аренды',
-    'RentedOuted'       =>  'Снять с аренды'
+    'RentedOuted'       =>  'Снять с аренды',
+    'VisibilityPhone'   =>  'Показать номер'
 ];

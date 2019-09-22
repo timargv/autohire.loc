@@ -15,7 +15,7 @@ Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdv
     Route::get('/all', 'AdvertController@index')->name('index');
     Route::get('/{carBrand}/all', 'AdvertController@carBrand')->name('brand');
     Route::get('/show/{carAdvert}', 'AdvertController@show')->name('show');
-
+    Route::post('/show/{carAdvert}/phone', 'AdvertController@phone')->name('phone');
     Route::post('/show/{carAdvert}/favorites', 'FavoriteController@add')->name('favorites');
     Route::delete('/show/{carAdvert}/favorites', 'FavoriteController@remove');
 
@@ -137,6 +137,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
         // VERIFICATION USER
         Route::post('/users/{user}/verify', 'UsersController@verify')->name('users.verify');
+
+        // VERIFIED OWNER
+        Route::post('/users/{user}/verify-owner', 'UsersController@verifyOwner')->name('users.verify_owner');
 
 
 

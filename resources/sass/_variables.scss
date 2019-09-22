@@ -9,8 +9,13 @@ $line-height-base: 1.6;
 // Colors
 $enable-gradients: true;
 
+
 $blue: #3490dc;
+$blue-tone-dark-300: #6574cdeb;
+$blue-tone-dark-600: #3e56f4;
+
 $indigo: #6574cd;
+$indigo-300: #8288ef;
 $purple: #9561e2;
 $pink: #f66d9b;
 $red: #e3342f;
@@ -21,6 +26,55 @@ $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $silver: #858585;
 $silver-black: #555555;
+$silver-lite: #f7f7f7;
 $ddd: #ddd;
 $link-lite: #aed3f1;
 $bg-link-lite: #aed3f1;
+
+
+
+
+
+// Background Color
+$bg-silver-lite: $silver-lite;
+
+
+
+// Text Color
+.text-blue-tone-dark {
+  color: $blue-tone-dark-600 !important;
+}
+
+.text-blue-tone-dark-50 {
+  color: $blue-tone-dark-300 !important;
+}
+
+.text-link-lite {
+  color: $link-lite;
+}
+
+
+// Background Color
+.bg-link-lite {
+  background-color: $link-lite;
+}
+
+.bg-silver-lite {
+  background-color: $bg-silver-lite !important;
+}
+
+.bg-indigo {
+  background-color: $indigo !important;
+}
+
+.bg-indigo-lite {
+  background-color: $indigo-300 !important;
+}
+
+.bg-blue-tone-dark {
+  background-color: $blue-tone-dark-600 !important;
+}
+
+.bg-blue-tone-dark-50 {
+  background-color: $blue-tone-dark-300 !important;
+}

@@ -43,6 +43,7 @@ class Advert extends Model
     public const STATUS_CLOSED = 'closed';
 
 
+
     protected $table = 'car_adverts';
     protected $guarded = ['id'];
 
@@ -118,7 +119,7 @@ class Advert extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id', 'id');
+        return $this->belongsTo(User::class, 'author_id', 'id')->with('avatar');
     }
 
     public function carBrand()

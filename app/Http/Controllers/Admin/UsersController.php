@@ -121,4 +121,10 @@ class UsersController extends Controller
 
         return redirect()->route('admin.users.show', $user);
     }
+
+    public function verifyOwner(User $user)
+    {
+        $this->register->verifyOwner($user->id);
+        return redirect()->route('admin.users.show', $user);
+    }
 }

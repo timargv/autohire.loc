@@ -5,42 +5,8 @@
 
     <div class="card-body">
         {{--  Фильтр  --}}
-        <form action="?" method="GET" class="input-group input-group-sm w-100">
+       <form action="?" method="GET" class="input-group input-group-sm w-100">
 
-        <div class="form-group w-100">
-            <input id="id" class="form-control form-control-sm" name="id" value="{{ request('id') }}" placeholder="ID">
-        </div>
-
-        <div class="form-group w-100">
-            <select id="car_brand" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_brand"  data-placeholder="{{ trans_choice('fillable.CarBrand', 1)}}">
-                <option value="">{{ trans_choice('fillable.CarBrand', 1)}}</option>
-                @foreach ($car_brands as $car_brand)
-                    <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand') ? ' selected' : '' }} @if($carBrand)  {{ $car_brand->id == $carBrand->id ?  ' selected' : ''   }} @endif>
-                        @for ($i = 0; $i < $car_brand->depth; $i++) &mdash; @endfor
-                        {{ $car_brand->name }}
-                    </option>
-                @endforeach;
-            </select>
-        </div>
-        <div class="form-group w-100">
-            <select id="car_model" class="form-control select2 w-100 {{ $errors->has('car_model') ? ' is-invalid' : '' }}" name="car_model" @if(!$carBrand) disabled @endif  data-placeholder="{{ trans_choice('fillable.CarModels', 1) }}">
-                <option value="">{{ trans_choice('fillable.CarModels', 1) }}</option>
-                @if($carBrand)
-                    @foreach ($carBrand->children as $car_brand)
-                        <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand') ? ' selected' : '' }} @if($carBrand)  {{ $car_brand->id == $carBrand->id ?  ' selected' : ''   }} @endif>
-                            @for ($i = 0; $i < $car_brand->depth; $i++) &mdash; @endfor
-                            {{ $car_brand->name }}
-                        </option>
-                    @endforeach;
-                @endif
-            </select>
-        </div>
-        <div class="form-group w-100">
-            <select id="car_series" class="form-control select2 w-100 {{ $errors->has('car_series') ? ' is-invalid' : '' }}" name="car_series" disabled  data-placeholder="{{ trans_choice('fillable.CarSeries', 1) }}">
-                <option value="">{{ trans_choice('fillable.CarSeries', 1) }}</option>
-            </select>
-        </div>
-       
        <div class="form-group w-100">
             <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year" data-placeholder="{{ trans_choice('fillable.CarYears', 1) }}">
                 <option value="">{{ trans_choice('fillable.CarYears', 1) }}</option>

@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
  * @property string $phone_verify_token
  * @property mixed id
  * @property mixed name
+ * @property string $verified_owner
  */
 class User extends Authenticatable
 {
@@ -38,6 +39,7 @@ class User extends Authenticatable
     public const GROUP_LANDLORD = 'arendodatel';
     public const GROUP_TENANT = 'arendator';
 
+    public const VERIFIED_OWNER_ACTIVE = 'active';
 
     protected $fillable = [
         'name',
@@ -55,6 +57,8 @@ class User extends Authenticatable
         'phone_auth',
         'phone_verify_token',
 
+        'verified_owner',
+
         'city',
         'about',
 
@@ -70,7 +74,6 @@ class User extends Authenticatable
         'phone_verify_token_expire' => 'datetime',
         'phone_auth' => 'boolean',
     ];
-
 
 
     // ---------- Аватар пользователя
@@ -148,6 +151,17 @@ class User extends Authenticatable
 
     }
 
+    public function verifyOwner(): void
+    {
+        if (!$this->verified_owner === self::VERIFIED_OWNER_ACTIVE) {
+            throw new \DomainException('Владелец уже проверен');
+        }
+
+        $this->update([
+            'verified_owner' => self::VERIFIED_OWNER_ACTIVE
+        ]);
+    }
+
     public static function new($name, $email): self
     {
         return static::create([
@@ -159,6 +173,10 @@ class User extends Authenticatable
         ]);
     }
 
+    public function isVerifiedOwner(): bool
+    {
+        return $this->verified_owner === self::VERIFIED_OWNER_ACTIVE;
+    }
 
     public function isWait(): bool
     {

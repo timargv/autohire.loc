@@ -113,6 +113,12 @@
                             </div>
                         </div>
                     </div>
+                    <div class="form-group mb-0 w-100 ">
+                        <form method="POST" action="{{ route('admin.users.verify_owner', $user) }}" class="">
+                            @csrf
+                            <button class="btn btn-block btn-success w-100 my-1 btn-sm rounded" onclick="return confirm('Владелец уже проверен?')" @if(!empty($user->isVerifiedOwner())) disabled @endif><i class="fal fa-check  mr-2"></i> {{__('Сделать владельца провереным')}}</button>
+                        </form>
+                    </div>
 
                 </div>
                 <!-- /.box-body -->

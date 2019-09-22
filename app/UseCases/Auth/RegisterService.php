@@ -41,4 +41,11 @@ class RegisterService
         $user = User::findOrFail($id);
         $user->verify();
     }
+
+    public function verifyOwner($id): void
+    {
+        /** @var User $user */
+        $user = User::findOrFail($id);
+        $user->verifyOwner();
+    }
 }

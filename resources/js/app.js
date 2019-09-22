@@ -5,34 +5,6 @@
  */
 
 require('./bootstrap');
-require('select2');
-window.AutoNumeric = require('autonumeric/dist/autoNumeric.min');
-require('@fancyapps/fancybox/dist/jquery.fancybox');
-// window.Vue = require('vue');
-
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
-// const app = new Vue({
-//     el: '#app',
-// });
-
 
 const autoNumericOptionsRuble = {
     currencySymbol: "\u202f ₽",
@@ -43,6 +15,41 @@ const autoNumericOptionsRuble = {
     decimalPlaces: "0"
 };
 
+
+
+$(document).on('click', '.phone-button', function () {
+    var button = $('.phone-button');
+    var number_block = $('.number-block');
+    var button_user_phone = $('.link-user-telephone-car-advert');
+
+    axios.post (button.data('source')).then(function (response) {
+        button.find('span').html('+7 ' + response.data).text(function(i, text) {
+            return text.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '($1) $2-$3-$4');
+        });
+
+        // number_block.toggleClass('d-none');
+        button.find('span').addClass('font-weight-bold');
+        button.find('.fad.fa-phone-alt').hide();
+
+    }).catch(function (error) {
+        console.error(error)
+    });
+
+}).on('click', '.btn-phone', function () {
+    var button = $('.btn-phone');
+    var myModal =  $('#myModal');
+
+    axios.post (button.data('source')).then(function (response) {
+        myModal.find('.modal-body > span').html('+7 ' + response.data).text(function(i, text) {
+            return text.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '($1) $2-$3-$4');
+        });
+        myModal.modal('show');
+
+    }).catch(function (error) {
+        console.error(error)
+    });
+});
+
 $(document).ready(function() {
 
     $('[data-toggle="tooltip"]').tooltip();
@@ -50,6 +57,21 @@ $(document).ready(function() {
     $('.select2').select2({
         theme: 'bootstrap4'
     });
+
+    setTimeout(function() {
+        $('.brand-readme').readmore({
+            speed: 200,
+            heightMargin: 16,
+            collapsedHeight: 160,
+            moreLink: '<a href="#">Все параметры <i class="fal fa-chevron-down pl-1"></i></a>',
+            lessLink: '<a href="#">Свернуть <i class="fal fa-chevron-up pl-1"></i></a>',
+            afterToggle: function(trigger, element, expanded) {
+                if(! expanded) { // The "Close" link was clicked
+                    $('html, body').animate({scrollTop: $(element).offset().top}, {duration: 100});
+                }
+            }
+        });
+    }, 100);
 
     AutoNumeric.multiple('#priceCarAdvert', autoNumericOptionsRuble);
 

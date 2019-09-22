@@ -19,7 +19,7 @@ class AdvertController extends Controller
 
         $query = Advert::active()->orderByDesc('id');
 
-        $car_brands = CarBrand::whereIsRoot()->defaultOrder('ASC')->get();
+        $carBrands = CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
         $car_years = Year::all();
         $types = Advert::typeRental();
         $attributes = Attribute::all();
@@ -33,7 +33,7 @@ class AdvertController extends Controller
         $carAdverts = $query->paginate(15);
         $user = Auth::user();
 
-        return view('car-adverts.index', compact('carBrand', 'carAdverts', 'user', 'car_brands', 'car_years', 'types', 'attributes'));
+        return view('car-adverts.index', compact('carBrand', 'carAdverts', 'user', 'carBrands', 'car_years', 'types', 'attributes'));
     }
 
     public function show (Advert $carAdvert)
@@ -44,37 +44,50 @@ class AdvertController extends Controller
 
         $user = Auth::user();
 
-
         $mainCarImage = $carAdvert->getMainPhoto($carAdvert->photos);
         $carAttributes = $carAdvert->values()
             ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
             ->join('car_adverts', 'car_adverts.id', '=', 'car_advert_values.car_advert_id')
-            ->select('car_attributes.name', 'car_advert_values.value')->get();
+            ->select('car_attributes.name', 'car_advert_values.value')->pluck('value', 'name');
         return view('car-adverts.show', compact('carAdvert', 'mainCarImage', 'carAttributes', 'user'));
     }
-
 
 
     public function carBrand ($slug) {
 
         $carBrand = $this->getCarBrand($slug);
-        $query = Advert::active()->orderByDesc('id')->with('favorites');
+        $query = Advert::active()->orderByDesc('id');
         $query->whereHas('carBrand', function ($query) use ($carBrand) {
-            $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
-        });
+                $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
+            })->orWhereHas('carModel', function ($query) use ($carBrand) {
+                $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
+            })->orWhereHas('carSerie', function ($query) use ($carBrand) {
+                $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
+            })->active();
 
         $carAdverts = $query->paginate(15);
+        $carModelsOrSeries = $carBrand->children()->defaultOrder()->getModels();
 
-        $car_brands = CarBrand::whereIsRoot()->defaultOrder('ASC')->get();
+//        $carBrands = CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
         $car_years = Year::all();
         $types = Advert::typeRental();
         $attributes = Attribute::all();
 
         $user = Auth::user();
-        return view('car-adverts.index', compact('carBrand', 'carAdverts', 'user', 'car_brands', 'car_years', 'types', 'attributes'));
+        return view('car-adverts.index', compact('carBrand', 'carAdverts', 'carModelsOrSeries', 'user', 'carBrands', 'car_years', 'types', 'attributes'));
     }
+
 
     private function getCarBrand ($slug) {
         return CarBrand::where('id', $slug)->orWhere('slug', $slug)->first();
+    }
+
+
+    public function phone(Advert $carAdvert): string
+    {
+        if (!($carAdvert->isActive() || Gate::allows('show-advert', $carAdvert))) {
+            abort(403);
+        }
+        return $carAdvert->author->phone;
     }
 }
