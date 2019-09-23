@@ -39,8 +39,7 @@ class ProfileService
     public function addAvatar($id, UserAvatarRequest $request) : void
     {
         $user = $this->getUser($id);
-
-        $this->deleteAvatar($user);
+        $this->deleteAvatar($id);
 
         DB::transaction(function () use ($request, $user) {
             $path = $this->pathPhoto()['original'];
@@ -86,15 +85,16 @@ class ProfileService
     }
 
 
-    public function deleteAvatar ($user) {
+    public function deleteAvatar ($userId) {
+        $user = $this->getUser($userId);
 
         if (!$user->avatar) {return;}
         Storage::disk('public')->delete([
-          $this->pathPhotoDelete()['original'].$user->avatar->image,
-          $this->pathPhotoDelete()['blur'].$user->avatar->image,
-          $this->pathPhotoDelete()['small'].$user->avatar->image,
-          $this->pathPhotoDelete()['medium'].$user->avatar->image,
-          $this->pathPhotoDelete()['large'].$user->avatar->image,
+          $this->pathAvatarDelete()['original'].$user->avatar->image,
+          $this->pathAvatarDelete()['blur'].$user->avatar->image,
+          $this->pathAvatarDelete()['small'].$user->avatar->image,
+          $this->pathAvatarDelete()['medium'].$user->avatar->image,
+          $this->pathAvatarDelete()['large'].$user->avatar->image,
         ]);
         $user->avatar()->delete();
     }
@@ -117,8 +117,6 @@ class ProfileService
     {
         return User::findOrFail($id);
     }
-
-
 
 }
 

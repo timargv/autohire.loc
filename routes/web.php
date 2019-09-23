@@ -23,7 +23,6 @@ Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdv
 
 
 // ---------- Cabinet
-
 Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet', 'middleware' => ['auth'] ], function () {
 
         Route::get('/', 'HomeController@index')->name('home');

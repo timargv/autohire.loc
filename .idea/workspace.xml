@@ -2,172 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/autohire.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/autohire.loc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav_button_cabinet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-brands-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-light-300.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-light-300.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-regular-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-solid-900.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/mix-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/mix-manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/LICENSE.txt" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/LICENSE.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/all.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/all.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/all.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/all.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/brands.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/brands.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/brands.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/brands.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/fontawesome.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/fontawesome.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/fontawesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/fontawesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/light.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/light.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/light.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/light.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/regular.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/regular.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/regular.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/regular.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/solid.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/solid.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/solid.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/solid.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/svg-with-js.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/svg-with-js.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/svg-with-js.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/svg-with-js.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/v4-shims.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/v4-shims.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/v4-shims.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/css/v4-shims.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/all.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/all.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/all.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/all.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/brands.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/brands.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/brands.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/brands.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/fontawesome.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/fontawesome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/fontawesome.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/fontawesome.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/light.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/light.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/light.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/light.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/regular.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/regular.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/regular.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/regular.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/solid.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/solid.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/solid.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/solid.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/v4-shims.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/v4-shims.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/v4-shims.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/js/v4-shims.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_animated.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_animated.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_bordered-pulled.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_bordered-pulled.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_core.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_core.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_fixed-width.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_fixed-width.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_icons.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_icons.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_larger.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_larger.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_list.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_list.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_mixins.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_mixins.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_rotated-flipped.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_rotated-flipped.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_screen-reader.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_screen-reader.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_shims.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_shims.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_stacked.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_stacked.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_variables.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/_variables.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/brands.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/brands.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/fontawesome.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/fontawesome.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/light.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/light.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/regular.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/regular.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/solid.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/solid.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/v4-shims.less" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/less/v4-shims.less" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/categories.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/categories.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/icons.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/icons.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/icons.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/icons.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/shims.json" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/shims.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/shims.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/shims.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/sponsors.yml" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/metadata/sponsors.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_animated.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_animated.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_bordered-pulled.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_bordered-pulled.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_core.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_core.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_fixed-width.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_fixed-width.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_icons.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_icons.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_larger.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_larger.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_list.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_list.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_rotated-flipped.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_rotated-flipped.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_screen-reader.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_screen-reader.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_shims.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_shims.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_stacked.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_stacked.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/_variables.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/brands.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/brands.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/fontawesome.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/fontawesome.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/light.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/light.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/regular.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/regular.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/solid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/solid.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/v4-shims.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/scss/v4-shims.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/brands.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/brands.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/light.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/light.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/regular.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/regular.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/solid.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/sprites/solid.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/keybase.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/brands/keybase.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/drum.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/drum.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/external-link-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/external-link-alt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/external-link.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/external-link.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/fax.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/fax.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/gamepad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/gamepad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/guitar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/guitar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/mandolin.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/mandolin.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/music.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/music.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/scanner.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/scanner.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/light/tv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/drum.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/drum.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/external-link-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/external-link-alt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/external-link.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/external-link.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/fax.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/fax.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/gamepad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/gamepad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/guitar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/guitar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/mandolin.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/mandolin.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/music.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/music.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/scanner.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/scanner.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/regular/tv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/drum.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/drum.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/external-link-alt.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/external-link-alt.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/external-link.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/external-link.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/fax.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/fax.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/gamepad.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/gamepad.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/guitar.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/guitar.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/hand-holding-usd.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/hand-holding-usd.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/mandolin.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/mandolin.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/music.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/music.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/scanner.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/scanner.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/swatchbook.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/swatchbook.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/tv.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/svgs/solid/tv.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-brands-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-light-300.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-regular-400.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/resources/assets/plugins/fontawesome-pro/webfonts/fa-solid-900.woff2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UseCases/Profile/ProfileService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/Profile/ProfileService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/users/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav_button.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav_button.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -363,7 +210,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/bootstrap/package.json" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -372,23 +219,23 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\car-adverts" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\favorites" />
-      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\admin\layouts" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\layouts\partials" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\admin\categories\car_brands\models\form" />
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts\forms" />
       <recent name="E:\OSPanel\domains\autohire.loc\app\Entity\Cars" />
       <recent name="E:\OSPanel\domains\autohire.loc\app\Http\Controllers\Admin\Category\Car" />
       <recent name="E:\OSPanel\domains\autohire.loc\app\Http\Requests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\cabinet\black-list-tenant" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\car-adverts" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\favorites" />
+      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\admin\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -474,7 +321,8 @@
       <workItem from="1567669273613" duration="9958000" />
       <workItem from="1569141313752" duration="10380000" />
       <workItem from="1569174311900" duration="10014000" />
-      <workItem from="1569225853081" duration="1600000" />
+      <workItem from="1569225853081" duration="5284000" />
+      <workItem from="1569246698071" duration="2144000" />
     </task>
     <servers />
   </component>
@@ -495,7 +343,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -62,19 +62,6 @@
                         @endif
                     </p>
 
-                    <ul class="list-group list-group-unbordered">
-                        <li class="list-group-item">
-                            <b>Город</b> <a class="pull-right">{{ $user->city??'—' }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{{__('register.EMailAddress')}}</b> <a class="pull-right">{{ $user->email }}</a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>{{__('fillable.Phone')}}</b> <a class="pull-right">{{ $user->userPhoneChar($user) }}</a>
-                        </li>
-
-                    </ul>
-
                     @if($user->avatar)
                         <div class="d-flex flex-row ">
                             <form method="POST" action="{{ route('admin.users.avatar.not.match', $user->avatar) }}" class="mr-1">
@@ -87,6 +74,19 @@
                             </form>
                         </div>
                     @endif
+
+                    <ul class="list-group list-group-unbordered">
+                        <li class="list-group-item">
+                            <b>Город</b> <a class="pull-right">{{ $user->city??'—' }}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>{{__('register.EMailAddress')}}</b> <a class="pull-right">{{ $user->email }}</a>
+                        </li>
+                        <li class="list-group-item">
+                            <b>{{__('fillable.Phone')}}</b> <a class="pull-right">{{ $user->userPhoneChar($user) }}</a>
+                        </li>
+
+                    </ul>
 
                     <div class="btn-group w-100 ">
                         <button type="button" class="btn btn-primary btn-sm dropdown-toggle btn-block " data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

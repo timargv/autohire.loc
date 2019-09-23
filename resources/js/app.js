@@ -90,8 +90,6 @@ $(document).ready(function() {
                 url: '/cabinet/my/cars/create/models/get/'+carBrandId,
                 type:"GET",
                 dataType:"json",
-
-
                 success:function(data) {
                     $('select[name="car_model"]').empty().prepend('<option value="">— Выберите модель</option>');
                     $.each(data, function(key, value){
