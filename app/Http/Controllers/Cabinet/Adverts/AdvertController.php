@@ -30,6 +30,7 @@ class AdvertController extends Controller
     }
 
 
+    // ------ Все объявления пользователя
     public function index (Request $request) {
         $query = Advert::forUser(Auth::user())->orderByDesc('id')->with(['photos', 'carBrand', 'carYear', 'values', 'attributes']);
 
@@ -53,6 +54,8 @@ class AdvertController extends Controller
         return view('cabinet.adverts.index', compact('car_adverts', 'countCarAdvert'));
     }
 
+
+    // ------ Форма добавления Объявлений
     public function create() {
         $car_brands = CarBrand::all();
         $car_years = Year::all();
@@ -62,6 +65,7 @@ class AdvertController extends Controller
     }
 
 
+    // ------ Запись объявления в базу
     public function store (CreateRequest $request)
     {
         try {
@@ -73,6 +77,8 @@ class AdvertController extends Controller
         return redirect()->route('cabinet.adverts.show', compact('carAdvert'));
     }
 
+
+    // ------ Показать объявление полностью
     public function show (Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
@@ -85,6 +91,8 @@ class AdvertController extends Controller
         return view('cabinet.adverts.show', compact('carAdvert', 'carAttributes', 'mainCarImage', 'user'));
     }
 
+
+    // ------ Форма редактирования объявления
     public function edit (Advert $carAdvert) {
 
         $this->checkAccess($carAdvert);
@@ -96,6 +104,7 @@ class AdvertController extends Controller
     }
 
 
+    // ------ Обновить объявление
     public function update (UpdateRequest $request, Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
@@ -109,11 +118,15 @@ class AdvertController extends Controller
         return redirect()->route('cabinet.adverts.show', $carAdvert);
     }
 
+
+    // ------ Форма добавления фотографий для Объявления
     public function photosForm (Advert $carAdvert) {
         $this->checkAccess($carAdvert);
         return view('cabinet.adverts.forms.photos', compact('carAdvert'));
     }
 
+
+    // ------ Добавить одну или несколько Фотографий для объявления
     public function photos (PhotosRequest $request, Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
@@ -126,6 +139,8 @@ class AdvertController extends Controller
         return redirect()->route('cabinet.adverts.show', $carAdvert)->with('success', 'Фото добавлено!');
     }
 
+
+    // ------ Сделать фотографию Главным в объявлении
     public function mainPhoto (Advert $carAdvert, Photo $photo) {
         $this->checkAccess($carAdvert);
 
@@ -138,6 +153,8 @@ class AdvertController extends Controller
         return redirect()->route('cabinet.adverts.show', $carAdvert)->with('success', 'Главное фото изменено!');
     }
 
+
+    // ------ Удалить одну фотографию объявления
     public function destroyPhoto (Advert $carAdvert, Photo $photo)
     {
         $this->checkAccess($carAdvert);
@@ -150,6 +167,8 @@ class AdvertController extends Controller
         return redirect()->back()->with('success', 'Фото Удалено!');
     }
 
+
+    // ------ Удалить Объявление полностью
     public function destroy(Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
@@ -163,6 +182,7 @@ class AdvertController extends Controller
     }
 
 
+    // ------ Отправить на модерацию
     public function send(Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
@@ -175,6 +195,7 @@ class AdvertController extends Controller
         return redirect()->route('cars.adverts.show', $carAdvert);
     }
 
+    // ------ Снять объявление
     public function close(Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
@@ -188,6 +209,13 @@ class AdvertController extends Controller
     }
 
 
+    // ------ Получить Масив Марок автомобиля по ID
+    public function getModels($id) {
+        $carModels = $this->getCarBrand($id)->children->pluck("name","id");
+        return $carModels;
+    }
+
+    // ------ Проверка на Владельца объявления
     private function checkAccess(Advert $carAdvert): void
     {
         if (!Gate::allows('manage-own-advert', $carAdvert)) {
@@ -195,13 +223,7 @@ class AdvertController extends Controller
         }
     }
 
-
-
-    public function getModels($id) {
-        $carModels = $this->getCarBrand($id)->children->pluck("name","id");
-        return json_encode($carModels);
-    }
-
+    // ------ Найти Марку или (модель, серию) по ID
     private function getCarBrand($id) {
         return CarBrand::findOrFail($id);
     }

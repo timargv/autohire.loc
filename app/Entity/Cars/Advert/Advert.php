@@ -42,8 +42,6 @@ class Advert extends Model
     public const STATUS_ACTIVE = 'active';
     public const STATUS_CLOSED = 'closed';
 
-
-
     protected $table = 'car_adverts';
     protected $guarded = ['id'];
 
