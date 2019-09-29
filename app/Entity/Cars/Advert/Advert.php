@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property Carbon $created_at
  * @property Carbon $updated_at
  *
- * @property User $user
+ * @property User $author
  * @property CarBrand $carBrand
  * @property Value[] $values
  * @property Photo[] $photos
@@ -117,7 +117,7 @@ class Advert extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id', 'id')->with('avatar');
+        return $this->belongsTo(User::class, 'author_id', 'id') ;
     }
 
     public function carBrand()

@@ -128,7 +128,7 @@
                     <div class="description mb-4">
                         <div class="h4 font-weight-bold">{{ __('fillable.CommentSeller') }}</div>
                         <div class="description">
-                            {{ $carAdvert->description }}
+                            {!! nl2br(str_replace(" ", " &nbsp;", $carAdvert->description)) !!}
                         </div>
                     </div>
                 </div>

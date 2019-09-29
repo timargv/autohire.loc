@@ -22,7 +22,7 @@ $(document).on('click', '.phone-button', function () {
     var number_block = $('.number-block');
     var button_user_phone = $('.link-user-telephone-car-advert');
 
-    axios.post (button.data('source')).then(function (response) {
+    axios.post(button.data('source')).then(function (response) {
         button.find('span').html('+7 ' + response.data).text(function(i, text) {
             return text.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '($1) $2-$3-$4');
         });
@@ -39,7 +39,7 @@ $(document).on('click', '.phone-button', function () {
     var button = $('.btn-phone');
     var myModal =  $('#myModal');
 
-    axios.post (button.data('source')).then(function (response) {
+    axios.post(button.data('source')).then(function (response) {
         myModal.find('.modal-body > span').html('+7 ' + response.data).text(function(i, text) {
             return text.replace(/(\d{3})(\d{3})(\d{2})(\d{2})/, '($1) $2-$3-$4');
         });

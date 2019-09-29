@@ -1,7 +1,7 @@
-<div class="card rounded-0 border-0 ">
+<div class="card rounded-0 border-0 shadow-sm">
     <div class="card-body p-0">
         <table class="table table-borderless table-responsive-sm bg-white">
-            <thead class="thead-light">
+            <thead class="thead-light d-none">
             <tr>
 {{--                <th width="60px">ID</th>--}}
                 <th width="50px">{{__('fillable.Photo')}}</th>
@@ -50,7 +50,11 @@
                 </td>
                 <td><a href="{{ route('cabinet.black.list.tenants.show', $tenant) }}">{{ $tenant->name }}</a>
                     <div class="small text-muted mb-2">
-                        @if($tenant->author) {{-- __('fillable.Author') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.Author')}}" class="text-dark" href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a>, @else - @endif
+                        @if($tenant->author->isAdmin())
+                            @if($tenant->author) {{-- __('fillable.Author') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.Author')}}" class="text-dark" href="{{ route('admin.users.show', $tenant->author) }}">{{ $tenant->author->name }}</a>, @else - @endif
+                        @else
+                            @if($tenant->author) {{ $tenant->author->name }}, @else - @endif
+                        @endif
                         @if($tenant->city) {{-- __('fillable.City') --}} <a data-toggle="tooltip" data-placement="top" title="{{__('fillable.City')}}" class="text-dark" href="#">{{ $tenant->city }}</a>, @endif
                         {{ $tenant->created_at->diffForHumans()}}</div>
                     @foreach($tenant->comments as $comment)
