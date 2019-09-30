@@ -2,7 +2,8 @@
 
 @section('content')
     @include('cabinet.adverts._nav')
-    @include('cabinet.adverts._nav_button', ['page' => ''])
+{{--    @include('cabinet.adverts._nav_button', ['page' => ''])--}}
+    @include('car-adverts._nav_button_cabinet', ['page' => ''])
 
     @if (!count($carAdvert->photos))
         {{ session()->flash('error_alert', 'Добавьте Фотогорафию авто') }}
