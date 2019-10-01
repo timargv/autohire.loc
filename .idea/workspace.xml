@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/_item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -39,44 +39,6 @@
         <option value="SCSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>html</find>
-      <find>dist/</find>
-      <find>webfonts</find>
-      <find>label label-success</find>
-      <find>gear</find>
-      <find>level</find>
-      <find>flat</find>
-      <find>checkboxClass</find>
-      <find>.CarYe</find>
-      <find>getMainPhoto</find>
-      <find>loader</find>
-      <find>media-body</find>
-      <find>dropdown-toggle</find>
-      <find>.dropdown-toggle:after</find>
-      <find>media</find>
-      <find>.dropdown-menu</find>
-      <find>dropdown-menu</find>
-      <find>$carAdvert</find>
-      <find>toast</find>
-      <find>$advert</find>
-      <find>pathPhoto</find>
-      <find>getTypeRental</find>
-      <find>fad</find>
-      <find>show-advert</find>
-      <find>phone</find>
-      <find>visibility</find>
-      <find>3490dc</find>
-      <find>a</find>
-      <find>tooltip</find>
-      <find>cars.adverts.brand</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>Model</replace>
-      <replace>CarModel</replace>
-    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -318,6 +280,7 @@
       <workItem from="1569397845396" duration="1178000" />
       <workItem from="1569771617799" duration="5472000" />
       <workItem from="1569827164708" duration="7940000" />
+      <workItem from="1569913107683" duration="3037000" />
     </task>
     <servers />
   </component>

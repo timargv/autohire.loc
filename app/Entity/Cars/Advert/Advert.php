@@ -166,17 +166,6 @@ class Advert extends Model
     //    Функции для объявлении
     //    =============================
 
-
-    // Объявление не принято с объяснением от модератора или администратора переведен в статус черновик
-    public function reject($reason): void
-    {
-        $this->update([
-            'status' => self::STATUS_DRAFT,
-            'reject_reason' => $reason,
-        ]);
-    }
-
-
     /*
      * Сменить статус объявления на модерации
      * */
@@ -188,11 +177,9 @@ class Advert extends Model
         if (!\count($this->photos)) {
             throw new \DomainException('Загрузите фотографию.');
         }
-
         $this->update([
             'status' => self::STATUS_MODERATION,
         ]);
-
     }
 
 
@@ -208,6 +195,27 @@ class Advert extends Model
             'published_at' => $date,
             'expires_at' => $date->copy()->addDays(15),
             'status' => self::STATUS_ACTIVE,
+        ]);
+    }
+
+    /*
+     * Объявление не принято с объяснением от модератора или администратора переведен в статус черновик
+     */
+    public function reject($reason): void
+    {
+        $this->update([
+            'status' => self::STATUS_DRAFT,
+            'reject_reason' => $reason,
+        ]);
+    }
+
+    /*
+     * Закрыть объявление по истечении времени
+     * */
+    public function expire(): void
+    {
+        $this->update([
+            'status' => self::STATUS_CLOSED,
         ]);
     }
 
@@ -267,7 +275,6 @@ class Advert extends Model
     public function getMainPhotoModel ($photos)
     {
         $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
-
         foreach ($photos as $photo) {
             if ($photo->type === Photo::TYPE_MAIN_PHOTO) {
                 $photoMain = $photo;

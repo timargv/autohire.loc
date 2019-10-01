@@ -20,53 +20,6 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
-
-<div class="p-3 clearfix">
-    <div class="float-left mr-3 cursor-pointer" style="width: 100px">
-        <div class="clearfix rounded-pill overflow-hidden bg-gray-light border">
-            <img src="https://dummyimage.com/40/eee/000" alt="..." class="rounded-circle float-left border" style="
-    width: 34px;
-    position: relative;
-    left: 0px;
-    margin-right: 10px;
-
-">
-            <div class="float-left px-0  " style="
-    line-height: 34px;
-">BMW</div>
-        </div>
-    </div>
-
-    <div class="float-left mr-3 cursor-pointer" style="width: 160px">
-        <div class="clearfix rounded-pill overflow-hidden bg-gray-light border">
-            <img src="https://dummyimage.com/40/eee/000" alt="..." class="rounded-circle float-left border" style="
-    width: 34px;
-    position: relative;
-    left: 0px;
-    margin-right: 10px;
-
-">
-            <div class="float-left px-0  " style="
-    line-height: 34px;
-">Mercedes-Benz</div>
-        </div>
-    </div>
-
-    <div class="float-left mr-3 cursor-pointer" style="width: 100px">
-        <div class="clearfix rounded-pill overflow-hidden bg-gray-light border">
-            <img src="https://dummyimage.com/40/eee/000" alt="..." class="rounded-circle float-left border" style="
-    width: 34px;
-    position: relative;
-    left: 0px;
-    margin-right: 10px;
-
-">
-            <div class="float-left px-0  " style="
-    line-height: 34px;
-">Kia</div>
-        </div>
-    </div>
-</div>
     <div class="position-relative" id="app" aria-live="polite" aria-atomic="true">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">

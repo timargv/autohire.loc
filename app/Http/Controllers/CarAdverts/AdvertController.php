@@ -17,7 +17,7 @@ class AdvertController extends Controller
 
     public function index () {
 
-        $query = Advert::active()->orderByDesc('id');
+        $query = Advert::active()->orderByDesc('published_at');
 
         $carBrands = CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
         $car_years = Year::all();
