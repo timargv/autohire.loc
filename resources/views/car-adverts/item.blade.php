@@ -1,6 +1,6 @@
 @forelse ($carAdverts as $carAdvert)
-    <div class="@if(!empty($col_1)) col-12 @else col-12 col-lg-6 @endif mb-3">
-        <div class="car_sh card border-0 shadow-sm overflow-hidden">
+    <div class="@if(!empty($col_1)) col-12 @else col-12 col-lg-6 @endif border-bottom mb-md-3 mb-2">
+        <div class="car_sh card border-0 shadow-sm overflow-hidden rounded-0">
             <a href="#" class="car_sh_href position-absolute w-100 h-100"></a>
             <div class="row d-flex align-items-stretch h-100">
                 <div class="col-6 col-md-5 pr-0">
