@@ -2,8 +2,15 @@
 
 @section('breadcrumbs', '')
 
+@section('filter')
+    @include('car-adverts._filter')
+@stop
+
 @section('content')
-    <div class="card card-default mb-3 border-0 shadow-sm">
+    <div class="row">
+        @include('car-adverts.item', ['carAdvert' => $carAdverts])
+    </div>
+    <div class="d-none card card-default mb-3 border-0 shadow-sm">
         <div class="card-header border-0 font-weight-bold text-muted">
             {{ __('Все Марки') }}
         </div>

@@ -23,14 +23,14 @@
     <div class="position-relative" id="app" aria-live="polite" aria-atomic="true">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-blue-tone-dark-50" href="{{ url('/') }}">
+                <a class="navbar-brand text-blue-tone-dark-50 pl-md-3 ml-md-3" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse pr-md-2 mr-md-3" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     @include('layouts.navbar.navleft')
 
@@ -39,7 +39,9 @@
                 </div>
             </div>
         </nav>
-
+        <div class="container position-relative">
+            @yield('filter')
+        </div>
         <div class="include_cabinet_menu" style="    background-color: #e9ecef;">
             <div class="container">
                 <div class="row">
@@ -49,7 +51,7 @@
         </div>
 
         <main class="app-content py-0 py-md-3" style="background: @yield('bgColor')">
-            <div class="container px-0 px-md-3">
+            <div class="container ">
                 <div class="d-none d-md-block">
                     @section('breadcrumbs', Breadcrumbs::render())
                     @yield('breadcrumbs')

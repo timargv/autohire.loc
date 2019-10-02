@@ -1,5 +1,5 @@
 // Body
-$body-bg: #ffffff;
+$body-bg: #dde1e7;
 
 // Typography
 $font-family-sans-serif: 'Nunito', sans-serif;
@@ -30,9 +30,10 @@ $silver-lite: #f7f7f7;
 $ddd: #ddd;
 $link-lite: #aed3f1;
 $bg-link-lite: #aed3f1;
-
-
-
+$gray-lite: #f6f8fa;
+$bg-silver-lite-filter: #e8eaeb;
+$bg-siran-lite: #807fbc;
+$bg-siran: #6361ad;
 
 
 // Background Color
@@ -48,7 +49,9 @@ $bg-silver-lite: $silver-lite;
 .text-blue-tone-dark-50 {
   color: $blue-tone-dark-300 !important;
 }
-
+.text-siran {
+  color: $bg-siran !important;
+}
 .text-link-lite {
   color: $link-lite;
 }
@@ -77,4 +80,19 @@ $bg-silver-lite: $silver-lite;
 
 .bg-blue-tone-dark-50 {
   background-color: $blue-tone-dark-300 !important;
+}
+
+.bg-gray-lite {
+  background-color: $gray-lite !important;
+}
+
+.bg-silver-lite-filter {
+  background-color: $bg-silver-lite-filter !important;
+}
+
+.bg-siran-lite {
+  background-color: $bg-siran-lite !important;
+}
+.bg-siran {
+  background-color: $bg-siran !important;
 }

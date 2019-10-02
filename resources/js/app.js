@@ -48,6 +48,17 @@ $(document).on('click', '.phone-button', function () {
     }).catch(function (error) {
         console.error(error)
     });
+}).on('click', '.visible-filter', function () {
+    var button = $(this);
+    var filter_block = $('.filter-header_top');
+
+    if (button.text() === "Паказать фильтр") {
+        button.text('Скрыть фильтр');
+    } else {
+        button.text('Паказать фильтр')
+    }
+    filter_block.toggleClass('active');
+
 });
 
 $(document).ready(function() {
