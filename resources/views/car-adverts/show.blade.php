@@ -4,8 +4,8 @@
 
     @include('car-adverts._nav_button_cabinet', ['page' => ''])
 
-    <div class="card rounded-0 border-0 shadow-sm">
-        <div class="card-header border-0 h5 d-flex">
+    <div class="card rounded-0 border-0  shadow-sm row mx-md-0">
+        <div class="card-header border-0 h5 py-4 d-flex">
             <div class="">
                 <span class="font-weight-bold">{{ $carAdvert->carBrand->name }} {{  $carAdvert->carModel ? $carAdvert->carModel->name : '' }}</span>
                 @canany(['manage-own-advert', 'manage-adverts'], $carAdvert)

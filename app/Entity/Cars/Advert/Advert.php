@@ -242,12 +242,31 @@ class Advert extends Model
         return $query->where('author_id', $user->id);
     }
 
-    public function scopeForCategory(Builder $query, CarBrand $carBrand)
+    public function scopeForCarBrand(Builder $query, CarBrand $carBrand)
     {
-        return $query->whereIn('car_brand_id', array_merge(
+        $carBrands = array_merge(
             [$carBrand->id],
             $carBrand->descendants()->pluck('id')->toArray()
-        ));
+        );
+        return $query->whereIn('car_brand_id', $carBrands);
+    }
+
+    public function scopeForCarModel(Builder $query, CarBrand $carModel)
+    {
+        $carModels = array_merge(
+            [$carModel->id],
+            $carModel->descendants()->pluck('id')->toArray()
+        );
+        return $query->whereIn('car_model_id', $carModels);
+    }
+
+    public function scopeForCarSeries(Builder $query, CarBrand $carSeries)
+    {
+        $carSeriesas = array_merge(
+            [$carSeries->id],
+            $carSeries->descendants()->pluck('id')->toArray()
+        );
+        return $query->whereIn('car_serie_id', $carSeriesas);
     }
 
     public function scopeFavoredByUser(Builder $query, User $user) {

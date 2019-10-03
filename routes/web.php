@@ -13,11 +13,13 @@ Route::group(['middleware' => ['auth']], function () {
 
 Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdverts'], function () {
     Route::get('/all', 'AdvertController@index')->name('index');
-    Route::get('/{carBrand}/all', 'AdvertController@carBrand')->name('brand');
+//    Route::get('/{carBrand}/all', 'AdvertController@carBrand')->name('brand');
     Route::get('/show/{carAdvert}', 'AdvertController@show')->name('show');
     Route::post('/show/{carAdvert}/phone', 'AdvertController@phone')->name('phone');
     Route::post('/show/{carAdvert}/favorites', 'FavoriteController@add')->name('favorites');
     Route::delete('/show/{carAdvert}/favorites', 'FavoriteController@remove');
+
+    Route::get('/{adverts_path?}', 'AdvertController@index')->name('index')->where('adverts_path', '.+');
 
 });
 

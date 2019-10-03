@@ -2,11 +2,23 @@
 
 namespace App\Entity\Categories\Car;
 
-use App\Entity\Cars\Advert\Advert;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Kalnoy\Nestedset\NodeTrait;
 
+/**
+ * @property int $id
+ * @property string $name
+ * @property string $name_ru
+ * @property string $status
+ * @property string $slug
+ * @property int|null $parent_id
+ * @property CarBrand $parent
+ * @property CarBrand[] $children
+ *
+ * @method Builder roots()
+ */
 
 class CarBrand extends Model
 {
@@ -22,16 +34,26 @@ class CarBrand extends Model
 //        return $this->belongsToMany(Advert::class,'car_id','id');
 //    }
 
-    public function parent()
+    public function getPath(): string
     {
-        return $this->belongsTo(self::class);
+//        return implode('/', array_merge($this->ancestors()->defaultOrder()->pluck('slug')->toArray(), [$this->slug]));
+        return ($this->parent ? $this->parent->getPath() . '/' : '') . $this->slug;
+    }
+
+    public function children()
+    {
+        return $this->hasMany(static::class, 'parent_id', 'id');
+    }
+
+    public function scopeRoots(Builder $query)
+    {
+        return $query->where('parent_id', null);
     }
 
     public function author()
     {
         return $this->belongsTo(User::class, 'author_id', 'id');
     }
-
 
     public function depthCarBrand ($id) {
         return self::withDepth()->find($id);

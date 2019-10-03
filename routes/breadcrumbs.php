@@ -6,6 +6,7 @@ use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use App\Entity\Tenant\BlackList;
 use App\Entity\User\Group;
+use App\Http\Router\AdvertsPath;
 use App\User;
 use DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator as Crumbs;
 
@@ -48,29 +49,52 @@ Breadcrumbs::register('profile.show', function (Crumbs $crumbs, User $user) {
 
 
 // Car Advert
-Breadcrumbs::register('cars.adverts.index', function (Crumbs $crumbs) {
-    $crumbs->parent('home');
-    $crumbs->push(__('fillable.CarsLite'), route('cars.adverts.index'));
+Breadcrumbs::register('cars.adverts.index', function (Crumbs $crumbs, AdvertsPath $path = null) {
+    $path = $path ?: adverts_path(null);
+    $crumbs->parent('cars.adverts.brand', $path);
 });
 
 Breadcrumbs::register('cars.adverts.show', function (Crumbs $crumbs, Advert $carAdvert) {
-    $crumbs->parent('cars.adverts.brand', $carAdvert->carBrand->slug);
-    $crumbs->push($carAdvert->carBrand->name .' '. $carAdvert->carModel->name ?? '', route('cars.adverts.show', $carAdvert));
+
+    $carBrandPath = $carAdvert->carBrand;
+
+    if ($carSerie = $carAdvert->carSerie) {
+        $carBrandPath = $carSerie;
+    } else if ($carModel = $carAdvert->carModel) {
+        $carBrandPath = $carModel;
+    }
+    $crumbs->parent('cars.adverts.brand', adverts_path($carBrandPath));
+    $crumbs->push('Актуально', route('cars.adverts.show', $carAdvert));
 });
+
 
 // Car Brand
-Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, $slug) {
+//Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, $slug) {
+////    $carBrand = CarBrand::where('slug', $slug)->orWhere('id', $slug)->first();
+////    $crumbs->parent('cars.adverts.index', $carBrand);
+//
 //    $carBrand = CarBrand::where('slug', $slug)->orWhere('id', $slug)->first();
-//    $crumbs->parent('cars.adverts.index', $carBrand);
+//    if ($parent = $carBrand->parent) {
+//        $crumbs->parent('cars.adverts.brand', $parent->slug?:$parent->id);
+//    } else {
+//        $crumbs->parent('cars.adverts.index', $slug);
+//    }
+//    $crumbs->push($carBrand->name, route('cars.adverts.brand', $carBrand));
+//});
 
-    $carBrand = CarBrand::where('slug', $slug)->orWhere('id', $slug)->first();
-    if ($parent = $carBrand->parent) {
-        $crumbs->parent('cars.adverts.brand', $parent->slug?:$parent->id);
+
+Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, AdvertsPath $path) {
+    if ($path->carBrand && $parent = $path->carBrand->parent) {
+        $crumbs->parent('cars.adverts.brand', $path->withCarAdvert($parent));
     } else {
-        $crumbs->parent('cars.adverts.index', $slug);
+        $crumbs->parent('home');
+        $crumbs->push(trans_choice('fillable.CarsLite', 1), route('cars.adverts.index'));
     }
-    $crumbs->push($carBrand->name, route('cars.adverts.brand', $carBrand));
+    if ($path->carBrand) {
+        $crumbs->push($path->carBrand->name, route('cars.adverts.index', $path));
+    }
 });
+
 
 
 // Cabinet
