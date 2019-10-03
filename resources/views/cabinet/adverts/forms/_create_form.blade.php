@@ -158,6 +158,7 @@
             <div class="form-group">
                 <label for="description" class="col-form-label">{{ __('fillable.Description') }}</label>
                 <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="5" required>{{ old('description') }}</textarea>
+                <span class="pt-4 small text-black-50 ">Запрещается давать ссылки, указывать адреса эл. почты, адрес места осмотра, телефоны, цену, предлагать услуги.</span>
                 @if ($errors->has('description'))
                     <span class="invalid-feedback"><strong>{{ $errors->first('description') }}</strong></span>
                 @endif

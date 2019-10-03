@@ -85,25 +85,30 @@ class UsersController extends Controller
 
     public function update(UpdateRequest $request, User $user)
     {
-        $user->update($request->only([
-            'name',
-            'forename',
-            'surname',
-            'patronymic',
-            'email',
-            'status',
-            'role',
-            'phone',
-            'city',
-            'about']));
+        try {
+            $user->update($request->only([
+                'name',
+                'forename',
+                'surname',
+                'patronymic',
+                'email',
+                'status',
+                'role',
+                'phone',
+                'city',
+                'about']));
 
-        if ($request['role'] !== $user->role) {
+            if ($request['role'] !== $user->role) {
                 $user->changeRole($request['role']);
+            }
+
+            $user->setGroups($request['groups']);
+
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
         }
 
-        $user->setGroups($request['groups']);
-
-        return redirect()->route('admin.users.show', $user);
+        return redirect()->route('admin.users.show', $user)->with('success', 'Профиль обновлен');
 
 
     }

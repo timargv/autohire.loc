@@ -57,6 +57,8 @@
             </div>
         </div>
     </div>
+
+
     <div class="d-none">
         @forelse($carAdverts as $carAdvert)
             <div  id="carAdvertSh" class="p-3 card rounded text-decoration-none">

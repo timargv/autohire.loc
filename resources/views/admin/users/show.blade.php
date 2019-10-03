@@ -42,7 +42,7 @@
                     @endif
 
                     <h3 class="profile-username text-center">
-                        {{ $user->name }} {{ $user->surname??'—' }}
+                        {{ $user->name }}
                     </h3>
 
                     <p class="text-muted text-center">{{ $user->forename??'—' }} {{ $user->surname??'—' }}</p>

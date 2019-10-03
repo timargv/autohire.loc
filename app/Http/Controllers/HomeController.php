@@ -7,6 +7,7 @@ use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -20,7 +21,7 @@ class HomeController extends Controller
         $types = Advert::typeRental();
         $attributes = Attribute::all();
         $carBrand = '';
-
-        return view('home', compact('carBrands', 'carAdverts', 'car_years', 'types', 'attributes', 'carBrand'));
+        $user = Auth::user();
+        return view('home', compact('user','carBrands', 'carAdverts', 'car_years', 'types', 'attributes', 'carBrand'));
     }
 }

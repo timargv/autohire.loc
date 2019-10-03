@@ -15,11 +15,12 @@ use Illuminate\Support\Facades\Gate;
 class AdvertController extends Controller
 {
 
-    public function index () {
+    public function index (CarBrand $carBrand = null) {
 
         $query = Advert::active()->orderByDesc('published_at');
 
         $carBrands = CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
+
         $car_years = Year::all();
         $types = Advert::typeRental();
         $attributes = Attribute::all();

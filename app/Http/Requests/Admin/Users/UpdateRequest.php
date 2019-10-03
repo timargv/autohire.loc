@@ -24,10 +24,10 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string|max:255',
+            'name' => 'required|string|max:255|unique:users,name,' . $this->user->id,
             'about' => 'nullable|string|max:3000',
-            'phone' => 'nullable|string|min:10|max:10|regex:/^\d+$/s|unique:users,id,' . $this->user->id,
-            'email' => 'required|string|email|max:255|unique:users,id,' . $this->user->id,
+            'phone' => 'nullable|string|min:10|max:10|regex:/^\d+$/s|unique:users,phone,' . $this->user->id,
+            'email' => 'required|string|email|max:255|unique:users,email,' . $this->user->id,
             'status' => ['required', 'string', Rule::in(array_keys(User::statusList()))],
             'role' => ['required', 'string', Rule::in(array_keys(User::rolesList()))]
 
