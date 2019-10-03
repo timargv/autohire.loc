@@ -10,6 +10,7 @@ use App\Http\Router\AdvertsPath;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 
 
@@ -17,6 +18,7 @@ class AdvertController extends Controller
 {
 
     public function index (AdvertsPath $path) {
+
 
         $query = Advert::active()->with(['carBrand','carModel'])->orderByDesc('published_at');
 
@@ -53,10 +55,14 @@ class AdvertController extends Controller
         $user = Auth::user();
 
         $mainCarImage = $carAdvert->getMainPhoto($carAdvert->photos);
-        $carAttributes = $carAdvert->values()
-            ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
-            ->join('car_adverts', 'car_adverts.id', '=', 'car_advert_values.car_advert_id')
-            ->select('car_attributes.name', 'car_advert_values.value')->pluck('value', 'name');
+
+        $carAttributes = Cache::tags(Advert::class)->rememberForever('car_advert_value_attribute_' . $carAdvert->id, function () use ($carAdvert) {
+            return $carAdvert->values()
+                ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
+                ->join('car_adverts', 'car_adverts.id', '=', 'car_advert_values.car_advert_id')
+                ->select('car_attributes.name', 'car_advert_values.value')->pluck('value', 'name');
+        });
+
         return view('car-adverts.show', compact('carAdvert', 'mainCarImage', 'carAttributes', 'user'));
     }
 

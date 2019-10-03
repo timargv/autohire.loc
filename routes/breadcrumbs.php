@@ -67,22 +67,7 @@ Breadcrumbs::register('cars.adverts.show', function (Crumbs $crumbs, Advert $car
     $crumbs->push('Актуально', route('cars.adverts.show', $carAdvert));
 });
 
-
 // Car Brand
-//Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, $slug) {
-////    $carBrand = CarBrand::where('slug', $slug)->orWhere('id', $slug)->first();
-////    $crumbs->parent('cars.adverts.index', $carBrand);
-//
-//    $carBrand = CarBrand::where('slug', $slug)->orWhere('id', $slug)->first();
-//    if ($parent = $carBrand->parent) {
-//        $crumbs->parent('cars.adverts.brand', $parent->slug?:$parent->id);
-//    } else {
-//        $crumbs->parent('cars.adverts.index', $slug);
-//    }
-//    $crumbs->push($carBrand->name, route('cars.adverts.brand', $carBrand));
-//});
-
-
 Breadcrumbs::register('cars.adverts.brand', function (Crumbs $crumbs, AdvertsPath $path) {
     if ($path->carBrand && $parent = $path->carBrand->parent) {
         $crumbs->parent('cars.adverts.brand', $path->withCarAdvert($parent));

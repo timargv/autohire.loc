@@ -9,6 +9,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Cache;
 
 /**
  * @property int $id
@@ -248,7 +249,11 @@ class Advert extends Model
             [$carBrand->id],
             $carBrand->descendants()->pluck('id')->toArray()
         );
+
         return $query->whereIn('car_brand_id', $carBrands);
+
+
+
     }
 
     public function scopeForCarModel(Builder $query, CarBrand $carModel)
@@ -258,6 +263,8 @@ class Advert extends Model
             $carModel->descendants()->pluck('id')->toArray()
         );
         return $query->whereIn('car_model_id', $carModels);
+
+
     }
 
     public function scopeForCarSeries(Builder $query, CarBrand $carSeries)
@@ -267,6 +274,7 @@ class Advert extends Model
             $carSeries->descendants()->pluck('id')->toArray()
         );
         return $query->whereIn('car_serie_id', $carSeriesas);
+
     }
 
     public function scopeFavoredByUser(Builder $query, User $user) {

@@ -25,17 +25,17 @@ class AdvertsPath implements UrlRoutable
 
     public function getRouteKey()
     {
-//        $segments = [];
+        $segments = [];
 //
-//        if ($this->carBrand) {
-//            $segments[] = Cache::tags(CarBrand::class)->rememberForever('car_brand_path_' . $this->carBrand->id, function () {
-//                return $this->carBrand->getPath();
-//            });
-//        }
-
         if ($this->carBrand) {
-            $segments[] =   $this->carBrand->getPath();
+            $segments[] = Cache::tags(CarBrand::class)->rememberForever('car_brand_path_' . $this->carBrand->id, function () {
+                return $this->carBrand->getPath();
+            });
         }
+
+//        if ($this->carBrand) {
+//            $segments[] =   $this->carBrand->getPath();
+//        }
 
         return implode('/', $segments);
     }

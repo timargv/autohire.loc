@@ -36,18 +36,8 @@ class CarBrand extends Model
 
     public function getPath(): string
     {
-//        return implode('/', array_merge($this->ancestors()->defaultOrder()->pluck('slug')->toArray(), [$this->slug]));
-        return ($this->parent ? $this->parent->getPath() . '/' : '') . $this->slug;
-    }
-
-    public function children()
-    {
-        return $this->hasMany(static::class, 'parent_id', 'id');
-    }
-
-    public function scopeRoots(Builder $query)
-    {
-        return $query->where('parent_id', null);
+        return implode('/', array_merge($this->ancestors()->defaultOrder()->pluck('slug')->toArray(), [$this->slug]));
+//        return ($this->parent ? $this->parent->getPath() . '/' : '') . $this->slug;
     }
 
     public function author()

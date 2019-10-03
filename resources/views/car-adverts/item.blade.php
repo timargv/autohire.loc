@@ -45,7 +45,7 @@
         </div>
     </div>
 @empty
-    <div class="d-flex mt-5 ml-5 pl-1 h-100">
+    <div class="d-flex mt-5 ml-3 h-100">
         <div class="row justify-content-center align-self-center mx-auto h4 font-weight-light text-black-50">
             Ничего не найдено
         </div>
