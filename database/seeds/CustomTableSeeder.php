@@ -1,5 +1,7 @@
 <?php
 
+use App\Entity\Categories\Car\CarBrand;
+use App\Entity\Categories\Car\Year;
 use Illuminate\Database\Seeder;
 
 class CustomTableSeeder extends Seeder
