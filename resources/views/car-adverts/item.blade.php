@@ -17,7 +17,7 @@
                     <div class="py-3 pl-3 pr-2 p-md-3 h-100">
                         <div class="car_sh_info pr-3 py-0 h-100">
                             <div class="car_sh_model">
-                                <div class="title_block">Модель @if($user && $user->isAdmin()) <span class="badge badge-warning align-top mt-1 small">{{ $carAdvert->status }}</span> @endif</div>
+                                <div class="title_block">Модель @if($user && $user->isAdmin()) <span class="badge badge-warning align-top mt-1 small">{{ $carAdvert->status }}</span> <span>{{ $carAdvert->published_at }}</span>@endif</div>
                                 <div class="title_model">
                                     {{ $carAdvert->carBrand->name }} {{  $carAdvert->carModel ? $carAdvert->carModel->name : '' }}, {{ $carAdvert->carYear->name }}
                                 </div>
@@ -31,7 +31,7 @@
                             <div class="d-none d-md-flex car_sh_btn-group clearfix">
                                 <div class="car_sh_address_data">
                                     <div class="card-text text-muted mb-0 ">{{ $carAdvert->address }}</div>
-                                    <div class="card-text"><small class="text-muted">{{ $carAdvert->updated_at->diffForHumans() }}</small></div>
+                                    <div class="card-text"><small class="text-muted">{{ $carAdvert->updated_at->diffForHumans() }}</small> <span class="ml-3">{{ $carAdvert->published_at }}</span></div>
                                 </div>
                                 <div class="clearfix ml-auto">
                                     <button class="btn bg-siran btn-sm text-white float-right ml-2"><i class="fal fa-phone-alt"></i></button>

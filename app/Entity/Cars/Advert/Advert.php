@@ -183,7 +183,6 @@ class Advert extends Model
         ]);
     }
 
-
     /*
      * Сменить статус объявление: прошел модерацию и активирован на 15 дней
      * */
@@ -220,14 +219,24 @@ class Advert extends Model
         ]);
     }
 
-
     /*
-     * Статус объявления: смнить на закрыть
+     * Статус объявления: сменить на черновик
      * */
     public function close(): void
     {
         $this->update([
             'status' => self::STATUS_CLOSED,
+        ]);
+    }
+
+
+    /*
+     * Статус объявления: сменить на закрыть
+     * */
+    public function draft(): void
+    {
+        $this->update([
+            'status' => self::STATUS_DRAFT,
         ]);
     }
 

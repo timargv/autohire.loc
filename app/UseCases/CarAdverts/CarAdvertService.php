@@ -97,6 +97,8 @@ class CarAdvertService
             'type_rental',
         ]));
 
+        $this->draft($carAdvert->id);
+
         $carAdvert->carBrand()->associate($carBrand);
         $carAdvert->carModel()->associate($carModel);
         $carAdvert->carSerie()->associate($carSeries);
@@ -286,6 +288,11 @@ class CarAdvertService
         $carAdvert->close();
     }
 
+    public function draft($id): void
+    {
+        $carAdvert = $this->getCarAdvert($id);
+        $carAdvert->draft();
+    }
 
     private function getCarAdvert($id) : Advert
     {
