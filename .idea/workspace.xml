@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Providers/CacheServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/autohire.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/autohire.loc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entity/Categories/Car/CarBrand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Categories/Car/CarBrand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Router/AdvertsPath.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Router/AdvertsPath.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/breadcrumbs.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/breadcrumbs.php" afterDir="false" />
-    </list>
+    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="238" selection-start-line="238" selection-end-line="238" />
+            <state relative-caret-position="281">
+              <caret line="279" column="30" selection-start-line="279" selection-start-column="25" selection-end-line="279" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -83,7 +69,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/car-adverts/item.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="677">
@@ -165,6 +151,7 @@
       <find>.filter-header_top</find>
       <find>model</find>
       <find>chi</find>
+      <find>favor</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -629,12 +616,12 @@
       <workItem from="1569827164708" duration="7940000" />
       <workItem from="1569913107683" duration="3037000" />
       <workItem from="1570004313235" duration="21177000" />
-      <workItem from="1570084245918" duration="19546000" />
+      <workItem from="1570084245918" duration="20784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40723000" />
+    <option name="totallyTimeSpent" value="41961000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -977,13 +964,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="238" selection-start-line="238" selection-end-line="238" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/cache/packages.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1013,6 +993,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="677">
           <caret line="47" column="32" selection-start-line="47" selection-start-column="32" selection-end-line="47" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="279" column="30" selection-start-line="279" selection-start-column="25" selection-end-line="279" selection-end-column="30" />
         </state>
       </provider>
     </entry>

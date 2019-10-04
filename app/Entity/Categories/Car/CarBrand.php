@@ -37,7 +37,7 @@ class CarBrand extends Model
     public function getPath(): string
     {
         return implode('/', array_merge($this->ancestors()->defaultOrder()->pluck('slug')->toArray(), [$this->slug]));
-//        return ($this->parent ? $this->parent->getPath() . '/' : '') . $this->slug;
+       // return ($this->parent ? $this->parent->getPath() . '/' : '') . $this->slug;
     }
 
     public function author()

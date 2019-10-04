@@ -13,9 +13,9 @@ class GroupsTableSeeder extends Seeder
     public function run()
     {
         Group::create([
-            'name' => 'Арендодатель',
+            'name' => 'Собственник',
             'author_id' => 1,
-            'slug'  => Str::slug('Арендодатель')
+            'slug'  => Str::slug('Собственник')
         ]);
 
         Group::create([

@@ -56,12 +56,10 @@ class AdvertController extends Controller
 
         $mainCarImage = $carAdvert->getMainPhoto($carAdvert->photos);
 
-        $carAttributes = Cache::tags(Advert::class)->rememberForever('car_advert_value_attribute_' . $carAdvert->id, function () use ($carAdvert) {
-            return $carAdvert->values()
+        $carAttributes = $carAdvert->values()
                 ->join('car_attributes', 'car_attributes.id', '=', 'car_advert_values.car_attribute_id')
                 ->join('car_adverts', 'car_adverts.id', '=', 'car_advert_values.car_advert_id')
                 ->select('car_attributes.name', 'car_advert_values.value')->pluck('value', 'name');
-        });
 
         return view('car-adverts.show', compact('carAdvert', 'mainCarImage', 'carAttributes', 'user'));
     }
