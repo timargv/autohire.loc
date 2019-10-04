@@ -235,7 +235,7 @@ class Advert extends Model
     // Заготовки для запросов
     public function scopeActive(Builder $query)
     {
-        return $query->where('status', self::STATUS_ACTIVE);
+        return $query->where('status', '=', self::STATUS_ACTIVE);
     }
 
     public function scopeForUser(Builder $query, User $user)

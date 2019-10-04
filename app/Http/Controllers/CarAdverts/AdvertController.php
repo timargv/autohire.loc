@@ -7,10 +7,8 @@ use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\Year;
 use App\Http\Router\AdvertsPath;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Gate;
 
 
@@ -19,11 +17,10 @@ class AdvertController extends Controller
 
     public function index (AdvertsPath $path) {
 
-
-        $query = Advert::active()->with(['carBrand','carModel'])->orderByDesc('published_at');
+        $query = Advert::active()->orderByDesc('published_at');
 
         if ($carBrand = $path->carBrand) {
-            $query->forCarBrand($carBrand)->orWhere->forCarModel($carBrand)->orWhere->forCarSeries($carBrand);
+            $query->forCarBrand($carBrand)->orWhere->active()->forCarModel($carBrand)->orWhere->active()->forCarSeries($carBrand);
         }
 
         $carBrands = $carBrand
@@ -39,6 +36,8 @@ class AdvertController extends Controller
 //                $query->where('id', $carBrand->id)->orWhere('slug', $carBrand->slug);
 //            });
 //        }
+
+
 
         $carAdverts = $query->paginate(15);
         $user = Auth::user();
