@@ -109,17 +109,21 @@ $(document).ready(function() {
 
                     if(!$.trim(data)) {
                         $('#car_model').attr('disabled', true).empty().prepend('<option value="">— Выберите Модель</option>');
+                        $('#car_series').attr('disabled', true).empty().prepend('<option value="">— Выберите Серию</option>');
                     } else {
                         $('#car_model').removeAttr("disabled");
                     }
                 },
                 complete: function(){
                     $('#car_model').attr("disabled");
+                    $('#car_series').attr("disabled");
                 }
 
         }); } else {
             $('select[name="car_model"]').empty().prepend('<option value="">— Выберите Модель</option>');
             $('#car_model').attr("disabled");
+            $('#car_series').attr("disabled");
+
         }
 
     });
