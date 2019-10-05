@@ -31,7 +31,7 @@
                             <div class="d-none d-md-flex car_sh_btn-group clearfix">
                                 <div class="car_sh_address_data">
                                     <div class="card-text text-muted mb-0 ">{{ $carAdvert->address }}</div>
-                                    <div class="card-text"><small class="text-muted">{{ $carAdvert->updated_at->diffForHumans() }}</small> <span class="ml-3">{{ $carAdvert->published_at }}</span></div>
+                                    <div class="card-text"><small class="text-muted">{{ $carAdvert->updated_at->diffForHumans() }}</small></div>
                                 </div>
                                 <div class="clearfix ml-auto">
                                     <button class="btn bg-siran btn-sm text-white float-right ml-2"><i class="fal fa-phone-alt"></i></button>
