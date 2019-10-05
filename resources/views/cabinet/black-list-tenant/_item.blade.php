@@ -16,7 +16,7 @@
             @can('manage-own-black-list', $tenant)
                 <tr>
 {{--                <td>{{ $tenant->id }}</td>--}}
-                <td>
+                <td style="max-width: 50px;">
                     @if(count($tenant->photos))
                     <div class="w-100 position-relative">
                         @foreach($tenant->photos as $photo)

@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="" />
+    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_item.blade.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +28,11 @@
     <expand />
     <select />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="autohire.loc" />
+  </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/car-adverts/index.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="544">
-              <caret line="32" selection-start-line="32" selection-end-line="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,7 +66,6 @@
       <list>
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/views/car-adverts/_filter.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/_variables.scss" />
         <option value="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
@@ -100,6 +95,9 @@
         <option value="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" />
         <option value="$PROJECT_DIR$/public/.htaccess" />
         <option value="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_item.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
+        <option value="&lt;00de781a-db17-44f0-be85-48ede2bc90db&gt;/resources/views/layouts/app.blade.php" />
       </list>
     </option>
   </component>
@@ -217,7 +215,7 @@
       <path value="$PROJECT_DIR$/vendor/predis/predis" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="264" />
     <option name="y" value="-8" />
     <option name="width" value="1400" />
@@ -242,145 +240,7 @@
             <path>
               <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
               <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-              <item name="Cars" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-              <item name="Cars" type="462c0819:PsiDirectoryNode" />
-              <item name="Advert" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-              <item name="Categories" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Entity" type="462c0819:PsiDirectoryNode" />
-              <item name="Categories" type="462c0819:PsiDirectoryNode" />
-              <item name="Car" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Cabinet" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="Cabinet" type="462c0819:PsiDirectoryNode" />
-              <item name="Adverts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-              <item name="CarAdverts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Router" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="UseCases" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="UseCases" type="462c0819:PsiDirectoryNode" />
-              <item name="CarAdverts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="bootstrap" type="462c0819:PsiDirectoryNode" />
-              <item name="cache" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="migrations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
@@ -393,23 +253,33 @@
               <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="car-adverts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="autohire.loc" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="E:\OSPanel\domains\autohire.loc" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -419,23 +289,23 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\cabinet\black-list-tenant" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\car-adverts" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\favorites" />
-      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\admin\layouts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\admin\categories\car_brands\models\form" />
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts\forms" />
       <recent name="E:\OSPanel\domains\autohire.loc\app\Entity\Cars" />
       <recent name="E:\OSPanel\domains\autohire.loc\app\Http\Controllers\Admin\Category\Car" />
       <recent name="E:\OSPanel\domains\autohire.loc\app\Http\Requests" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\cabinet\black-list-tenant" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\car-adverts" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\favorites" />
+      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\admin\layouts" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -531,11 +401,15 @@
       <workItem from="1570004313235" duration="21177000" />
       <workItem from="1570084245918" duration="20784000" />
       <workItem from="1570196201161" duration="4671000" />
+      <workItem from="1570288775605" duration="1815000" />
+      <workItem from="1570293453899" duration="68000" />
+      <workItem from="1570293533272" duration="209000" />
+      <workItem from="1570293757452" duration="1547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46632000" />
+    <option name="totallyTimeSpent" value="50271000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -547,13 +421,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="npm" order="2" side_tool="true" />
-      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Remote Host" order="0" weight="0.19509594" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.49837488" weight="0.26545843" />
+      <window_info id="Structure" order="2" sideWeight="0.5016251" side_tool="true" weight="0.26545843" />
+      <window_info id="npm" order="3" sideWeight="0.5016251" side_tool="true" weight="0.26545843" />
+      <window_info id="Favorites" order="4" sideWeight="0.5016251" side_tool="true" weight="0.26545843" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -562,7 +436,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Terminal" order="11" />
@@ -571,6 +445,29 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info id="Remote Host" order="0" weight="0.19509594" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.49837488" visible="true" weight="0.26545843" />
+      <window_info id="Structure" order="2" sideWeight="0.5016251" side_tool="true" weight="0.26545843" />
+      <window_info id="npm" order="3" sideWeight="0.5016251" side_tool="true" weight="0.26545843" />
+      <window_info id="Favorites" order="4" sideWeight="0.5016251" side_tool="true" weight="0.26545843" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32936078" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="11" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -679,13 +576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="578">
           <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="430">
-          <caret line="58" column="56" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -845,13 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Providers/CacheServiceProvider.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -922,8 +805,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/car-adverts/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="408">
+          <caret line="24" column="54" selection-start-line="24" selection-start-column="54" selection-end-line="24" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="18" column="44" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="44" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="39" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
         </state>
       </provider>
     </entry>
