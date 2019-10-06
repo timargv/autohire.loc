@@ -36,13 +36,13 @@
                         </td>
                         <td>{{ $car_advert->getTypeRental() }}</td>
                         <td><span style="width: 100px; display:block;" id="priceCarAdvert" data-toggle="tooltip" data-placement="top" title="{{ __('fillable.PricePerDay').' в рублях' }}">{{ $car_advert->price_per_day }}</span></td>
-                        <td class="pr-0" width="65px">
+                        <td class="" width="65px">
                             <div class="d-flex justify-content-end">
                                 <form method="POST" action="{{ route('cabinet.favorites.remove', $car_advert) }}" class="d-inline-block">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-sm bg-transparent border border-bottom  rounded"
-                                            data-toggle="tooltip" data-placement="left" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-heart text-danger"></i></button>
+                                            data-toggle="tooltip" data-placement="left" title="Удалил из закладок" style="border-radius: 0px"><i class="fas fa-times text-danger"></i></button>
                                 </form>
                             </div>
                         </td>
