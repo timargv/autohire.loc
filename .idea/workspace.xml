@@ -1,29 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Services/Search/CarAdvertIndexer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/UseCases/CarAdverts/SearchService.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/elasticserach.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/autohire.loc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/autohire.loc.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Cars/Advert/Advert.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/fonts/fa-duotone-900.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +316,7 @@
       <workItem from="1570293533272" duration="209000" />
       <workItem from="1570293757452" duration="2839000" />
       <workItem from="1570346958391" duration="6439000" />
-      <workItem from="1570431891574" duration="25237000" />
+      <workItem from="1570431891574" duration="25280000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
