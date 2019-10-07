@@ -14,7 +14,10 @@ use Illuminate\Support\Facades\Cache;
 /**
  * @property int $id
  * @property int $author_id
- * @property int $category_id
+ * @property int $car_brand_id
+ * @property int $car_model_id
+ * @property int $car_serie_id
+ * @property int $car_year_id
  * @property string $description
  * @property int $price_per_day
  * @property string $address
@@ -23,9 +26,14 @@ use Illuminate\Support\Facades\Cache;
  * @property string $reject_reason
  * @property Carbon $created_at
  * @property Carbon $updated_at
+ * @property Carbon $published_at
+ * @property Carbon $expires_at
  *
  * @property User $author
  * @property CarBrand $carBrand
+ * @property CarBrand $carModel
+ * @property CarBrand $carSerie
+ * @property CarBrand $carYear
  * @property Value[] $values
  * @property Photo[] $photos
  * @method Builder active()
@@ -254,36 +262,17 @@ class Advert extends Model
 
     public function scopeForCarBrand(Builder $query, CarBrand $carBrand)
     {
-        $carBrands = array_merge(
-            [$carBrand->id],
-            $carBrand->descendants()->pluck('id')->toArray()
-        );
-
-        return $query->whereIn('car_brand_id', $carBrands);
-
-
-
+        return $query->where('car_brand_id', $carBrand->id);
     }
 
     public function scopeForCarModel(Builder $query, CarBrand $carModel)
     {
-        $carModels = array_merge(
-            [$carModel->id],
-            $carModel->descendants()->pluck('id')->toArray()
-        );
-        return $query->whereIn('car_model_id', $carModels);
-
-
+        return $query->where('car_model_id', $carModel->id);
     }
 
     public function scopeForCarSeries(Builder $query, CarBrand $carSeries)
     {
-        $carSeriesas = array_merge(
-            [$carSeries->id],
-            $carSeries->descendants()->pluck('id')->toArray()
-        );
-        return $query->whereIn('car_serie_id', $carSeriesas);
-
+        return $query->where('car_serie_id', $carSeries->id);
     }
 
     public function scopeFavoredByUser(Builder $query, User $user) {

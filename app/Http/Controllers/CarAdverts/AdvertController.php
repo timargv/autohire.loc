@@ -6,8 +6,10 @@ use App\Entity\Cars\Advert\Advert;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\Year;
+use App\Http\Requests\Adverts\SearchRequest;
 use App\Http\Router\AdvertsPath;
 use App\Http\Controllers\Controller;
+use App\UseCases\CarAdverts\SearchService;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 
@@ -15,17 +17,32 @@ use Illuminate\Support\Facades\Gate;
 class AdvertController extends Controller
 {
 
-    public function index (AdvertsPath $path) {
+    private $search;
 
-        $query = Advert::active()->orderByDesc('published_at');
+    public function __construct(SearchService $search)
+    {
+        $this->search = $search;
+    }
 
-        if ($carBrand = $path->carBrand) {
-            $query->forCarBrand($carBrand)->orWhere->active()->forCarModel($carBrand)->orWhere->active()->forCarSeries($carBrand);
-        }
+    public function index (SearchRequest $request, AdvertsPath $path) {
+
+        $carBrand = $path->carBrand;
+
+//        $query = Advert::active()->orderByDesc('published_at');
+
+//        if ($carBrand = $path->carBrand) {
+//            $query->forCarSeries($carBrand)->orWhere(function ($query) use ($carBrand) {
+//                $query->forCarModel($carBrand)->orWhere(function ($query) use ($carBrand) {
+//                    $query->forCarBrand($carBrand)->active();
+//                })->active();
+//            })->active();
+//        }
 
         $carBrands = $carBrand
             ? $carBrand->children()->defaultOrder()->getModels()
             : CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
+
+        $result = $this->search->search($carBrand, $request, 20, $request->get('page', 1));
 
         $car_years = Year::all();
         $types = Advert::typeRental();
