@@ -22,7 +22,7 @@
                     @foreach (array_chunk($carBrands, 3) as $chunk)
                         <ul class="list-group list-unstyled col-md-6 mb-md-3">
                             @foreach ($chunk as $carBrand)
-                                <li><a href="{{ route('cars.adverts.index', array_merge(['adverts_path' => adverts_path($carBrand)], request()->all())) }}">{{ $carBrand->name }}</a></li>
+                                <li><a href="{{ route('cars.adverts.index', array_merge(['adverts_path' => adverts_path($carBrand)], request()->all())) }}">{{ $carBrand->name }} ({{ $carBrandsCounts[$carBrand->id] ?? 0 }})</a></li>
                             @endforeach
                         </ul>
                     @endforeach

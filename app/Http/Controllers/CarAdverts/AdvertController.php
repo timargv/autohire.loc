@@ -27,6 +27,9 @@ class AdvertController extends Controller
     public function index (SearchRequest $request, AdvertsPath $path) {
 
         $carBrand = $path->carBrand;
+        $result = $this->search->search($carBrand, $request, 20, $request->get('page', 1));
+        $carAdverts = $result->carAdverts;
+        $carBrandsCounts = $result->carBrandsCounts;
 
 //        $query = Advert::active()->orderByDesc('published_at');
 
@@ -42,7 +45,6 @@ class AdvertController extends Controller
             ? $carBrand->children()->defaultOrder()->getModels()
             : CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
 
-        $result = $this->search->search($carBrand, $request, 20, $request->get('page', 1));
 
         $car_years = Year::all();
         $types = Advert::typeRental();
@@ -56,10 +58,10 @@ class AdvertController extends Controller
 
 
 
-        $carAdverts = $query->paginate(15);
+
         $user = Auth::user();
 
-        return view('car-adverts.index', compact('carBrand', 'carAdverts', 'user', 'carBrands', 'car_years', 'types', 'attributes'));
+        return view('car-adverts.index', compact('carBrand', 'carAdverts', 'user', 'carBrands', 'car_years', 'types', 'attributes', 'carBrandsCounts'));
     }
 
     public function show (Advert $carAdvert)

@@ -25,15 +25,6 @@ class SearchService
     public function search (?CarBrand $carBrand, SearchRequest $request, int $perPage, int $page) : SearchResult
     {
 
-        $response = $this->client->search([
-            'index' => 'car_adverts',
-            'body' => [],
-        ]);
-
-        $ids = array_column($response['hits']['hits'], '_id');
-
-        $items = Advert::active()->with(['carBrand', 'carModel', 'carSerie', 'carYear'])->whereIn('id', $ids)->get();
-
 
         $values = array_filter((array)$request->input('attrs'), function ($value) {
             return !empty($value['equals']) || !empty($value['from']) || !empty($value['to']);
@@ -104,9 +95,9 @@ class SearchService
             ],
         ]);
 
+
         $ids = array_column($response['hits']['hits'], '_id');
 
-        dd($ids);
 
 
         if ($ids) {
@@ -115,10 +106,12 @@ class SearchService
                 ->whereIn('id', $ids)
                 ->orderBy(new Expression('FIELD(id,' . implode(',', $ids) . ')'))
                 ->get();
-            $pagination = new LengthAwarePaginator($items, $response['hits']['total'], $perPage, $page);
+            $pagination = new LengthAwarePaginator($items, $response['hits']['total']['value'], $perPage, $page);
         } else {
             $pagination = new LengthAwarePaginator([], 0, $perPage, $page);
         }
+
+        dd($ids);
 
         return new SearchResult(
             $pagination,
