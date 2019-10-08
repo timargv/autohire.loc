@@ -41,15 +41,16 @@ class CarAdvertIndexer
                 'price_per_day' => $carAdvert->price_per_day,
                 'status' => $carAdvert->status,
                 'type_rental' => $carAdvert->type_rental,
-                'car_brand' => $carAdvert->carBrand ? $carAdvert->carBrand->id : '',
-                'car_model' => $carAdvert->carModel ? $carAdvert->carModel->id : '',
-                'car_series' => $carAdvert->carSerie ? $carAdvert->carSerie->id : '',
+                'car_brands' => array_filter(array(
+                    $carAdvert->carBrand ? $carAdvert->carBrand->id : '',
+                    $carAdvert->carModel ? $carAdvert->carModel->id : '',
+                    $carAdvert->carSerie ? $carAdvert->carSerie->id : '')),
                 'car_year' => $carAdvert->carYear ? $carAdvert->carYear->id : '',
                 'values' => array_map(function (Value $value) {
                     return [
-                        'attribute' => $value->attribute_id,
-                        'value_string' => (string)$value->value,
-                        'value_int' => (int)$value->value,
+                        'car_attribute' => $value->car_attribute_id,
+                        'car_value_string' => (string)$value->value,
+                        'car_value_int' => (int)$value->value,
                     ];
                 }, $carAdvert->values()->getModels()),
             ]

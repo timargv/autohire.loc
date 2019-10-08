@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
-
-@section('filter')
-    @include('car-adverts._filter')
-@stop
+@section('search')
+    @include('layouts.partials._filter', ['carBRND' => 'true', 'route' => '?'])
+@endsection
 
 @section('content')
     <div class="row ">

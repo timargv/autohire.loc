@@ -1,4 +1,5 @@
 @extends('admin.layouts.app', ['page' => 'users'])
+
 @section('btnBlock')
     @include ('admin.users._nav_user', ['page' => ''])
 @stop

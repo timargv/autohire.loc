@@ -30,75 +30,68 @@ class SearchService
             return !empty($value['equals']) || !empty($value['from']) || !empty($value['to']);
         });
 
-        $response = $this->client->search([
-            'index' => 'car_adverts',
-            'body' => [
-                '_source' => ['id'],
-                'from' => ($page - 1) * $perPage,
-                'size' => $perPage,
-                'sort' => empty($request['text']) ? [
-                    ['published_at' => ['order' => 'desc']],
-                ] : [],
-                'aggs' => [
-                    'group_by_carBrand' => [
-                        'terms' => [
-                            'field' => 'car_brand',
-                        ],
-                    ],
-                    'group_by_carModel' => [
-                        'terms' => [
-                            'field' => 'car_model',
-                        ],
-                    ],
-                    'group_by_carSeries' => [
-                        'terms' => [
-                            'field' => 'car_series',
-                        ],
-                    ],
-                ],
-                'query' => [
-                    'bool' => [
-                        'must' => array_merge(
-                            [
-                                ['term' => ['status' => Advert::STATUS_ACTIVE]],
+
+        $response = $this->client->search(
+            [
+                'index' => 'car_adverts',
+                'body' => [
+                    '_source' => ['id'],
+                    'from' => ($page - 1) * $perPage,
+                    'size' => $perPage,
+                    'sort' => empty($request['text']) ? [
+                        ['published_at' => ['order' => 'desc']],
+                    ] : [],
+                    'aggs' => [
+                        'group_by_carBrand' => [
+                            'terms' => [
+                                'field' => 'car_brands',
                             ],
-                            array_filter([
-                                $carBrand ? ['term' => ['car_brand' => $carBrand->id]] : false,
-                                $carBrand ? ['term' => ['car_model' => $carBrand->id]] : false,
-                                $carBrand ? ['term' => ['car_series' => $carBrand->id]] : false,
-                                $request['car_year'] ? ['term' => ['car_year' => $request['car_year']]] : false,
+                        ],
+                    ],
+                    'query' => [
+                        'bool' => [
+                            'must' => array_merge(
+                                [
+                                    ['term' => ['status' => Advert::STATUS_ACTIVE]],
+                                ],
+                                array_filter([
+                                    $carBrand ? ['term' => ['car_brands' => $carBrand->id]] : false,
+                                    $request['car_year'] ? ['term' => ['car_year' => $request['car_year']]] : false,
+                                    $request['type_rental'] ? ['term' => ['type_rental' => $request['type_rental']]] : false,
 //                                !empty($request['text']) ? ['multi_match' => [
 //                                    'query' => $request['text'],
 //                                    'fields' => [ 'title^3', 'content' ]
 //                                ]] : false,
-                            ]),
-                            array_map(function ($value, $id) {
-                                return [
-                                    'nested' => [
-                                        'path' => 'values',
-                                        'query' => [
-                                            'bool' => [
-                                                'must' => array_values(array_filter([
-                                                    ['match' => ['values.attribute' => $id]],
-                                                    !empty($value['equals']) ? ['match' => ['values.value_string' => $value['equals']]] : false,
-                                                    !empty($value['from']) ? ['range' => ['values.value_int' => ['gte' => $value['from']]]] : false,
-                                                    !empty($value['to']) ? ['range' => ['values.value_int' => ['lte' => $value['to']]]] : false,
-                                                ])),
+                                ]),
+                                array_map(function ($value, $id) {
+                                    return [
+                                        'nested' => [
+                                            'path' => 'values',
+                                            'query' => [
+                                                'bool' => [
+                                                    'must' => array_values(array_filter([
+                                                        ['match' => ['values.car_attribute' => $id]],
+                                                        !empty($value['equals']) ? ['match' => ['values.car_value_string' => $value['equals']]] : false
+//                                                    !empty($value['from']) ? ['range' => ['values.value_int' => ['gte' => $value['from']]]] : false,
+//                                                    !empty($value['to']) ? ['range' => ['values.value_int' => ['lte' => $value['to']]]] : false,
+                                                    ])),
+                                                ],
                                             ],
                                         ],
-                                    ],
-                                ];
-                            }, $values, array_keys($values))
-                        )
+                                    ];
+                                }, $values, array_keys($values))
+                            )
+                        ],
                     ],
                 ],
-            ],
-        ]);
+            ]
+        );
+
+
 
 
         $ids = array_column($response['hits']['hits'], '_id');
-
-
+//dd($ids);
 
         if ($ids) {
             $items = Advert::active()
@@ -111,13 +104,10 @@ class SearchService
             $pagination = new LengthAwarePaginator([], 0, $perPage, $page);
         }
 
-        dd($ids);
 
         return new SearchResult(
             $pagination,
-            array_column($response['aggregations']['group_by_carBrand']['buckets'], 'doc_count', 'key'),
-            array_column($response['aggregations']['group_by_carModel']['buckets'], 'doc_count', 'key'),
-            array_column($response['aggregations']['group_by_carSeries']['buckets'], 'doc_count', 'key')
+            array_column($response['aggregations']['group_by_carBrand']['buckets'], 'doc_count', 'key')
         );
     }
 

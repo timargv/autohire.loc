@@ -40,7 +40,9 @@
             </div>
         </nav>
         <div class="container position-relative">
-            @yield('filter')
+            @section('search')
+                @include('layouts.partials._filter', ['carBRND' => null, 'route' => route('cars.adverts.index')])
+            @show
         </div>
         <div class="include_cabinet_menu" style="    background-color: #e9ecef;">
             <div class="container">

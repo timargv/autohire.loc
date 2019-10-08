@@ -41,10 +41,12 @@ class AdvertController extends Controller
 //            })->active();
 //        }
 
-        $carBrands = $carBrand
-            ? $carBrand->children()->defaultOrder()->getModels()
-            : CarBrand::whereIsRoot()->defaultOrder('ASC')->getModels();
+        $query = $carBrand ? $carBrand->children() : CarBrand::whereIsRoot();
+        $carBrands = $query->defaultOrder()->getModels();
 
+        $carBrands = array_filter($carBrands, function (CarBrand $carBrand) use ($carBrandsCounts) {
+            return isset($carBrandsCounts[$carBrand->id]) && $carBrandsCounts[$carBrand->id] > 0;
+        });
 
         $car_years = Year::all();
         $types = Advert::typeRental();

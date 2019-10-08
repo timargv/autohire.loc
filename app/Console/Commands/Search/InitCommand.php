@@ -97,28 +97,22 @@ class InitCommand extends Command
                             'type_rental' => [
                                 'type' => 'keyword',
                             ],
-                            'car_brand' => [
-                                'type' => 'integer',
-                            ],
-                            'car_model' => [
-                                'type' => 'integer',
-                            ],
-                            'car_series' => [
+                            'car_brands' => [
                                 'type' => 'integer',
                             ],
                             'car_year' => [
                                 'type' => 'integer',
                             ],
-                            'value' => [
+                            'values' => [
                                 'type' => 'nested',
                                 'properties' => [
-                                    'attribute' => [
-                                        'type' => 'integer',
+                                    'car_attribute' => [
+                                        'type' => 'integer'
                                     ],
-                                    'value_string' => [
+                                    'car_value_string' => [
                                         'type' => 'keyword',
                                     ],
-                                    'value_number' => [
+                                    'car_value_int' => [
                                         'type' => 'integer',
                                     ],
                                 ],

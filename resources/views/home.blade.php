@@ -2,10 +2,6 @@
 
 @section('breadcrumbs', '')
 
-@section('filter')
-    @include('car-adverts._filter')
-@stop
-
 @section('content')
     <div class="row">
         @include('car-adverts.item', ['carAdvert' => $carAdverts])
