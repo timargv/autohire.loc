@@ -22,6 +22,15 @@ assets-dev:
 assets-watch:
 	docker-compose exec node yarn run watch
 
+key-generate:
+	docker-compose exec php-cli php artisan key:generate
+
+migrate:
+	docker-compose exec php-cli php artisan migrate
+
+migrate-refresh-seed:
+	docker-compose exec php-cli php artisan migrate:refresh --seed
+
 queue:
 	docker-compose exec php-cli php artisan queue:work
 
