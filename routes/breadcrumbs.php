@@ -167,14 +167,14 @@ Breadcrumbs::register('cabinet.black.list.tenants.show', function (Crumbs $crumb
 
 Breadcrumbs::register('cabinet.favorites.index', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.home');
-    $crumbs->push(__('fillable.Adverts'), route('cabinet.favorites.index'));
+    $crumbs->push(__('fillable.Favorites'), route('cabinet.favorites.index'));
 });
 
 // Cabinet Tickets
 
 Breadcrumbs::register('cabinet.tickets.index', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.home');
-    $crumbs->push(__('fillable.Tickets'), route('cabinet.tickets.index'));
+    $crumbs->push(trans_choice('fillable.Tickets', 2), route('cabinet.tickets.index'));
 });
 
 Breadcrumbs::register('cabinet.tickets.create', function (Crumbs $crumbs) {

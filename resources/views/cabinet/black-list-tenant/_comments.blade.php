@@ -24,7 +24,11 @@
                     <div class="media-body">
                         <h6 class="mt-0 mb-2 font-weight-bold mt-1 w-100">
                             @if($comment->author)
-                                <a href="{{ route('admin.users.show', $comment->author) }}">{{ $comment->author->name }}</a>
+                                @if(Auth::user()->can('admin-panel', auth()->user()))
+                                <a href="{{ route('admin.users.show', $comment->author) }}" target="_blank">{{ $comment->author->name }}</a>
+                                @else
+                                    <a>{{ $comment->author->name }}</a>
+                                @endif
                             @else
                                 <span style="pointer-events: none; opacity: 0.4;">Автор удалил свою страницу</span>
                             @endif

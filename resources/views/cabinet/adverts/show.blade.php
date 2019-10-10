@@ -4,10 +4,6 @@
     @include('cabinet.adverts._nav')
     @include('car-adverts._nav_button_cabinet', ['page' => ''])
 
-    @if (!count($carAdvert->photos))
-        {{ session()->flash('error_alert', 'Добавьте Фотогорафию авто') }}
-    @endif
-
     <div class="card rounded-0 border-0 shadow-sm">
         <div class="card-header border-0 h5 d-flex">
             <div class="">
@@ -85,6 +81,9 @@
                     </table>
                 </div>
                 <div class="col-md-8 col-12">
+                    @if (!count($carAdvert->photos))
+                        {{ session()->flash('error_alert', 'Добавьте Фотогорафию авто') }}
+                    @endif
                     <div class="row">
                         <div class="col-md-12 col-12">
                             <div class="images mb-md-4 mb-2">
