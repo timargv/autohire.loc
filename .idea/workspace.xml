@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/CarAdvertsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CarAdvertsTableSeeder.php" afterDir="false" />
-    </list>
+    <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +301,7 @@
       <workItem from="1570431891574" duration="25280000" />
       <workItem from="1570474688715" duration="2658000" />
       <workItem from="1570521373847" duration="15821000" />
-      <workItem from="1570608298900" duration="26755000" />
+      <workItem from="1570608298900" duration="26873000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
