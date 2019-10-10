@@ -2,9 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CarAdverts/AdvertController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Auth/RegisterRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Auth/RegisterRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UseCases/Auth/RegisterService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/Auth/RegisterService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UseCases/CarAdverts/SearchResult.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/CarAdverts/SearchResult.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/UseCases/CarAdverts/SearchService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/CarAdverts/SearchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/CarAdvertFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/CarAdvertFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/factories/PhotoCarAdvertFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PhotoCarAdvertFactory.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/CarAdvertsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CarAdvertsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/PhotoCarAdvertsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/PhotoCarAdvertsTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/ru/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/favorites/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/favorites/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/profile/_nav.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/profile/_nav.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/_nav_button_cabinet.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/_nav_button_cabinet.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar/navleft.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar/navleft.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/_filter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/_filter.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/flash_alert.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/flash_alert.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,24 +79,6 @@
         <option value="SCSS File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>807fbc</find>
-      <find>6361ad</find>
-      <find>e8eaeb</find>
-      <find>car_sh_btn-group</find>
-      <find>body_filter_footer</find>
-      <find>filter_title</find>
-      <find>mx</find>
-      <find>filter-form</find>
-      <find>.filter-header_top</find>
-      <find>model</find>
-      <find>chi</find>
-      <find>favor</find>
-      <find>active</find>
-      <find>collapse navbar-collapse pr-md-2 mr-md-3</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -207,19 +227,19 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\PhpStorm 2019.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\layouts\partials" />
-      <recent name="D:\OSPanel\domains\autohire.loc\app\Services" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\admin\categories\car_brands\models\form" />
-      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts\forms" />
-      <recent name="E:\OSPanel\domains\autohire.loc\app\Entity\Cars" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\OSPanel\domains\autohire.loc\resources\views\cabinet\black-list-tenant" />
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\car-adverts" />
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts" />
       <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\favorites" />
       <recent name="D:\OSPanel\domains\autohire.loc\resources\views\admin\layouts" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\OSPanel\domains\autohire.loc\resources\views\layouts\partials" />
+      <recent name="D:\OSPanel\domains\autohire.loc\app\Services" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\admin\categories\car_brands\models\form" />
+      <recent name="E:\OSPanel\domains\autohire.loc\resources\views\cabinet\adverts\forms" />
+      <recent name="E:\OSPanel\domains\autohire.loc\app\Entity\Cars" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -323,7 +343,7 @@
       <workItem from="1570431891574" duration="25280000" />
       <workItem from="1570474688715" duration="2658000" />
       <workItem from="1570521373847" duration="15821000" />
-      <workItem from="1570608298900" duration="3384000" />
+      <workItem from="1570608298900" duration="26330000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>

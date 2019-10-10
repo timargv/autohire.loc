@@ -2,6 +2,10 @@
 
 @section('breadcrumbs', '')
 
+@section('search')
+    @include('layouts.partials._filter', ['carBRND' => 'true', 'route' => route('cars.adverts.index'), 'height' => true])
+@endsection
+
 @section('content')
     <div class="row">
         @include('car-adverts.item', ['carAdvert' => $carAdverts])

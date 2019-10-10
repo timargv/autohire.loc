@@ -33,7 +33,7 @@ class RegisterController extends Controller
         $this->service->register($request);
 
         return redirect()->route('login')
-            ->with('info', __('register.CheckYourEmail'));
+            ->with('danger_alert', __('register.CheckYourEmail'));
     }
 
 
@@ -42,14 +42,14 @@ class RegisterController extends Controller
     {
         if (!$user = User::where('verify_token', $token)->first()) {
             return redirect()->route('login')
-                ->with('error', __('register.ErrorLinkVerify'));
+                ->with('error_alert', __('register.ErrorLinkVerify'));
         }
 
         try {
             $this->service->verify($user->id);
-            return redirect()->route('login')->with('success', __('register.EmailVerified'));
+            return redirect()->route('login')->with('success_alert', __('register.EmailVerified'));
         } catch (\DomainException $e) {
-            return redirect()->route('login')->with('error', $e->getMessage());
+            return redirect()->route('login')->with('error_alert', $e->getMessage());
         }
     }
 

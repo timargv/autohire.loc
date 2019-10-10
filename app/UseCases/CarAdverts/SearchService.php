@@ -8,9 +8,11 @@ use App\Entity\Cars\Advert\Advert;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use App\Http\Requests\Adverts\SearchRequest;
+use App\Http\Router\AdvertsPath;
 use Elasticsearch\Client;
 use Illuminate\Database\Query\Expression;
 use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Pagination\Paginator;
 
 class SearchService
 {
@@ -22,14 +24,11 @@ class SearchService
         $this->client = $client;
     }
 
-    public function search (?CarBrand $carBrand, SearchRequest $request, int $perPage, int $page) : SearchResult
+    public function search (?CarBrand $carBrand, SearchRequest $request, int $perPage, int $page): SearchResult
     {
-
-
         $values = array_filter((array)$request->input('attrs'), function ($value) {
-            return !empty($value['equals']) || !empty($value['from']) || !empty($value['to']);
+            return !empty($value['equals']);
         });
-
 
         $response = $this->client->search(
             [
@@ -87,9 +86,6 @@ class SearchService
             ]
         );
 
-
-
-
         $ids = array_column($response['hits']['hits'], '_id');
 //dd($ids);
 
@@ -99,11 +95,25 @@ class SearchService
                 ->whereIn('id', $ids)
                 ->orderBy(new Expression('FIELD(id,' . implode(',', $ids) . ')'))
                 ->get();
-            $pagination = new LengthAwarePaginator($items, $response['hits']['total']['value'], $perPage, $page);
+//            $pagination = new LengthAwarePaginator($items, $response['hits']['total']['value'], $perPage, $page);
+            $pagination = new LengthAwarePaginator($items, $response['hits']['total']['value'], $perPage, $page, ['path' => Paginator::resolveCurrentPath($page)]);
+
+//            $pagination = new LengthAwarePaginator($items->forPage($page, $perPage), $response['hits']['total']['value'], $perPage, $page, ['path'=>Paginator::resolveCurrentPath($page)]);
+
+
+//            $pagination =  new LengthAwarePaginator($items. $response['hits']['total']['value'], $perPage, $page);
+//
+//            return view('adminexception.index', compact('admin_exceptions'))->withInput($request->all())
         } else {
             $pagination = new LengthAwarePaginator([], 0, $perPage, $page);
         }
 
+//dd($pagination);
+
+//        dd(Advert::active()
+//            ->with(['carBrand', 'carModel', 'carSerie', 'carYear'])
+//            ->whereIn('id', $ids)
+//            ->orderBy(new Expression('FIELD(id,' . implode(',', $ids) . ')'))->paginate(15), $pagination2);
 
         return new SearchResult(
             $pagination,

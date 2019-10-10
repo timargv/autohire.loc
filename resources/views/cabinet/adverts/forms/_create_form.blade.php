@@ -11,7 +11,7 @@
                 <div class="col-md-4">
                     <div class="form-group @if($errors->has('car_brand'))has-error @endif">
                         <label for="car_brand" class="col-form-label">{{ trans_choice('fillable.CarBrand', 1) }}</label>
-                        <select id="car_brand" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_brand">
+                        <select id="car_brand" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_brand" required>
                             <option value="">&mdash; Выберите марку автомобиля</option>
                             @foreach ($car_brands as $car_brand)
                                 <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand') ? ' selected' : '' }}>
@@ -57,7 +57,7 @@
                 <div class="col-md-4">
                     <div class="form-group @if($errors->has('car_year'))has-error @endif">
                         <label for="parent" class="col-form-label">{{ trans_choice('fillable.CarYears', 1) }}</label>
-                        <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year">
+                        <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year" required>
                             <option value="">&mdash; {{ trans_choice('fillable.CarYears', 1) }} автомобиля</option>
                             @foreach ($car_years as $car_year)
                                 <option value="{{ $car_year->id }}"{{ $car_year->id == old('car_year') ? ' selected' : '' }}>
@@ -74,7 +74,7 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="type_rental" class="col-form-label">{{ __('fillable.TypeRental') }}</label>
-                        <select id="type_rental" class="form-control select2 {{ $errors->has('type_rental') ? ' is-invalid' : '' }}" name="type_rental">
+                        <select id="type_rental" class="form-control select2 {{ $errors->has('type_rental') ? ' is-invalid' : '' }}" name="type_rental" required>
                             @foreach ($types as $type => $label)
                                 <option value="{{ $type }}"{{ $type == old('type_rental') ? ' selected' : '' }}>{{ $label }}</option>
                             @endforeach;
@@ -103,10 +103,10 @@
 
                                 @if ($attribute->isSelect())
 
-                                    <select id="attribute_{{ $attribute->id }}" class="form-control select2 select2-search--hide {{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" data-placeholder="{{ $attribute->name }}">
+                                    <select id="attribute_{{ $attribute->id }}" class="form-control select2 select2-search--hide {{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" data-placeholder="{{ $attribute->name }}" required>
                                         <option value=""> {{ $attribute->name }} </option>
                                         @foreach ($attribute->variants as $variant)
-                                            <option value="{{ $variant }}"{{ $variant == old('attributes.' . $attribute->id) ? ' selected' : '' }}>
+                                            <option value="{{ $variant }}" {{ $variant == old('attributes.' . $attribute->id) ? ' selected' : '' }}>
                                                 {{ $variant }}
                                             </option>
                                         @endforeach
@@ -114,11 +114,11 @@
 
                                 @elseif ($attribute->isNumber())
 
-                                    <input id="attribute_{{ $attribute->id }}" type="number" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id) }}" placeholder="{{ $attribute->name }}">
+                                    <input id="attribute_{{ $attribute->id }}" type="number" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id) }}" placeholder="{{ $attribute->name }}" required>
 
                                 @else
 
-                                    <input id="attribute_{{ $attribute->id }}" type="text" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id) }}" placeholder="{{ $attribute->name }}">
+                                    <input id="attribute_{{ $attribute->id }}" type="text" class="form-control{{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]" value="{{ old('attributes.' . $attribute->id) }}" placeholder="{{ $attribute->name }}" required>
 
                                 @endif
 

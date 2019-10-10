@@ -15,7 +15,7 @@ class HomeController extends Controller
     public function index()
     {
         $carBrands = CarBrand::whereIsRoot()->defaultOrder()->getModels();
-        $carAdverts = Advert::active()->orderByDesc('published_at')->paginate('15');
+        $carAdverts = Advert::active()->orderByDesc('published_at')->limit(6)->get();
 
         $car_years = Year::all();
         $types = Advert::typeRental();

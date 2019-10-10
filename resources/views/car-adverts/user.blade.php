@@ -37,8 +37,8 @@
             </div>
         </div>
         <div class="col-12 align-content-stretch">
-            <div class="d-flex flex-row h-100 text-center" style="background: #f7f7f7;">
-                <div class="btn-user-message-car-advert text-decoration-none w-50"
+            <div class="d-flex h-100 text-center" style="background: #f7f7f7;">
+                <div class="btn-user-message-car-advert text-decoration-none flex-fill"
                      data-toggle="tooltip" data-placement="top" title="Написать сообщение">
                      <div class="d-flex align-content-center flex-wrap px-3 py-2 h-100 text-center">
                          <div class="m-auto ">
@@ -47,16 +47,18 @@
                          </div>
                      </div>
                 </div>
-                <div class="btn-user-telephone-car-advert text-decoration-none phone-button w-50"
-                     data-toggle="tooltip" data-placement="top" title="Показать телефон"
-                     data-source="{{ route('cars.adverts.phone', $carAdvert) }}">
-                     <div class="d-flex align-content-center bg-indigo text-white flex-wrap px-3 py-2 h-100 text-center text-center">
-                         <div class="m-auto">
-                             <i class="fad fa-phone-alt pr-1 fa-1x"></i>
-                             <span class=" my-auto">{{ trans_choice('button.VisibilityPhone', 1) }}</span>
-                         </div>
-                     </div>
-                </div>
+                @if($user->phone)
+                    <div class="btn-user-telephone-car-advert text-decoration-none phone-button flex-fill"
+                         data-toggle="tooltip" data-placement="top" title="Показать телефон"
+                         data-source="{{ route('cars.adverts.phone', $carAdvert) }}">
+                        <div class="d-flex align-content-center bg-indigo text-white flex-wrap px-3 py-2 h-100 text-center text-center">
+                            <div class="m-auto">
+                                <i class="fad fa-phone-alt pr-1 fa-1x"></i>
+                                <span class=" my-auto">{{ trans_choice('button.VisibilityPhone', 1) }}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endif
             </div>
         </div>
     </div>

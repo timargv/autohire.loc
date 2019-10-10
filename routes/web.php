@@ -12,7 +12,7 @@ Route::group(['middleware' => ['auth']], function () {
 });
 
 Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdverts'], function () {
-    Route::get('/all', 'AdvertController@index')->name('index');
+//    Route::get('/all', 'AdvertController@index')->name('index');
 //    Route::get('/{carBrand}/all', 'AdvertController@carBrand')->name('brand');
     Route::get('/show/{carAdvert}', 'AdvertController@show')->name('show');
     Route::post('/show/{carAdvert}/phone', 'AdvertController@phone')->name('phone');

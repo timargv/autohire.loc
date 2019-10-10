@@ -23,11 +23,11 @@
     <div class="position-relative" id="app" aria-live="polite" aria-atomic="true">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand text-blue-tone-dark-50 " href="{{ url('/') }}">
+                <a class="navbar-brand text-blue-tone-dark-50 mr-0 mr-md-5" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler border-0 px-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <i class="far fa-bars px-2"></i>
                 </button>
 
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
@@ -39,18 +39,15 @@
                 </div>
             </div>
         </nav>
+        @section('cabinet_nav')
+            @include ('cabinet._nav', ['page' => null])
+        @show
         <div class="container position-relative">
             @section('search')
-                @include('layouts.partials._filter', ['carBRND' => null, 'route' => route('cars.adverts.index')])
+                @include('layouts.partials._filter', ['carBRND' => null, 'route' => route('cars.adverts.index'), 'height' => null])
             @show
         </div>
-        <div class="include_cabinet_menu" style="    background-color: #e9ecef;">
-            <div class="container">
-                <div class="row">
-                    @yield('cabinet_nav')
-                </div>
-            </div>
-        </div>
+
 
         <main class="app-content py-0 py-md-3" style="background: @yield('bgColor')">
             <div class="container ">
@@ -72,7 +69,7 @@
     <footer class="footer mt-auto py-3">
         <div class="container">
             <div class="border-top pt-3">
-                <p>&copy; {{ date('Y') }} - {{ config('app.name', 'Laravel') }}</p>
+                <p>&copy; {{ date('Y') }} - {{ config('app.name', 'AutoHire') }}</p>
             </div>
         </div>
     </footer>

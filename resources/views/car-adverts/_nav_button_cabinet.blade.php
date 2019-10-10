@@ -1,4 +1,4 @@
-<div class="d-flex flex-row">
+<div class="d-flex flex-row mt-3">
     @can ('manage-own-advert', $carAdvert )
     <div class="form-group">
         <div class="text-muted small">
@@ -14,7 +14,7 @@
                 @if ($carAdvert->isDraft() || $carAdvert->isClosed())
                     <form method="POST" action="{{ route('cabinet.adverts.send', $carAdvert) }}" class="mr-1">
                         @csrf
-                        <button class="btn btn-sm btn-success mb-2 mb-md-0" data-toggle="tooltip" data-placement="top" data-title="{{ __('button.Activate') }}"><i class="fad fa-check" style="font-style: normal !important;"></i></button>
+                        <button class="btn btn-sm btn-success mb-2 mb-md-0" data-toggle="tooltip" data-placement="top" data-title="{{ __('button.Activate') }}"><i class="fad fa-check" style="font-style: normal !important;"></i> Активировать</button>
                     </form>
                 @endif
                 @if ($carAdvert->isActive())

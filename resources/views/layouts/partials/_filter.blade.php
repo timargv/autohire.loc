@@ -1,5 +1,5 @@
 @if($carBRND)
-    <div class="filter-header_top bg-white">
+    <div class="filter-header_top bg-white" @if($height) style="height: auto !important;" @endif>
         <div class="p-3">
             <div class="filter_header px-3 pb-3 pt-3">
                 <div class="filter_title">Выбери свой автомобиль</div>
@@ -52,8 +52,8 @@
                         <div class="w-100">
                             <div class="form-group"></div>
                             <div class="form-group ml-auto">
-                                <button type="submit" class="btn btn-light">{{__('button.Search')}}</button>
-                                <a href="?" class="btn btn-light"><i class="fas fa-times"></i></a>
+                                <button type="submit" class="btn bg-siran text-white mr-2">{{__('Показать предложения')}}</button>
+                                <a href="?" class="btn bg-silver-lite-filter text-siran "><i class="fas fa-times"></i></a>
                             </div>
                         </div>
 
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        <div class="p-3 filter_footer bg-gray-lite">
+        <div class="d-none p-3 filter_footer bg-gray-lite">
             <div class="p-3">
                 <div class="title_filter_footer"></div>
                 <div class="body_filter_footer">
@@ -113,5 +113,5 @@
             </div>
         </div>
     </div>
-    <div class="visible-filter">Паказать фильтр</div>
+    <div class="visible-filter @if($height) d-none @endif">Паказать фильтр</div>
 @endif

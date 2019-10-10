@@ -28,11 +28,33 @@ class AdvertController extends Controller
 
         $carBrand = $path->carBrand;
         $result = $this->search->search($carBrand, $request, 20, $request->get('page', 1));
+
         $carAdverts = $result->carAdverts;
         $carBrandsCounts = $result->carBrandsCounts;
 
-//        $query = Advert::active()->orderByDesc('published_at');
+        $query = $carBrand ? $carBrand->children() : CarBrand::whereIsRoot();
+        $carBrands = $query->defaultOrder()->getModels();
 
+//        $carBrands = array_filter($carBrands, function (CarBrand $carBrand) use ($carBrandsCounts) {
+//            return $carBrandsCounts[$carBrand->id] && $carBrandsCounts[$carBrand->id];
+//        });
+//
+//        dd($carBrands);
+//
+//
+        $carBrands = array_filter($carBrands, function (CarBrand $carBrand) use ($carBrandsCounts) {
+            return isset($carBrandsCounts[$carBrand->id]) && $carBrandsCounts[$carBrand->id] > 0;
+        });
+
+
+
+        $car_years = Year::all();
+        $types = Advert::typeRental();
+        $attributes = Attribute::all();
+
+
+//        $query = Advert::active()->orderByDesc('published_at');
+//
 //        if ($carBrand = $path->carBrand) {
 //            $query->forCarSeries($carBrand)->orWhere(function ($query) use ($carBrand) {
 //                $query->forCarModel($carBrand)->orWhere(function ($query) use ($carBrand) {
@@ -40,17 +62,9 @@ class AdvertController extends Controller
 //                })->active();
 //            })->active();
 //        }
+//
+//        $carAdverts = $query->paginate(3);
 
-        $query = $carBrand ? $carBrand->children() : CarBrand::whereIsRoot();
-        $carBrands = $query->defaultOrder()->getModels();
-
-        $carBrands = array_filter($carBrands, function (CarBrand $carBrand) use ($carBrandsCounts) {
-            return isset($carBrandsCounts[$carBrand->id]) && $carBrandsCounts[$carBrand->id] > 0;
-        });
-
-        $car_years = Year::all();
-        $types = Advert::typeRental();
-        $attributes = Attribute::all();
 
 //        if (!empty($request)) {
 //            $query->whereHas('carBrand', function ($query) use ($carBrand) {
@@ -58,6 +72,7 @@ class AdvertController extends Controller
 //            });
 //        }
 
+//        $carBrands = null;
 
 
 
@@ -95,6 +110,6 @@ class AdvertController extends Controller
         if (!($carAdvert->isActive() || Gate::allows('show-advert', $carAdvert))) {
             abort(403);
         }
-        return $carAdvert->author->phone;
+        return $carAdvert->author->phone ? $carAdvert->author->phone : abort(403);
     }
 }

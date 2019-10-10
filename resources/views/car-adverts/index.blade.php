@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('search')
-    @include('layouts.partials._filter', ['carBRND' => 'true', 'route' => '?'])
+    @include('layouts.partials._filter', ['carBRND' => 'true', 'route' => '?', 'height' => null])
 @endsection
 
 @section('content')
@@ -11,7 +11,7 @@
                 @include('car-adverts.item', ['carAdvert' => $carAdverts, 'col_1' => true])
             </div>
             <div class="mt-4">
-                {{ $carAdverts->links() }}
+                {{ $carAdverts->appends(request()->all())->links() }}
             </div>
         </div>
         @if ($carBrands)
@@ -21,7 +21,7 @@
                     @foreach (array_chunk($carBrands, 3) as $chunk)
                         <ul class="list-group list-unstyled col-md-6 mb-md-3">
                             @foreach ($chunk as $carBrand)
-                                <li><a href="{{ route('cars.adverts.index', array_merge(['adverts_path' => adverts_path($carBrand)], request()->all())) }}">{{ $carBrand->name }} ({{ $carBrandsCounts[$carBrand->id] ?? 0 }})</a></li>
+                                <li class="d-flex"><a class="mr-auto" href="{{ route('cars.adverts.index', array_merge(['adverts_path' => adverts_path($carBrand)], request()->all())) }}">{{ $carBrand->name }}</a> <span class="d-block">{{ $carBrandsCounts[$carBrand->id] ?? 0 }}</span></li>
                             @endforeach
                         </ul>
                     @endforeach

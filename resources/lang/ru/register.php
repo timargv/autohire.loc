@@ -8,6 +8,7 @@ return [
     'VerifyEmail' => 'Подтвердить электронную почту',
     'Register' => 'Регистрация',
     'Name' => 'Имя',
+    'Phone' => 'Телефон без (+7)',
     'LastName' => 'Имя и Фамилия',
     'EMailAddress' => 'E-Mail Адрес',
     'Password' => 'Пароль',

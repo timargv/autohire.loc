@@ -122,10 +122,11 @@ class User extends Authenticatable
         ];
     }
 
-    public static function register(string $name, string $email, string $password): self
+    public static function register(string $name, string $phone, string $email, string $password): self
     {
         return static::create([
             'name' => $name,
+            'phone' => $phone,
             'email' => $email,
             'password' => bcrypt($password),
             'verify_token' => Str::uuid(),

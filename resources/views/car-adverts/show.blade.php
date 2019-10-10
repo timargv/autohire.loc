@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-
-
 @section('content')
 
     @include('car-adverts._nav_button_cabinet', ['page' => ''])

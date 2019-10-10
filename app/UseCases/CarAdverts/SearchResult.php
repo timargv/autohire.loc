@@ -3,7 +3,6 @@
 
 namespace App\UseCases\CarAdverts;
 
-
 use Illuminate\Contracts\Pagination\Paginator;
 
 class SearchResult

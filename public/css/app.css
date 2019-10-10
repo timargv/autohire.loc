@@ -6221,6 +6221,10 @@
   background-color: #6361ad !important;
 }
 
+.font-weight-400 {
+  font-weight: 400 !important;
+}
+
 /*!
  * Bootstrap v4.3.1 (https://getbootstrap.com/)
  * Copyright 2011-2019 The Bootstrap Authors
@@ -17002,27 +17006,51 @@ a {
 
 .navbar-light .navbar-brand {
   color: #165d98;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: lowercase;
   font-size: 1.5rem;
   padding: 0;
-  line-height: 1.3;
+  height: 44px;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar-light .navbar-nav .nav-link {
-  color: #2e3529;
-  font-weight: 600;
-  opacity: 0.8;
+  color: #000000b0;
+  height: 44px;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 !important;
+  padding-right: 0.8rem !important;
+  padding-left: 0.8rem !important;
+  font-weight: 500 !important;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-light .navbar-toggler {
+  outline: none !important;
+  box-shadow: none !important;
+  font-size: 26px;
+  color: rgba(101, 99, 99, 0.5);
 }
 
 .navbar-expand-md.shadow-sm {
   box-shadow: 0 0 10px 0 rgba(100, 100, 100, 0.1) !important;
-  min-height: 70px;
+  min-height: 60px;
   z-index: 1;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
-.nav.cabinet_nav .nav-link {
+.navbar-light .navbar-brand {
   color: #858585;
+}
+
+.include_cabinet_menu .nav-link {
+  color: #4f4f4fad;
 }
 
 .nav.cabinet_nav .nav-link.active {
@@ -17125,6 +17153,10 @@ a {
   font-size: 11px;
   color: #848484;
   cursor: pointer;
+}
+
+.filter-header .btn {
+  font-size: 15px;
 }
 
 .filter-7 {
@@ -17369,7 +17401,7 @@ a {
     transition: all 0.3s;
     margin-bottom: 5px;
     /*height: auto;*/
-    height: 336px;
+    height: 236px;
   }
 
   .filter-7 {
@@ -17424,6 +17456,10 @@ a {
 
   .car_sh_list {
     margin: 0 -15px !important;
+  }
+
+  .navbar-expand-md.shadow-sm {
+    min-height: 44px;
   }
 }
 
