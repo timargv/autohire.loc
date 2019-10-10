@@ -5,8 +5,8 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 px-0">
-            <div class="card">
-                <div class="card-header">{{ __('auth.ResetPassword') }}</div>
+            <div class="card border-0 shadow-sm rounded">
+                <div class="card-header border-0">{{ __('auth.ResetPassword') }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('password.update') }}">
@@ -52,7 +52,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn bg-siran text-white">
                                     {{ __('auth.ResetPassword') }}
                                 </button>
                             </div>
