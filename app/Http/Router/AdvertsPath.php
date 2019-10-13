@@ -25,19 +25,13 @@ class AdvertsPath implements UrlRoutable
 
     public function getRouteKey()
     {
-        $segments = [];
-//
-        if ($this->carBrand) {
-            $segments[] = Cache::tags(CarBrand::class)->rememberForever('car_brand_path_' . $this->carBrand->id, function () {
-                return $this->carBrand->getPath();
-            });
+        if (!$this->carBrand) {
+            throw new \BadMethodCallException('Empty page.');
         }
 
-//        if ($this->carBrand) {
-//            $segments[] =   $this->carBrand->getPath();
-//        }
-
-        return implode('/', $segments);
+        return Cache::tags(CarBrand::class)->rememberForever('car_brand_path_' . $this->carBrand->id, function () {
+            return $this->carBrand->getPath();
+        });
     }
 
     public function getRouteKeyName(): string
@@ -48,8 +42,6 @@ class AdvertsPath implements UrlRoutable
     public function resolveRouteBinding($value)
     {
         $chunks = explode('/', $value);
-
-
 
         /** @var CarBrand|null $carBrand */
         $carBrand = null;

@@ -1,0 +1,30 @@
+GET http://autohire.loc/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-10-11T024714.200.html
+
+###
+
+GET http://autohire.loc/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-10-11T024703.200.html
+
+###
+
+GET https://auto-hire.ru/
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-10-11T024622.200.html
+
+###
+
+GET http://localhost:8080/
+Accept: */*
+Cache-Control: no-cache
+
+###
+

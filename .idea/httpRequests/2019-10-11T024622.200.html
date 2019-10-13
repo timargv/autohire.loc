@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="ru" class="h-100">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="gdepF3eZYJDA1ZUO8uhLZZ4B1mlIwXtGN2kcchaF">
+
+    <title>Autohire</title>
+
+    <!-- Scripts -->
+    <script src="https://auto-hire.ru/js/app.js" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap&subset=cyrillic"
+          rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="https://auto-hire.ru/css/app.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column h-100">
+<div class="position-relative" id="app" aria-live="polite" aria-atomic="true">
+    <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand text-blue-tone-dark-50 mr-0 mr-md-5" href="https://auto-hire.ru">
+                Autohire
+            </a>
+            <button class="navbar-toggler border-0 px-0" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <i class="far fa-bars px-2"></i>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <!-- Left Side Of Navbar -->
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://auto-hire.ru/cars">Легковые</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://auto-hire.ru">Мото</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://auto-hire.ru">Коммерческие</a>
+                    </li>
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://auto-hire.ru/login">Войти</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://auto-hire.ru/register">Регистрация</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container position-relative">
+        <div class="filter-header_top bg-white" style="height: auto !important;">
+            <div class="p-3">
+                <div class="filter_header px-3 pb-3 pt-3">
+                    <div class="filter_title">Выбери свой автомобиль</div>
+                    <div class="filter-form">
+                        <form action="https://auto-hire.ru/cars" method="GET" class="input-group input-group-sm ">
+
+                            <div class="row ml-0">
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="car_year" class="form-control select2 w-100 " name="car_year"
+                                            data-placeholder="Год">
+                                        <option value="">Год</option>
+
+                                        <option value="1">
+                                            2019
+                                        </option>
+
+                                        <option value="2">
+                                            2018
+                                        </option>
+
+                                        <option value="3">
+                                            2017
+                                        </option>
+
+                                        <option value="4">
+                                            2016
+                                        </option>
+
+                                        <option value="5">
+                                            2015
+                                        </option>
+
+                                        <option value="6">
+                                            2014
+                                        </option>
+
+                                        <option value="7">
+                                            2013
+                                        </option>
+
+                                        <option value="8">
+                                            2012
+                                        </option>
+
+                                        <option value="9">
+                                            2011
+                                        </option>
+
+                                        <option value="10">
+                                            2010
+                                        </option>
+
+                                        <option value="11">
+                                            2009
+                                        </option>
+
+                                        <option value="12">
+                                            2008
+                                        </option>
+
+                                        <option value="13">
+                                            2007
+                                        </option>
+
+                                        <option value="14">
+                                            2006
+                                        </option>
+
+                                        <option value="15">
+                                            2005
+                                        </option>
+
+                                        <option value="16">
+                                            2004
+                                        </option>
+
+                                        <option value="17">
+                                            2003
+                                        </option>
+
+                                        <option value="18">
+                                            2002
+                                        </option>
+
+                                        <option value="19">
+                                            2001
+                                        </option>
+
+                                        <option value="20">
+                                            2000
+                                        </option>
+
+                                        <option value="21">
+                                            1999
+                                        </option>
+
+                                        <option value="22">
+                                            1998
+                                        </option>
+
+                                        <option value="23">
+                                            1997
+                                        </option>
+
+                                        <option value="24">
+                                            1996
+                                        </option>
+
+                                        <option value="25">
+                                            1995
+                                        </option>
+
+                                        <option value="26">
+                                            1994
+                                        </option>
+
+                                        <option value="27">
+                                            1993
+                                        </option>
+
+                                        <option value="28">
+                                            1992
+                                        </option>
+
+                                        <option value="29">
+                                            1991
+                                        </option>
+
+                                        <option value="30">
+                                            1990
+                                        </option>
+                                        ;
+                                    </select>
+                                </div>
+
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="type_rental" class="form-control select2 " name="type_rental"
+                                            data-placeholder="Тип Аренды">
+                                        <option value="">Тип Аренды</option>
+                                        <option value="daily">Суточная</option>
+                                        <option value="long_term">Долгосрочная</option>
+                                        <option value="for_redemption">Под выкуп</option>
+                                        ;
+                                    </select>
+                                </div>
+
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="attribute_1" class="form-control select2 select2-search--hide "
+                                            name="attrs[1][equals]" data-placeholder="Кузов">
+                                        <option value="">&mdash; Кузов</option>
+                                        <option value="Седан">
+                                            Седан
+                                        </option>
+                                        <option value="Хэтчбек">
+                                            Хэтчбек
+                                        </option>
+                                        <option value="Хэтчбек 3 дв.">
+                                            Хэтчбек 3 дв.
+                                        </option>
+                                        <option value="Хэтчбек 5 дв.">
+                                            Хэтчбек 5 дв.
+                                        </option>
+                                        <option value="Лифтбек">
+                                            Лифтбек
+                                        </option>
+                                        <option value="Внедорожники">
+                                            Внедорожники
+                                        </option>
+                                        <option value="Внедорожник 3 дв.">
+                                            Внедорожник 3 дв.
+                                        </option>
+                                        <option value="Внедорожник 5 дв.">
+                                            Внедорожник 5 дв.
+                                        </option>
+                                        <option value="Универсал">
+                                            Универсал
+                                        </option>
+                                        <option value="Купе">
+                                            Купе
+                                        </option>
+                                        <option value="Минивэн">
+                                            Минивэн
+                                        </option>
+                                        <option value="Пикап">
+                                            Пикап
+                                        </option>
+                                        <option value="Лимузин">
+                                            Лимузин
+                                        </option>
+                                        <option value="Фургон">
+                                            Фургон
+                                        </option>
+                                        <option value="Кабриолет">
+                                            Кабриолет
+                                        </option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="attribute_2" class="form-control select2 select2-search--hide "
+                                            name="attrs[2][equals]" data-placeholder="Коробка">
+                                        <option value="">&mdash; Коробка</option>
+                                        <option value="Автоматическая">
+                                            Автоматическая
+                                        </option>
+                                        <option value="Робот">
+                                            Робот
+                                        </option>
+                                        <option value="Вариатор">
+                                            Вариатор
+                                        </option>
+                                        <option value="Механическая">
+                                            Механическая
+                                        </option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="attribute_3" class="form-control select2 select2-search--hide "
+                                            name="attrs[3][equals]" data-placeholder="Двигатель">
+                                        <option value="">&mdash; Двигатель</option>
+                                        <option value="Бензин">
+                                            Бензин
+                                        </option>
+                                        <option value="Дизель">
+                                            Дизель
+                                        </option>
+                                        <option value="Гибрид">
+                                            Гибрид
+                                        </option>
+                                        <option value="Электро">
+                                            Электро
+                                        </option>
+                                        <option value="Турбированный">
+                                            Турбированный
+                                        </option>
+                                        <option value="Атмосферный">
+                                            Атмосферный
+                                        </option>
+                                        <option value="Газобаллонное оборудование">
+                                            Газобаллонное оборудование
+                                        </option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="attribute_4" class="form-control select2 select2-search--hide "
+                                            name="attrs[4][equals]" data-placeholder="Объем">
+                                        <option value="">&mdash; Объем</option>
+                                        <option value="0.2 л">
+                                            0.2 л
+                                        </option>
+                                        <option value="0.4 л">
+                                            0.4 л
+                                        </option>
+                                        <option value="0.6 л">
+                                            0.6 л
+                                        </option>
+                                        <option value="0.8 л">
+                                            0.8 л
+                                        </option>
+                                        <option value="1.0 л">
+                                            1.0 л
+                                        </option>
+                                        <option value="1.2 л">
+                                            1.2 л
+                                        </option>
+                                        <option value="1.4 л">
+                                            1.4 л
+                                        </option>
+                                        <option value="1.6 л">
+                                            1.6 л
+                                        </option>
+                                        <option value="1.8 л">
+                                            1.8 л
+                                        </option>
+                                        <option value="2.0 л">
+                                            2.0 л
+                                        </option>
+                                        <option value="2.2 л">
+                                            2.2 л
+                                        </option>
+                                        <option value="2.4 л">
+                                            2.4 л
+                                        </option>
+                                        <option value="2.6 л">
+                                            2.6 л
+                                        </option>
+                                        <option value="2.8 л">
+                                            2.8 л
+                                        </option>
+                                        <option value="3.0 л">
+                                            3.0 л
+                                        </option>
+                                        <option value="3.5 л">
+                                            3.5 л
+                                        </option>
+                                        <option value="4.0 л">
+                                            4.0 л
+                                        </option>
+                                        <option value="4.5 л">
+                                            4.5 л
+                                        </option>
+                                        <option value="5.0 л">
+                                            5.0 л
+                                        </option>
+                                        <option value="5.5 л">
+                                            5.5 л
+                                        </option>
+                                        <option value="6.0 л">
+                                            6.0 л
+                                        </option>
+                                        <option value="7.0 л">
+                                            7.0 л
+                                        </option>
+                                        <option value="8.0 л">
+                                            8.0 л
+                                        </option>
+                                        <option value="9.0 л">
+                                            9.0 л
+                                        </option>
+                                        <option value="10.0 л">
+                                            10.0 л
+                                        </option>
+                                    </select>
+
+                                </div>
+                                <div class="form-group pr-3 filter-7">
+                                    <select id="attribute_5" class="form-control select2 select2-search--hide "
+                                            name="attrs[5][equals]" data-placeholder="Привод">
+                                        <option value="">&mdash; Привод</option>
+                                        <option value="Передний">
+                                            Передний
+                                        </option>
+                                        <option value="Задний">
+                                            Задний
+                                        </option>
+                                        <option value="Полный">
+                                            Полный
+                                        </option>
+                                    </select>
+
+                                </div>
+                            </div>
+
+                            <div class="w-100">
+                                <div class="form-group"></div>
+                                <div class="form-group ml-auto">
+                                    <button type="submit" class="btn bg-siran text-white mr-2">Показать предложения
+                                    </button>
+                                    <a href="?" class="btn bg-silver-lite-filter text-siran "><i
+                                            class="fas fa-times"></i></a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none p-3 filter_footer bg-gray-lite">
+                <div class="p-3">
+                    <div class="title_filter_footer"></div>
+                    <div class="body_filter_footer">
+                        <ul class="clearfix list-unstyled m-0">
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                            <li class="float-left mr-3">
+                                <a href="#"
+                                   class="clearfix d-block rounded-pill text-decoration-none p-1 overflow-hidden bg-silver-lite-filter">
+                                    <div class="logo_model_filter_popular rounded-pill d-inline-block align-middle overflow-hidden"
+                                         style="background-image: url('http://pngimg.com/uploads/bmw_logo/bmw_logo_PNG19705.png')"></div>
+                                    <div class="title_model_filter_popular d-inline-block align-middle"><span
+                                            class="pl-2 pr-3 text-black-50">BMW</span></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="visible-filter  d-none ">Паказать фильтр</div>
+    </div>
+
+
+    <main class="app-content py-0 py-md-3" style="background: ">
+        <div class="container ">
+            <div class="d-none d-md-block">
+            </div>
+            <div class="row">
+                <div class=" col-12 col-lg-6  mb-md-3 mb-2">
+                    <div class="car_sh card border-left-0 bottom-right-0 border-top-0 border-bottom shadow-sm overflow-hidden rounded-0">
+                        <a href="https://auto-hire.ru/cars/show/1"
+                           class="car_sh_href position-absolute w-100 h-100"></a>
+                        <div class="row d-flex align-items-stretch h-100">
+                            <div class="col-6 col-md-5 pr-0">
+                                <div class="car_sh_img w-100 h-100"
+                                     style="background-image: url('https://vk.com/images/dquestion_app_widget_1_b.png')"
+                                ></div>
+
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="py-3 pl-3 pr-2 p-md-3 h-100">
+                                    <div class="car_sh_info pr-3 py-0 h-100">
+                                        <div class="car_sh_model">
+                                            <div class="title_block">Модель</div>
+                                            <div class="title_model">
+                                                Brilliance , 1990
+                                            </div>
+                                        </div>
+
+                                        <div class="car_sh_price mb-3">
+                                            <div class="price_block">Цена за сутки</div>
+                                            <div class="price">2 967<i class="fal fa-ruble-sign ml-1"></i></div>
+                                        </div>
+
+                                        <div class="d-none d-md-flex car_sh_btn-group clearfix">
+                                            <div class="car_sh_address_data">
+                                                <div class="card-text text-muted mb-0 ">наб. Домодедовская, 03</div>
+                                                <div class="card-text">
+                                                    <small class="text-muted">22 часа назад</small>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix ml-auto">
+                                                <button class="btn bg-siran btn-sm text-white float-right ml-2"><i
+                                                        class="fal fa-phone-alt"></i></button>
+                                                <button class="btn bg-silver-lite-filter btn-sm text-siran float-right">
+                                                    <i class="fal fa-comments"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-12 col-lg-6  mb-md-3 mb-2">
+                    <div class="car_sh card border-left-0 bottom-right-0 border-top-0 border-bottom shadow-sm overflow-hidden rounded-0">
+                        <a href="https://auto-hire.ru/cars/show/2"
+                           class="car_sh_href position-absolute w-100 h-100"></a>
+                        <div class="row d-flex align-items-stretch h-100">
+                            <div class="col-6 col-md-5 pr-0">
+                                <div class="car_sh_img w-100 h-100"
+                                     style="background-image: url('https://vk.com/images/dquestion_app_widget_1_b.png')"
+                                ></div>
+
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="py-3 pl-3 pr-2 p-md-3 h-100">
+                                    <div class="car_sh_info pr-3 py-0 h-100">
+                                        <div class="car_sh_model">
+                                            <div class="title_block">Модель</div>
+                                            <div class="title_model">
+                                                Ariel , 2008
+                                            </div>
+                                        </div>
+
+                                        <div class="car_sh_price mb-3">
+                                            <div class="price_block">Цена за сутки</div>
+                                            <div class="price">3 518<i class="fal fa-ruble-sign ml-1"></i></div>
+                                        </div>
+
+                                        <div class="d-none d-md-flex car_sh_btn-group clearfix">
+                                            <div class="car_sh_address_data">
+                                                <div class="card-text text-muted mb-0 ">пр. 1905 года, 68</div>
+                                                <div class="card-text">
+                                                    <small class="text-muted">22 часа назад</small>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix ml-auto">
+                                                <button class="btn bg-siran btn-sm text-white float-right ml-2"><i
+                                                        class="fal fa-phone-alt"></i></button>
+                                                <button class="btn bg-silver-lite-filter btn-sm text-siran float-right">
+                                                    <i class="fal fa-comments"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-12 col-lg-6  mb-md-3 mb-2">
+                    <div class="car_sh card border-left-0 bottom-right-0 border-top-0 border-bottom shadow-sm overflow-hidden rounded-0">
+                        <a href="https://auto-hire.ru/cars/show/3"
+                           class="car_sh_href position-absolute w-100 h-100"></a>
+                        <div class="row d-flex align-items-stretch h-100">
+                            <div class="col-6 col-md-5 pr-0">
+                                <div class="car_sh_img w-100 h-100"
+                                     style="background-image: url('https://vk.com/images/dquestion_app_widget_1_b.png')"
+                                ></div>
+
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="py-3 pl-3 pr-2 p-md-3 h-100">
+                                    <div class="car_sh_info pr-3 py-0 h-100">
+                                        <div class="car_sh_model">
+                                            <div class="title_block">Модель</div>
+                                            <div class="title_model">
+                                                AC , 2005
+                                            </div>
+                                        </div>
+
+                                        <div class="car_sh_price mb-3">
+                                            <div class="price_block">Цена за сутки</div>
+                                            <div class="price">3 213<i class="fal fa-ruble-sign ml-1"></i></div>
+                                        </div>
+
+                                        <div class="d-none d-md-flex car_sh_btn-group clearfix">
+                                            <div class="car_sh_address_data">
+                                                <div class="card-text text-muted mb-0 ">пр. Гоголя, 91</div>
+                                                <div class="card-text">
+                                                    <small class="text-muted">22 часа назад</small>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix ml-auto">
+                                                <button class="btn bg-siran btn-sm text-white float-right ml-2"><i
+                                                        class="fal fa-phone-alt"></i></button>
+                                                <button class="btn bg-silver-lite-filter btn-sm text-siran float-right">
+                                                    <i class="fal fa-comments"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-12 col-lg-6  mb-md-3 mb-2">
+                    <div class="car_sh card border-left-0 bottom-right-0 border-top-0 border-bottom shadow-sm overflow-hidden rounded-0">
+                        <a href="https://auto-hire.ru/cars/show/4"
+                           class="car_sh_href position-absolute w-100 h-100"></a>
+                        <div class="row d-flex align-items-stretch h-100">
+                            <div class="col-6 col-md-5 pr-0">
+                                <div class="car_sh_img w-100 h-100"
+                                     style="background-image: url('https://vk.com/images/dquestion_app_widget_1_b.png')"
+                                ></div>
+
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="py-3 pl-3 pr-2 p-md-3 h-100">
+                                    <div class="car_sh_info pr-3 py-0 h-100">
+                                        <div class="car_sh_model">
+                                            <div class="title_block">Модель</div>
+                                            <div class="title_model">
+                                                BMW , 1994
+                                            </div>
+                                        </div>
+
+                                        <div class="car_sh_price mb-3">
+                                            <div class="price_block">Цена за сутки</div>
+                                            <div class="price">6 856<i class="fal fa-ruble-sign ml-1"></i></div>
+                                        </div>
+
+                                        <div class="d-none d-md-flex car_sh_btn-group clearfix">
+                                            <div class="car_sh_address_data">
+                                                <div class="card-text text-muted mb-0 ">пл. Гоголя, 39</div>
+                                                <div class="card-text">
+                                                    <small class="text-muted">22 часа назад</small>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix ml-auto">
+                                                <button class="btn bg-siran btn-sm text-white float-right ml-2"><i
+                                                        class="fal fa-phone-alt"></i></button>
+                                                <button class="btn bg-silver-lite-filter btn-sm text-siran float-right">
+                                                    <i class="fal fa-comments"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-12 col-lg-6  mb-md-3 mb-2">
+                    <div class="car_sh card border-left-0 bottom-right-0 border-top-0 border-bottom shadow-sm overflow-hidden rounded-0">
+                        <a href="https://auto-hire.ru/cars/show/5"
+                           class="car_sh_href position-absolute w-100 h-100"></a>
+                        <div class="row d-flex align-items-stretch h-100">
+                            <div class="col-6 col-md-5 pr-0">
+                                <div class="car_sh_img w-100 h-100"
+                                     style="background-image: url('https://vk.com/images/dquestion_app_widget_1_b.png')"
+                                ></div>
+
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="py-3 pl-3 pr-2 p-md-3 h-100">
+                                    <div class="car_sh_info pr-3 py-0 h-100">
+                                        <div class="car_sh_model">
+                                            <div class="title_block">Модель</div>
+                                            <div class="title_model">
+                                                Alpina , 1994
+                                            </div>
+                                        </div>
+
+                                        <div class="car_sh_price mb-3">
+                                            <div class="price_block">Цена за сутки</div>
+                                            <div class="price">3 261<i class="fal fa-ruble-sign ml-1"></i></div>
+                                        </div>
+
+                                        <div class="d-none d-md-flex car_sh_btn-group clearfix">
+                                            <div class="car_sh_address_data">
+                                                <div class="card-text text-muted mb-0 ">шоссе Домодедовская, 10</div>
+                                                <div class="card-text">
+                                                    <small class="text-muted">22 часа назад</small>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix ml-auto">
+                                                <button class="btn bg-siran btn-sm text-white float-right ml-2"><i
+                                                        class="fal fa-phone-alt"></i></button>
+                                                <button class="btn bg-silver-lite-filter btn-sm text-siran float-right">
+                                                    <i class="fal fa-comments"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" col-12 col-lg-6  mb-md-3 mb-2">
+                    <div class="car_sh card border-left-0 bottom-right-0 border-top-0 border-bottom shadow-sm overflow-hidden rounded-0">
+                        <a href="https://auto-hire.ru/cars/show/6"
+                           class="car_sh_href position-absolute w-100 h-100"></a>
+                        <div class="row d-flex align-items-stretch h-100">
+                            <div class="col-6 col-md-5 pr-0">
+                                <div class="car_sh_img w-100 h-100"
+                                     style="background-image: url('https://vk.com/images/dquestion_app_widget_1_b.png')"
+                                ></div>
+
+                            </div>
+                            <div class="col-6 col-md-7">
+                                <div class="py-3 pl-3 pr-2 p-md-3 h-100">
+                                    <div class="car_sh_info pr-3 py-0 h-100">
+                                        <div class="car_sh_model">
+                                            <div class="title_block">Модель</div>
+                                            <div class="title_model">
+                                                Aston Martin , 2018
+                                            </div>
+                                        </div>
+
+                                        <div class="car_sh_price mb-3">
+                                            <div class="price_block">Цена за сутки</div>
+                                            <div class="price">5 374<i class="fal fa-ruble-sign ml-1"></i></div>
+                                        </div>
+
+                                        <div class="d-none d-md-flex car_sh_btn-group clearfix">
+                                            <div class="car_sh_address_data">
+                                                <div class="card-text text-muted mb-0 ">шоссе Чехова, 88</div>
+                                                <div class="card-text">
+                                                    <small class="text-muted">22 часа назад</small>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix ml-auto">
+                                                <button class="btn bg-siran btn-sm text-white float-right ml-2"><i
+                                                        class="fal fa-phone-alt"></i></button>
+                                                <button class="btn bg-silver-lite-filter btn-sm text-siran float-right">
+                                                    <i class="fal fa-comments"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" card card-default mb-3 border-0 shadow-sm">
+                <div class="card-header border-0 font-weight-bold text-muted">
+                    Все Марки
+                </div>
+                <div class="card-body pb-0 border-0">
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/ac">AC</a></li>
+                                <li><a href="https://auto-hire.ru/cars/acura">Acura</a></li>
+                                <li><a href="https://auto-hire.ru/cars/adler">Adler</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/alfa-romeo">Alfa Romeo</a></li>
+                                <li><a href="https://auto-hire.ru/cars/alpina">Alpina</a></li>
+                                <li><a href="https://auto-hire.ru/cars/alpine">Alpine</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/am-general">AM General</a></li>
+                                <li><a href="https://auto-hire.ru/cars/amc">AMC</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ariel">Ariel</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/aro">Aro</a></li>
+                                <li><a href="https://auto-hire.ru/cars/asia">Asia</a></li>
+                                <li><a href="https://auto-hire.ru/cars/aston-martin">Aston Martin</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/audi">Audi</a></li>
+                                <li><a href="https://auto-hire.ru/cars/aurus">Aurus</a></li>
+                                <li><a href="https://auto-hire.ru/cars/austin">Austin</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/austin-healey">Austin Healey</a></li>
+                                <li><a href="https://auto-hire.ru/cars/autobianchi">Autobianchi</a></li>
+                                <li><a href="https://auto-hire.ru/cars/baic">BAIC</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/bajaj">Bajaj</a></li>
+                                <li><a href="https://auto-hire.ru/cars/baltijas-dzips">Baltijas Dzips</a></li>
+                                <li><a href="https://auto-hire.ru/cars/batmobile">Batmobile</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/bentley">Bentley</a></li>
+                                <li><a href="https://auto-hire.ru/cars/bertone">Bertone</a></li>
+                                <li><a href="https://auto-hire.ru/cars/bilenkin">Bilenkin</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/bitter">Bitter</a></li>
+                                <li><a href="https://auto-hire.ru/cars/bmw">BMW</a></li>
+                                <li><a href="https://auto-hire.ru/cars/borgward">Borgward</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/brabus">Brabus</a></li>
+                                <li><a href="https://auto-hire.ru/cars/brilliance">Brilliance</a></li>
+                                <li><a href="https://auto-hire.ru/cars/bristol">Bristol</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/bufori">Bufori</a></li>
+                                <li><a href="https://auto-hire.ru/cars/bugatti">Bugatti</a></li>
+                                <li><a href="https://auto-hire.ru/cars/buick">Buick</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/byd">BYD</a></li>
+                                <li><a href="https://auto-hire.ru/cars/byvin">Byvin</a></li>
+                                <li><a href="https://auto-hire.ru/cars/cadillac">Cadillac</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/callaway">Callaway</a></li>
+                                <li><a href="https://auto-hire.ru/cars/carbodies">Carbodies</a></li>
+                                <li><a href="https://auto-hire.ru/cars/caterham">Caterham</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/chana">Chana</a></li>
+                                <li><a href="https://auto-hire.ru/cars/changan">Changan</a></li>
+                                <li><a href="https://auto-hire.ru/cars/changfeng">ChangFeng</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/changhe">Changhe</a></li>
+                                <li><a href="https://auto-hire.ru/cars/chery">Chery</a></li>
+                                <li><a href="https://auto-hire.ru/cars/chevrolet">Chevrolet</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/chrysler">Chrysler</a></li>
+                                <li><a href="https://auto-hire.ru/cars/citroen">Citroen</a></li>
+                                <li><a href="https://auto-hire.ru/cars/cizeta">Cizeta</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/coggiola">Coggiola</a></li>
+                                <li><a href="https://auto-hire.ru/cars/cord">Cord</a></li>
+                                <li><a href="https://auto-hire.ru/cars/dacia">Dacia</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/dadi">Dadi</a></li>
+                                <li><a href="https://auto-hire.ru/cars/daewoo">Daewoo</a></li>
+                                <li><a href="https://auto-hire.ru/cars/daihatsu">Daihatsu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/daimler">Daimler</a></li>
+                                <li><a href="https://auto-hire.ru/cars/datsun">Datsun</a></li>
+                                <li><a href="https://auto-hire.ru/cars/de-tomaso">De Tomaso</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/delage">Delage</a></li>
+                                <li><a href="https://auto-hire.ru/cars/delorean">DeLorean</a></li>
+                                <li><a href="https://auto-hire.ru/cars/derways">Derways</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/desoto">DeSoto</a></li>
+                                <li><a href="https://auto-hire.ru/cars/dkw">DKW</a></li>
+                                <li><a href="https://auto-hire.ru/cars/dodge">Dodge</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/dongfeng">DongFeng</a></li>
+                                <li><a href="https://auto-hire.ru/cars/doninvest">Doninvest</a></li>
+                                <li><a href="https://auto-hire.ru/cars/donkervoort">Donkervoort</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/ds">DS</a></li>
+                                <li><a href="https://auto-hire.ru/cars/dw-hower">DW Hower</a></li>
+                                <li><a href="https://auto-hire.ru/cars/eagle">Eagle</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/eagle-cars">Eagle Cars</a></li>
+                                <li><a href="https://auto-hire.ru/cars/e-car">E-Car</a></li>
+                                <li><a href="https://auto-hire.ru/cars/excalibur">Excalibur</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/faw">FAW</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ferrari">Ferrari</a></li>
+                                <li><a href="https://auto-hire.ru/cars/fiat">Fiat</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/fisker">Fisker</a></li>
+                                <li><a href="https://auto-hire.ru/cars/flanker">Flanker</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ford">Ford</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/foton">Foton</a></li>
+                                <li><a href="https://auto-hire.ru/cars/fso">FSO</a></li>
+                                <li><a href="https://auto-hire.ru/cars/fuqi">Fuqi</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/gac">GAC</a></li>
+                                <li><a href="https://auto-hire.ru/cars/geely">Geely</a></li>
+                                <li><a href="https://auto-hire.ru/cars/genesis">Genesis</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/geo">Geo</a></li>
+                                <li><a href="https://auto-hire.ru/cars/gmc">GMC</a></li>
+                                <li><a href="https://auto-hire.ru/cars/gonow">Gonow</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/gordon">Gordon</a></li>
+                                <li><a href="https://auto-hire.ru/cars/gp">GP</a></li>
+                                <li><a href="https://auto-hire.ru/cars/great-wall">Great Wall</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/hafei">Hafei</a></li>
+                                <li><a href="https://auto-hire.ru/cars/haima">Haima</a></li>
+                                <li><a href="https://auto-hire.ru/cars/hanomag">Hanomag</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/haval">Haval</a></li>
+                                <li><a href="https://auto-hire.ru/cars/hawtai">Hawtai</a></li>
+                                <li><a href="https://auto-hire.ru/cars/hindustan">Hindustan</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/hispano-suiza">Hispano-Suiza</a></li>
+                                <li><a href="https://auto-hire.ru/cars/holden">Holden</a></li>
+                                <li><a href="https://auto-hire.ru/cars/honda">Honda</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/horch">Horch</a></li>
+                                <li><a href="https://auto-hire.ru/cars/huanghai">HuangHai</a></li>
+                                <li><a href="https://auto-hire.ru/cars/hudson">Hudson</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/hummer">Hummer</a></li>
+                                <li><a href="https://auto-hire.ru/cars/hyundai">Hyundai</a></li>
+                                <li><a href="https://auto-hire.ru/cars/infiniti">Infiniti</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/innocenti">Innocenti</a></li>
+                                <li><a href="https://auto-hire.ru/cars/international">International</a></li>
+                                <li><a href="https://auto-hire.ru/cars/invicta">Invicta</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/iran-khodro">Iran Khodro</a></li>
+                                <li><a href="https://auto-hire.ru/cars/isdera">Isdera</a></li>
+                                <li><a href="https://auto-hire.ru/cars/isuzu">Isuzu</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/jac">JAC</a></li>
+                                <li><a href="https://auto-hire.ru/cars/jaguar">Jaguar</a></li>
+                                <li><a href="https://auto-hire.ru/cars/jeep">Jeep</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/jensen">Jensen</a></li>
+                                <li><a href="https://auto-hire.ru/cars/jinbei">Jinbei</a></li>
+                                <li><a href="https://auto-hire.ru/cars/jmc">JMC</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/kia">Kia</a></li>
+                                <li><a href="https://auto-hire.ru/cars/koenigsegg">Koenigsegg</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ktm-ag">KTM AG</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/lada-vaz">LADA (ВАЗ)</a></li>
+                                <li><a href="https://auto-hire.ru/cars/lamborghini">Lamborghini</a></li>
+                                <li><a href="https://auto-hire.ru/cars/lancia">Lancia</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/land-rover">Land Rover</a></li>
+                                <li><a href="https://auto-hire.ru/cars/landwind">Landwind</a></li>
+                                <li><a href="https://auto-hire.ru/cars/lexus">Lexus</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/liebao-motor">Liebao Motor</a></li>
+                                <li><a href="https://auto-hire.ru/cars/lifan">Lifan</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ligier">Ligier</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/lincoln">Lincoln</a></li>
+                                <li><a href="https://auto-hire.ru/cars/lotus">Lotus</a></li>
+                                <li><a href="https://auto-hire.ru/cars/lti">LTI</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/lucid">Lucid</a></li>
+                                <li><a href="https://auto-hire.ru/cars/luxgen">Luxgen</a></li>
+                                <li><a href="https://auto-hire.ru/cars/mahindra">Mahindra</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/marcos">Marcos</a></li>
+                                <li><a href="https://auto-hire.ru/cars/marlin">Marlin</a></li>
+                                <li><a href="https://auto-hire.ru/cars/marussia">Marussia</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/maruti">Maruti</a></li>
+                                <li><a href="https://auto-hire.ru/cars/maserati">Maserati</a></li>
+                                <li><a href="https://auto-hire.ru/cars/maybach">Maybach</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/mazda">Mazda</a></li>
+                                <li><a href="https://auto-hire.ru/cars/mclaren">McLaren</a></li>
+                                <li><a href="https://auto-hire.ru/cars/mega">Mega</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/mercedes-benz">Mercedes-Benz</a></li>
+                                <li><a href="https://auto-hire.ru/cars/mercury">Mercury</a></li>
+                                <li><a href="https://auto-hire.ru/cars/metrocab">Metrocab</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/mg">MG</a></li>
+                                <li><a href="https://auto-hire.ru/cars/microcar">Microcar</a></li>
+                                <li><a href="https://auto-hire.ru/cars/minelli">Minelli</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/mini">MINI</a></li>
+                                <li><a href="https://auto-hire.ru/cars/mitsubishi">Mitsubishi</a></li>
+                                <li><a href="https://auto-hire.ru/cars/mitsuoka">Mitsuoka</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/morgan">Morgan</a></li>
+                                <li><a href="https://auto-hire.ru/cars/morris">Morris</a></li>
+                                <li><a href="https://auto-hire.ru/cars/nash">Nash</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/nissan">Nissan</a></li>
+                                <li><a href="https://auto-hire.ru/cars/noble">Noble</a></li>
+                                <li><a href="https://auto-hire.ru/cars/oldsmobile">Oldsmobile</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/opel">Opel</a></li>
+                                <li><a href="https://auto-hire.ru/cars/osca">Osca</a></li>
+                                <li><a href="https://auto-hire.ru/cars/packard">Packard</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/pagani">Pagani</a></li>
+                                <li><a href="https://auto-hire.ru/cars/panoz">Panoz</a></li>
+                                <li><a href="https://auto-hire.ru/cars/perodua">Perodua</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/peugeot">Peugeot</a></li>
+                                <li><a href="https://auto-hire.ru/cars/pgo">PGO</a></li>
+                                <li><a href="https://auto-hire.ru/cars/piaggio">Piaggio</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/plymouth">Plymouth</a></li>
+                                <li><a href="https://auto-hire.ru/cars/pontiac">Pontiac</a></li>
+                                <li><a href="https://auto-hire.ru/cars/porsche">Porsche</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/premier">Premier</a></li>
+                                <li><a href="https://auto-hire.ru/cars/proton">Proton</a></li>
+                                <li><a href="https://auto-hire.ru/cars/puch">PUCH</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/puma">Puma</a></li>
+                                <li><a href="https://auto-hire.ru/cars/qoros">Qoros</a></li>
+                                <li><a href="https://auto-hire.ru/cars/qvale">Qvale</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/rambler">Rambler</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ravon">Ravon</a></li>
+                                <li><a href="https://auto-hire.ru/cars/reliant">Reliant</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/renaissance">Renaissance</a></li>
+                                <li><a href="https://auto-hire.ru/cars/renault">Renault</a></li>
+                                <li><a href="https://auto-hire.ru/cars/renault-samsung">Renault Samsung</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/rezvani">Rezvani</a></li>
+                                <li><a href="https://auto-hire.ru/cars/rimac">Rimac</a></li>
+                                <li><a href="https://auto-hire.ru/cars/rinspeed">Rinspeed</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/rolls-royce">Rolls-Royce</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ronart">Ronart</a></li>
+                                <li><a href="https://auto-hire.ru/cars/rover">Rover</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/saab">Saab</a></li>
+                                <li><a href="https://auto-hire.ru/cars/saipa">Saipa</a></li>
+                                <li><a href="https://auto-hire.ru/cars/saleen">Saleen</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/santana">Santana</a></li>
+                                <li><a href="https://auto-hire.ru/cars/saturn">Saturn</a></li>
+                                <li><a href="https://auto-hire.ru/cars/scion">Scion</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/seat">SEAT</a></li>
+                                <li><a href="https://auto-hire.ru/cars/shanghai-maple">Shanghai Maple</a></li>
+                                <li><a href="https://auto-hire.ru/cars/shuanghuan">ShuangHuan</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/simca">Simca</a></li>
+                                <li><a href="https://auto-hire.ru/cars/skoda">Skoda</a></li>
+                                <li><a href="https://auto-hire.ru/cars/smart">Smart</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/soueast">Soueast</a></li>
+                                <li><a href="https://auto-hire.ru/cars/spectre">Spectre</a></li>
+                                <li><a href="https://auto-hire.ru/cars/spyker">Spyker</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/ssangyong">SsangYong</a></li>
+                                <li><a href="https://auto-hire.ru/cars/steyr">Steyr</a></li>
+                                <li><a href="https://auto-hire.ru/cars/studebaker">Studebaker</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/subaru">Subaru</a></li>
+                                <li><a href="https://auto-hire.ru/cars/suzuki">Suzuki</a></li>
+                                <li><a href="https://auto-hire.ru/cars/talbot">Talbot</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/tata">TATA</a></li>
+                                <li><a href="https://auto-hire.ru/cars/tatra">Tatra</a></li>
+                                <li><a href="https://auto-hire.ru/cars/tazzari">Tazzari</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/tesla">Tesla</a></li>
+                                <li><a href="https://auto-hire.ru/cars/think">Think</a></li>
+                                <li><a href="https://auto-hire.ru/cars/tianma">Tianma</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/tianye">Tianye</a></li>
+                                <li><a href="https://auto-hire.ru/cars/tofas">Tofas</a></li>
+                                <li><a href="https://auto-hire.ru/cars/toyota">Toyota</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/trabant">Trabant</a></li>
+                                <li><a href="https://auto-hire.ru/cars/tramontana">Tramontana</a></li>
+                                <li><a href="https://auto-hire.ru/cars/triumph">Triumph</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/tvr">TVR</a></li>
+                                <li><a href="https://auto-hire.ru/cars/ultima">Ultima</a></li>
+                                <li><a href="https://auto-hire.ru/cars/vauxhall">Vauxhall</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/vector">Vector</a></li>
+                                <li><a href="https://auto-hire.ru/cars/venturi">Venturi</a></li>
+                                <li><a href="https://auto-hire.ru/cars/volkswagen">Volkswagen</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/volvo">Volvo</a></li>
+                                <li><a href="https://auto-hire.ru/cars/vortex">Vortex</a></li>
+                                <li><a href="https://auto-hire.ru/cars/w-motors">W Motors</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/wanderer">Wanderer</a></li>
+                                <li><a href="https://auto-hire.ru/cars/wartburg">Wartburg</a></li>
+                                <li><a href="https://auto-hire.ru/cars/westfield">Westfield</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/wiesmann">Wiesmann</a></li>
+                                <li><a href="https://auto-hire.ru/cars/willys">Willys</a></li>
+                                <li><a href="https://auto-hire.ru/cars/xin-kai">Xin Kai</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/zastava">Zastava</a></li>
+                                <li><a href="https://auto-hire.ru/cars/zenos">Zenos</a></li>
+                                <li><a href="https://auto-hire.ru/cars/zenvo">Zenvo</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/zibar">Zibar</a></li>
+                                <li><a href="https://auto-hire.ru/cars/zotye">Zotye</a></li>
+                                <li><a href="https://auto-hire.ru/cars/zx">ZX</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/avtokam">Автокам</a></li>
+                                <li><a href="https://auto-hire.ru/cars/gaz">ГАЗ</a></li>
+                                <li><a href="https://auto-hire.ru/cars/e-mobil">Ё-мобиль</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/zaz">ЗАЗ</a></li>
+                                <li><a href="https://auto-hire.ru/cars/zil">ЗИЛ</a></li>
+                                <li><a href="https://auto-hire.ru/cars/zis">ЗиС</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/izh">ИЖ</a></li>
+                                <li><a href="https://auto-hire.ru/cars/kanonir">Канонир</a></li>
+                                <li><a href="https://auto-hire.ru/cars/kombat">Комбат</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/luaz">ЛуАЗ</a></li>
+                                <li><a href="https://auto-hire.ru/cars/moskvich">Москвич</a></li>
+                                <li><a href="https://auto-hire.ru/cars/smz">СМЗ</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <ul class="list-unstyled">
+                                <li><a href="https://auto-hire.ru/cars/tagaz">ТагАЗ</a></li>
+                                <li><a href="https://auto-hire.ru/cars/uaz">УАЗ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <div style="position: absolute; top: 70px; left: 15px;">
+    </div>
+</div>
+
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <div class="border-top pt-3">
+            <p>&copy; 2019 - Autohire</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
