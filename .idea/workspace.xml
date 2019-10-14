@@ -57,7 +57,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/admin/tickets/_item.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="425">
-              <caret line="25" column="22" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="25" selection-end-column="22" />
+              <caret line="25" column="22" selection-start-line="17" selection-start-column="16" selection-end-line="25" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -96,7 +96,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/admin/tickets/_user_item.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
-              <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+              <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -684,7 +684,7 @@
       <workItem from="1570794242089" duration="1341000" />
       <workItem from="1570982806190" duration="1063000" />
       <workItem from="1571034778744" duration="21160000" />
-      <workItem from="1571063627316" duration="7891000" />
+      <workItem from="1571063627316" duration="8080000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -697,7 +697,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7891000" />
+    <option name="totallyTimeSpent" value="8080000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -884,7 +884,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/admin/tickets/_user_item.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
-          <caret line="27" column="49" lean-forward="true" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
+          <caret line="27" column="49" selection-start-line="27" selection-start-column="49" selection-end-line="27" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -905,7 +905,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/admin/tickets/_item.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
-          <caret line="25" column="22" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="25" selection-end-column="22" />
+          <caret line="25" column="22" selection-start-line="17" selection-start-column="16" selection-end-line="25" selection-end-column="22" />
         </state>
       </provider>
     </entry>
