@@ -1,7 +1,9 @@
 @extends('admin.layouts.app', ['page' => 'users'])
-@section('btnBlock')
-    @include ('admin.users._nav_user', ['page' => 'create'])
-@stop
+
+
+@section('TitlePage')
+    @include('admin.layouts.partials.title_page', ['titlePage' => null, 'subTitlePage' => null])
+@endsection
 
 @section('content')
 

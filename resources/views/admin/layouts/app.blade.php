@@ -56,10 +56,9 @@ desired effect
         <!-- Content Header (Page header) -->
         <section class="content-header clearfix">
             @yield('btnBlock')
-            <h1>
-                @yield('TitlePage')
-                <small>@yield('SubTitlePage')</small>
-            </h1>
+            @section('TitlePage')
+               @include('admin.layouts.partials.title_page', ['titlePage' => null, 'subTitlePage' => null])
+            @show
 
             @section('breadcrumbs', Breadcrumbs::render())
             @yield('breadcrumbs')

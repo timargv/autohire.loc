@@ -17,9 +17,12 @@ return [
     'Reject'            =>  'Отклонить',
     'Moderate'          =>  'Отклонить',
     'Accept'            =>  'Принять',
+    'Close'             =>  'Закрыть',
+    'Reopen'            =>  'Переоткртыть',
     'AddPhotos'         =>  'Добваить фото',
     'Activate'          =>  'Активировать',
     'RentedOut'         =>  'Снято с аренды',
     'RentedOuted'       =>  'Снять с аренды',
     'VisibilityPhone'   =>  'Показать номер',
+    'SendMessage'       =>  'Отправить сообщение',
 ];

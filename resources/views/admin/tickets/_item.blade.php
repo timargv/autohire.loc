@@ -1,7 +1,7 @@
 <table class="table table-borderless table-responsive-sm bg-white">
     <thead class="thead-light">
     <tr>
-        <th>ID</th>
+        <th width="65px">ID</th>
         <th>Тема</th>
         <th width="150px">{{__('fillable.User')}}</th>
         <th>{{__('fillable.Status')}}</th>

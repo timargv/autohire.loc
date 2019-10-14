@@ -29,7 +29,7 @@
                             <span class="badge bg-danger text-white">{{ $statuses[$ticket->status] }}</span>
                         @endif
                         @if ($ticket->isApproved())
-                            <span class="badge bg-light-blue">{{ $$statuses[$ticket->status] }}</span>
+                            <span class="badge bg-light-blue">{{ $statuses[$ticket->status] }}</span>
                         @endif
                     </td>
                     <td>

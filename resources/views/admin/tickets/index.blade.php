@@ -14,7 +14,7 @@
         </div>
         <!-- /.box-header -->
         <div class="box-body table-responsive no-padding">
-            @include('admin.tickets._item', ['tickets' => $tickets])
+            @include('admin.tickets._item', ['tickets' => $tickets, 'statuses' => $statuses])
         </div>
         <!-- /.box-body -->
 

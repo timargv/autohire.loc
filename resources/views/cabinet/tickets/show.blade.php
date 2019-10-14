@@ -3,15 +3,24 @@
 @section('content')
     @include('cabinet.tickets._nav', ['page' => 'tickets'])
 
-    <div class="pt-3 pb-3">
-        <h4 class="text-muted">#{{ $ticket->subject }}</h4>
+    <div class="pt-3 pb-3  w-md-75 w-100 clearfix">
+        <h4 class="text-muted w-75 float-left">#{{ $ticket->subject }}</h4>
+        <div class="float-left w-25">
+            @if ($ticket->canBeRemoved())
+                <form method="POST" action="{{ route('cabinet.tickets.destroy', $ticket) }}">
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-light btn-sm float-right"><i class="fal fa-trash-alt pr-1"></i> {{ __('button.Delete') }}</button>
+                </form>
+            @endif
+        </div>
     </div>
     <div class="card border-0 w-md-75 w-100">
         <div class="card-body">
             {!! nl2br(e($ticket->content)) !!}
         </div>
         <div class="card-footer border-0 text-black-50 text-right">
-            {{ $ticket->created_at }}, {{ $ticket->user->name }}
+            {{ $ticket->created_at->diffForHumans() }}, {{ $ticket->user->name }}
         </div>
     </div>
 
@@ -41,7 +50,7 @@
             </div>
 
             <div class="form-group mb-0">
-                <button type="submit" class="btn btn-primary">Send Message</button>
+                <button type="submit" class="btn bg-siran text-white">{{ __('button.SendMessage') }}</button>
             </div>
         </form>
     @endif
