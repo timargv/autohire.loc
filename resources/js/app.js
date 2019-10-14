@@ -35,6 +35,7 @@ $(document).on('click', '.phone-button', function () {
         console.error(error)
     });
 
+//    Phone btn visible
 }).on('click', '.btn-phone', function () {
     var button = $('.btn-phone');
     var myModal =  $('#myModal');
@@ -164,3 +165,8 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function () {
+    $('.summernote').summernote({
+        height: 200
+    });
+});

@@ -21,5 +21,5 @@ return [
     'Activate'          =>  'Активировать',
     'RentedOut'         =>  'Снято с аренды',
     'RentedOuted'       =>  'Снять с аренды',
-    'VisibilityPhone'   =>  'Показать номер'
+    'VisibilityPhone'   =>  'Показать номер',
 ];

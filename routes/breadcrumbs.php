@@ -5,6 +5,7 @@ use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use App\Entity\Tenant\BlackList;
+use App\Entity\Ticket\Ticket;
 use App\Entity\User\Group;
 use App\Http\Router\AdvertsPath;
 use App\User;
@@ -64,7 +65,7 @@ Breadcrumbs::register('cars.adverts.show', function (Crumbs $crumbs, Advert $car
         $carBrandPath = $carModel;
     }
     $crumbs->parent('cars.adverts.brand', adverts_path($carBrandPath));
-    $crumbs->push('Актуально', route('cars.adverts.show', $carAdvert));
+    $crumbs->push('Автомобиль - '. $carAdvert->id, route('cars.adverts.show', $carAdvert));
 });
 
 // Car Brand
@@ -189,6 +190,8 @@ Breadcrumbs::register('cabinet.tickets.show', function (Crumbs $crumbs, Ticket $
 
 
 
+
+
 // ======= Admin
 
 Breadcrumbs::register('admin.home', function (Crumbs $crumbs) {
@@ -310,25 +313,6 @@ Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crum
 });
 
 
-
-
-//Breadcrumbs::register('admin.categories.car.brands.model.create', function (Crumbs $crumbs, CarBrand $carBrand) {
-//    if ($parent = $carBrand->parent) {
-//        $crumbs->parent('admin.categories.car.brands.show', $parent);
-//    } else {
-//        $crumbs->parent('admin.categories.car.brands.show', $carBrand->id);
-//    }
-//    $crumbs->push(__('fillable.Create') .' '. __('fillable.CarModels'), route('admin.categories.car.brands.model.create', $carBrand));
-//});
-
-
-//Breadcrumbs::register('admin.categories.car.brands.show', function (Crumbs $crumbs, CarBrand $car_brand) {
-//
-//    $crumbs->push('ss'  );
-//});
-//
-
-
 // == Admin Category Car Years
 Breadcrumbs::register('admin.categories.car.years.index', function (Crumbs $crumbs) {
     $crumbs->parent('admin.categories.home');
@@ -371,6 +355,24 @@ Breadcrumbs::register('admin.cars.adverts.index', function (Crumbs $crumbs) {
 });
 
 Breadcrumbs::register('admin.cars.adverts.reject', function (Crumbs $crumbs, Advert $carAdvert) {
-    $crumbs->parent('admin.home');
-    $crumbs->push($carAdvert->carBrand->name, route('admin.cars.adverts.reject', $carAdvert));
+    $crumbs->parent('cars.adverts.show', $carAdvert);
+    $crumbs->push(__('title.Reason'), route('admin.cars.adverts.reject', $carAdvert));
 });
+
+
+// == Admin Tickets
+Breadcrumbs::register('admin.tickets.index', function (Crumbs $crumbs) {
+    $crumbs->parent('admin.home');
+    $crumbs->push('Tickets', route('admin.tickets.index'));
+});
+
+Breadcrumbs::register('admin.tickets.show', function (Crumbs $crumbs, Ticket $ticket) {
+    $crumbs->parent('admin.tickets.index');
+    $crumbs->push($ticket->subject, route('admin.tickets.show', $ticket));
+});
+
+Breadcrumbs::register('admin.tickets.edit', function (Crumbs $crumbs, Ticket $ticket) {
+    $crumbs->parent('admin.tickets.show', $ticket);
+    $crumbs->push('Edit', route('admin.tickets.edit', $ticket));
+});
+

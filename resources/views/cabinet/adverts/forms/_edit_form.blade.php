@@ -68,7 +68,7 @@
                         <select id="car_brand" class="form-control select2 w-100 {{ $errors->has('car_brand') ? ' is-invalid' : '' }}" name="car_brand">
                             <option value="">&mdash; Выберите марку автомобиля</option>
                             @foreach ($car_brands as $car_brand)
-                                <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand', $carAdvert->carBrand->id) ? ' selected' : '' }}>
+                                <option value="{{ $car_brand->id }}" {{ $car_brand->id == old('car_brand', $carAdvert->carBrand->id) ? ' selected' : '' }}>
                                     @for ($i = 0; $i < $car_brand->depth; $i++) &mdash; @endfor
                                     {{ $car_brand->name }}
                                 </option>
@@ -87,7 +87,7 @@
                             <option value="">&mdash; Выберите {{ __('fillable.CarModel') }}</option>
                             @if ($carAdvert->carBrand->children)
                                 @foreach ($carAdvert->carBrand->children as $car_model)
-                                    <option value="{{ $car_model->id }}"{{ $car_model->id == old('car_model', $carAdvert->carModel ? $carAdvert->carModel->id : null) ? ' selected' : '' }}>
+                                    <option value="{{ $car_model->id }}" {{ $car_model->id == old('car_model', $carAdvert->carModel ? $carAdvert->carModel->id : null) ? ' selected' : '' }}>
                                         @for ($i = 0; $i < $car_model->depth; $i++) &mdash; @endfor
                                         {{ $car_model->name }}
                                     </option>
@@ -126,7 +126,7 @@
                         <select id="car_year" class="form-control select2 w-100 {{ $errors->has('car_year') ? ' is-invalid' : '' }}" name="car_year">
                             <option value="">&mdash; {{ trans_choice('fillable.CarYears', 1) }} автомобиля</option>
                             @foreach ($car_years as $car_year)
-                                <option value="{{ $car_year->id }}"{{ $car_year->id == old('car_year', $carAdvert->carYear->id) ? ' selected' : '' }}>
+                                <option value="{{ $car_year->id }}" {{ $car_year->id == old('car_year', $carAdvert->carYear->id) ? ' selected' : '' }}>
                                     @for ($i = 0; $i < $car_year->depth; $i++) &mdash; @endfor
                                     {{ $car_year->name }}
                                 </option>
@@ -142,7 +142,7 @@
                         <label for="type_rental" class="col-form-label">{{ __('fillable.TypeRental') }}</label>
                         <select id="type_rental" class="form-control select2 {{ $errors->has('type_rental') ? ' is-invalid' : '' }}" name="type_rental">
                             @foreach ($types as $type => $label)
-                                <option value="{{ $type }}"{{ $type == old('type_rental', $carAdvert->type_rental) ? ' selected' : '' }}>{{ $label }}</option>
+                                <option value="{{ $type }}" {{ $type == old('type_rental', $carAdvert->type_rental) ? ' selected' : '' }}>{{ $label }}</option>
                             @endforeach;
                         </select>
                         @if ($errors->has('type_rental'))
@@ -171,7 +171,7 @@
                                     <select id="attribute_{{ $attribute->id }}" class="form-control select2 select2-search--hide {{ $errors->has('attributes.' . $attribute->id) ? ' is-invalid' : '' }}" name="attributes[{{ $attribute->id }}]">
                                         <option value=""> &mdash; </option>
                                         @foreach ($attribute->variants as $variant)
-                                            <option value="{{ $variant }}"{{ $variant == old('attributes.' . $attribute->id, $carAdvert->getValue($attribute->id)) ? ' selected' : '' }}>
+                                            <option value="{{ $variant }}" {{ $variant == old('attributes.' . $attribute->id, $carAdvert->getValue($attribute->id)) ? ' selected' : '' }}>
                                                 {{ $variant }}
                                             </option>
                                         @endforeach
@@ -222,7 +222,7 @@
 
             <div class="form-group">
                 <label for="description" class="col-form-label">{{ __('fillable.Description') }}</label>
-                <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }}" name="description" rows="5" required>{{ old('description', $carAdvert->description) }}</textarea>
+                <textarea id="description" class="form-control{{ $errors->has('description') ? ' is-invalid' : '' }} summernote" name="description" rows="5" required>{{ old('description', $carAdvert->description) }}</textarea>
                 @if ($errors->has('description'))
                     <span class="invalid-feedback"><strong>{{ $errors->first('description') }}</strong></span>
                 @endif

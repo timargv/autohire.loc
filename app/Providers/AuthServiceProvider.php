@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Entity\Cars\Advert\Advert;
 use App\Entity\Tenant\BlackList;
 use App\Entity\Tenant\BlackListComment;
+use App\Entity\Ticket\Ticket;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -113,6 +114,13 @@ class AuthServiceProvider extends ServiceProvider
         */
         Gate::define('manage-own-advert', function (User $user, Advert $carAdvert) {
             return $carAdvert->author_id === $user->id;
+        });
+
+        /*
+         *  Доступ к своим тикетам
+        */
+        Gate::define('manage-own-ticket', function (User $user, Ticket $ticket) {
+            return $ticket->user_id === $user->id;
         });
 
     }

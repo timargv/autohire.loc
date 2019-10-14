@@ -58,8 +58,8 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
         Route::get('favorites', 'FavoriteController@index')->name('favorites.index');
         Route::delete('favorites/{carAdvert}', 'FavoriteController@remove')->name('favorites.remove');
 //
-//        Route::resource('tickets', 'TicketController')->only(['index', 'show', 'create', 'store', 'destroy']);
-//        Route::post('tickets/{ticket}/message', 'TicketController@message')->name('tickets.message');
+        Route::resource('tickets', 'TicketController')->only(['index', 'show', 'create', 'store', 'destroy']);
+        Route::post('tickets/{ticket}/message', 'TicketController@message')->name('tickets.message');
 
         Route::group(['prefix' => 'my/cars', 'as' => 'adverts.', 'namespace' => 'Adverts',], function () {
             Route::get('/', 'AdvertController@index')->name('index');
@@ -82,16 +82,6 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::get('/{carAdvert}/photo/{photo}/main', 'AdvertController@mainPhoto')->name('main.photo');
             Route::delete('/{carAdvert}/{photo}/destroy', 'AdvertController@destroyPhoto')->name('delete.photo');
 
-
-//            Route::get('/{advert}/edit', 'ManageController@editForm')->name('edit');
-//            Route::put('/{advert}/edit', 'ManageController@edit');
-//            Route::get('/{advert}/photos', 'ManageController@photosForm')->name('photos');
-//            Route::post('/{advert}/photos', 'ManageController@photos');
-//            Route::get('/{advert}/attributes', 'ManageController@attributesForm')->name('attributes');
-//            Route::post('/{advert}/attributes', 'ManageController@attributes');
-//            Route::post('/{advert}/send', 'ManageController@send')->name('send');
-//            Route::post('/{advert}/close', 'ManageController@close')->name('close');
-//            Route::delete('/{advert}/destroy', 'ManageController@destroy')->name('destroy');
         });
 
 //        Route::group([
@@ -120,9 +110,7 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
 );
 
 
-
 // ---------- ADMIN
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'can:admin-panel'] ], function () {
 
 //        Route::post('/ajax/upload/image', 'UploadController@image')->name('ajax.upload.image');
@@ -226,6 +214,20 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
                 Route::post('/{carAdvert}/reject', 'AdvertController@reject');
                 Route::delete('/{carAdvert}/destroy', 'AdvertController@destroy')->name('destroy');
 
+        });
+
+
+        // TICKET
+        Route::group(['prefix' => 'tickets', 'as' => 'tickets.'], function () {
+            Route::get('/', 'TicketController@index')->name('index');
+            Route::get('/{ticket}/show', 'TicketController@show')->name('show');
+            Route::get('/{ticket}/edit', 'TicketController@editForm')->name('edit');
+            Route::put('/{ticket}/edit', 'TicketController@edit');
+            Route::post('{ticket}/message', 'TicketController@message')->name('message');
+            Route::post('/{ticket}/close', 'TicketController@close')->name('close');
+            Route::post('/{ticket}/approve', 'TicketController@approve')->name('approve');
+            Route::post('/{ticket}/reopen', 'TicketController@reopen')->name('reopen');
+            Route::delete('/{ticket}/destroy', 'TicketController@destroy')->name('destroy');
         });
 
     }

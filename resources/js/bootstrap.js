@@ -14,6 +14,7 @@ try {
     require('select2');
     require('inputmask');
     require('readmore-js');
+    require('summernote/dist/summernote-bs4.min');
     window.AutoNumeric = require('autonumeric/dist/autoNumeric.min');
     require('@fancyapps/fancybox/dist/jquery.fancybox');
 } catch (e) {}

@@ -56,6 +56,7 @@
         "readmore-js": "^2.2.1",
         "select2": "^4.0.3",
         "slimscroll": "^0.9.1",
+        "summernote": "^0.8.12",
         "toastr": "^2.1.4"
     }
 }
