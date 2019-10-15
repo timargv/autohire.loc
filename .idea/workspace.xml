@@ -2,18 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Adverts/PhotosRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Adverts/PhotosRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Cabinet/UserAvatarRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Cabinet/UserAvatarRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListFileRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListFileRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListPhotoRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListPhotoRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/ru/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/ru/validation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +31,17 @@
     <favorites_list name="autohire.loc" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="595">
+              <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -113,11 +112,11 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Adverts/PhotosRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Cabinet/UserAvatarRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListPhotoRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListFileRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListRequest.php" />
+        <option value="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" />
       </list>
     </option>
   </component>
@@ -695,7 +694,7 @@
       <workItem from="1570982806190" duration="1063000" />
       <workItem from="1571034778744" duration="21160000" />
       <workItem from="1571063627316" duration="8080000" />
-      <workItem from="1571124819137" duration="21148000" />
+      <workItem from="1571124819137" duration="21312000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -708,7 +707,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29228000" />
+    <option name="totallyTimeSpent" value="29392000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -721,6 +720,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -1087,13 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" selection-start-line="38" selection-end-line="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/UseCases/Profile/ProfileService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -1161,6 +1154,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
         </state>
       </provider>
     </entry>

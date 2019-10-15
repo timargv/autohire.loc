@@ -33,7 +33,7 @@
                             <span class="invalid-feedback"><strong>{{ $errors->first('files') }}</strong></span>
                         @endif
                     </div>
-                    <span class="pt-4 small text-dark ">Не больше 5мб, jpg, jpeg, png.</span>
+                    <span class="pt-4 small text-danger ">Не больше 5мб, jpg, jpeg, png.</span>
                 </div>
 
                 <div class="form-group">
