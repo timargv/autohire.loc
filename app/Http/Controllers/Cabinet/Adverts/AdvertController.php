@@ -130,7 +130,6 @@ class AdvertController extends Controller
     public function photos (PhotosRequest $request, Advert $carAdvert)
     {
         $this->checkAccess($carAdvert);
-        dd($request['files']);
         try {
             $this->service->addPhotos($carAdvert->id, $request);
         } catch (\DomainException $e) {

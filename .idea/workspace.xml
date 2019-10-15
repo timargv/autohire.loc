@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,11 +32,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="595">
               <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="561">
+              <caret line="132" selection-start-line="132" selection-end-line="132" />
             </state>
           </provider>
         </entry>
@@ -106,7 +115,6 @@
         <option value="$PROJECT_DIR$/resources/views/cabinet/adverts/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/car-adverts/show.blade.php" />
         <option value="$PROJECT_DIR$/app/UseCases/CarAdverts/PhotoService.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" />
         <option value="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" />
         <option value="$PROJECT_DIR$/resources/lang/ru/validation.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/partials/flash.blade.php" />
@@ -117,6 +125,7 @@
         <option value="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListFileRequest.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" />
       </list>
     </option>
   </component>
@@ -694,7 +703,7 @@
       <workItem from="1570982806190" duration="1063000" />
       <workItem from="1571034778744" duration="21160000" />
       <workItem from="1571063627316" duration="8080000" />
-      <workItem from="1571124819137" duration="21312000" />
+      <workItem from="1571124819137" duration="21430000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -707,7 +716,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29392000" />
+    <option name="totallyTimeSpent" value="29510000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1011,13 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="132" column="30" selection-start-line="132" selection-start-column="30" selection-end-line="132" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
@@ -1161,6 +1163,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="35" column="55" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="132" selection-start-line="132" selection-end-line="132" />
         </state>
       </provider>
     </entry>
