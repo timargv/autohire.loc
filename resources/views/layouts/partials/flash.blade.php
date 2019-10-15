@@ -28,3 +28,12 @@
     </div>
 @endif
 
+@if (count($errors) > 0)
+    @foreach ($errors->all() as $error)
+        <div class="toast border-0 shadow-sm" role="alert" aria-live="polite" aria-atomic="true" data-delay="10000">
+            <div class="toast-body alert-danger"  role="alert" aria-live="assertive" aria-atomic="true">
+                {{ $error }}
+            </div>
+        </div>
+    @endforeach
+@endif

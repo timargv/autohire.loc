@@ -14,7 +14,7 @@ class BlackListFileRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'files.*' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx',
+            'files.*' => 'required|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx|max:5120',
             'is_visible' => 'boolean',
         ];
     }

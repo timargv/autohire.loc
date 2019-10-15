@@ -6,25 +6,27 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class PhotosRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
+
+    public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
+
+    public function rules(): array
     {
         return [
-            'files.*' => 'required|image|mimes:jpg,jpeg,png',
+            'files.*' => 'required|image|mimes:jpg,jpeg,png|max:5120',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'files.*.required' => 'Фотография обязательна.',
+            'files.*.mimes'  => 'Фотография должен быть формата: :values.',
+            'files.*.image'  => 'Файл должно быть изображением.',
+            'files.*.max'  => 'Фотография не может быть больше чем 5120 кб или 5 мб.',
         ];
     }
 }

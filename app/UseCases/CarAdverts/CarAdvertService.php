@@ -19,7 +19,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use function PHPSTORM_META\type;
+
 
 class CarAdvertService
 {
@@ -159,6 +159,7 @@ class CarAdvertService
 
         $carAdvert = $this->getCarAdvert($id);
 
+
         DB::transaction(function () use ($request, $carAdvert) {
             $path = $this->pathPhoto()['original'];
             $thumbPath = $this->pathPhoto()['thumbnail'];
@@ -212,6 +213,7 @@ class CarAdvertService
             $carAdvert->update();
 
         });
+
     }
 
     public function makePhotoMain ($carAdvertId, $photoId) : void
@@ -228,7 +230,6 @@ class CarAdvertService
     public function deletePhotos ($carAdvertId)
     {
         $carAdvert = $this->getCarAdvert($carAdvertId);
-
         foreach ($carAdvert->photos as $carPhoto) {
             $carPhoto = $this->getCarPhoto($carPhoto->id);
             Storage::disk('public')->delete([
@@ -242,7 +243,6 @@ class CarAdvertService
             ]);
             $carPhoto->delete();
         }
-
     }
 
     /*

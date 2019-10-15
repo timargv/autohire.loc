@@ -46,10 +46,10 @@
                                             data-toggle="tooltip" data-placement="top" title="Добавить в закладки" style="border-radius: 0px"><i class="fal fa-heart "></i></button>
                                 </form>
                             @endif
-                                <button type="submit" class="btn btn-sm bg-transparent border-top border-bottom  "
+                                <button type="submit" class="btn btn-sm bg-transparent border-top border-bottom d-none"
                                         data-toggle="tooltip" data-placement="top" title="Оставить заметку" style="border-radius: 0px"><i class="far fa-edit text-black-50"></i></button>
 
-                                <div class="btn-group" role="group">
+                                <div class="btn-group d-none" role="group">
                                     <button id="btnGroupDrop1" class="btn btn-sm bg-transparent border border-bottom  rounded-right"
                                             type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
                                             data-toggle="tooltip" data-placement="top" title="Пожаловаться" style="border-radius: 0px"><i class="fas fa-ban  text-black-50"></i></button>

@@ -14,7 +14,7 @@ class BlackListPhotoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'photo' => 'required|image|mimes:jpg,jpeg,png',
+            'photo' => 'required|image|mimes:jpg,jpeg,png|max:5120',
         ];
     }
 }
