@@ -5,7 +5,7 @@
             {!! nl2br(e($message->message)) !!}
         </div>
         <div class="card-header border-0 text-right text-muted small">
-            {{ $message->created_at->diffForHumans() }} <span class="pl-3">{{ $message->user->name }}</span>
+            {{ $message->created_at->diffForHumans() }} <span class="pl-3">@if($message->user->isAdmin() || $message->user->isModerator()) Отдел технической поддержки @else {{ $message->user->name }}  @endif</span>
         </div>
     </div>
 @endforeach
