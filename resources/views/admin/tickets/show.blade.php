@@ -56,11 +56,11 @@
                                 @if ($ticket->isOpen())
                                     <span class="badge bg-warning">{{ $statuses[$ticket->status] }}</span>
                                 @endif
+                                @if ($ticket->isApproved())
+                                    <span class="badge bg-success">{{ $statuses[$ticket->status] }}</span>
+                                @endif
                                 @if ($ticket->isClosed())
                                     <span class="badge bg-danger">{{ $statuses[$ticket->status] }}</span>
-                                @endif
-                                @if ($ticket->isApproved())
-                                    <span class="badge bg-light-blue">{{ $statuses[$ticket->status] }}</span>
                                 @endif
 
                             </td>
@@ -93,7 +93,7 @@
                                 <span class="badge bg-success">{{ $statuses[$status->status] }}</span>
                             @endif
                             @if ($status->isClosed())
-                                <span class="badge bg-light-blue">{{ $statuses[$status->status] }}</span>
+                                <span class="badge bg-danger">{{ $statuses[$status->status] }}</span>
                             @endif
                         </td>
                     </tr>

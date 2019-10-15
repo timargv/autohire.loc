@@ -4,6 +4,10 @@
     @include('admin.car-adverts.adverts._form_search_header')
 @stop
 
+@section('TitlePage')
+    @include('admin.layouts.partials.title_page', ['titlePage' => __('fillable.All') .' '. __('fillable.Adverts'), 'subTitlePage' => null])
+@endsection
+
 @section('content')
     <div class="box box-solid">
         <div class="box-header with-border">

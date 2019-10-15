@@ -8,6 +8,7 @@ use App\Entity\Ticket\Ticket;
 use App\Http\Requests\Ticket\CreateRequest;
 use App\Http\Requests\Ticket\EditRequest;
 use App\Http\Requests\Ticket\MessageRequest;
+use App\User;
 
 class TicketService
 {
@@ -28,6 +29,12 @@ class TicketService
     public function message(int $userId, int $id, MessageRequest $request): void
     {
         $ticket = $this->getTicket($id);
+        $user   = $this->getUser($userId);
+
+        if ($user->isAdmin() && !$ticket->isApproved()) {
+            $this->approve($userId, $ticket->id);
+        }
+
         $ticket->addMessage($userId, $request['message']);
     }
 
@@ -72,6 +79,11 @@ class TicketService
     private function getTicket($id): Ticket
     {
         return Ticket::findOrFail($id);
+    }
+
+    private function getUser($id): User
+    {
+        return User::findOrFail($id);
     }
 
 }

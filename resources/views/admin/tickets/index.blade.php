@@ -1,5 +1,7 @@
 @extends('admin.layouts.app', ['page' => 'tickets'])
-
+@section('TitlePage')
+    @include('admin.layouts.partials.title_page', ['titlePage' => __('fillable.AllTickets'), 'subTitlePage' => null])
+@endsection
 @section('content')
 
     <div class="box box-solid">

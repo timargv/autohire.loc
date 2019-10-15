@@ -1,4 +1,5 @@
-window._ = require('lodash');
+// window._ = require('lodash');
+window.Popper = require('popper.js').default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -7,16 +8,15 @@ window._ = require('lodash');
  */
 
 try {
-    window.Popper = require('popper.js').default;
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
     require('select2');
-    require('inputmask');
-    require('readmore-js');
-    require('summernote/dist/summernote-bs4.min');
+    // require('inputmask');
+    require('readmore-js'); // Показать больше
+    require('summernote/dist/summernote-bs4.min'); // Визуальный редактор
     window.AutoNumeric = require('autonumeric/dist/autoNumeric.min');
-    require('@fancyapps/fancybox/dist/jquery.fancybox');
+    require('@fancyapps/fancybox/dist/jquery.fancybox'); // Картинки в сплываюшем окне
 } catch (e) {}
 
 /**

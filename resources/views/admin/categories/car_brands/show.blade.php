@@ -4,11 +4,14 @@
 @stop
 
 @if ($carBrand->depthCarBrand($carBrand->id)->depth == 0)
-    @section('TitlePage', trans_choice('fillable.CarBrand', 1) . ' ' . $carBrand->name)
+    @section('TitlePage')
+        @include('admin.layouts.partials.title_page', ['titlePage' => trans_choice('fillable.CarBrand', 1) . ' ' . $carBrand->name, 'subTitlePage' => null])
+    @endsection
 @else
-    @section('TitlePage', $carBrand->depthCarBrand($carBrand->id)->depth == 1 ?  trans_choice('fillable.CarModel', 1) : __('fillable.CarSeries') )
+    @section('TitlePage')
+        @include('admin.layouts.partials.title_page', ['titlePage' => $carBrand->depthCarBrand($carBrand->id)->depth == 1 ?  trans_choice('fillable.CarModel', 1) : __('fillable.CarSeries'), 'subTitlePage' => null])
+    @endsection
 @endif
-
 
 @section('content')
 

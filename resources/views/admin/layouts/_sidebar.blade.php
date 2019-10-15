@@ -56,7 +56,7 @@
 
             <li class="header">Другое</li>
             <!-- Optionally, you can add icons to the links -->
-            <li class="{{ $page === 'tickets' ? 'active' : '' }}"><a href="{{ route('admin.tickets.index') }}"><i class="fa fa-link"></i> <span>{{ __('fillable.Tickets') }}</span></a></li>
+            <li class="{{ $page === 'tickets' ? 'active' : '' }}"><a href="{{ route('admin.tickets.index') }}"><i class="far fa-ticket mr-3"></i> <span>{{ __('fillable.Tickets') }}</span></a></li>
 {{--            <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>--}}
 {{--            <li class="treeview">--}}
 {{--                <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>--}}

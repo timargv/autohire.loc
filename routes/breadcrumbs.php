@@ -168,7 +168,7 @@ Breadcrumbs::register('cabinet.black.list.tenants.show', function (Crumbs $crumb
 
 Breadcrumbs::register('cabinet.favorites.index', function (Crumbs $crumbs) {
     $crumbs->parent('cabinet.home');
-    $crumbs->push(__('fillable.Favorites'), route('cabinet.favorites.index'));
+    $crumbs->push(trans_choice('fillable.Favorites', 2), route('cabinet.favorites.index'));
 });
 
 // Cabinet Tickets

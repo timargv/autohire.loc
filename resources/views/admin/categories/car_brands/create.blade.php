@@ -5,9 +5,13 @@
 @stop
 
 @if (!empty($carBrand))
-    @section('TitlePage', $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. __('fillable.CarSeries') : __('button.Add') .' '. __('fillable.CarModel') )
+    @section('TitlePage')
+        @include('admin.layouts.partials.title_page', ['titlePage' =>  $carBrand->depthCarBrand($carBrand->id)->depth == 1 ? __('button.Add') .' '. __('fillable.CarSeries') : __('button.Add') .' '. __('fillable.CarModel'), 'subTitlePage' => null])
+    @endsection
 @else
-    @section('TitlePage', __('button.Add') .' '. trans_choice('fillable.CarBrand', 10) )
+    @section('TitlePage')
+        @include('admin.layouts.partials.title_page', ['titlePage' =>  __('button.Add') .' '. trans_choice('fillable.CarBrand', 10), 'subTitlePage' => null])
+    @endsection
 @endif
 
 @section('content')

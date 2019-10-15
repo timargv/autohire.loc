@@ -5,7 +5,7 @@
             <tr>
                 <th colspan="5">
                     <div class="row">
-                        <div class="col-6">{{ trans_choice('title.favorite', 1) }} <span class="font-weight-light">&mdash; {{ count($car_adverts) }}</span></div>
+                        <div class="col-6">{{ trans_choice('fillable.Favorites', 2) }} <span class="font-weight-light">&mdash; {{ count($car_adverts) }}</span></div>
                         <div class="col-6">
                         </div>
                     </div>

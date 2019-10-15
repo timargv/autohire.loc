@@ -6,6 +6,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * @property int $id
@@ -70,7 +71,7 @@ class Ticket extends Model
     public function approve(int $userId): void
     {
         if ($this->isApproved()) {
-            throw new \DomainException('Ticket is already approved.');
+            throw new \DomainException('Тикет уже одобрен.');
         }
         $this->setStatus(Status::APPROVED, $userId);
     }
@@ -79,7 +80,7 @@ class Ticket extends Model
     public function close(int $userId): void
     {
         if ($this->isClosed()) {
-            throw new \DomainException('Ticket is already closed.');
+            throw new \DomainException('Тикет уже закрыт.');
         }
         $this->setStatus(Status::CLOSED, $userId);
     }
@@ -88,7 +89,7 @@ class Ticket extends Model
     public function reopen(int $userId): void
     {
         if (!$this->isClosed()) {
-            throw new \DomainException('Ticket is not closed.');
+            throw new \DomainException('Тикет не закрыт.');
         }
         $this->setStatus(Status::APPROVED, $userId);
     }

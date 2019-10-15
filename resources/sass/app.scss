@@ -127,6 +127,13 @@ a {
 .include_cabinet_menu .nav-link {
     color: #4f4f4fad;
 }
+.cabinet_nav {
+    -ms-overflow-style: none;  // Internet Explorer 10+
+    scrollbar-width: none;  // Firefox
+}
+.cabinet_nav::-webkit-scrollbar {
+    display: none;  // Safari and Chrome
+}
 .nav.cabinet_nav .nav-link.active {
 	background: $ddd;
 	color: $silver-black;

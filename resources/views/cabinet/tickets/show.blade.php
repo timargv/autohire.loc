@@ -24,36 +24,25 @@
         </div>
     </div>
 
-    <div class="text-muted text-center my-3 my-md-5 h5 font-weight-normal">
-        <div class="d-flex flex-row">
-            <div class="flex-fill d-flex align-content-center flex-wrap">
-                <div class="w-100 border align-self-center"></div>
-            </div>
-            <div class="px-3">Все сообщения</div>
-            <div class="flex-fill d-flex align-content-center flex-wrap">
-                <div class="w-100 border align-self-center"></div>
+    <div class="w-md-75 w-100">
+        <div class="text-muted text-center my-3 my-md-5 h5 font-weight-normal">
+            <div class="d-flex flex-row">
+                <div class="flex-fill d-flex align-content-center flex-wrap">
+                    <div class="w-100 border align-self-center"></div>
+                </div>
+                <div class="px-3">Все сообщения</div>
+                <div class="flex-fill d-flex align-content-center flex-wrap">
+                    <div class="w-100 border align-self-center"></div>
+                </div>
             </div>
         </div>
+
+        @include('.cabinet.tickets.messages._item', ['messages' => $ticket->messages() ])
+
+        @if ($ticket->allowsMessages())
+            @include('.cabinet.tickets.messages._create', ['ticket' => $ticket])
+        @endif
     </div>
-
-    @include('.cabinet.tickets.messages._item', ['messages' => $ticket->messages() ])
-
-    @if ($ticket->allowsMessages())
-        <form method="POST" action="{{ route('cabinet.tickets.message', $ticket) }}">
-            @csrf
-
-            <div class="form-group">
-                <textarea class="form-control{{ $errors->has('message') ? ' is-invalid' : '' }}" name="message" rows="3" required>{{ old('message') }}</textarea>
-                @if ($errors->has('message'))
-                    <span class="invalid-feedback"><strong>{{ $errors->first('message') }}</strong></span>
-                @endif
-            </div>
-
-            <div class="form-group mb-0">
-                <button type="submit" class="btn bg-siran text-white">{{ __('button.SendMessage') }}</button>
-            </div>
-        </form>
-    @endif
 
 
 @endsection

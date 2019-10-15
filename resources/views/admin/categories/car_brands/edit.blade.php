@@ -2,9 +2,13 @@
 @include('admin.categories.car_brands._header_panel')
 
 @if ($carBrand->depthCarBrand($carBrand->id)->depth == 0)
-    @section('TitlePage', __('fillable.Edit') .' '.  trans_choice('fillable.CarBrand', 10) . ' ' . $carBrand->name)
+    @section('TitlePage')
+        @include('admin.layouts.partials.title_page', ['titlePage' =>  __('fillable.Edit') .' '.  trans_choice('fillable.CarBrand', 10) . ' ' . $carBrand->name, 'subTitlePage' => null])
+    @endsection
 @else
-    @section('TitlePage',  $carBrand->depthCarBrand($carBrand->id)->depth == 1 ?  __('fillable.Edit').' '. trans_choice('fillable.CarModel', 1).' '. $carBrand->name  : __('fillable.Edit') .' '. trans_choice('fillable.CarSeries', 10) .' '. $carBrand->name  )
+    @section('TitlePage')
+        @include('admin.layouts.partials.title_page', ['titlePage' =>  $carBrand->depthCarBrand($carBrand->id)->depth == 1 ?  __('fillable.Edit').' '. trans_choice('fillable.CarModel', 1).' '. $carBrand->name  : __('fillable.Edit') .' '. trans_choice('fillable.CarSeries', 10) .' '. $carBrand->name, 'subTitlePage' => null])
+    @endsection
 @endif
 
 
