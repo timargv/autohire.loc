@@ -31,6 +31,7 @@ class TicketController extends Controller
 
     public function show(Ticket $ticket)
     {
+        $this->checkAccess($ticket);
         return view('cabinet.tickets.show', compact('ticket'));
     }
 
