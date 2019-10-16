@@ -61,7 +61,9 @@
 
                         </div>
                     </div>
+
                     @include('car-adverts.user', ['user' => $carAdvert->author, 'carAdvert' => $carAdvert])
+
                     <div class="character-car px-0 px-md-3">
                         <table class="table table-responsive-sm table-borderless table-sm">
                             <tr>

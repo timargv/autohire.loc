@@ -20,7 +20,6 @@ Route::group(['prefix'=> 'cars', 'as' => 'cars.adverts.', 'namespace' => 'CarAdv
     Route::delete('/show/{carAdvert}/favorites', 'FavoriteController@remove');
 
     Route::get('/{adverts_path?}', 'AdvertController@index')->name('index')->where('adverts_path', '.+');
-
 });
 
 
@@ -83,6 +82,36 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::delete('/{carAdvert}/{photo}/destroy', 'AdvertController@destroyPhoto')->name('delete.photo');
 
         });
+
+        Route::group(['prefix' => 'dialogs', 'as' => 'dialogs.', 'namespace' => 'Adverts'], function () {
+//            Route::resource('/', 'DialogController')->only(['index', 'destroy']);
+
+            Route::get('/', 'AdvertController@dialogs')->name('index');
+            Route::get('/car/{carAdvert}/dialog/{dialog}/show', 'AdvertController@dialog')->name('show');
+
+            Route::get('/{carAdvert}/message', 'AdvertController@messageForm')->name('message.create');
+            Route::post('/{carAdvert}/dialog/{dialog}/message', 'AdvertController@message')->name('message.store');
+            Route::post('/{carAdvert}/dialog/message', 'AdvertController@message_client')->name('message_client.store');
+
+
+//            Route::post('/{carAdvert}/message', 'AdvertController@message')->name('message');
+//            Route::post('/{carAdvert}/message', 'Adverts\AdvertController@message_client')->name('message.client');
+
+
+//            Route::post('dialogs/{ticket}/message', 'DialogsController@message')->name('tickets.message');
+//
+//            Route::get('/', 'DialogsController@index')->name('index');
+//            Route::get('/{ticket}/show', 'TicketController@show')->name('show');
+//            Route::get('/{ticket}/edit', 'TicketController@editForm')->name('edit');
+//            Route::put('/{ticket}/edit', 'TicketController@edit');
+//            Route::post('{ticket}/message', 'TicketController@message')->name('message');
+//            Route::post('/{ticket}/close', 'TicketController@close')->name('close');
+//            Route::post('/{ticket}/approve', 'TicketController@approve')->name('approve');
+//            Route::post('/{ticket}/reopen', 'TicketController@reopen')->name('reopen');
+//            Route::delete('/{ticket}/destroy', 'TicketController@destroy')->name('destroy');
+        });
+
+
 
 //        Route::group([
 //            'prefix' => 'banners',

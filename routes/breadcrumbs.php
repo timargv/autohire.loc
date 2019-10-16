@@ -15,6 +15,21 @@ Breadcrumbs::register('home', function (Crumbs $crumbs) {
     $crumbs->push('Главная', route('home'));
 });
 
+Breadcrumbs::register('cabinet.dialogs.index', function (Crumbs $crumbs) {
+    $crumbs->push('Главная', route('home'));
+});
+
+Breadcrumbs::register('cabinet.dialogs.message.create', function (Crumbs $crumbs) {
+    $crumbs->push('Главная', route('home'));
+});
+
+Breadcrumbs::register('cabinet.dialogs.show', function (Crumbs $crumbs) {
+    $crumbs->push('Главная', route('home'));
+});
+
+
+
+
 Breadcrumbs::register('login', function (Crumbs $crumbs) {
     $crumbs->parent('home');
     $crumbs->push(__('auth.Login'), route('login'));

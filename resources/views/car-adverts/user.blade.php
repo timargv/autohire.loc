@@ -1,4 +1,3 @@
-
 <div class="mb-md-4 mb-3">
 <div class="p-0 rounded shadow-md overflow-hidden position-relative" style="z-index: 1">
     <div class="row">
@@ -38,15 +37,15 @@
         </div>
         <div class="col-12 align-content-stretch">
             <div class="d-flex h-100 text-center" style="background: #f7f7f7;">
-                <div class="btn-user-message-car-advert text-decoration-none flex-fill"
+                <a href="{{ route('cabinet.dialogs.message.create', $carAdvert) }}" class="btn-user-message-car-advert text-decoration-none flex-fill"
                      data-toggle="tooltip" data-placement="top" title="Написать сообщение">
-                     <div class="d-flex align-content-center flex-wrap px-3 py-2 h-100 text-center">
-                         <div class="m-auto ">
+                     <div class="d-flex align-content-center flex-wrap text-center">
+                         <div class="btn bg-transparent px-3 py-2 h-100 w-100">
                              <i class="fad fa-envelope pr-1 fa-1x"></i>
                              <span class=" my-auto ">Написать</span>
                          </div>
                      </div>
-                </div>
+                </a>
                 @if($user->phone)
                     <div class="btn-user-telephone-car-advert text-decoration-none phone-button flex-fill"
                          data-toggle="tooltip" data-placement="top" title="Показать телефон"

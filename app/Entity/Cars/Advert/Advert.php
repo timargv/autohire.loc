@@ -2,6 +2,7 @@
 
 namespace App\Entity\Cars\Advert;
 
+use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
@@ -168,6 +169,11 @@ class Advert extends Model
         return $this->belongsToMany(User::class, 'car_advert_favorites', 'car_advert_id', 'user_id');
     }
 
+    public function dialogs()
+    {
+        return $this->hasMany(Dialog::class, 'car_advert_id', 'id');
+    }
+
 
     //    =============================
 
@@ -282,6 +288,69 @@ class Advert extends Model
     }
 
 
+    //=========================== Dialogs functions ===========================
+
+    /**
+     * Получить или создать диалог от -> клиента[fromId]
+     * если нашел или создал то написать сообщение от себя(клиента)[fromId]
+     */
+    // Получи или создай новый диалог
+    // Напиши клиентское сообщение
+    public function writeClientMessage(int $fromId, string $message): void
+    {
+
+        $this->getOrCreateDialogWith($fromId)->writeMessageByClient($fromId, $message);
+    }
+
+    // Получить свои диалоги с сообщениями - c клиентом ($toId = кому из пользователей)
+    // Напиши пользовательское сообщение
+    // получить диалог с сообщениями от клиента
+    public function writeOwnerMessage(int $toId, string $message): void
+    {
+        $this->getDialogWith($toId)->writeMessageByOwner($this->author_id, $message);
+    }
+
+    // Прочитай сообщения клиента
+    public function readClientMessages(int $userId): void
+    {
+        $this->getDialogWith($userId)->readByClient();
+    }
+
+    // Прочитай мои сообщения
+    public function readOwnerMessages(int $userId): void
+    {
+        $this->getDialogWith($userId)->readByOwner();
+    }
+
+    // Получить диалог
+    private function getDialogWith(int $userId): Dialog
+    {
+        $dialog = $this->dialogs()->where([
+            'user_id' => $this->author_id,
+            'client_id' => $userId
+        ])->first();
+
+        if (!$dialog) {
+            throw new \DomainException('Диалог не найден');
+        }
+        return $dialog;
+    }
+
+    // Получить или создать диалог
+    private function getOrCreateDialogWith(int $userId): Dialog
+    {
+        if ($userId === $this->author_id) {
+            throw new \DomainException('Вы не можете отправить сообщение самому себе');
+        }
+        return $this->dialogs()->firstOrCreate([
+            'user_id' => $this->author_id,
+            'client_id' => $userId
+        ]);
+    }
+
+    //==================================
+
+
 
     // Получить основную картинку
     public function getMainPhoto ($photos)
@@ -345,3 +414,5 @@ class Advert extends Model
 
 
 }
+
+

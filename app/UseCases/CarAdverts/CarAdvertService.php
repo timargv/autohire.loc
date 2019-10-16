@@ -5,6 +5,7 @@ namespace App\UseCases\CarAdverts;
 
 
 use App\Entity\Cars\Advert\Advert;
+use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Cars\Advert\Photo;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
@@ -16,7 +17,9 @@ use App\Http\Requests\Adverts\RejectRequest;
 use App\Http\Requests\Adverts\UpdateRequest;
 use App\User;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -294,6 +297,48 @@ class CarAdvertService
         $carAdvert->draft();
     }
 
+
+    public function message($id, $dialogId, $userId, Request $request)
+    {
+
+        $dialog = $this->getDialog($dialogId);
+        $carAdvert = $this->getCarAdvert($dialog->carAdvert->id);
+
+        if (Auth::id() === $carAdvert->author_id) {
+            $carAdvert->writeOwnerMessage($dialog->client_id, $request['message']);
+        } else {
+            $carAdvert->writeClientMessage($dialog->client_id, $request['message']);
+        }
+        return $carAdvert;
+    }
+
+//    public function messageOwned($id, $userId, $message)
+//    {
+//        $user = $this->getUser($userId);
+//        $carAdvert = $this->getCarAdvert($id);
+//        $carAdvert->writeOwnerMessage($user->id, $message);
+//    }
+
+    public function messageClient($id, $userId, Request $request)
+    {
+        $user = $this->getUser($userId);
+        $carAdvert = $this->getCarAdvert($id);
+        $carAdvert->writeClientMessage($user->id, $request['message']);
+        return $carAdvert;
+    }
+
+    public function readOwnerMessages($carAdvertId, $dialogId): void
+    {
+        $carAdvert = $this->getCarAdvert($carAdvertId);
+        $dialog = $this->getDialog($dialogId);
+        if (Auth::id() === $carAdvert->author_id) {
+            $carAdvert->readOwnerMessages($dialog->client_id);
+        } else {
+            $carAdvert->readClientMessages($dialog->client_id);
+        }
+    }
+
+
     private function getCarAdvert($id) : Advert
     {
         return Advert::findOrFail($id);
@@ -302,6 +347,16 @@ class CarAdvertService
     private function getCarPhoto($id) : Photo
     {
         return Photo::findOrFail($id);
+    }
+
+    private function getUser($id) : User
+    {
+        return User::findOrFail($id);
+    }
+
+    private function getDialog($id) : Dialog
+    {
+        return Dialog::findOrFail($id);
     }
 
     private function pathPhoto()

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cabinet\Adverts;
 
 use App\Entity\Cars\Advert\Advert;
+use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Cars\Advert\Photo;
 use App\Entity\Cars\Advert\Value;
 use App\Entity\Cars\Attribute;
@@ -209,6 +210,61 @@ class AdvertController extends Controller
     }
 
 
+    public function dialogs()
+    {
+        $carAdvertIds = Advert::forUser(Auth::user())->pluck('id');
+//        dd($carAdvertIds);
+        $dialogs = Dialog::forUser(Auth::user())->with(['carAdvert', 'client', 'messages'])->paginate(15);
+        return view('cabinet.dialogs.index', compact('dialogs'));
+    }
+
+    public function dialog($carAdvert, Dialog $dialog)
+    {
+//        $this->checkAccess($carAdvert);
+//        $dialog = $this->getDialog($dialogId)->with('messages');
+
+//        dd($dialog);
+
+        $messages = $dialog->messages()->orderByDesc('created_at')->paginate(15);
+
+
+        $this->service->readOwnerMessages($carAdvert, $dialog->id);
+        return view('cabinet.dialogs.show', compact('dialog', 'carAdvert', 'messages'));
+    }
+
+    public function messageForm(Advert $carAdvert)
+    {
+        if ($carAdvert->author_id === Auth::id()) {
+            return back()->with('error', 'Вы не можете отправить сообщение самому себе');
+        }
+        return view('cabinet.dialogs.messages._create_client', compact('carAdvert'));
+    }
+
+    public function message($id, Dialog $dialog, Request $request)
+    {
+        try {
+            $carAdvert = $this->service->message($id, $dialog->id, Auth::id(), $request);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('cars.adverts.show', $carAdvert)->with('success', 'Good');
+    }
+
+    public function message_client($id, Request $request)
+    {
+        try {
+            $carAdvert = $this->service->messageClient($id, Auth::id(), $request);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->route('cars.adverts.show', $carAdvert)->with('success', 'Good');
+    }
+
+
+
+
     // ------ Получить Масив Марок автомобиля по ID
     public function getModels($id) {
         $carModels = $this->getCarBrand($id)->children->pluck("name","id");
@@ -226,6 +282,10 @@ class AdvertController extends Controller
     // ------ Найти Марку или (модель, серию) по ID
     private function getCarBrand($id) {
         return CarBrand::findOrFail($id);
+    }
+
+    private function getDialog($id) {
+        return Dialog::findOrFail($id);
     }
 
 }

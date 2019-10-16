@@ -9,6 +9,9 @@
                     <li class="nav-item d-inline-block"><a class="nav-link{{ $page === 'adverts' ? ' active' : '' }}" href="{{ route('cabinet.adverts.index') }}">
                             <i class="fal fa-ad pr-md-1"></i> <span class="{{ $page === 'adverts' ? '' : 'd-none' }} d-md-inline-block">{{ __('fillable.Adverts') }}</span></a>
                     </li>
+                    <li class="nav-item d-inline-block"><a class="nav-link{{ $page === 'dialogs' ? ' active' : '' }}" href="{{ route('cabinet.dialogs.index') }}">
+                            <i class="fad fa-comments-alt pr-md-1"></i> <span class="{{ $page === 'dialogs' ? '' : 'd-none' }} d-md-inline-block">{{ trans_choice('fillable.Message', 2) }}</span></a>
+                    </li>
                     <li class="nav-item d-inline-block"><a class="nav-link{{ $page === 'favorites' ? ' active' : '' }}" href="{{ route('cabinet.favorites.index') }}">
                             <i class="far fa-heart pr-md-1"></i> <span class="{{ $page === 'favorites' ? '' : 'd-none' }} d-md-inline-block">{{ trans_choice('title.favorite', 1) }}</span></a>
                     </li>

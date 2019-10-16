@@ -1,26 +1,23 @@
 @extends('layouts.app')
-
+@section('breadcrumbs', '')
 @section('content')
-    @include('cabinet.tickets._nav', ['page' => 'tickets'])
+    @include('cabinet.dialogs._nav', ['page' => 'dialogs'])
 
     <div class="pt-3 pb-3  w-md-75 w-100 clearfix">
-        <h4 class="text-muted w-75 float-left">#{{ $ticket->subject }}</h4>
+{{--        <h4 class="text-muted w-75 float-left">#{{ $carAdvertName }}</h4>--}}
         <div class="float-left w-25">
-            @if ($ticket->canBeRemoved())
-                <form method="POST" action="{{ route('cabinet.tickets.destroy', $ticket) }}">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-light btn-sm float-right"><i class="fal fa-trash-alt pr-1"></i> {{ __('button.Delete') }}</button>
-                </form>
-            @endif
+{{--            <form method="POST" action="{{ route('cabinet.tickets.destroy', $ticket) }}">--}}
+{{--                @csrf--}}
+{{--                @method('DELETE')--}}
+{{--                <button class="btn btn-light btn-sm float-right"><i class="fal fa-trash-alt pr-1"></i> {{ __('button.Delete') }}</button>--}}
+{{--            </form>--}}
         </div>
     </div>
     <div class="card border-0 w-md-75 w-100">
         <div class="card-body">
-            {!! nl2br(e($ticket->content)) !!}
         </div>
         <div class="card-footer border-0 text-black-50 text-right">
-            {{ $ticket->created_at->diffForHumans() }}, {{ $ticket->user->name }}
+            {{ $dialog->created_at->diffForHumans() }}, {{ $dialog->client->name }}
         </div>
     </div>
 
@@ -37,11 +34,15 @@
             </div>
         </div>
 
-        @include('cabinet.tickets.messages._item', ['messages' => $ticket->messages() ])
+        <div class="mb-4">
+            @include('cabinet.dialogs.messages._create', ['dialog' => $dialog, 'carAdvert' => $carAdvert])
+        </div>
 
-        @if ($ticket->allowsMessages())
-            @include('cabinet.tickets.messages._create', ['ticket' => $ticket])
-        @endif
+        @include('cabinet.dialogs.messages._item', ['messages' => $messages ])
+
+        {{ $messages->appends(request()->query())->links() }}
+
+
     </div>
 
 

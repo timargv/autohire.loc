@@ -53,10 +53,10 @@ $(document).on('click', '.phone-button', function () {
     var button = $(this);
     var filter_block = $('.filter-header_top');
 
-    if (button.text() === "Паказать фильтр") {
+    if (button.text() === "Показать фильтр") {
         button.text('Скрыть фильтр');
     } else {
-        button.text('Паказать фильтр')
+        button.text('Показать фильтр')
     }
     filter_block.toggleClass('active');
 
