@@ -78,6 +78,20 @@
             </div>
         </div>
     </footer>
+    <div class="">
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-body text-center">
+                        <div class="mb-2">
+                            <div>Номер телефона</div>
+                        </div>
+                        <span class="h5 pb-1"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}" defer></script>
