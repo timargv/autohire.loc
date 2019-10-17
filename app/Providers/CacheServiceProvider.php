@@ -4,6 +4,7 @@
 namespace App\Providers;
 
 
+use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Categories\Car\CarBrand;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
@@ -14,6 +15,7 @@ class CacheServiceProvider extends ServiceProvider
 
     private $classes = [
         CarBrand::class,
+        Dialog::class,
     ];
 
     public function boot(): void

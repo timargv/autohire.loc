@@ -298,7 +298,6 @@ class Advert extends Model
     // Напиши клиентское сообщение
     public function writeClientMessage(int $fromId, string $message): void
     {
-
         $this->getOrCreateDialogWith($fromId)->writeMessageByClient($fromId, $message);
     }
 

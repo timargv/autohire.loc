@@ -244,6 +244,7 @@ class AdvertController extends Controller
 
     public function message($id, Dialog $dialog, DialogRequest $request)
     {
+
         try {
             $this->service->message($id, $dialog->id, Auth::id(), $request);
         } catch (\DomainException $e) {
