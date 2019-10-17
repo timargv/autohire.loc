@@ -3,7 +3,7 @@
 @section('content')
     @include('cabinet.dialogs._nav', ['page' => 'dialogs'])
 
-    <div class="pt-3 pb-3  w-md-75 w-100 clearfix">
+    <div class="pt-3 pb-3  w-md-75 w-100 clearfix d-none">
 {{--        <h4 class="text-muted w-75 float-left">#{{ $carAdvertName }}</h4>--}}
         <div class="float-left w-25">
 {{--            <form method="POST" action="{{ route('cabinet.tickets.destroy', $ticket) }}">--}}
@@ -13,7 +13,7 @@
 {{--            </form>--}}
         </div>
     </div>
-    <div class="card border-0 w-md-75 w-100">
+    <div class="card border-0 w-md-75 w-100 d-none">
         <div class="card-body">
         </div>
         <div class="card-footer border-0 text-black-50 text-right">
