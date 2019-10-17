@@ -1,16 +1,10 @@
 @foreach ($messages as $message)
-    <div class="card mb-3
-{{--        @if(!$message->isMessageOwn() && ($message->user->isAdmin() || $message->user->isModerator()))--}}
-{{--            border-info--}}
-{{--        @else--}}
-{{--            border-0--}}
-{{--        @endif--}}
-{{--            w-md-75--}}
-{{--        @if($message->isMessageOwn())--}}
-{{--            ml-md-auto--}}
-{{--        @else--}}
-{{--            mr-md-auto--}}
-{{--        @endif--}}
+    <div class="card mb-3 w-md-75
+        @if($message->isMessageOwn())
+            ml-md-auto
+        @else
+            mr-md-auto
+        @endif
             ">
 
         <div class="card-body">
