@@ -9,6 +9,7 @@ use App\Entity\Cars\Advert\Value;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
+use App\Http\Requests\Adverts\DialogRequest;
 use App\Http\Requests\Adverts\PhotosRequest;
 use App\Http\Requests\Adverts\UpdateRequest;
 use App\Http\Requests\Adverts\CreateRequest;
@@ -223,9 +224,7 @@ class AdvertController extends Controller
     public function dialog($carAdvert, Dialog $dialog)
     {
         $this->checkAccessDialog($dialog);
-
-        try
-        {
+        try {
             $messages = $dialog->messages()->orderByDesc('created_at')->paginate(15);
             $this->service->readOwnerMessages($carAdvert, $dialog->id);
         } catch (\DomainException $e) {
@@ -243,10 +242,10 @@ class AdvertController extends Controller
         return view('cabinet.dialogs.messages._create_client', compact('carAdvert'));
     }
 
-    public function message($id, Dialog $dialog, Request $request)
+    public function message($id, Dialog $dialog, DialogRequest $request)
     {
         try {
-            $carAdvert = $this->service->message($id, $dialog->id, Auth::id(), $request);
+            $this->service->message($id, $dialog->id, Auth::id(), $request);
         } catch (\DomainException $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -254,7 +253,7 @@ class AdvertController extends Controller
         return redirect()->back()->with('success', 'Good');
     }
 
-    public function message_client($id, Request $request)
+    public function message_client($id, DialogRequest $request)
     {
         try {
             $carAdvert = $this->service->messageClient($id, Auth::id(), $request);

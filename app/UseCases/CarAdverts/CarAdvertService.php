@@ -12,6 +12,7 @@ use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
 use App\Http\Requests\Adverts\AttributesRequest;
 use App\Http\Requests\Adverts\CreateRequest;
+use App\Http\Requests\Adverts\DialogRequest;
 use App\Http\Requests\Adverts\PhotosRequest;
 use App\Http\Requests\Adverts\RejectRequest;
 use App\Http\Requests\Adverts\UpdateRequest;
@@ -298,7 +299,7 @@ class CarAdvertService
     }
 
 
-    public function message($id, $dialogId, $userId, Request $request)
+    public function message($id, $dialogId, $userId, DialogRequest $request)
     {
 
         $dialog = $this->getDialog($dialogId);
@@ -319,7 +320,7 @@ class CarAdvertService
 //        $carAdvert->writeOwnerMessage($user->id, $message);
 //    }
 
-    public function messageClient($id, $userId, Request $request)
+    public function messageClient($id, $userId, DialogRequest $request)
     {
         $user = $this->getUser($userId);
         $carAdvert = $this->getCarAdvert($id);
