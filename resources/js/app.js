@@ -169,4 +169,11 @@ $(document).ready(function () {
     $('.summernote').summernote({
         height: 200
     });
+
+    $('.my-select').selectpicker();
+
+    if( /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ) {
+        $('.my-select').selectpicker('mobile');
+    }
+
 });

@@ -12,6 +12,8 @@ try {
 
     require('bootstrap');
     require('select2');
+    require('bootstrap-select');
+
     // require('inputmask');
     require('readmore-js'); // Показать больше
     require('summernote/dist/summernote-bs4.min'); // Визуальный редактор
