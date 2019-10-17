@@ -34,10 +34,11 @@
                                     <div class="card-text"><small class="text-muted">{{ $carAdvert->updated_at->diffForHumans() }}</small></div>
                                 </div>
                                 <div class="clearfix ml-auto">
-                                    @if($user->phone)
+                                    @if($carAdvert->author->phone)
                                         <button class="btn bg-siran btn-sm text-white float-right ml-2 btn-phone"
                                                 data-toggle="tooltip" data-placement="top" title="Показать телефон"
-                                                data-source="{{ route('cars.adverts.phone', $carAdvert) }}"><i class="fal fa-phone-alt"></i></button>
+                                                data-source="{{ route('cars.adverts.phone', $carAdvert) }}"
+                                        ><i class="fal fa-phone-alt"></i></button>
                                     @endif
                                     <a href="{{ route('cabinet.dialogs.message.create', $carAdvert) }}" style="font-size: 1rem !important; z-index: 2;" class="btn bg-silver-lite-filter btn-sm text-siran float-right position-relative"><i class="fal fa-comments"></i></a>
                                 </div>

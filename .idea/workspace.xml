@@ -71,8 +71,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/car-adverts/item.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="481">
-              <caret line="40" column="42" lean-forward="true" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+            <state relative-caret-position="413">
+              <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
               <folding>
                 <element signature="e#2828#2875#0#HTML" expanded="true" />
               </folding>
@@ -805,7 +805,7 @@
       <workItem from="1571219144011" duration="35437000" />
       <workItem from="1571294963254" duration="778000" />
       <workItem from="1571298514677" duration="25000" />
-      <workItem from="1571298552730" duration="11689000" />
+      <workItem from="1571298552730" duration="11857000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -818,7 +818,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77608000" />
+    <option name="totallyTimeSpent" value="77776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1273,8 +1273,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/car-adverts/item.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="40" column="42" lean-forward="true" selection-start-line="40" selection-start-column="42" selection-end-line="40" selection-end-column="42" />
+        <state relative-caret-position="413">
+          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
           <folding>
             <element signature="e#2828#2875#0#HTML" expanded="true" />
           </folding>
