@@ -23,6 +23,14 @@
                 <a class="navbar-brand text-blue-tone-dark-50 mr-0 mr-md-5" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                @auth
+                    <a class="nav-link font-weight-bold d-inline-block d-md-none ml-auto position-relative" href="{{ route('cabinet.dialogs.index') }}" >
+                        <i class="fal fa-envelope d-md-none d-inline-block align-middle" style="font-size: 1.7rem;" @if (!empty($newMessage))data-toggle="tooltip" data-placement="left" title="У Вас есть новые сообщения" @endif></i>
+                        @if (!empty($newMessage))
+                            <span class="badge badge-success rounded-circle d-inline-block" style="height: 10px;width: 10px;right: 10px;"></span>
+                        @endif
+                    </a>
+                @endauth
                 <button class="navbar-toggler border-0 px-0" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <i class="far fa-bars px-2"></i>
                 </button>

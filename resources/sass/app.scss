@@ -95,6 +95,7 @@ a {
     flex-direction: row;
 }
 
+.navbar  a.nav-link >.badge,
 .navbar .navbar-nav a >.badge {
   position: absolute;
   top: 9px;

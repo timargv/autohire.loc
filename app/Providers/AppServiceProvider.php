@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('countModerationAvatars', Avatar::countModerationAvatars());
         });
 
-        view()->composer('layouts.navbar.navright', function($view){
+        view()->composer(['layouts.navbar.navright', 'layouts.app'], function($view){
             $view->with('newMessage', Dialog::getNewMessagesDialogCount());
         });
 
