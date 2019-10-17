@@ -10,6 +10,17 @@
             </li>
         @endif
     @else
+
+        <li class="nav-item  mx-md-3 mx-0">
+            <a class="nav-link font-weight-bold" href="{{ route('cabinet.dialogs.index') }}" >
+                <span class="d-md-none d-block">{{ __('menu.Messages') }}</span>
+                <i class="fal fa-envelope" style="font-size: 1.5rem;" @if (!empty($newMessage))data-toggle="tooltip" data-placement="left" title="У Вас есть новые сообщения" @endif></i>
+                @if (!empty($newMessage))
+                    <span class="badge badge-success rounded-circle d-inline-block" style="height: 10px;width: 10px;"></span>
+                @endif
+            </a>
+        </li>
+
         @can ('admin-panel')
             <li class="nav-item">
                 <a class="nav-link font-weight-bold" href="{{ route('admin.home') }}" target="_blank">{{ __('menu.Admin') }}</a>

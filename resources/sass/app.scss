@@ -94,6 +94,16 @@ a {
     flex-direction: row;
 }
 
+.navbar .navbar-nav a >.badge {
+  position: absolute;
+  top: 9px;
+  right: 7px;
+  text-align: center;
+  font-size: 9px;
+  padding: 2px 3px;
+  line-height: .9;
+}
+
 .navbar-light .navbar-nav .nav-link {
     color: #000000b0;
     height: 44px;
@@ -106,6 +116,7 @@ a {
     align-items: center;
     display: flex;
     flex-direction: row;
+    position: relative;
 }
 .navbar-light .navbar-toggler {
     outline: none !important;
@@ -310,6 +321,25 @@ a {
   font-size: .975rem !important;
   position: relative;
   z-index: 2;
+}
+.dialogs_list {}
+.dialogs_list a {
+  color: #4f4f4ff5;
+  transition: all .3s;
+}
+.dialogs_list a:hover {
+  background: #e9ecef;
+}
+.dialog_list_car_advert_image {
+
+}
+
+.dialog_car_advert_image {
+  width: 80px;
+  height: 65px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 @media (min-width: 992px) {

@@ -92,7 +92,6 @@ return [
 
     'AllTickets'    =>  'Все тикеты',
     'All'           =>  'Все',
-    'Message'       =>  'Сообщение',
     'Subject'       =>  'Тема',
 
 ];

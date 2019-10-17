@@ -13,10 +13,12 @@ use App\Http\Requests\Adverts\PhotosRequest;
 use App\Http\Requests\Adverts\UpdateRequest;
 use App\Http\Requests\Adverts\CreateRequest;
 use App\UseCases\CarAdverts\CarAdvertService;
+use App\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 
@@ -212,23 +214,24 @@ class AdvertController extends Controller
 
     public function dialogs()
     {
-        $carAdvertIds = Advert::forUser(Auth::user())->pluck('id');
-//        dd($carAdvertIds);
-        $dialogs = Dialog::forUser(Auth::user())->with(['carAdvert', 'client', 'messages'])->paginate(15);
+        $dialogs = Cache::tags(Dialog::class)->rememberForever('dialogs_'.Auth::user(), function () {
+            return Dialog::forUser(Auth::user())->orderByDesc('updated_at')->with(['carAdvert', 'client', 'client', 'messages'])->paginate(15);
+        });
         return view('cabinet.dialogs.index', compact('dialogs'));
     }
 
     public function dialog($carAdvert, Dialog $dialog)
     {
-//        $this->checkAccess($carAdvert);
-//        $dialog = $this->getDialog($dialogId)->with('messages');
+        $this->checkAccessDialog($dialog);
 
-//        dd($dialog);
+        try
+        {
+            $messages = $dialog->messages()->orderByDesc('created_at')->paginate(15);
+            $this->service->readOwnerMessages($carAdvert, $dialog->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
 
-        $messages = $dialog->messages()->orderByDesc('created_at')->paginate(15);
-
-
-        $this->service->readOwnerMessages($carAdvert, $dialog->id);
         return view('cabinet.dialogs.show', compact('dialog', 'carAdvert', 'messages'));
     }
 
@@ -248,7 +251,7 @@ class AdvertController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('cars.adverts.show', $carAdvert)->with('success', 'Good');
+        return redirect()->back()->with('success', 'Good');
     }
 
     public function message_client($id, Request $request)
@@ -275,6 +278,14 @@ class AdvertController extends Controller
     private function checkAccess(Advert $carAdvert): void
     {
         if (!Gate::allows('manage-own-advert', $carAdvert)) {
+            abort(404);
+        }
+    }
+
+    // ------ Проверка на Владельца объявления
+    private function checkAccessDialog(Dialog $dialog): void
+    {
+        if (!Gate::allows('manage-dialog', $dialog)) {
             abort(404);
         }
     }

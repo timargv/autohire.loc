@@ -86,4 +86,16 @@ class Dialog extends Model
             return $this->user_new_messages;
         }
     }
+
+    public static function getNewMessagesDialogCount()
+    {
+        return Dialog::where([
+            ['user_id', Auth::id()],
+            ['user_new_messages', '>', 0]
+        ])->orWhere([
+            ['client_id', Auth::id()],
+            ['client_new_messages', '>', 0]
+        ])->first();
+    }
+
 }

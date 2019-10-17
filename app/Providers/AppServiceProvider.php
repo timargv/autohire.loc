@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Tenant\BlackList;
 use App\Entity\Tenant\BlackListComment;
 use App\Entity\Tenant\BlackListPhoto;
@@ -34,6 +35,10 @@ class AppServiceProvider extends ServiceProvider
 
         view()->composer('admin.users._nav_user', function($view){
             $view->with('countModerationAvatars', Avatar::countModerationAvatars());
+        });
+
+        view()->composer('layouts.navbar.navright', function($view){
+            $view->with('newMessage', Dialog::getNewMessagesDialogCount());
         });
 
         view()->composer('admin.black-list-tenant._nav_button', function($view){

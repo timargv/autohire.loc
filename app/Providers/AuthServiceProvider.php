@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Entity\Cars\Advert\Advert;
+use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Tenant\BlackList;
 use App\Entity\Tenant\BlackListComment;
 use App\Entity\Ticket\Ticket;
@@ -124,6 +125,11 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('manage-own-ticket', function (User $user, Ticket $ticket) {
             return $ticket->user_id === $user->id;
         });
+
+        Gate::define('manage-dialog', function (User $user, $dialog) {
+            return $dialog->user_id === Auth::id() || $dialog->client_id === Auth::id();
+        });
+
 
     }
 }
