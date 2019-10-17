@@ -48,7 +48,7 @@
                                                     <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                                                 @endif
                                             </div>
-                                            {{ $dialog->carAdvert && $dialog->carAdvert->author->name }}
+                                            {{ $dialog->carAdvert ? $dialog->carAdvert->author->name : 'Объявление удалено' }}
                                         @endif
                                             <span class="badge bg-siran text-white">{{ $dialog->getNewMessagesCount() != 0 ? $dialog->getNewMessagesCount() : '' }}</span>
                                     </h5>
