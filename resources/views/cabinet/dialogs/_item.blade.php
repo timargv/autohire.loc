@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="col text-right">
-                                    <div class="small">{{ $dialog->created_at->diffForHumans() }}</div>
+                                    <div class="small">{{ $dialog->updated_at->diffForHumans() }}</div>
                                 </div>
 
                             </div>
