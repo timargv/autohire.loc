@@ -251,7 +251,7 @@ class AdvertController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->back()->with('success', 'Good');
+        return redirect()->back()->with('success', 'Сообщение отправлено');
     }
 
     public function message_client($id, DialogRequest $request)
@@ -262,7 +262,7 @@ class AdvertController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('cars.adverts.show', $carAdvert)->with('success', 'Good');
+        return redirect()->route('cars.adverts.show', $carAdvert)->with('success', 'Сообщение отправлено');
     }
 
 
