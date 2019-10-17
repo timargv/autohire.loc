@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/show.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
+            <state relative-caret-position="680">
+              <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
             </state>
           </provider>
         </entry>
@@ -80,7 +80,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
@@ -107,13 +107,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="34" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="34" />
+            <state relative-caret-position="17">
+              <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
               <folding>
-                <marker date="1571309269615" expanded="true" signature="58:179" ph="..." />
+                <marker date="1571310840603" expanded="true" signature="58:122" ph="..." />
               </folding>
             </state>
           </provider>
@@ -206,10 +206,10 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" />
         <option value="$PROJECT_DIR$/resources/views/cabinet/dialogs/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cabinet/dialogs/_item.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php" />
         <option value="$PROJECT_DIR$/app/Entity/Cars/Advert/Dialog/Message.php" />
         <option value="$PROJECT_DIR$/resources/views/car-adverts/item.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/navbar/navright.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php" />
       </list>
     </option>
   </component>
@@ -802,7 +802,7 @@
       <workItem from="1571219144011" duration="35437000" />
       <workItem from="1571294963254" duration="778000" />
       <workItem from="1571298514677" duration="25000" />
-      <workItem from="1571298552730" duration="12072000" />
+      <workItem from="1571298552730" duration="12276000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -815,7 +815,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77991000" />
+    <option name="totallyTimeSpent" value="78195000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1195,23 +1195,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/_item.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="626">
-          <caret line="50" column="122" selection-start-line="50" selection-start-column="122" selection-end-line="50" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="34" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="34" />
-          <folding>
-            <marker date="1571309269615" expanded="true" signature="58:179" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Entity/Cars/Advert/Dialog/Message.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="544">
@@ -1219,13 +1202,6 @@
           <folding>
             <element signature="e#49#62#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="56" selection-start-line="5" selection-start-column="56" selection-end-line="5" selection-end-column="56" />
         </state>
       </provider>
     </entry>
@@ -1271,6 +1247,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="16" column="66" selection-start-line="16" selection-start-column="66" selection-end-line="16" selection-end-column="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/_item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="626">
+          <caret line="50" column="122" selection-start-line="50" selection-start-column="122" selection-end-line="50" selection-end-column="122" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="46" selection-start-line="40" selection-start-column="46" selection-end-line="40" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/dialogs/messages/_item.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="31" selection-start-line="1" selection-start-column="31" selection-end-line="1" selection-end-column="31" />
+          <folding>
+            <marker date="1571310840603" expanded="true" signature="58:122" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
