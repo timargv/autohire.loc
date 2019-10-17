@@ -78,7 +78,7 @@
                 @empty
                     <div class="w-100 p-5">
                         <div class="text-muted h5 mb-2">Сообщения</div>
-                        <div class="text-black-50 mb-3 text-center">
+                        <div class="text-black-50 mb-3 ">
                             У Вас нет Сообщений.
                         </div>
 
