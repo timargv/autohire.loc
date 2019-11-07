@@ -191,12 +191,12 @@ Dropzone.options.dropzone = {
     addRemoveLinks: false,
     dictDefaultMessage: "Перетащите файлы сюда, чтобы загрузить",
     timeout: 5000,
-    success: function(file, response)
-    {
-        console.log(response);
-    },
-    error: function(file, response)
-    {
-        return false;
-    }
+    // success: function(file, response)
+    // {
+    //     console.log(response);
+    // },
+    // error: function(file, response)
+    // {
+    //     return false;
+    // }
 };
