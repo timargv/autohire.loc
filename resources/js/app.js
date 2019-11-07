@@ -5,7 +5,6 @@
  */
 
 require('./bootstrap');
-import Dropzone from 'dropzone';
 
 const autoNumericOptionsRuble = {
     currencySymbol: "\u202f ₽",
@@ -179,6 +178,7 @@ $(document).ready(function () {
 
 });
 
+import Dropzone from 'dropzone';
 
 Dropzone.options.dropzone = {
     maxFilesize: 12,
