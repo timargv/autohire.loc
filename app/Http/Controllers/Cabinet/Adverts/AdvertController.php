@@ -133,21 +133,32 @@ class AdvertController extends Controller
     // ------ Добавить одну или несколько Фотографий для объявления
     public function photos (PhotosRequest $request, Advert $carAdvert)
     {
+//        $this->checkAccess($carAdvert);
+//        try {
+//            $this->service->addPhotos($carAdvert->id, $request);
+//        } catch (\DomainException $e) {
+//            return back()->with('error', $e->getMessage());
+//        }
+//
+//        return redirect()->route('cabinet.adverts.show', $carAdvert)->with('success', 'Фото добавлено!');
+
+        $carAdvert = $this->getCarAdvert($request['carAdvert']);
         $this->checkAccess($carAdvert);
         try {
-            $this->service->addPhotos($carAdvert->id, $request);
+            $fileName = $this->service->addPhoto($carAdvert->id, $request);
+
         } catch (\DomainException $e) {
-            return back()->with('error', $e->getMessage());
+            return response()->json(['error', $e->getMessage()]);
         }
 
-        return redirect()->route('cabinet.adverts.show', $carAdvert)->with('success', 'Фото добавлено!');
+        return response()->json(['success'=> $fileName]);
     }
 
 
     // ------ Сделать фотографию Главным в объявлении
     public function mainPhoto (Advert $carAdvert, Photo $photo) {
+//        dd($carAdvert);
         $this->checkAccess($carAdvert);
-
         try {
             $this->service->makePhotoMain($carAdvert->id, $photo->id);
         } catch (\DomainException $e) {
@@ -293,6 +304,10 @@ class AdvertController extends Controller
     // ------ Найти Марку или (модель, серию) по ID
     private function getCarBrand($id) {
         return CarBrand::findOrFail($id);
+    }
+
+    private function getCarAdvert($id) {
+        return Advert::findOrFail($id);
     }
 
     private function getDialog($id) {

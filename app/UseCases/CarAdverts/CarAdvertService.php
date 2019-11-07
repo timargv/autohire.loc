@@ -220,6 +220,68 @@ class CarAdvertService
 
     }
 
+    public function addPhoto ($id, PhotosRequest $request)
+    {
+
+        $carAdvert = $this->getCarAdvert($id);
+
+        return DB::transaction(function () use ($request, $carAdvert) {
+            $path = $this->pathPhoto()['original'];
+            $thumbPath = $this->pathPhoto()['thumbnail'];
+            $itemPath = $this->pathPhoto()['item'];
+            $smallPath = $this->pathPhoto()['small'];
+            $middlePath = $this->pathPhoto()['medium'];
+            $largePath = $this->pathPhoto()['large'];
+
+            $carAdvertPhotos = $carAdvert->photos()->count();
+
+
+            $file = $request['file'];
+
+            $img = Image::make($file);
+
+
+            if (!file_exists($path) && !file_exists($itemPath) && !file_exists($thumbPath) && !file_exists($smallPath) && !file_exists($middlePath) && !file_exists($largePath)) {
+                mkdir($path, 0755, true);
+                mkdir($thumbPath, 0755, true);
+                mkdir($itemPath, 0755, true);
+                mkdir($smallPath, 0755, true);
+                mkdir($middlePath, 0755, true);
+                mkdir($largePath, 0755, true);
+            }
+
+            $fileName = $carAdvert->id.'-'.uniqid().'-'. (new \DateTime)->getTimeStamp() . '.png';
+
+            $img->save($path . $fileName);
+            $img->fit(1024, 768, function ($image) { $image->upsize(); })->save($largePath .$fileName, 100);
+            $img->fit(800, 600, function ($image) { $image->upsize(); })->save($middlePath . $fileName, 100);
+            $img->fit(512, 384, function ($image) { $image->upsize(); })->save($smallPath . $fileName, 100);
+            $img->fit(320, 240, function ($image) { $image->upsize(); })->save($thumbPath . $fileName, 100);
+            $img->fit(256, 192, function ($image) { $image->upsize(); })->save($itemPath . $fileName, 100);
+
+
+
+            if (!$carAdvert->photos()->where('type', '=', 'main')->first()) {
+                $carAdvert->photos()->create([
+                    'file' => $fileName,
+                    'type' => 'main',
+                ]);
+            } else {
+                $carAdvert->photos()->create([
+                    'file' => $fileName,
+//                        'sort' => 1,
+                ]);
+            }
+
+
+            $carAdvert->update();
+
+            return $fileName;
+
+        });
+
+    }
+
     public function makePhotoMain ($carAdvertId, $photoId) : void
     {
 
