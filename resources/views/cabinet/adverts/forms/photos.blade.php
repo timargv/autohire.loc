@@ -45,9 +45,12 @@
             <form method="POST" action="?" enctype="multipart/form-data"
                   class="dropzone" id="dropzone">
                 @csrf
-
                 <input type="hidden" name="carAdvert" value="{{ $carAdvert->id }}">
             </form>
+
+            <div class="d-flex mb-3">
+                <a href="{{ route('cabinet.adverts.show', $carAdvert) }}" class="d-inline-block btn btn-success btn-sm mx-auto"><i class="fal fa-save mr-1"></i> Сохранить</a>
+            </div>
 
             <div class="alert alert-info">
                 <strong>Рекомендации и ограничения</strong> <br />

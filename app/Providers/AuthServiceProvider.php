@@ -11,6 +11,7 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Laravel\Horizon\Horizon;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -23,12 +24,15 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         $this->registerPermissions();
+
+        Horizon::auth(function () {
+            return Gate::allows('horizon');
+        });
     }
 
 
     private function registerPermissions(): void
     {
-
 
         Gate::define('horizon', function (User $user) {
             return $user->isAdmin() || $user->isModerator();

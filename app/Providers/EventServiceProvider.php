@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\Advert\ModerationPassed;
+use App\Listeners\Advert\AdvertChangedListener;
+use App\Listeners\Advert\ModerationPassedListener;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -17,6 +20,10 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        ModerationPassed::class => [
+            AdvertChangedListener::class,
+            ModerationPassedListener::class,
         ],
     ];
 

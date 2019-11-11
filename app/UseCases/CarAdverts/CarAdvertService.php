@@ -10,6 +10,7 @@ use App\Entity\Cars\Advert\Photo;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
+use App\Events\Advert\ModerationPassed;
 use App\Http\Requests\Adverts\AttributesRequest;
 use App\Http\Requests\Adverts\CreateRequest;
 use App\Http\Requests\Adverts\DialogRequest;
@@ -339,7 +340,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->moderate(Carbon::now());
-//        event(new ModerationPassed($advert));
+        event(new ModerationPassed($carAdvert));
     }
 
     public function reject($id, RejectRequest $request): void
