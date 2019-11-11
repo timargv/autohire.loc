@@ -82,6 +82,12 @@
                             @csrf
                             <button class="btn btn-sm btn-link" data-toggle="tooltip" data-placement="top" title="{{ $statuses['active'] }}"><i class="fas fa-check"></i></button>
                         </form>
+                        <form method="POST" action="{{ route('admin.black.list.tenants.destroy', $tenant) }}" class="w-100">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-sm btn-link" data-toggle="tooltip" onclick="return confirm('Удалить Категорию?')" data-placement="top" title="Удалить"><i class="fal fa-trash-alt fa-1x px-2 text-gray" ></i></button>
+
+                        </form>
                     </div>
                 </td>
             </tr>

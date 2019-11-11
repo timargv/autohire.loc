@@ -21,6 +21,7 @@ use Illuminate\Support\Str;
  * @property mixed id
  * @property mixed name
  * @property string $verified_owner
+ * @property Avatar $avatar
  */
 class User extends Authenticatable
 {

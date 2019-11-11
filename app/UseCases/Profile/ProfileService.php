@@ -90,11 +90,12 @@ class ProfileService
 
         if (!$user->avatar) {return;}
         Storage::disk('public')->delete([
-          $this->pathAvatarDelete()['original'].$user->avatar->image,
-          $this->pathAvatarDelete()['blur'].$user->avatar->image,
-          $this->pathAvatarDelete()['small'].$user->avatar->image,
-          $this->pathAvatarDelete()['medium'].$user->avatar->image,
-          $this->pathAvatarDelete()['large'].$user->avatar->image,
+            $this->pathAvatarDelete()['original'].$user->avatar->image,
+            $this->pathAvatarDelete()['blur'].$user->avatar->image,
+            $this->pathAvatarDelete()['small'].$user->avatar->image,
+            $this->pathAvatarDelete()['medium'].$user->avatar->image,
+            $this->pathAvatarDelete()['large'].$user->avatar->image,
+            $this->pathAvatarDelete()['blur'].$user->avatar->image,
         ]);
         $user->avatar()->delete();
     }

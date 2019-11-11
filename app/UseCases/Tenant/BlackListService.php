@@ -144,7 +144,17 @@ class BlackListService
         $tenant->update();
     }
 
-    public function deletePhotoMainTenant ($tenantId) {
+    public function remove($id)
+    {
+        $tenant = $this->getTenant($id);
+
+        $this->deletePhotoMainTenant($tenant->id);
+        $tenant->comments()->delete();
+        $tenant->delete();
+    }
+
+    public function deletePhotoMainTenant ($tenantId)
+    {
 
         $photo = $this->getPhotoMainTenant($tenantId);
 
@@ -154,6 +164,7 @@ class BlackListService
             $this->pathPhotoDelete()['small'].$photo->photo,
             $this->pathPhotoDelete()['medium'].$photo->photo,
             $this->pathPhotoDelete()['large'].$photo->photo,
+            $this->pathPhotoDelete()['blur'].$photo->photo,
         ]);
         $photo->delete();
     }
@@ -165,6 +176,7 @@ class BlackListService
           'small' => '/user/black-tenant/images/small/',
           'medium' => '/user/black-tenant/images/medium/',
           'large' => '/user/black-tenant/images/large/',
+          'blur' => '/user/black-tenant/images/blur/',
         ];
         return $paths;
     }

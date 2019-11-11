@@ -181,6 +181,8 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
             Route::get('/{tenant}', 'TenantsController@show')->name('show');
 
+            Route::delete('/{tenant}/destroy', 'TenantsController@destroy')->name('destroy');
+
 
             Route::post('/not-match/{tenant}', 'TenantsController@notMatch')->name('not.match');
             Route::post('/active/{tenant}', 'TenantsController@active')->name('active');

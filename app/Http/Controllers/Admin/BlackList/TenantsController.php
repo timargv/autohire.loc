@@ -75,11 +75,22 @@ class TenantsController extends Controller
         return redirect()->route('admin.black.list.tenants.show', compact('tenant'))->with('success', 'Запись добавлена');
     }
 
+    public function destroy(BlackList $tenant)
+    {
+        try {
+            $this->service->remove($tenant->id);
+        } catch (\DomainException $e) {
+            return back()->with('error', $e->getMessage());
+        }
+
+        return redirect()->back()->with('success', 'Запись удалена');
+    }
+
 
     // --- Проверка на автора и прова редактирования
-    private function checkAccess(BlackList $blackList): void
+    private function checkAccess(BlackList $tenant): void
     {
-        if (!Gate::allows('manage-own-black-list', $blackList)) {
+        if (!Gate::allows('manage-own-black-list', $tenant)) {
             abort(403);
         }
     }
