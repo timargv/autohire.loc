@@ -30,7 +30,6 @@ class AuthServiceProvider extends ServiceProvider
         });
     }
 
-
     private function registerPermissions(): void
     {
         Gate::define('horizon', function (User $user) {
