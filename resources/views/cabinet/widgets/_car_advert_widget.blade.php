@@ -2,7 +2,7 @@
     <div class="col-md-6 col-sm-6 col-xs-12">
         <div class="info-box p-3">
             <span class="info-box-text">{{ __('fillable.Adverts') }}</span>
-            <canvas id="chartjs-4" class="chartjs"></canvas>
+            <canvas id="chartjs-4" class="chartjs" height="250"></canvas>
         </div>
     </div>
 </div>
