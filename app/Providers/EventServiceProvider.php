@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Events\Advert\ModerationNotPassed;
 use App\Events\Advert\ModerationPassed;
 use App\Listeners\Advert\AdvertChangedListener;
 use App\Listeners\Advert\ModerationNotPassedListener;
@@ -25,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
         ModerationPassed::class => [
             AdvertChangedListener::class,
             ModerationPassedListener::class,
+        ],
+        ModerationNotPassed::class => [
+            AdvertChangedListener::class,
             ModerationNotPassedListener::class,
         ],
     ];
