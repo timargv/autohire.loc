@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Entity\Cars\Advert\Advert;
 use App\Entity\Cars\Advert\Dialog\Dialog;
 use App\Entity\Tenant\BlackList;
 use App\Entity\Tenant\BlackListComment;
@@ -45,6 +46,11 @@ class AppServiceProvider extends ServiceProvider
             $view->with('countModerationTenants', BlackList::countModerationTenants());
             $view->with('countModerationTenantPhotos', BlackListPhoto::countModerationPhotos());
             $view->with('countModerationTenantComments', BlackListComment::countModerationComments());
+        });
+
+        view()->composer('cabinet.home', function($view) {
+            $view->with('countCarAdvertCabinet', Advert::countCarAdvertWidget());
+
         });
 
     }

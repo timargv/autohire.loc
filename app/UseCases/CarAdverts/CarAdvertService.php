@@ -24,6 +24,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Cache;
 
 
 class CarAdvertService
@@ -76,6 +77,8 @@ class CarAdvertService
                     ]);
                 }
             }
+
+            Cache::tags(Advert::class.'_'.Auth::id())->flush();
 
             return $carAdvert;
         });
@@ -152,11 +155,12 @@ class CarAdvertService
     public function remove($id) {
 
         $carAdvert = $this->getCarAdvert($id);
+        $authorId = $carAdvert->author->id;
         if ($carAdvert->photos) {
             $this->deletePhotos($carAdvert->id);
         }
         $carAdvert->delete();
-
+        Cache::tags(Advert::class.'_'.$authorId)->flush();
     }
 
     public function addPhotos ($id, PhotosRequest $request) : void
@@ -334,6 +338,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->sendToModeration();
+        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
     public function moderate($id): void
@@ -341,24 +346,28 @@ class CarAdvertService
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->moderate(Carbon::now());
         event(new ModerationPassed($carAdvert));
+        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
     public function reject($id, RejectRequest $request): void
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->reject($request['reason']);
+        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
     public function close($id): void
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->close();
+        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
     public function draft($id): void
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->draft();
+        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
 

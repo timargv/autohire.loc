@@ -10,6 +10,7 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 
 /**
@@ -38,7 +39,9 @@ use Illuminate\Support\Facades\Cache;
  * @property Value[] $values
  * @property Photo[] $photos
  * @method Builder active()
+ * @method Builder forActive()
  * @method Builder forUser(User $user)
+ * @method Builder forFavoredByUser(User $user)
  */
 class Advert extends Model
 {
@@ -64,7 +67,7 @@ class Advert extends Model
 
 
     //  Массив из типа аренды авто
-    public static function typeRental () : array
+    public static function typeRental(): array
     {
         return [
             self::TYPE_RENTAL_DAILY => __('fillable.Daily'),
@@ -127,7 +130,7 @@ class Advert extends Model
 
     public function author()
     {
-        return $this->belongsTo(User::class, 'author_id', 'id') ;
+        return $this->belongsTo(User::class, 'author_id', 'id');
     }
 
     public function carBrand()
@@ -155,7 +158,7 @@ class Advert extends Model
         return $this->hasMany(Value::class, 'car_advert_id', 'id');
     }
 
-    public function attributes ()
+    public function attributes()
     {
         return $this->belongsToMany(Attribute::class, 'car_advert_values', 'car_advert_id', 'car_attribute_id');
     }
@@ -165,7 +168,8 @@ class Advert extends Model
         return $this->hasMany(Photo::class, 'car_advert_id', 'id');
     }
 
-    public function favorites() {
+    public function favorites()
+    {
         return $this->belongsToMany(User::class, 'car_advert_favorites', 'car_advert_id', 'user_id');
     }
 
@@ -261,6 +265,11 @@ class Advert extends Model
         return $query->where('status', '=', self::STATUS_ACTIVE);
     }
 
+    public function scopeForActive(Builder $query)
+    {
+        return $query->where('status', '=', self::STATUS_ACTIVE);
+    }
+
     public function scopeForUser(Builder $query, User $user)
     {
         return $query->where('author_id', $user->id);
@@ -281,11 +290,20 @@ class Advert extends Model
         return $query->where('car_serie_id', $carSeries->id);
     }
 
-    public function scopeFavoredByUser(Builder $query, User $user) {
+    public function scopeFavoredByUser(Builder $query, User $user)
+    {
         return $query->whereHas('favorites', function (Builder $query) use ($user) {
             $query->where('user_id', $user->id);
         });
     }
+
+    public function scopeForFavoredByUser(Builder $query, User $user)
+    {
+        return $query->whereHas('favorites', function (Builder $query) use ($user) {
+            $query->where('user_id', $user->id);
+        });
+    }
+
 
 
     //=========================== Dialogs functions ===========================
@@ -350,9 +368,8 @@ class Advert extends Model
     //==================================
 
 
-
     // Получить основную картинку
-    public function getMainPhoto ($photos)
+    public function getMainPhoto($photos)
     {
         $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
 
@@ -365,7 +382,7 @@ class Advert extends Model
     }
 
     // Получить основную картинку
-    public function getMainPhotoModel ($photos)
+    public function getMainPhotoModel($photos)
     {
         $photoMain = 'https://vk.com/images/dquestion_app_widget_1_b.png';
         foreach ($photos as $photo) {
@@ -378,7 +395,7 @@ class Advert extends Model
 
 
     // Получить тип аренды
-    public function getTypeRental ()
+    public function getTypeRental()
     {
         if (array_key_exists($this->type_rental, self::typeRental())) {
             return self::typeRental()[$this->type_rental];
@@ -386,14 +403,14 @@ class Advert extends Model
     }
 
 
-    public function getCarAttributeModelValue ($values)
+    public function getCarAttributeModelValue($values)
     {
-        if ($value = $values->where('car_attribute_id', 1)->first()){
+        if ($value = $values->where('car_attribute_id', 1)->first()) {
             return $value['value'];
         }
     }
 
-    public function isCarAttributeModel ($value): bool
+    public function isCarAttributeModel($value): bool
     {
         return $value->car_attribute_id === 1;
     }
@@ -402,13 +419,41 @@ class Advert extends Model
     /*
      * Сколько фотографий еще можно добавить
      * */
-    public function photosCount ()
+    public function photosCount()
     {
         $maxPhotos = 30;
         $countPhotos = count($this->photos()->get());
         if ($countPhotos <= $maxPhotos && $countPhotos > 0) {
             return $maxPhotos - $countPhotos;
-        } return $maxPhotos;
+        }
+        return $maxPhotos;
+    }
+
+
+    public static function countCarAdvertWidget(): array
+    {
+        return [
+            'car_advert_activate_count' => Cache::tags(Advert::class.'_'.Auth::id())->rememberForever('count_carAdvert_active_auth_user', function () {
+                return static::forUser(Auth::user())->where('status', self::STATUS_ACTIVE)->count();
+            }),
+            'car_advert_closed_count' => Cache::tags(Advert::class.'_'.Auth::id())->rememberForever('count_carAdvert_closed_auth_user', function () {
+                return static::forUser(Auth::user())->where('status', self::STATUS_CLOSED)->count();
+            }),
+            'car_advert_moderation_count' => Cache::tags(Advert::class.'_'.Auth::id())->rememberForever('count_carAdvert_moderation_auth_user', function () {
+                return static::forUser(Auth::user())->where('status', self::STATUS_MODERATION)->count();
+            }),
+            'car_advert_draft_count' => Cache::tags(Advert::class.'_'.Auth::id())->rememberForever('count_carAdvert_draft_auth_user', function () {
+                return static::forUser(Auth::user())->where('status', self::STATUS_DRAFT)->count();
+            })
+        ];
+
+    }
+
+    public static function countFavorite()
+    {
+        return Cache::tags(Advert::class.'_favorites')->remember('count_carAdvert_favorite', '60', function () {
+            return static::forFavoredByUser(Auth::user())->count();
+        });
     }
 
 
