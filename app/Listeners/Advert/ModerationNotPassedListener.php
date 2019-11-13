@@ -7,9 +7,9 @@ use App\Notifications\Advert\ModerationNotPassedNotification;
 
 class ModerationNotPassedListener
 {
-    public function handle(ModerationNotPassed $event): void
+    public function handle(ModerationNotPassed $eventNotPassedModeration): void
     {
-        $carAdvert = $event->carAdvert;
+        $carAdvert = $eventNotPassedModeration->carAdvert;
         $carAdvert->author->notify(new ModerationNotPassedNotification($carAdvert));
     }
 }

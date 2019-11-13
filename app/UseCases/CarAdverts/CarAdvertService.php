@@ -363,8 +363,8 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->close();
-        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
         ReindexCarAdvert::dispatch();
+        Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
     public function draft($id): void
