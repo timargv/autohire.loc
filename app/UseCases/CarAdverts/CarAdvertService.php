@@ -17,6 +17,7 @@ use App\Http\Requests\Adverts\DialogRequest;
 use App\Http\Requests\Adverts\PhotosRequest;
 use App\Http\Requests\Adverts\RejectRequest;
 use App\Http\Requests\Adverts\UpdateRequest;
+use App\Jobs\Advert\ReindexCarAdvert;
 use App\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
@@ -353,6 +354,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->reject($request['reason']);
+        ReindexCarAdvert::dispatch();
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
@@ -360,6 +362,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->close();
+        ReindexCarAdvert::dispatch();
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
@@ -367,6 +370,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->draft();
+        ReindexCarAdvert::dispatch();
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
