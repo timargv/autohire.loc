@@ -1,0 +1,16 @@
+<?php
+
+namespace App\Listeners\Advert;
+
+use App\Events\Advert\ModerationNotPassed;
+use App\Events\Advert\ModerationPassed;
+use App\Notifications\Advert\ModerationPassedNotification;
+
+class ModerationNotPassedListener
+{
+    public function handle(ModerationNotPassed $event): void
+    {
+        $carAdvert = $event->carAdvert;
+        $carAdvert->author->notify(new ModerationNotPassedNotification($carAdvert));
+    }
+}

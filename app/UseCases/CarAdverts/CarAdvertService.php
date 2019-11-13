@@ -10,6 +10,7 @@ use App\Entity\Cars\Advert\Photo;
 use App\Entity\Cars\Attribute;
 use App\Entity\Categories\Car\CarBrand;
 use App\Entity\Categories\Car\Year;
+use App\Events\Advert\ModerationNotPassed;
 use App\Events\Advert\ModerationPassed;
 use App\Http\Requests\Adverts\AttributesRequest;
 use App\Http\Requests\Adverts\CreateRequest;
@@ -354,7 +355,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->reject($request['reason']);
-        ReindexCarAdvert::dispatch();
+        event(new ModerationNotPassed($carAdvert));
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
@@ -362,8 +363,8 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->close();
-        ReindexCarAdvert::dispatch();
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
+        ReindexCarAdvert::dispatch();
     }
 
     public function draft($id): void
