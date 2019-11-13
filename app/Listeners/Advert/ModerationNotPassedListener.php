@@ -4,6 +4,7 @@ namespace App\Listeners\Advert;
 
 use App\Events\Advert\ModerationNotPassed;
 use App\Events\Advert\ModerationPassed;
+use App\Notifications\Advert\ModerationNotPassedNotification;
 use App\Notifications\Advert\ModerationPassedNotification;
 
 class ModerationNotPassedListener
