@@ -3,13 +3,14 @@
 namespace App\Listeners\Advert;
 
 use App\Events\Advert\ModerationNotPassed;
+use App\Events\Advert\ModerationPassed;
 use App\Notifications\Advert\ModerationNotPassedNotification;
 
 class ModerationNotPassedListener
 {
-    public function handle(ModerationNotPassed $eventNotPassedModeration): void
+    public function handle(ModerationNotPassed $event): void
     {
-        $carAdvert = $eventNotPassedModeration->carAdvert;
+        $carAdvert = $event->carAdvert;
         $carAdvert->author->notify(new ModerationNotPassedNotification($carAdvert));
     }
 }
