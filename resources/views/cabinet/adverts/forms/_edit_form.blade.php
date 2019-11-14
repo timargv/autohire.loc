@@ -3,7 +3,7 @@
         <div class="row pl-3 pr-3">
             @if(count($carAdvert->photos))
                 @if($mainPhoto = $carAdvert->getMainPhotoModel($carAdvert->photos))
-                    <div class="mb-1 px-0 mr-1 position-relative col-1">
+                    <div class="mb-1 px-0 mr-1 position-relative col-sm-1">
                         <img class="img-responsive rounded border-0 w-100" src="{{ Storage::disk('public')->url('car-adverts/item/'. $mainPhoto->file) }}" >
                         <div class="btn-group position-absolute fixed-bottom">
                             <form method="POST" action="{{ route('cabinet.adverts.delete.photo', [$carAdvert, $mainPhoto]) }}" class="w-100">
@@ -20,7 +20,7 @@
                 @endif
                 @foreach($carAdvert->photos as $photo)
                     @if($photo->type == null)
-                        <div class="mb-1 mr-1 px-0 position-relative col-1">
+                        <div class="mb-1 mr-1 px-0 position-relative col-sm-1">
                             <img class="img-responsive rounded border-0 w-100" src="{{ Storage::disk('public')->url('car-adverts/item/'. $photo->file) }}">
                             <div class="btn-group position-absolute fixed-bottom">
                                 <form method="POST" action="{{ route('cabinet.adverts.delete.photo', [$carAdvert, $photo]) }}" class="w-100">
