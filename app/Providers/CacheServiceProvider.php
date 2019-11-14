@@ -17,6 +17,7 @@ class CacheServiceProvider extends ServiceProvider
 
     private $classes = [
         CarBrand::class,
+        Dialog::class,
     ];
 
     public function boot(): void
