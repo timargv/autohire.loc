@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('cabinet.profile._nav', ['page' => 'tickets'])
+    @include('cabinet.tickets._nav', ['page' => 'tickets'])
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">
@@ -17,7 +17,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="content" class="col-form-label">{{ __('fillable.Message') }}</label>
+                    <label for="content" class="col-form-label">{{ trans_choice('fillable.Message', 1) }}</label>
                     <textarea id="content" class="form-control{{ $errors->has('content') ? ' is-invalid' : '' }}" name="content" rows="10" required>{{ old('content') }}</textarea>
                     @if ($errors->has('content'))
                         <span class="invalid-feedback"><strong>{{ $errors->first('content') }}</strong></span>

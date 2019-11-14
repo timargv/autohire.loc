@@ -363,7 +363,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->close();
-        ReindexCarAdvert::dispatch();
+        ReindexCarAdvert::dispatch($carAdvert);
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 
@@ -371,7 +371,7 @@ class CarAdvertService
     {
         $carAdvert = $this->getCarAdvert($id);
         $carAdvert->draft();
-        ReindexCarAdvert::dispatch();
+        ReindexCarAdvert::dispatch($carAdvert);
         Cache::tags(Advert::class.'_'.$carAdvert->author->id)->flush();
     }
 

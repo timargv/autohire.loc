@@ -181,7 +181,7 @@ $(document).ready(function () {
 import Dropzone from 'dropzone';
 
 Dropzone.options.dropzone = {
-    maxFilesize: 12,
+    maxFilesize: 5,
     renameFile: function(file) {
         var dt = new Date();
         var time = dt.getTime();
@@ -191,12 +191,12 @@ Dropzone.options.dropzone = {
     addRemoveLinks: false,
     dictDefaultMessage: "Перетащите файлы сюда, чтобы загрузить",
     timeout: 5000,
-    // success: function(file, response)
-    // {
-    //     console.log(response);
-    // },
-    // error: function(file, response)
-    // {
-    //     return false;
-    // }
+    success: function(file, response)
+    {
+        console.log(response);
+    },
+    error: function(file, response)
+    {
+        return false;
+    }
 };
