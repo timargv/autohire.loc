@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         CarBrand::defaultOrder()->withDepth()->fixTree();
         Year::defaultOrder()->withDepth()->fixTree();
 
-//        $this->call(CarAdvertsTableSeeder::class);
+        $this->call(CarAdvertsTableSeeder::class);
 //        $this->call(PhotoCarAdvertsTableSeeder::class);
 
     }

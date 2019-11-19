@@ -3,14 +3,16 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Entity\Cars\Advert\Advert;
+use App\Entity\Categories\Car\CarBrand;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
 
 $factory->define(Advert::class, function (Faker $faker) {
     $active = $faker->boolean;
+    $carBrands = CarBrand::whereIsRoot()->defaultOrder()->inRandomOrder()->pluck('id');
     return [
 
-        'car_brand_id' => random_int(1, 30),
+        'car_brand_id' => random_int($carBrands[0], $carBrands[256]),
         'car_year_id'  => random_int(1, 30),
         'author_id'    => 1,
         'type_rental'  => array_rand(Advert::typeRental()),
