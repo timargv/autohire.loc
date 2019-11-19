@@ -12,6 +12,7 @@ use Kalnoy\Nestedset\NodeTrait;
  * @property string $name
  * @property string $name_ru
  * @property string $status
+ * @property string $type
  * @property string $slug
  * @property int|null $parent_id
  * @property CarBrand $parent
@@ -26,7 +27,7 @@ class CarBrand extends Model
     use NodeTrait;
 
     protected $table = 'car_brands';
-    protected $fillable = ['name', 'name_ru', 'status', 'slug', 'parent_id', 'author_id'];
+    protected $fillable = ['name', 'name_ru', 'type', 'status', 'slug', 'parent_id', 'author_id'];
 
 
     //-------------------

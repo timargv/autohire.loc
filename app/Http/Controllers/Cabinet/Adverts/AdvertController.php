@@ -61,7 +61,7 @@ class AdvertController extends Controller
 
     // ------ Форма добавления Объявлений
     public function create() {
-        $car_brands = CarBrand::all();
+        $car_brands = CarBrand::whereIsRoot()->defaultOrder()->getModels();
         $car_years = Year::all();
         $types = Advert::typeRental();
         $attributes = Attribute::all();

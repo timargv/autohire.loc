@@ -18,6 +18,7 @@ class CreateCarBrandsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name')->index();
             $table->string('name_ru')->index()->nullable();
+            $table->string('type')->nullable(); // Тип автомобиля, легковой и т.д
             $table->string('slug');
             $table->string('status', 16);
             $table->integer('author_id');

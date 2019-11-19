@@ -87,7 +87,6 @@ class CarAdvertService
 
     }
 
-
     public function edit ($id, UpdateRequest $request)
     {
         $carAdvert = $this->getCarAdvert($id);

@@ -15,7 +15,6 @@
                             <option value="">&mdash; Выберите марку автомобиля</option>
                             @foreach ($car_brands as $car_brand)
                                 <option value="{{ $car_brand->id }}"{{ $car_brand->id == old('car_brand') ? ' selected' : '' }}>
-                                    @for ($i = 0; $i < $car_brand->depth; $i++) &mdash; @endfor
                                     {{ $car_brand->name }}
                                 </option>
                             @endforeach;
