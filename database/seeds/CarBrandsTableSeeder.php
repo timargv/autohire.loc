@@ -257,11 +257,11 @@ class CarBrandsTableSeeder extends Seeder
         });
 
         DB::transaction(function () {
-            $carBrand = CarBrand::make(['type' => 'passenger', 'name' => 'BMW', 'name_ru' => 'БМВ', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('BMW')])->children()->createMany([['name' => 'I', 'name_ru' => 'I', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I')],['name' => 'I', 'name_ru' => 'I', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I')],])
-            ;
+            $carBrand = CarBrand::make(['type' => 'passenger', 'name' => 'BMW', 'name_ru' => 'БМВ', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('BMW')]);
             $carBrand->saveOrFail();
 
-            $carBrand->children()->create(['name' => '02 (E10)', 'name_ru' => '02 (E10)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('02 (E10)')]);
+            $carBrand->children()->create(['name' => '02 (E10)', 'name_ru' => '02 (E10)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('02 (E10)')])->children()->createMany([['name' => 'I', 'name_ru' => 'I', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I')],['name' => 'I', 'name_ru' => 'I', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I')],])
+            ;;
             $carBrand->children()->create(['name' => '1 серия', 'name_ru' => '1 серия', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1 серия')])->children()->createMany([['name' => 'III (F40)', 'name_ru' => 'III (F40)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('III (F40)')],['name' => 'II (F20/F21) Рестайлинг 2', 'name_ru' => 'II (F20/F21) Рестайлинг 2', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('II (F20/F21) Рестайлинг 2')],['name' => 'II (F20/F21) Рестайлинг', 'name_ru' => 'II (F20/F21) Рестайлинг', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('II (F20/F21) Рестайлинг')],['name' => 'II (F20/F21)', 'name_ru' => 'II (F20/F21)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('II (F20/F21)')],['name' => 'III (F40)', 'name_ru' => 'III (F40)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('III (F40)')],['name' => 'I (E82/E88) Рестайлинг 2', 'name_ru' => 'I (E82/E88) Рестайлинг 2', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I (E82/E88) Рестайлинг 2')],['name' => 'I (E81/E82/E87/E88) Рестайлинг', 'name_ru' => 'I (E81/E82/E87/E88) Рестайлинг', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I (E81/E82/E87/E88) Рестайлинг')],['name' => 'I (E81/E82/E87/E88)', 'name_ru' => 'I (E81/E82/E87/E88)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('I (E81/E82/E87/E88)')],])
             ;
             $carBrand->children()->create(['name' => '1M', 'name_ru' => '1M', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1M')]);
@@ -1013,8 +1013,7 @@ class CarBrandsTableSeeder extends Seeder
         });
 
         DB::transaction(function () {
-            $carBrand = CarBrand::make(['type' => 'passenger', 'name' => 'Genesis', 'name_ru' => 'Дженезис', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Genesis')])->children()->createMany([['name' => '1', 'name_ru' => '1', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1')],['name' => '1 (Рестайлинг)', 'name_ru' => '1 (Рестайлинг)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1 (Рестайлинг)')],['name' => '2', 'name_ru' => '2', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('2')],['name' => '1', 'name_ru' => '1', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1')],])
-            ;
+            $carBrand = CarBrand::make(['type' => 'passenger', 'name' => 'Genesis', 'name_ru' => 'Дженезис', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Genesis')]);
             $carBrand->saveOrFail();
 
             $carBrand->children()->create(['name' => 'G70', 'name_ru' => 'G70', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('G70')]);
@@ -1192,7 +1191,8 @@ class CarBrandsTableSeeder extends Seeder
             $carBrand->children()->create(['name' => 'Creta', 'name_ru' => 'Creta', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Creta')]);
             $carBrand->children()->create(['name' => 'Elantra', 'name_ru' => 'Elantra', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Elantra')]);
             $carBrand->children()->create(['name' => 'Equus', 'name_ru' => 'Equus', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Equus')]);
-            $carBrand->children()->create(['name' => 'Genesis', 'name_ru' => 'Genesis', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Genesis')]);
+            $carBrand->children()->create(['name' => 'Genesis', 'name_ru' => 'Genesis', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Genesis')])->children()->createMany([['name' => '1', 'name_ru' => '1', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1')],['name' => '1 (Рестайлинг)', 'name_ru' => '1 (Рестайлинг)', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1 (Рестайлинг)')],['name' => '2', 'name_ru' => '2', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('2')],['name' => '1', 'name_ru' => '1', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('1')],])
+            ;;
             $carBrand->children()->create(['name' => 'Getz', 'name_ru' => 'Getz', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Getz')]);
             $carBrand->children()->create(['name' => 'Grace', 'name_ru' => 'Grace', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Grace')]);
             $carBrand->children()->create(['name' => 'Grand Starex', 'name_ru' => 'Grand Starex', 'status' => 'active', 'author_id' => 1, 'slug' => Str::slug('Grand Starex')]);

@@ -3,13 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Entity/Categories/Car/CarBrand.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Entity/Categories/Car/CarBrand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_21_052103_create_car_brands_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_21_052103_create_car_brands_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/CarBrandsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/CarBrandsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,64 +33,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/UseCases/CarAdverts/CarAdvertService.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="608">
-              <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-              <folding>
-                <element signature="e#45#79#0#PHP" expanded="true" />
-                <element signature="e#2880#4454#0#PHP" />
-                <element signature="e#4460#5172#0#PHP" />
-                <element signature="e#5178#5487#0#PHP" />
-                <element signature="e#5493#7929#0#PHP" />
-                <element signature="e#7935#10242#0#PHP" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/seeds/CarBrandsTableSeeder.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
-              <caret line="1834" column="73" selection-start-line="1834" selection-start-column="73" selection-end-line="1834" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="16" column="73" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/kalnoy/nestedset/src/NodeTrait.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3417">
-              <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+            <state relative-caret-position="298">
+              <caret line="1194" column="13" selection-start-line="1194" selection-start-column="13" selection-end-line="1194" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -139,6 +80,8 @@
       <find>100</find>
       <find>land</find>
       <find>yati</find>
+      <find>merc</find>
+      <find>genes</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -863,7 +806,7 @@
       <workItem from="1573456753233" duration="14499000" />
       <workItem from="1573624118181" duration="17489000" />
       <workItem from="1573716143623" duration="1506000" />
-      <workItem from="1574150222919" duration="11050000" />
+      <workItem from="1574150222919" duration="11647000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -876,7 +819,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="135439000" />
+    <option name="totallyTimeSpent" value="136036000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1290,13 +1233,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/kalnoy/nestedset/src/NodeTrait.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3417">
-          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/TenantsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1325,13 +1261,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Entity/Categories/Car/CarBrand.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="141">
@@ -1343,20 +1272,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="20" column="81" selection-start-line="20" selection-start-column="81" selection-end-line="20" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="73" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="20" lean-forward="true" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -1375,10 +1290,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/database/seeds/DatabaseSeeder.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="27" lean-forward="true" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="16" column="73" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/kalnoy/nestedset/src/NodeTrait.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3417">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/database/seeds/CarBrandsTableSeeder.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="1834" column="73" selection-start-line="1834" selection-start-column="73" selection-end-line="1834" selection-end-column="73" />
+        <state relative-caret-position="298">
+          <caret line="1194" column="13" selection-start-line="1194" selection-start-column="13" selection-end-line="1194" selection-end-column="13" />
         </state>
       </provider>
     </entry>
