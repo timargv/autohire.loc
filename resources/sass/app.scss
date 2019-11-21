@@ -287,6 +287,10 @@ a {
     overflow: hidden;
 }
 
+.car_sh_info .car_sh_model .title_model {
+  font-weight: 700!important;
+}
+
 .car_sh_price {
 }
 .car_sh_price .price_block {
@@ -415,7 +419,7 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-progress-description {
+.progress-description {
   margin: 0;
 }
 .small-box {
@@ -571,9 +575,9 @@ font-size: 1rem;
     height: auto !important;
 }
 
-.car_sh_model .title_model {
+.car_sh_info .car_sh_model .title_model {
     font-size: 18px;
-    font-weight: 400 !important;
+    font-weight: 700 !important;
     opacity: 0.8;
     max-height: 44px;
     overflow: hidden;

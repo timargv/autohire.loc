@@ -18,8 +18,9 @@
                         <div class="car_sh_info pr-3 py-0 h-100">
                             <div class="car_sh_model">
                                 <div class="title_block">Модель @if($user && $user->isAdmin()) <span class="badge badge-warning align-top mt-1 small">{{ $carAdvert->status }}</span> <span>{{ $carAdvert->published_at }}</span>@endif</div>
-                                <div class="title_model">
-                                    {{ $carAdvert->carBrand->name }} {{  $carAdvert->carModel ? $carAdvert->carModel->name : '' }}, {{ $carAdvert->carYear->name }}
+                                <div class="title_model text-indigo">
+                                    {{ $carAdvert->carBrand->name }}
+                                    <span class="text-muted font-weight-light">{{  $carAdvert->carModel ? $carAdvert->carModel->name : '' }}, {{ $carAdvert->carYear->name }}</span>
                                 </div>
                             </div>
 

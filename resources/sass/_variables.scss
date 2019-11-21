@@ -54,6 +54,9 @@ $bg-silver-lite: $silver-lite;
 .text-link-lite {
   color: $link-lite;
 }
+.text-indigo {
+  color: $indigo !important;
+}
 
 
 // Background Color
@@ -104,8 +107,6 @@ $bg-silver-lite: $silver-lite;
 .font-weight-400 {
     font-weight: 400 !important;
 }
-
-
 
 
 .dropzone {
