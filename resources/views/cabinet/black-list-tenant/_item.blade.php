@@ -79,6 +79,9 @@
                         <div><span class="badge badge-danger">{{ $tenant->statusTenant()[$tenant->status] }}</span></div>
                     @endif
                 </td>
+                <td>
+
+                </td>
             </tr>
                 @continue
             @endcan

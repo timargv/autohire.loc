@@ -28,7 +28,9 @@
                                     @if($photo->isModeration() || $photo->isNotMatch())
                                         <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/blur/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
                                     @else
-                                        <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/medium/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                                        <a href="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/original/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png' }}" data-fancybox="images" class="main-photo mb-3 d-block overflow-hidden" >
+                                            <img src="{{ $photo->photo !== null ? Storage::disk('public')->url('user/black-tenant/images/medium/'.$photo->photo) : 'https://vk.com/images/dquestion_app_widget_1_b.png'}}" class="rounded w-100 " alt="...">
+                                        </a>
                                     @endif
                                 @else
                                     <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
