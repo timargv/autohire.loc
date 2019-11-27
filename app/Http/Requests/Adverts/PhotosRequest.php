@@ -16,7 +16,7 @@ class PhotosRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'files.*' => 'required|image|mimes:jpg,jpeg,png|max:5120',
+            'files.*' => 'required|image|mimes:jpg,jpeg,png|max:20480',
         ];
     }
 
@@ -26,7 +26,7 @@ class PhotosRequest extends FormRequest
             'files.*.required' => 'Фотография обязательна.',
             'files.*.mimes'  => 'Фотография должен быть формата: :values.',
             'files.*.image'  => 'Файл должно быть изображением.',
-            'files.*.max'  => 'Фотография не может быть больше чем 5120 кб или 5 мб.',
+            'files.*.max'  => 'Фотография не может быть больше чем 20480 кб или 20 мб.',
         ];
     }
 }
