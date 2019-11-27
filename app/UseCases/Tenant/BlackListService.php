@@ -182,11 +182,10 @@ class BlackListService
     public function deleteTenantPhotoFile($fileName) {
         Storage::disk('public')->delete([
             $this->pathPhotoDelete()['original'].$fileName,
-            $this->pathPhotoDelete()['thumbnail'].$fileName,
-            $this->pathPhotoDelete()['item'].$fileName,
             $this->pathPhotoDelete()['small'].$fileName,
             $this->pathPhotoDelete()['medium'].$fileName,
             $this->pathPhotoDelete()['large'].$fileName,
+            $this->pathPhotoDelete()['blur'].$fileName,
 
         ]);
     }
