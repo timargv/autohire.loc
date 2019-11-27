@@ -182,6 +182,8 @@ import Dropzone from 'dropzone';
 
 Dropzone.options.carAdvertPhoto = {
     maxFilesize: 20,
+    resizeWidth: 1200,
+    resizeMethod: 'contain',
     renameFile: function(file) {
         var dt = new Date();
         var time = dt.getTime();
@@ -203,6 +205,8 @@ Dropzone.options.carAdvertPhoto = {
 
 Dropzone.options.dropzoneTenant = {
     maxFilesize: 20,
+    resizeWidth: 1200,
+    resizeMethod: 'contain',
     transformFile: function(file, done) {
 
         var myDropZone = this;
