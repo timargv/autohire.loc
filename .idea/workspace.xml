@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Adverts/PhotosRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Adverts/PhotosRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,11 +77,27 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="671">
               <caret line="57" column="64" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="634">
+              <caret line="204" column="19" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
+              <folding>
+                <element signature="e#521#1161#0" />
+                <element signature="e#1335#1564#0" />
+                <element signature="e#1969#5635#0" />
+                <element signature="e#2980#4380#0" />
+                <element signature="e#4441#5631#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -98,15 +113,6 @@
                 <element signature="e#10591#11340#0#PHP" />
                 <element signature="e#11407#11793#0#PHP" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="578">
-              <caret line="109" selection-start-line="109" selection-end-line="109" />
             </state>
           </provider>
         </entry>
@@ -217,7 +223,6 @@
         <option value="$PROJECT_DIR$/app/Entity/Tenant/BlackListPhoto.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BlackList/TenantsController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BlackList/TenantPhotosController.php" />
-        <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cabinet/BlackList/TenantsController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/black-list-tenant/show.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/_nav_button.blade.php" />
@@ -229,6 +234,7 @@
         <option value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Adverts/PhotosRequest.php" />
         <option value="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/photos.blade.php" />
+        <option value="$PROJECT_DIR$/resources/js/app.js" />
       </list>
     </option>
   </component>
@@ -1061,7 +1067,7 @@
       <workItem from="1573716143623" duration="1506000" />
       <workItem from="1574150222919" duration="15028000" />
       <workItem from="1574325057717" duration="1189000" />
-      <workItem from="1574847386090" duration="17469000" />
+      <workItem from="1574847386090" duration="17730000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -1074,7 +1080,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158075000" />
+    <option name="totallyTimeSpent" value="158336000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1089,7 +1095,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.2249467" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2249467" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -1418,20 +1424,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="226" column="43" selection-start-line="226" selection-start-column="43" selection-end-line="226" selection-end-column="43" />
-          <folding>
-            <element signature="e#521#1161#0" />
-            <element signature="e#1335#1564#0" />
-            <element signature="e#1969#5635#0" />
-            <element signature="e#2980#4380#0" />
-            <element signature="e#4441#5631#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/black-list-tenant/_nav_button.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1550,6 +1542,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="671">
           <caret line="57" column="64" selection-start-line="57" selection-start-column="64" selection-end-line="57" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="634">
+          <caret line="204" column="19" selection-start-line="204" selection-start-column="19" selection-end-line="204" selection-end-column="19" />
+          <folding>
+            <element signature="e#521#1161#0" />
+            <element signature="e#1335#1564#0" />
+            <element signature="e#1969#5635#0" />
+            <element signature="e#2980#4380#0" />
+            <element signature="e#4441#5631#0" />
+          </folding>
         </state>
       </provider>
     </entry>
