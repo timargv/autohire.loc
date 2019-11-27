@@ -14,7 +14,17 @@ class BlackListPhotoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'photo' => 'required|image|mimes:jpg,jpeg,png|max:5120',
+            'files.*' => 'required|image|mimes:jpg,jpeg,png|max:5120',
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'files.*.required' => 'Фотография обязательна.',
+            'files.*.mimes'  => 'Фотография должен быть формата: :values.',
+            'files.*.image'  => 'Файл должно быть изображением.',
+            'files.*.max'  => 'Фотография не может быть больше чем 5120 кб или 5 мб.',
         ];
     }
 }

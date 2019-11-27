@@ -3,17 +3,19 @@
 @section('content')
     @include('cabinet.black-list-tenant._nav')
     @include('cabinet.black-list-tenant._nav_button', ['page' => ''])
+    <a href="{{ route('cabinet.black.list.tenants.photos', $tenant) }}" class="mb-2 mb-md-3 btn-sm btn btn-primary"><i class="fal fa-images mr-1"></i> Добавить фото</a>
+
 
 
     <div class="card border-0 shadow-sm">
         <div class="card-body">
             <div class="row">
 
-                <div class="col-md-3">
+                <div class="col-md-3 mb-3 mb-md-5">
                     @if(count($tenant->photos))
-                        <div class="w-100 position-relative mb-5">
+                        <div class="w-100 position-relative mb-0">
                             @foreach($tenant->photos as $photo)
-
+                                @continue(!$photo->isMain())
                                 <div class="position-absolute" style="top: -10px;left: -6px;">
                                     @if ($photo->isNotMatch())
                                         <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $photo->statusPhoto()[$photo->status] }}"></i>
@@ -36,12 +38,14 @@
                                     <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                                 @endif
 
-                                @break($photo->isMain())
+
                             @endforeach
                         </div>
                     @else
                         <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                     @endif
+
+                    <a href="{{ route('cabinet.black.list.tenants.photos', $tenant) }}" class="my-3 btn-md btn btn-outline-secondary d-block"><i class="fal fa-images mr-1"></i> Добавить фото</a>
                 </div>
 
                 <div class="col-md-9">
@@ -64,8 +68,17 @@
                             </div>
                         </div>
 
-                        <div class="all-docs my-4 py-4">
-                            <div class="mb-4 pb-3">
+                        <div class="all-docs my-4 py-4 ">
+                            <div class="mb-4 pb-3 ">
+                                <div class="mb-2 text-muted ">
+                                    {{ __('fillable.City') }}
+                                </div>
+                                <div class="font-weight-bold h4 ">
+                                    {{ $tenant->city??'—' }}
+                                </div>
+                            </div>
+
+                            <div class="mb-4 pb-3 d-none">
                                 <div class="mb-2 text-muted ">
                                     {{ __('fillable.Passport') }}
                                 </div>
@@ -75,7 +88,7 @@
                             </div>
 
 
-                            <div class="mb-4 pb-3">
+                            <div class="mb-4 pb-3 d-none">
                                 <div class="mb-2 text-muted ">
                                     {{ __('fillable.DriverLicense') }}
                                 </div>
@@ -84,7 +97,7 @@
                                 </div>
                             </div>
 
-                            <div class="mb-3">
+                            <div class="mb-3 d-none">
                                 <div class="mb-2 text-muted ">
                                     {{ __('fillable.OtherDocuments') }}
                                 </div>

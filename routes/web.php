@@ -50,7 +50,8 @@ Route::group(['prefix' => 'cabinet', 'as' => 'cabinet.', 'namespace' => 'Cabinet
             Route::get('/edit', 'TenantsController@edit')->name('edit');
             Route::put('/update', 'TenantsController@update')->name('update');
 
-            Route::post('/{tenant}/photo', 'TenantsController@addPhoto')->name('add.photo');
+            Route::get('/{tenant}/photos', 'TenantsController@photosForm')->name('photos');
+            Route::post('/{tenant}/photos', 'TenantsController@photos');
         });
 
 
@@ -202,7 +203,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'mi
 
             Route::group(['prefix' => 'car', 'as' => 'car.', 'namespace' => 'Car'], function () {
 
-                Route::resource('brands', 'CarBrandsController');
+                Route::resource('brands', 'CarBrandsController')->only(['index', 'edit', 'show', 'store']);
+                Route::put('/brands/{carBrand}/update', 'CarBrandsController@update')->name('brands.update');
+
                 Route::get('/brands/create/{carBrand?}', 'CarBrandsController@create')->name('brands.create');
                 Route::delete('/brands/{carBrand}/destroy', 'CarBrandsController@destroy')->name('brands.destroy');
 

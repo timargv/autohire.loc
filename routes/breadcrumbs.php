@@ -177,6 +177,11 @@ Breadcrumbs::register('cabinet.black.list.tenants.show', function (Crumbs $crumb
     $crumbs->push($tenant->name, route('cabinet.black.list.tenants.show', $tenant));
 });
 
+// Cabinet Tenant Photos
+Breadcrumbs::register('cabinet.black.list.tenants.photos', function (Crumbs $crumbs, BlackList $tenant) {
+    $crumbs->parent('cabinet.black.list.tenants.home');
+    $crumbs->push($tenant->name, route('cabinet.black.list.tenants.photos', $tenant));
+});
 
 
 // Favorites

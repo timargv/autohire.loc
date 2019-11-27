@@ -9,6 +9,7 @@ use App\Entity\Tenant\BlackListComment;
 use App\Entity\Tenant\BlackListPhoto;
 use App\Http\Requests\Tenant\BlackListCommentRequest;
 use App\Http\Requests\Tenant\BlackListFileRequest;
+use App\Http\Requests\Tenant\BlackListPhotoRequest;
 use App\Http\Requests\Tenant\BlackListRequest;
 use App\User;
 use Illuminate\Support\Facades\DB;
@@ -60,10 +61,6 @@ class BlackListService
             // ssh test
             $blacklistTenant->saveOrFail();
 
-            if ($request['photo']) {
-                $this->addPhotoMain($user->id, $request, $blacklistTenant->id);
-            }
-
             if ($request['comment']) {
                 $this->addComment($user->id, $request, $blacklistTenant->id);
             }
@@ -74,13 +71,13 @@ class BlackListService
 
     }
 
-    public function addPhotoMain($userId, $request, $blackListId) : void
+    public function addPhoto($userId, BlackListPhotoRequest $request, $blackListId)
     {
         $tenant = $this->getTenant($blackListId);
 
-        $this->deletePhotoMainTenant($blackListId);
+//        return $request;
 
-         DB::transaction(function () use ($request, $userId, $tenant) {
+         return DB::transaction(function () use ($request, $userId, $tenant) {
 
              $path = $this->pathPhoto()['original'];
              $blurPath = $this->pathPhoto()['blur'];
@@ -88,7 +85,7 @@ class BlackListService
              $middlePath = $this->pathPhoto()['medium'];
              $largePath = $this->pathPhoto()['large'];
 
-             $img = Image::make($request['photo']);
+             $img = Image::make($request['file']);
              if (!file_exists($path) && !file_exists($smallPath) && !file_exists($blurPath) && !file_exists($middlePath) && !file_exists($largePath)) {
                  mkdir($path, 0755, true);
                  mkdir($blurPath, 0755, true);
@@ -115,7 +112,13 @@ class BlackListService
              })->blur(70)->save($blurPath . $fileName, 100);
 
 
-             $photo = $tenant->photos()->create([
+             $photos = $tenant->photos()->get();
+
+             foreach ($photos as $photo) {
+                 $photo->update(['is_main' => 0]);
+             }
+
+             $tenant->photos()->create([
                  'author_id' => $userId,
                  'status' => BlackListPhoto::STATUS_MODERATION,
                  'photo' => $fileName,
@@ -123,6 +126,8 @@ class BlackListService
              ]);
 
              $tenant->update();
+
+             return $fileName;
 
          });
     }
@@ -148,25 +153,42 @@ class BlackListService
     {
         $tenant = $this->getTenant($id);
 
-        $this->deletePhotoMainTenant($tenant->id);
+        $this->deletePhotos($tenant->id);
         $tenant->comments()->delete();
         $tenant->delete();
     }
 
-    public function deletePhotoMainTenant ($tenantId)
+
+    /*
+     * Удалить одну фотографию
+     * */
+    public function deletePhoto ($photoId)
     {
+        $tenantPhoto = $this->getPhotoTenant($photoId);
+        $this->deleteTenantPhotoFile($tenantPhoto->photo);
+        $tenantPhoto->delete();
+    }
 
-        $photo = $this->getPhotoMainTenant($tenantId);
+    public function deletePhotos ($tenantId)
+    {
+        $tenant = $this->getTenant($tenantId);
+        foreach ($tenant->photos as $tenantPhoto) {
+            $tenantPhoto = $this->getPhotoTenant($tenantPhoto->id);
+            $this->deleteTenantPhotoFile($tenantPhoto->photo);
+            $tenantPhoto->delete();
+        }
+    }
 
-        if (!$photo) {return;}
+    public function deleteTenantPhotoFile($fileName) {
         Storage::disk('public')->delete([
-            $this->pathPhotoDelete()['original'].$photo->photo,
-            $this->pathPhotoDelete()['small'].$photo->photo,
-            $this->pathPhotoDelete()['medium'].$photo->photo,
-            $this->pathPhotoDelete()['large'].$photo->photo,
-            $this->pathPhotoDelete()['blur'].$photo->photo,
+            $this->pathPhotoDelete()['original'].$fileName,
+            $this->pathPhotoDelete()['thumbnail'].$fileName,
+            $this->pathPhotoDelete()['item'].$fileName,
+            $this->pathPhotoDelete()['small'].$fileName,
+            $this->pathPhotoDelete()['medium'].$fileName,
+            $this->pathPhotoDelete()['large'].$fileName,
+
         ]);
-        $photo->delete();
     }
 
     private function pathPhotoDelete()
@@ -190,6 +212,11 @@ class BlackListService
     public function getTenant($id) : BlackList
     {
         return BlackList::findOrFail($id);
+    }
+
+    public function getPhotoTenant($id)
+    {
+        return BlackListPhoto::findOrFail($id);
     }
 
     public function getPhotoMainTenant($tenantId)

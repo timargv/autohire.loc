@@ -43,7 +43,7 @@
 {{--            </form>--}}
 
             <form method="POST" action="?" enctype="multipart/form-data"
-                  class="dropzone" id="dropzone">
+                  class="dropzone" id="carAdvertPhoto">
                 @csrf
                 <input type="hidden" name="carAdvert" value="{{ $carAdvert->id }}">
             </form>

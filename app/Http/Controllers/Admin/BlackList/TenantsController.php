@@ -109,6 +109,23 @@ class TenantsController extends Controller
         $tenant->update([
             'status' => BlackList::STATUS_ACTIVE
         ]);
+        $photos = $tenant->photos()->get();
+        foreach ($photos as $photo) {
+            if ($photo->isMain())
+            {
+                $photo->update([
+                    'status' => BlackList::STATUS_ACTIVE
+                ]);
+            }
+        }
+
+        $comments = $tenant->comments()->get();
+        foreach ($comments as $comment) {
+            $comment->update([
+                'status' => BlackList::STATUS_ACTIVE
+            ]);
+        }
+
         return redirect()->back()->with('success', 'Арендатель подтвержден');
     }
 }

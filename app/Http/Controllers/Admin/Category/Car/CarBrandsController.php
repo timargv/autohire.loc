@@ -101,15 +101,16 @@ class CarBrandsController extends Controller
 
     public function update(Request $request, CarBrand $carBrand)
     {
-        $this->validate($request, [
+        $request->validate([
             'name' => 'required|string|max:255',
-            'name_ru' => 'required|string|max:255'
+            'name_ru' => 'required|string|max:255',
+            'parent' => 'nullable|integer|exists:car_brands,id',
         ]);
 
         $carBrand->update([
             'name' => $request['name'],
             'name_ru' => $request['name_ru'],
-            'status' => 'active',
+            'status' => $request['status'] == 'on' ? CarBrand::STATUS_ACTIVE : CarBrand::STATUS_CLOSED,
             'author_id' => \Auth::id(),
             'slug' => Str::slug($request['name']).'-'.rand(0, 10),
         ]);

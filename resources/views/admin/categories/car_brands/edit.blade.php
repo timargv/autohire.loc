@@ -28,6 +28,7 @@
 
                 @csrf
                 @method('PUT')
+
                 <div class="form-group">
                     <label for="name" class="col-form-label">{{ __('fillable.Title') }}</label>
                     <input id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name', $carBrand->name) }}" required>
@@ -54,7 +55,7 @@
 
                 <div class="form-group">
                     <div class="custom-control custom-switch">
-                        <input type="checkbox" class="custom-control-input flat-red" id="status" name="status" {{ old('status', $carBrand->status != 'off') ? 'checked' : '' }}>
+                        <input type="checkbox" class="custom-control-input flat-red" id="status" name="status" {{ old('status', $carBrand->status != 'closed') ? 'checked' : '' }}>
                         <label class="custom-control-label" for="status">{{ __('fillable.Status') }}</label>
                     </div>
                     @if ($errors->has('status'))

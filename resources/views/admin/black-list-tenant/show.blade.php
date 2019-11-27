@@ -3,7 +3,6 @@
     @include('admin.black-list-tenant._nav_button', ['page' => ''])
 @stop
 
-
 @section('content')
 
     <div class="box box-solid">
@@ -16,6 +15,7 @@
                     @if(count($tenant->photos))
                         <div class="w-100 position-relative mb-5">
                             @foreach($tenant->photos as $photo)
+                                @continue(!$photo->isMain())
                                 <div class="position-absolute" style="top: -10px;left: -6px;">
                                     @if ($photo->isNotMatch())
                                         <i class="fas fa-times-circle text-danger bg-white rounded-circle overflow-hidden" data-toggle="tooltip" data-placement="top" title="{{ $photo->statusPhoto()[$photo->status] }}"></i>

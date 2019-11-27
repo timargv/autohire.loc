@@ -15,8 +15,6 @@ class BlackListRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:255',
-            'photo' => 'nullable|image|mimes:jpg,jpeg,png',
-            'files.*' => 'nullable|mimes:jpg,jpeg,png,pdf,doc,docx,xls,xlsx|max:5120',
             'comment' => 'nullable|string|min:2|max:3000',
         ];
     }

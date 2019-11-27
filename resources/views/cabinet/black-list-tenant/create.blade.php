@@ -11,24 +11,6 @@
 
             <div class="row">
 
-                <div class="col-md-4">
-                    <div class="card border-0 mb-5">
-                        <div class="card-header border-0 text-muted h5">
-                            Добавь фото
-                        </div>
-                        <div class="card-body border-0 p-0">
-{{--                            <img src="https://vk.com/images/dquestion_app_widget_1_b.png" alt="" class="w-100" />--}}
-                        </div>
-                        <div class="card-footer border-0 px-2">
-                            <div class="input-group mb-3">
-                                <div class="custom-file">
-                                    <input name="photo" type="file" class="custom-file-input border-0" id="photo" aria-describedby="photo">
-                                    <label class="custom-file-label border-0 " for="photo">Добавьте фотографию</label>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="col-md-8">
                     <div class="form-group">
                         <label for="name" class="col-form-label">{{ __('fillable.Name') }}</label>

@@ -4,10 +4,12 @@ namespace App\Entity\Tenant;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Cache;
 
 /**
  * @property mixed status
+ * @method Builder forMain()
  */
 class BlackListPhoto extends Model
 {
@@ -62,6 +64,10 @@ class BlackListPhoto extends Model
         return $this->is_main === self::STATUS_MAIN;
     }
 
+    public function scopeForMain(Builder $query)
+    {
+        return $query->where('is_main', '=', self::STATUS_MAIN);
+    }
 
     // Кешированое количество не проверенных фотографий к арендателю из черного списка
     public static function countModerationPhotos () {

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Cabinet\BlackList;
 
 use App\Entity\Tenant\BlackList;
+use App\Http\Requests\Tenant\BlackListPhotoRequest;
 use App\Http\Requests\Tenant\BlackListRequest;
 use App\UseCases\Tenant\BlackListService;
 use App\User;
@@ -79,7 +80,30 @@ class TenantsController extends Controller
             return back()->with('error', $e->getMessage());
         }
 
-        return redirect()->route('cabinet.black.list.tenants.show', compact('tenant'))->with('success', 'Запись добавлена');
+        return redirect()->route('cabinet.black.list.tenants.photos', $tenant)->with('success', 'Запись добавлена');
+    }
+
+
+    // ------ Форма добавления фотографий для Объявления
+    public function photosForm (BlackList $tenant) {
+        $this->checkAccess($tenant);
+        return view('cabinet.black-list-tenant.form.photo', compact('tenant'));
+    }
+
+
+    // ------ Добавить одну или несколько Фотографий для объявления
+    public function photos (BlackListPhotoRequest $request, BlackList $tenant)
+    {
+        $blackList = $this->getBlackList($request['blackList']);
+        $this->checkAccess($blackList);
+
+        try {
+            $fileName = $this->service->addPhoto(Auth::id(), $request, $blackList->id);
+        } catch (\DomainException $e) {
+            return response()->json(['error', $e->getMessage()]);
+        }
+
+        return response()->json(['success'=> $fileName]);
     }
 
 
@@ -97,6 +121,10 @@ class TenantsController extends Controller
         if (!Gate::allows('manage-add-tenant', $user)) {
             abort(403);
         }
+    }
+
+    private function getBlackList($id) {
+        return BlackList::findOrFail($id);
     }
 
 }
