@@ -3,6 +3,7 @@
     <tr>
         <th width="70px">ID</th>
         <th>{{__('fillable.CarBrands')}}</th>
+        <th>{{__('fillable.Status')}}</th>
         <th width="250px">{{__('fillable.Function')}}</th>
         <th width="40px"></th>
     </tr>
@@ -11,7 +12,8 @@
     @foreach ($carBrands as $carBrand)
         <tr>
             <td>{{ $carBrand->id }}</td>
-            <td><a href="{{ route('admin.categories.car.brands.show', $carBrand) }}">{{ $carBrand->name }}</a></td>
+            <td><a href="{{ route('admin.categories.car.brands.show', $carBrand) }}">{{ $carBrand->name }}</a> @if ($carBrand->children->count()) &mdash; @endif </td>
+            <td>{{ $carBrand->status }}</td>
             <td>
                 <div class="" style="margin: 0 -5px;">
                     <form class="float-left ml-2" method="POST" action="{{ route('admin.categories.car.brand.first', $carBrand) }}">

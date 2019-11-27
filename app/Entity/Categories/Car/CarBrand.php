@@ -17,6 +17,7 @@ use Kalnoy\Nestedset\NodeTrait;
  * @property int|null $parent_id
  * @property CarBrand $parent
  * @property CarBrand[] $children
+ * @method Builder active()
  *
  * @method Builder roots()
  */
@@ -25,6 +26,9 @@ class CarBrand extends Model
 {
 
     use NodeTrait;
+
+    public const STATUS_ACTIVE = 'active';
+    public const STATUS_CLOSED = 'closed';
 
     protected $table = 'car_brands';
     protected $fillable = ['name', 'name_ru', 'type', 'status', 'slug', 'parent_id', 'author_id'];
@@ -48,5 +52,22 @@ class CarBrand extends Model
 
     public function depthCarBrand ($id) {
         return self::withDepth()->find($id);
+    }
+
+    public function isActive(): bool
+    {
+        return $this->status === self::STATUS_ACTIVE;
+    }
+
+    public function isClosed(): bool
+    {
+        return $this->status === self::STATUS_CLOSED;
+    }
+
+
+    // Заготовки для запросов
+    public function scopeActive(Builder $query)
+    {
+        return $query->where('status', '=', self::STATUS_ACTIVE);
     }
 }
