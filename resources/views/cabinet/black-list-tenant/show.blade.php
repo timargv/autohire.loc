@@ -3,8 +3,9 @@
 @section('content')
     @include('cabinet.black-list-tenant._nav')
     @include('cabinet.black-list-tenant._nav_button', ['page' => ''])
+    @can('manage-own-black-list', $tenant)
     <a href="{{ route('cabinet.black.list.tenants.photos', $tenant) }}" class="mb-2 mb-md-3 btn-sm btn btn-primary"><i class="fal fa-images mr-1"></i> Добавить фото</a>
-
+    @endcan
 
 
     <div class="card border-0 shadow-sm">
@@ -45,7 +46,10 @@
                         <img src="https://vk.com/images/dquestion_app_widget_1_b.png" class="rounded w-100 " alt="...">
                     @endif
 
-                    <a href="{{ route('cabinet.black.list.tenants.photos', $tenant) }}" class="my-3 btn-md btn btn-outline-secondary d-block"><i class="fal fa-images mr-1"></i> Добавить фото</a>
+                        @can('manage-own-black-list', $tenant)
+                            <a href="{{ route('cabinet.black.list.tenants.photos', $tenant) }}" class="my-3 btn-md btn btn-outline-secondary d-block"><i class="fal fa-images mr-1"></i> Добавить фото</a>
+                        @endcan
+
                 </div>
 
                 <div class="col-md-9">
