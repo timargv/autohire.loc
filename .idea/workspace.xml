@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="710dc0df-26fd-46d4-9b22-f89445cdafcf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,20 +51,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="654">
-              <caret line="166" column="99" selection-start-line="166" selection-start-column="99" selection-end-line="166" selection-end-column="99" />
+              <caret line="166" column="83" selection-start-line="166" selection-start-column="83" selection-end-line="166" selection-end-column="83" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/admin/black-list-tenant/show.blade.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
+            <state relative-caret-position="663">
+              <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
             </state>
           </provider>
         </entry>
@@ -206,7 +207,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Cabinet/Adverts/AdvertController.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/categories/car_brands/_item.blade.php" />
         <option value="$PROJECT_DIR$/app/Console/Commands/CarBrand/EditCarBrandStatusCommand.php" />
-        <option value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Requests/Tenant/BlackListRequest.php" />
         <option value="$PROJECT_DIR$/routes/breadcrumbs.php" />
         <option value="$PROJECT_DIR$/resources/sass/app.scss" />
@@ -228,6 +228,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/Category/Car/CarBrandsController.php" />
         <option value="$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php" />
       </list>
     </option>
   </component>
@@ -744,23 +745,6 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="cabinet" type="462c0819:PsiDirectoryNode" />
-              <item name="adverts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="cabinet" type="462c0819:PsiDirectoryNode" />
-              <item name="adverts" type="462c0819:PsiDirectoryNode" />
-              <item name="forms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="autohire.loc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="autohire.loc" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="cabinet" type="462c0819:PsiDirectoryNode" />
               <item name="black-list-tenant" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1060,7 +1044,7 @@
       <workItem from="1573716143623" duration="1506000" />
       <workItem from="1574150222919" duration="15028000" />
       <workItem from="1574325057717" duration="1189000" />
-      <workItem from="1574847386090" duration="16969000" />
+      <workItem from="1574847386090" duration="17026000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <created>1570299755689</created>
@@ -1073,7 +1057,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="157575000" />
+    <option name="totallyTimeSpent" value="157632000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1293,13 +1277,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="173" selection-start-line="173" selection-end-line="173" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
         </state>
       </provider>
     </entry>
@@ -1548,7 +1525,14 @@
     <entry file="file://$PROJECT_DIR$/resources/views/cabinet/adverts/forms/_create_form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="654">
-          <caret line="166" column="99" selection-start-line="166" selection-start-column="99" selection-end-line="166" selection-end-column="99" />
+          <caret line="166" column="83" selection-start-line="166" selection-start-column="83" selection-end-line="166" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/cabinet/black-list-tenant/create.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="91" selection-start-line="39" selection-start-column="91" selection-end-line="39" selection-end-column="91" />
         </state>
       </provider>
     </entry>

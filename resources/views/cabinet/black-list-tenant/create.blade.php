@@ -37,7 +37,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-primary">{{__('button.Save')}}</button>
+                        <button type="submit" class="btn btn-primary">{{__('button.Save')}} и добавить фото</button>
                     </div>
                 </div>
             </div>
