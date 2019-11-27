@@ -65,7 +65,7 @@ class TenantsController extends Controller
     public function show(BlackList $tenant)
     {
         try {
-            $this->checkAccess($tenant);
+            $this->checkAccessActive($tenant);
         } catch (\DomainException $e) {
             return back()->with('error', $e->getMessage());
         }
@@ -96,7 +96,6 @@ class TenantsController extends Controller
     {
         $blackList = $this->getBlackList($request['blackList']);
         $this->checkAccess($blackList);
-
         try {
             $fileName = $this->service->addPhoto(Auth::id(), $request, $blackList->id);
         } catch (\DomainException $e) {
@@ -116,9 +115,9 @@ class TenantsController extends Controller
     }
 
     // --- Проверка на автора и прова редактирования
-    private function checkAccessAddTenant(User $user): void
+    private function checkAccessActive(BlackList $blackList): void
     {
-        if (!Gate::allows('manage-add-tenant', $user)) {
+        if (!Gate::allows('manage-black-list-active', $blackList)) {
             abort(403);
         }
     }

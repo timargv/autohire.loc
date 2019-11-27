@@ -13,7 +13,7 @@
             </thead>
             <tbody>
             @foreach ($tenants as $tenant)
-            @can('manage-own-black-list', $tenant)
+            @canany(['manage-own-black-list', 'manage-black-list-active'], $tenant)
                 <tr>
 {{--                <td>{{ $tenant->id }}</td>--}}
                 <td style="max-width: 80px;min-width: 80px;">
@@ -85,7 +85,7 @@
                 </td>
             </tr>
                 @continue
-            @endcan
+            @endcanany
             @endforeach
             </tbody>
         </table>

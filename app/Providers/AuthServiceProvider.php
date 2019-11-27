@@ -101,7 +101,11 @@ class AuthServiceProvider extends ServiceProvider
          *  Доступ к своим добавленым в черный список арендателей Автор, Админ, Модератор
         */
         Gate::define('manage-own-black-list', function (User $user, BlackList $blackList) {
-            return $user->isAdmin() || $user->isModerator() || $blackList->author_id === $user->id || $blackList->isActive() || $blackList->isModeration();
+            return $user->isAdmin() || $user->isModerator() || $blackList->author_id === $user->id;
+        });
+
+        Gate::define('manage-black-list-active', function (User $user, BlackList $blackList) {
+            return $blackList->isActive();
         });
 
 
